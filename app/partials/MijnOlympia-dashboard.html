@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<title>Mijn Olympia - Dashboard</title>
+	<link rel="stylesheet" href="../css/app.css"/>
+	<link rel="stylesheet" href="../css/custom.css"/>
+	<link rel="stylesheet" href="../css/olympia-icons.css"/>
+</head>
+<body>
+	<header class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<a href="#" class="logo">
+					<img src="../img/logo.png" alt="Olympia"/>
+				</a>
+			</div>
+			<div class="col-sm-1"></div>
+			<div class="col-sm-8">
+				<div class="col-sm-8 well well-sm pull-right login" style="background: #fff; margin-top: 20px; margin-bottom: 0px; padding: 5px;">
+					<div class="row low-gutter row-low-gutter-main">
+						<div class="col-sm-9">
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group" style="margin-bottom: 8px">
+										<input class="form-control input-sm input-extra-sm height" type="text">
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group" style="margin-bottom: 8px">
+										<input class="form-control input-sm input-extra-sm height" type="password">
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<button class="btn btn-info btn-sm btn-block pull-right input-extra-sm padding" data-toggle="modal" data-target="#myModal">Login</button>
+								</div>
+
+							</div>
+							
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="checkbox" style="margin-top: 0; margin-bottom: 0;">
+										<label>
+											<input type="checkbox"> <a class="link-in-text" href="#">Onthoud mijn innologgegeven</a>
+										</label>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<a href="#" class="link-in-text" data-toggle="modal" data-target="#forgot-pass">Wachtwoord vergeten</a>
+								</div>
+							</div>
+							
+						</div>
+						<div class="col-sm-3 border-left">
+							<div class="row">
+								<div class="col-sm-12 text-center">
+									<p style="font-size: 11px;">Of log in met</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 text-center icons-img">
+									<a href="#" title="Deel via Facebook" class="facebook"></a>
+									<a href="#" title="Deel via Linked in" class="linkedin"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="full-width-border" style="margin-top: 15px;">
+		<div class="container">
+			<nav>
+				<ul class="menu sf-menu" id="menu-227">
+					<li>
+						<a href="javascript:void(0)" class="title">Ik zoek werk</a>
+						<ul>
+							<li>
+								<a href="/Vacatures" class="title">Alle vacatures</a>
+							</li>
+							<li>
+								<a href="/vacaturesperbranche" class="title">Vacatures per branche</a>
+							</li>
+							<li>
+								<a href="/werkgevers" class="title">Vacatures bij topbedrijven</a>
+							</li>
+							<li>
+								<a href="/Registration/RegisterIntro" class="title">Direct inschrijven bij Olympia</a>
+							</li>
+							<li>
+								<a href="/Vestigingen-Olympia-Uitzendbureau" class="title">Vestiging zoeken</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="title">Ik zoek personeel</a>
+						<ul>
+							<li>
+								<a href="/voorendoorondernemers" class="title">Voor en door ondernemers</a>
+							</li>
+							<li>
+								<a href="http://www.olympia.nl/toptalent" target="_blank" class="title">ONZE VISIE OP TOPTALENT</a>
+							</li>
+							<li>
+								<div class="title">Onze diensten</div>
+								<ul>
+									<li>
+										<a href="/onzediensten/uitzenden" class="title">Uitzenden</a>
+									</li>
+									<li>
+										<a href="/payrollservice" class="title">Payroll service</a>
+									</li>
+									<li>
+										<a href="/wervingenselectie" class="title">Werving en selectie</a>
+									</li>
+									<li>
+										<a href="/mastervendorservice" class="title">Master vendor service</a>
+									</li>
+									<li>
+										<a href="/inhouseservice" class="title">Inhouse Service</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/vacatureplaatsen" class="title">Vacature aanmelden</a>
+							</li>
+							<li>
+								<a href="/Vestigingen-Olympia-Uitzendbureau?radius=25" class="title">Vestiging zoeken</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="title">Over Olympia</a>
+						<ul>
+							<li>
+								<a href="/welovetoworkforyou" class="title">We love to work for you</a>
+							</li>
+							<li>
+								<a href="http://www.ondernemenbijolympia.nl" target="_blank" class="title">Ondernemer worden?</a>
+							</li>
+							<li>
+								<a href="/contact" class="title">Contact</a>
+							</li>
+						</ul>
+					</li>
+					<li class="current">
+						<a href="/mijn-olympia" class="title">Mijn Olympia</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div><!-- // navigation -->
+
+	<div class="container">
+		<div class="alert alert-info fade in email-subs-wrapper" role="alert">
+            <div class="row">
+                <div class="col-sm-5">
+                    <span class="olympia-mail4"></span>
+                    <div class="left">
+                        <h4>E-mail mij nieuwe vacatures voor:</h4>
+                        <p class="nederlang-text">
+                            'Nederland' en 'Heftruckchauffeurs' <a href="#">Geavanceerd</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <form role="form">
+                        <div class="form-group">
+                            <label>E-mailadres</label>
+                            <input type="email" class="form-control" placeholder="E-mailadres">
+                            <button type="submit" class="btn btn-primary medium-text">Zoekopdracht bewaren</button>
+                        </div>
+                        
+                        <p class="email-subs-text">Als je verder gaat, ga je akkoord met het gebruik van  cookie door Olympia en ga je akkoord met de 
+                            <a href="#">Gebruiksvoorwaarden</a> en 
+                            <a href="#">Privacyverklaring</a> van Olympia.
+                        </p>
+                    </form>                   
+                </div>
+                <div class="col-sm-1">
+                    <button type="button" class="close" id="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+			</div>
+			<div class="row hidden">
+				<div class="col-sm-6">
+					<div class="row">
+						<div class="col-sm-1">
+							<i class="olympia-mail4" style="font-size: 40px;"></i>
+						</div>
+						<div class="col-sm-11">
+							<h4>E-mail mij nieuwe vacatures voor:</h4>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">sdfsad</div>
+			</div>
+		</div>
+		<!--main container starts -->
+		<div class="row margin-top-30">
+			<div class="col-sm-3 left-container">
+				<div class="well well-olympia">
+					<div class="row">
+						<div class="col-lg-12 col-md-12">
+							<div class="dashboard-image">
+								<img src="../img/pasfoto.jpg"/>
+								<div class="overlay-container">
+									<label>Compleetheid profiel <span>60%</span></label> 
+									<div class="progress" style="margin-bottom: 0px;">
+										<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+											<span class="sr-only"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-12">
+							<div class="profile-data">
+								<label class="title">Maak je profiel compleet</label>
+								<ul>
+									<li>Update je CV<a href="javascript:void(0)"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Maak een video CV<a href="javascript:void(0)"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Stel een e-mail alert in<a href="javascript:void(0)"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Waar ben je naar op zoek?<a href="javascript:void(0)"><span class="olympia-icon olympia-plus"></span></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-12">
+							<div class="profile-data">
+								<label class="title addresses">Persoonsgegevens</label>
+								<ul>
+									<li class="address">Henk van Dunzelkamp</li>
+									<li class="city">Amersfoort</li>
+									<li class="phone">06-35792468</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-12">
+							<div class="profile-data">
+								<label class="sub-title">E-mail: </label>
+								<p>henk.van.dunzelamp@outlook.com</p>
+								<label class="sub-title">Wachtwoord </label>
+								<p><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span></p>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-12">
+							<div class="profile-data">
+								<button class="btn btn-primary">Wijzigen</button>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-12">
+							<div class="profile-data cv">
+								<label class="title addresses">Mijn ervaring &amp; CV</label>
+								<ul>
+									<li>
+										<label class="sub-title">Mijn meest recente opleiding:</label>
+										<p>MBO, Rotterdam college</p>
+									</li>
+									<li>
+										<label class="sub-title">Mijn meest recente werkervaring:</label>
+										<p>Heftruckchauffeur, Philips BV</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-12">
+							<div class="profile-data">
+								<button class="btn btn-primary">Wijzigen</button>
+							</div>
+						</div>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						<div class="col-lg-12 col-md-12">
+							<div class="side-menu">
+								<ul>
+									<li class="active"><a href="javascript:void(0)">Mijn dashboard</a></li>
+									<li><a href="javascript:void(0)">Mijn persoonlijke gegevens</a></li>
+									<li><a href="javascript:void(0)">Mijn video CV</a></li>
+									<li><a href="javascript:void(0)">Mijn ervaring &amp; CV</a></li>
+									<li><a href="javascript:void(0)">Mijn voorkeuren &amp; alerts</a></li>
+									<li><a href="javascript:void(0)">Mijn sollicitaties (<span>3</span>)</a></li>
+									<li><a href="javascript:void(0)">Mijn suggesties (<spam>21</span>)</a></li>
+									<li><a href="javascript:void(0)">Mijn competenties</a></li>
+									<li><a href="javascript:void(0)">Mijn administratie</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+			<div class="col-sm-9 right-container">
+				<div class="well well-olympia">
+					<div class="box-inner">
+						<h1>Goedemiddag Henk!</h1>
+						<p>Welkom op je MijnOlympia account. Je laatste bezoek was op dinsdag 23 maart 2015 om 19:34.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="container" style="font-size: 13px;">
+		<hr/>
+		<p class="info-text">
+			&copy; COPYRIGHT OLYMPIA UITZENDBUREAU
+			&nbsp;
+			<a class="info-text" href="#">Privacy statement</a> | <a class="info-text" href="#">Disclaimer</a> | <a class="info-text" href="#">Contact</a>
+		</p>
+		<br/>
+		<br/>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="../lib/jquery/dist/jquery.min.js"></script>
+	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	
+</body>
+</html>

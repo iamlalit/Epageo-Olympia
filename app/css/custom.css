@@ -1,0 +1,149 @@
+h1, h2, h3, h4, h5{
+	color: #ff4400;
+}
+.container{
+	max-width: 940px;
+	margin: 0 auto;
+	min-height: 100%;
+}
+nav > ul > li{
+	width: 223px;
+}
+.container .left-container{
+	padding-right: 0;
+}
+.left-container .well.well-olympia{
+	border-radius: 0;
+	padding: 0
+}
+.left-container .well.well-olympia .dashboard-image{
+	position: relative;
+}
+.left-container .well.well-olympia .dashboard-image img{
+	width: 100%;
+}
+.left-container .well.well-olympia .overlay-container{
+	padding: 5px 10px;
+	position: absolute;
+	bottom: 0;
+	background: rgb(0, 0, 0); /* fallback color */
+	background: rgba(0, 0, 0, 0.6);
+	border-top: 1px solid #ffffff;
+	width: 100%;
+}
+.left-container .well.well-olympia .overlay-container label{
+	color: #ffffff;
+	display: block;
+}
+.left-container .well.well-olympia .overlay-container label span{
+	float: right;
+}
+.left-container .well.well-olympia .overlay-container .progress{
+	background: rgba(148, 147, 147, 0.6);
+	border: 1px solid #ffffff;
+}
+.left-container .well.well-olympia .overlay-container .progress .progress-bar.progress-bar-success{
+	background: rgba(92, 184, 92, 0.6);
+	border-right: 1px solid;
+	border-radius: 4px;
+} 
+.left-container .well.well-olympia .profile-data{
+	padding: 5px 7px 0 7px;
+}
+.left-container .well.well-olympia .profile-data label.title{
+	font-size: 16px;
+	margin-bottom: 0;
+	padding-top: 15px;
+}
+.left-container .well.well-olympia .profile-data label.title.addresses{
+	padding-top: 5px;
+}
+.left-container .well.well-olympia .profile-data ul{
+	list-style-type: none;
+	padding: 2px 0;
+}
+.left-container .well.well-olympia .profile-data ul li .olympia-icon{
+	float: right;
+	font-size: 1.22em;
+	color: #666666;
+	cursor: pointer;
+}
+.left-container .well.well-olympia .profile-data ul li:first-child{
+	padding-top: 3px;
+}
+.left-container .well.well-olympia .profile-data .btn.btn-primary{
+	padding: 4px 20px;
+	position: relative;
+	float: right;
+}
+.left-container .well.well-olympia .profile-data .sub-title{
+	font-size: 12.9px;
+	display: block;
+}
+.left-container .well.well-olympia .profile-data.cv{
+	margin-top: 30px;
+}
+/***********/
+/*side-menu*/
+/***********/
+.left-container .well.well-olympia .side-menu ul{
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 0;
+} 
+.left-container .well.well-olympia .side-menu ul li{
+	width: 100%;
+}
+.left-container .well.well-olympia .side-menu ul li:first-child{
+	margin-bottom: 10px
+}
+.left-container .well.well-olympia .side-menu ul li:hover a,
+.left-container .well.well-olympia .side-menu ul li:focus a{
+	background: #f7f9f8;
+}
+.left-container .well.well-olympia .side-menu ul li:hover a,
+.left-container .well.well-olympia .side-menu ul li:focus a{
+	color: #ff4400;
+}
+.left-container .well.well-olympia .side-menu ul li a{
+	padding: 13px 10px;
+	font-size: 12px;
+	text-transform: uppercase;
+	cursor: pointer;
+	text-decoration: none;
+	width: 100%;
+	display: block;
+	background: #eeeeee;
+	border: 1px solid #ddd;
+	color: #555;
+	font-weight: 700;
+}
+.left-container .well.well-olympia .side-menu ul li a:hover,
+.left-container .well.well-olympia .side-menu ul li a:focus{
+	text-decoration: none;
+}
+.left-container .well.well-olympia .side-menu ul li.active a{
+	background: #ffffff;
+}
+.left-container .well.well-olympia .side-menu ul li.active a{
+	color: #ff4400;
+}
+/*****************/
+/*Right conatiner*/
+/*****************/
+.right-container .well.well-olympia{
+	border-radius: 0;
+	padding: 0;
+	background: #ffffff;
+	border: 1px solid #d2d2d2;
+	border-radius: 5px;
+	box-shadow: 0px 0px 3px 0px rgba(166, 166, 166, 0.25);
+	box-shadow: 0px 0px 5px 0px #f6f6f6\9;
+	margin: 0;
+}
+.right-container .well.well-olympia .box-inner{
+	padding: 15px;
+}
+.right-container .well.well-olympia .box-inner h1{
+	margin-top: 5px;
+}
