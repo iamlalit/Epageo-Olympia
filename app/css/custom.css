@@ -1,5 +1,6 @@
 h1, h2, h3, h4, h5{
 	color: #ff4400;
+	font-weight: bold;
 }
 .container{
 	max-width: 940px;
@@ -8,6 +9,21 @@ h1, h2, h3, h4, h5{
 }
 nav > ul > li{
 	width: 223px;
+}
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #e2e7e3;
+	margin: 1em 0;
+	padding: 0;
+}
+a{
+	color: #ff4400;
+}
+a:hover,
+a:focus{
+	color: #ff4400;	
 }
 .container .left-container{
 	padding-right: 0;
@@ -54,6 +70,7 @@ nav > ul > li{
 	font-size: 16px;
 	margin-bottom: 0;
 	padding-top: 15px;
+	color: #ff4400;
 }
 .left-container .well.well-olympia .profile-data label.title.addresses{
 	padding-top: 5px;
@@ -133,7 +150,7 @@ nav > ul > li{
 /*****************/
 .right-container .well.well-olympia{
 	border-radius: 0;
-	padding: 0;
+	padding: 0 15px;
 	background: #ffffff;
 	border: 1px solid #d2d2d2;
 	border-radius: 5px;
@@ -142,8 +159,74 @@ nav > ul > li{
 	margin: 0;
 }
 .right-container .well.well-olympia .box-inner{
+	padding: 15px 0;
+}
+.right-container .well.well-olympia .box-inner label.title{
+	display: inline;
+	font-size: 16px;
+	color: #ff4400;
+}
+.right-container .well.well-olympia .box-inner hr {
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+.right-container .well.well-olympia .bewerk a{
+	margin-right: 5px;
+}
+.right-container .well.well-olympia .bewerk i.olympia-icon{
+	font-size: 1.22em;
+	position: relative;
+	top: 1px;
+}
+.right-container .well.well-olympia + .well.well-olympia{
+	margin-top: 20px;
+}
+.right-container .well.well-olympia.orange-well{
+	background: #ff4400;
+}
+.right-container .well.well-olympia.orange-well label,
+.right-container .well.well-olympia.orange-well h1,
+.right-container .well.well-olympia.orange-well a{
+	color: #ffffff;
+	display: block
+}
+.right-container .well.well-olympia.orange-well .row .input-box{
+	padding-right: 0;
+}
+.right-container .well.well-olympia.orange-well .row .input-box input[type="text"]{
+	border-radius: 2px;
+	font-size: 10px;
+}
+.right-container .well.well-olympia.orange-well .row select{
+	width: 80px;
+	border-radius: 2px;
+	display: inline-block;
+	padding: 6px 3px;
+	font-size: 12px;
+	cursor: pointer;
+}
+.right-container .well.well-olympia.orange-well .row .btn{
+	width: 52%;
+	margin-left: 10px;
+	height: 35px;
+	position: relative;
+	top: -1px;
+}
+.right-container .well.well-olympia.orange-well .row .btn i{
+	padding-right: 6px;
+}
+.right-container .well.well-olympia.orange-well a{
+	padding-top: 5px;
+}
+.right-container .well.well-olympia .half-box{
+	
 	padding: 15px;
 }
-.right-container .well.well-olympia .box-inner h1{
-	margin-top: 5px;
+.right-container .well.well-olympia .half-box.last-box{
+	border-left: 1px solid #ccc;
+}
+.right-container .well.well-olympia .half-box label.title{
+	font-size: 16px;
+	color: #ff4400;
+	margin-right: 4px;
 }
