@@ -219,6 +219,27 @@
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="progress-container">
+								<label>Compleetheid profiel <span>60%</span></label> 
+								<div class="progress" style="margin-bottom: 0px;">
+									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+										<span class="sr-only"></span>
+									</div>
+								</div>
+							</div>
+							<div class="profile-data">
+								<label class="title">Aanbevolen voor jou:</label>
+								<ul>
+									<li>Update je CV<a href="javascript:void(0)"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Maak een video CV<a href="javascript:void(0)"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Stel een e-mail alert in<a href="javascript:void(0)"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Waar ben je naar op zoek?<a href="javascript:void(0)"><span class="olympia-icon olympia-plus"></span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
             </div>
 			<div class="col-lg-9 right-container">
@@ -257,16 +278,35 @@
 						</div>
 
 						<div class="form-group">
+							<label for="month">Burgerlijke staat</label>
+							<div class="row">
+								<div class="col-sm-4">
+									<select class="form-control" id="martialStatus" name="martialStatus">
+										<option value="Ongehuwd" selected="selected">Ongehuwd</option>
+										<option value="Getrouwd">Getrouwd</option>
+										<option value="Gescheiden">Gescheiden</option>
+									</select>
+								</div>
+								<div class="col-sm-4">
+									&nbsp;
+								</div>
+								<div class="col-sm-4">
+									&nbsp;
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
 							<label for="month">Geboortedatum</label>
 							<div class="row">
 								<div class="col-sm-4">
 									<select class="form-control" id="day" name="dobDay">
-										<option value="0" select="selected">Dag</option>
+										<option value="0">Dag</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
 										<option value="4">4</option>
-										<option value="5">5</option>
+										<option value="5" selected="selected">5</option>
 										<option value="6">6</option>
 										<option value="7">7</option>
 										<option value="8">8</option>
@@ -304,7 +344,7 @@
 										<option value="4">April</option>
 										<option value="5">Mei</option>
 										<option value="6">Juni</option>
-										<option value="7">Juli</option>
+										<option value="7" selected="selected">Juli</option>
 										<option value="8">Augustus</option>
 										<option value="9">September</option>
 										<option value="10">Oktober</option>
@@ -327,7 +367,7 @@
 										<option value="26">1989</option>
 										<option value="27">1988</option>
 										<option value="28">1987</option>
-										<option value="29">1986</option>
+										<option value="29" selected="selected">1986</option>
 										<option value="30">1985</option>
 										<option value="31">1984</option>
 										<option value="32">1983</option>
@@ -383,11 +423,11 @@
 							<div class="row">
 								<div class="col-sm-4">
 									<label for="6">Mobiel telefoonnummer</label>
-									<input type="tel" name="Mobielnummer" class="form-control" id="6"/>
+									<input type="tel" name="Mobielnummer" class="form-control" id="6" value="06-12345678"/>
 								</div>
 								<div class="col-sm-4">
 									<label for="6">Vast telefoonnummer</label>
-									<input type="tel" name="Telefoonnummer" class="form-control" id="6"/>
+									<input type="tel" name="Telefoonnummer" class="form-control" id="6" value="06-12345678"/>
 								</div>
 							</div>
 						</div>
@@ -396,7 +436,7 @@
 								<div class="col-sm-4">
 									<label for="12">Land</label>
 									<select class="form-control" id="12">
-										<option>Nederland</option>
+										<option selected="selected">Nederland</option>
 										<option>België</option>
 										<option>Duitsland</option>
 									</select>
@@ -409,12 +449,12 @@
 							<div class="row">
 								<div class="col-sm-4">
 									<label for="10">Postcode</label>
-									<input type="text" name="Postcode" class="form-control" id="10"/>
+									<input type="text" name="Postcode" class="form-control" id="10" value="2020 BT"/>
 								</div>
 								
 								<div class="col-sm-4">
 									<label for="8">Huisnummer</label>
-									<input type="text" name="Huisnummer" class="form-control" id="8"/>
+									<input type="text" name="Huisnummer" class="form-control" id="8" value="82"/>
 								</div>
 								<div class="col-sm-4">
 									<label for="9">Toevoeging (optioneel)</label>
@@ -427,11 +467,11 @@
 							<div class="row">
 								<div class="col-sm-8">
 									<label for="7">Straat</label>
-									<input type="text" name="Straat" class="form-control" id="7"/>
+									<input type="text" name="Straat" class="form-control" id="7" value="Dorpsstraat"/>
 								</div>
 								<div class="col-sm-4">
 									<label for="11">Woonplaats</label>
-									<input type="text" name="Woonplaats" class="form-control" id="11"/>
+									<input type="text" name="Woonplaats" class="form-control" id="11" value="Rotterdam"/>
 								</div>
 							</div>
 						</div>
@@ -442,7 +482,7 @@
 							<div class="row">
 								<div class="col-sm-8">
 									<label class="col-sm-2 checkbox-inline">
-										<input type="checkbox" id="inlineCheckbox1" value="option1"> A
+										<input type="checkbox" id="inlineCheckbox1" value="option1" checked="checked"> A
 									</label>
 									<label class="col-sm-2 checkbox-inline">
 										<input type="checkbox" id="inlineCheckbox2" value="option2"> BE
@@ -472,6 +512,222 @@
 								</div>
 							</div>
 						</div>
+
+						<div class="form-group">
+							<div class="row margin-top-15">
+								<div class="col-lg-12">
+	                            	<button type="submit" class="btn btn-primary medium-text pull-right">Gegevens opslaan</button>
+	                            </div>
+	                        </div>
+                        </div>
+					</div>
+				</div>
+				<div class="well well-olympia">
+					<h1>Betalingsgegevens &amp; verzekering</h1>
+					<div class="box-inner">
+						<div class="row margin-top-10">
+							<div class="col-sm-8">
+								<div class="form-group">
+									<label for="paymentMethod">Betaalwijze</label>
+									<input type="text" class="form-control" name="paymentMethod" id="paymentMethod" value="ING/Postbank"/>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								&nbsp;
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-8">
+									<label for="iban">IBAN</label>
+									<input type="text" class="form-control" name="iban" id="iban" value="NL5478987897274"/>
+								</div>
+								<div class="col-sm-4">
+									&nbsp;
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-8">
+									<label for="bic">BIC</label>
+									<input type="text" class="form-control" name="bic" id="bic" value="NL5478987897274"/>
+								</div>
+								<div class="col-sm-4">
+									&nbsp;
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-8">
+									<label for="locations">T.n.v. / Plaats</label>
+									<input type="text" class="form-control" name="locations" id="locations" value="H. van Dunzelkamp"/>
+								</div>
+								<div class="col-sm-4">
+									<label for="locationState">&nbsp;</label>
+									<input type="text" class="form-control" name="locationState" id="locationState" value="Rotterdam"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-8">
+									<label for="healthInsurer">Zorgverzekeraar</label>
+									<input type="text" class="form-control" name="healthInsurer" id="healthInsurer" value="-"/>
+								</div>
+								<div class="col-sm-4">
+									&nbsp;
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-8">
+									<div class="form-group">
+										<label for="healthInsurance">Nr. zorgverzekering</label>
+										<input type="text" class="form-control" name="healthInsurance" id="healthInsurance" value="-"/>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									&nbsp;
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row margin-top-15">
+								<div class="col-lg-12">
+	                            	<button type="submit" class="btn btn-primary medium-text pull-right">Gegevens opslaan</button>
+	                            </div>
+	                        </div>
+                        </div>
+					</div>
+				</div>
+				<div class="well well-olympia">
+					<h1>E-mail adres wijzigen</h1>
+					<div class="box-inner">
+						<div class="row margin-top-10">
+							<div class="col-sm-8">
+								<div class="form-group">
+									<label for="emailAddress">Huidige e-mail adres</label>
+									<input type="text" class="form-control" name="emailAddress" id="emailAddress" value="henk.van.dunzelkamp@outlook.com"/>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								&nbsp;
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-8">
+									<label for="newEmail">Nieuwe e-mail adres</label>
+									<input type="text" class="form-control" name="newEmail" id="newEmail"/>
+								</div>
+								<div class="col-sm-4">
+									&nbsp;
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-8">
+									<div class="form-group">
+										<label for="confirmPassword">Bevestig met je wachtwoord</label>
+										<input type="text" class="form-control" name="confirmPassword" id="confirmPassword"/>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									&nbsp;
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row margin-top-15">
+								<div class="col-lg-12">
+	                            	<button type="submit" class="btn btn-primary medium-text pull-right">Wijzig e-mail adres</button>
+	                            </div>
+	                        </div>
+                        </div>
+					</div>
+				</div>
+				<div class="well well-olympia">
+					<h1>Wachtwoord wijzigen</h1>
+					<div class="box-inner">
+						<div class="row margin-top-10">
+							<div class="col-sm-8">
+								<div class="form-group">
+									<label for="email">Huidige wachtwoord</label>
+									<input type="text" class="form-control" name="password" id="password"/>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								&nbsp;
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-8">
+									<label for="email">Nieuwe wachtwoord</label>
+									<input type="password" id="newPassword" class="form-control" name="newPassword"/>
+								</div>
+								<div class="col-sm-4">
+									<div id="messages"></div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-8">
+									<div class="form-group">
+										<label for="email">Bevestig nieuwe wachtwoord</label>
+										<input type="text" class="form-control" name="reNewPassword" id="reNewPassword"/>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									&nbsp;
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row margin-top-15">
+								<div class="col-lg-12">
+	                            	<button type="submit" class="btn btn-primary medium-text pull-right">Wijzig account</button>
+	                            </div>
+	                        </div>
+                        </div>
+					</div>
+				</div>
+				<div class="well well-olympia">
+					<h1>Account beëindigen</h1>
+					<div class="box-inner">
+						<div class="row margin-top-10">
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label class="checkbox-inline">
+										<input type="checkbox" id="inlineCheckbox8" value="option8"> Ja ik wil mijn account verwijderen. Al mijn gegevens bij Olympia gaan onherstelbaar verloren.
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row margin-top-15">
+								<div class="col-lg-12">
+	                            	<button type="submit" class="btn btn-primary medium-text pull-right">Verwijder account</button>
+	                            </div>
+	                        </div>
+                        </div>
+					</div>
+				</div>
+				<div class="well well-olympia">
+					<div class="row">
+						<div class="col-lg-6 half-box">
+							<label class="title">Mijn voorkeuren</label>
+							<p>Zijn wij op de hoogte zijn van jouw laatste voorkeuren?<br><a href="javascript:void(0)">Controleer voorkeuren &gt;</a></p>
+						</div>
+						<div class="col-lg-6 half-box last-box">
+							<label class="title">Mijn ervaring &amp; CV</label>
+							<p>Je CV is voor het laatst bijgewerkt op 12-04-2014.<br><a href="javascript:void(0)">Nu bijwerken &gt;</a></p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -491,6 +747,7 @@
 	<!-- Scripts -->
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
 	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
-	
+	<script src="../js/app.js"></script>
+
 </body>
 </html>

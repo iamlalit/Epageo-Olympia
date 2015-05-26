@@ -18,6 +18,10 @@ hr {
 	margin: 1em 0;
 	padding: 0;
 }
+ul{
+	list-style-type: none;
+	padding: 0;
+}
 a{
 	color: #ff4400;
 }
@@ -63,6 +67,9 @@ a:focus{
 	border-right: 1px solid;
 	border-radius: 4px;
 } 
+.left-container .well.well-olympia .progress-container{
+	padding: 40px 15px 10px;
+}
 .left-container .well.well-olympia .profile-data{
 	padding: 5px 7px 0 7px;
 }
@@ -219,7 +226,6 @@ a:focus{
 	padding-top: 5px;
 }
 .right-container .well.well-olympia .half-box{
-	
 	padding: 15px;
 }
 .right-container .well.well-olympia .half-box.last-box{
@@ -229,4 +235,57 @@ a:focus{
 	font-size: 16px;
 	color: #ff4400;
 	margin-right: 4px;
+}
+.right-container .half-well{
+	margin-top: 20px;
+}
+.right-container .half-well .col-lg-6 {
+	padding-right: 5px;
+}
+.right-container .half-well .col-lg-6:last-child {
+	padding-right: 15px;
+	padding-left: 5px;
+}
+.right-container .half-well .col-lg-6:first-child .well.well-olympia{
+	min-height: 166px;
+}
+.right-container .half-well .well.well-olympia{
+	padding: 10px
+}
+.right-container .half-well .well.well-olympia .title{
+	font-size: 16px;
+	color: #ff4400;
+}
+.right-container .half-well .well.well-olympia ul{
+	padding: 10px 15px;
+	list-style-type: square;
+	color: #ff4400;
+}
+.right-container .half-well .well.well-olympia ul li span{
+	color: #333333;
+}
+.right-container .half-well .well.well-olympia .video-box{
+	padding: 10px;
+	text-align: center;
+	border: 2px dashed #aaa;
+}
+/************/
+/*alert page*/
+/************/
+.alert.right-container .well.well-olympia label.title{
+	font-size: 16px;
+	color: #ff4400;	
+}
+.alert.right-container .well.well-olympia .label-container{
+	padding-top: 15px;
+}
+.alert.right-container .well.well-olympia .details ul li strong,
+.alert.right-container .well.well-olympia .details ul li span{
+	display: block;
+}
+.alert.right-container .well.well-olympia .details ul li{
+	padding-bottom: 10px;
+}
+.alert.right-container .well.well-olympia .details ul li:last-child{
+	padding-bottom: 0;
 }
