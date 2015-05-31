@@ -272,20 +272,82 @@ a:focus{
 /************/
 /*alert page*/
 /************/
-.alert.right-container .well.well-olympia label.title{
+.alert-box.right-container .well.well-olympia label.title{
 	font-size: 16px;
 	color: #ff4400;	
 }
-.alert.right-container .well.well-olympia .label-container{
+.alert-box.right-container .well.well-olympia .label-container{
 	padding-top: 15px;
 }
-.alert.right-container .well.well-olympia .details ul li strong,
-.alert.right-container .well.well-olympia .details ul li span{
+.alert-box.right-container .well.well-olympia .details ul li strong,
+.alert-box.right-container .well.well-olympia .details ul li span{
 	display: block;
 }
-.alert.right-container .well.well-olympia .details ul li{
+.alert-box.right-container .well.well-olympia .details ul li{
 	padding-bottom: 10px;
 }
-.alert.right-container .well.well-olympia .details ul li:last-child{
+.alert-box.right-container .well.well-olympia .details ul li:last-child{
 	padding-bottom: 0;
+}
+.alert-box.right-container .well.well-olympia .accordion .job-title{
+	margin-left: 10px;
+	display: inline-block;
+}
+.alert-box.right-container .well.well-olympia .accordion .header{
+	background: rgb(244, 244, 244);
+	border: 1px solid #dddddd;
+}
+.alert-box.right-container .well.well-olympia .accordion .header .form-group{
+	margin-bottom: 0;
+	display: inline-block;
+	border-right: 1px solid #DFDCDC;
+	padding: 12px;
+}
+.alert-box.right-container .well.well-olympia .accordion .job-body{
+	background: #ffffff;
+	border: 1px solid #ccc;
+	padding: 15px;
+	border-top: none;
+}
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    text-align:left;
+    margin-right:-4px;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data li.show .job-body{
+	display: block;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data li .job-body{
+	display: none;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li:first-child{
+	margin-top: 0;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .header{
+	cursor: pointer;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li{
+	margin-top: 15px;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .header span{
+	margin-right: 10px;
+	position: relative;
+	vertical-align: middle;
+	margin-top: 12px;
+	font-size: 16px;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .job-body .bewerk{
+	margin-top: 10px;
+	display: block;
+}
+.alert-box.right-container .well.well-olympia .accordion-button{
+	text-align: right;
+	margin-bottom: 20px;
+}
+.alert-box.right-container .well.well-olympia .accordion-button button{
+	margin-top: 10px;
 }
