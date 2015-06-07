@@ -183,7 +183,7 @@ a:focus{
 .right-container .well.well-olympia .bewerk i.olympia-icon{
 	font-size: 1.22em;
 	position: relative;
-	top: 1px;
+	top: 2px;
 }
 .right-container .well.well-olympia + .well.well-olympia{
 	margin-top: 20px;
@@ -297,6 +297,82 @@ a:focus{
 	background: rgb(244, 244, 244);
 	border: 1px solid #dddddd;
 }
+.cv.right-container .well.well-olympia .accordion .header{
+	background: rgb(244, 244, 244);
+	border: 1px solid #dddddd;
+	padding: 15px;
+	cursor: pointer;
+}
+.suggestie.right-container .well.well-olympia .accordion .header{
+	background: rgb(244, 244, 244);
+	border: 1px solid #dddddd;
+	padding: 15px;
+	cursor: pointer;
+}
+.cv.right-container .well.well-olympia .accordion ul.accordion-data > li,
+.suggestie.right-container .well.well-olympia .accordion ul.accordion-data > li{
+	margin-top: 10px;
+}
+.suggestie.right-container .well.well-olympia .accordion .header strong span.olympia-icon{
+	position: relative;
+	vertical-align: middle;
+	font-size: 16px;
+}
+.cv.right-container .well.well-olympia .accordion .job-body,
+.suggestie.right-container .well.well-olympia .accordion .job-body{
+	border: 1px solid #ccc;
+	padding: 15px;
+	border-top: none;
+	background: rgb(252, 252, 252);
+}
+.suggestie.right-container .well.well-olympia .accordion .job-body ul.accordion-li{
+	margin-top: 10px;
+}
+.suggestie.right-container .well.well-olympia .accordion .job-body ul.accordion-li li{
+	width: 49.5%;
+	display: inline-block;
+}
+.suggestie.right-container .well.well-olympia .accordion .job-body ul.accordion-li li strong{
+	width: 45%;
+	display: inline-block;
+}
+.suggestie.right-container .well.well-olympia .accordion .job-body ul.accordion-li li strong a{
+	position: relative;
+	top: 1px;
+	font-size: 12px;
+}
+.suggestie.right-container .well.well-olympia .accordion .job-body .para{
+	margin-top: 20px;
+}
+.suggestie.right-container .well.well-olympia .accordion .job-body .para + .para{
+	margin-top: 10px;
+}
+.suggestie.right-container .well.well-olympia .accordion .job-body .para.with-image img{
+	width: 100%;
+	float: right;
+}
+.suggestie.right-container .well.well-olympia .accordion .job-body .listed{
+	margin-top: 15px;
+}
+.suggestie.right-container .well.well-olympia .accordion .job-body .listed ul{
+	list-style-type: square;
+	padding-left: 15px;
+	color: #ff4400;
+}
+.suggestie.right-container .well.well-olympia .accordion .job-body .listed ul li span{
+	color: #444444;
+}
+.suggestie.right-container .well.well-olympia .accordion .job-body .listed p{
+	margin-top: 10px;
+}
+.cv.right-container .well.well-olympia .accordion ul.accordion-data li.show .job-body,
+.suggestie.right-container .well.well-olympia .accordion ul.accordion-data li.show .job-body{
+	display: block;
+}
+.cv.right-container .well.well-olympia .accordion ul.accordion-data li .job-body,
+.suggestie.right-container .well.well-olympia .accordion ul.accordion-data li .job-body{
+	display: none;
+}
 .alert-box.right-container .well.well-olympia .accordion .header .form-group{
 	margin-bottom: 0;
 	display: inline-block;
@@ -304,7 +380,7 @@ a:focus{
 	padding: 12px;
 }
 .alert-box.right-container .well.well-olympia .accordion .job-body{
-	background: #ffffff;
+	background: rgb(252, 252, 252);
 	border: 1px solid #ccc;
 	padding: 15px;
 	border-top: none;
