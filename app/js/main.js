@@ -4,25 +4,17 @@ function toggleView(obj) // the li element clicked in the current scope
     var element = obj;  // This is the DOM object being clicked
     var $this = $(obj); // This is the jQuery object being clicked
     //this is to remove the previous show class from the ul li elements
-    console.log($this.closest('li').hasClass('show'));
     //this will add new show class where user has clicked
-    
     if($this.closest('li').hasClass('show')==true){
-        $('body .accordion-data > li').removeClass('show');
+        $('.accordion-data > li').removeClass('show');
     }else{
-        $('body .accordion-data > li').removeClass('show');
-        $this.closest('li').addClass('show');   
+        $('.accordion-data > li').removeClass('show');
+        $this.closest('li').addClass('show');
     }
+
+    $('.accordion-data > li').find('.olympia-icon').addClass('olympia-caret-down').removeClass('olympia-caret-up');
+    $('.accordion-data > li.show').find('.olympia-icon').addClass('olympia-caret-up').removeClass('olympia-caret-down');
     
-    //this will update the caret icon based on the accordion is opened or closed
-    var $switchClass = $this.find('.olympia-icon');
-    if($this.closest('li').hasClass('show')){
-        $switchClass.removeClass('olympia-caret-down');
-        $switchClass.addClass('olympia-caret-up');
-    }else{
-        $switchClass.addClass('olympia-caret-down');
-        $switchClass.removeClass('olympia-caret-up');
-    }
     //this will scroll the page to the accordion where user has clicked
     $this.scrollView();
 }
