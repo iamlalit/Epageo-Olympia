@@ -427,3 +427,65 @@ a:focus{
 .alert-box.right-container .well.well-olympia .accordion-button button{
 	margin-top: 10px;
 }
+.cv.right-container .well.well-olympia .work .job-work{
+	padding-top: 15px;
+}
+.cv.right-container .well.well-olympia .work .job-work ul li label{
+	padding-top: 8px;
+}
+.cv.right-container .well.well-olympia .work .job-work ul .row{
+	margin-top: 10px;
+}
+.right-container .well.well-olympia.sollicitaties i.olympia-map-marker{
+	font-size: 3em;
+	color: #CF2A27;
+}
+.right-container .well.well-olympia.sollicitaties .solid-line{
+	background: url('../img/pipe-bg.png');
+	background-repeat: repeat-y;
+	background-position: center;
+	position: relative;
+	top: -14px;
+	left: -1px;
+}
+.right-container .well.well-olympia.sollicitaties .solid-line .heading{
+	margin-bottom: 10px;
+}
+.right-container .well.well-olympia.sollicitaties .job-description{
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0px -1px 1px 0px rgba(201,199,201,0.5);
+	-moz-box-shadow: inset 0px -1px 1px 0px rgba(201,199,201,0.5);
+	box-shadow: inset 0px -1px 1px 0px rgba(201,199,201,0.5);
+	background: rgba(238, 238, 238, 0.6);
+}
+.right-container .well.well-olympia.sollicitaties .job-description > .row{
+	margin-right: 0;
+	margin-left: 0;
+}
+.right-container .well.well-olympia.sollicitaties .job-description .box{
+	padding: 5px;
+	border-radius: 3px;
+	border: 1px solid #999;
+	margin: 0;
+	width: 25%;
+	text-align: right;
+	font-size: 10px;
+	color: #000000;
+	float: left;
+}
+.right-container .well.well-olympia.sollicitaties .job-description .box1{
+	width: 21%;
+}
+.right-container .well.well-olympia.sollicitaties .job-description .box.pre{
+	background: #597EAA;
+}
+.right-container  .well.well-olympia.sollicitaties .job-description .box.center{
+	background: #6FA8DC;
+}
+.right-container  .well.well-olympia.sollicitaties .job-description .box.post{
+	background: #CCCCCC;
+}
+.right-container  .well.well-olympia.sollicitaties .job-description .box.pre-rejected{
+	background: #EA9999;
+}
