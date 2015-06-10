@@ -12,8 +12,8 @@ function toggleView(obj) // the li element clicked in the current scope
         $this.closest('li').addClass('show');
     }
 
-    $('.accordion-data > li').find('.olympia-icon').addClass('olympia-caret-down').removeClass('olympia-caret-up');
-    $('.accordion-data > li.show').find('.olympia-icon').addClass('olympia-caret-up').removeClass('olympia-caret-down');
+    $('.accordion-data > li').find('.olympia-caret-up').addClass('olympia-caret-down').removeClass('olympia-caret-up');
+    $('.accordion-data > li.show').find('.olympia-caret-down').addClass('olympia-caret-up').removeClass('olympia-caret-down');
     
     //this will scroll the page to the accordion where user has clicked
     $this.scrollView();
