@@ -3,10 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-	<title>Mijn Olympia - Mijn ervaring en CV</title>
+	<title>Mijn email alerts</title>
 	<link rel="stylesheet" href="../css/app.css"/>
 	<link rel="stylesheet" href="../css/custom.css"/>
 	<link rel="stylesheet" href="../css/olympia-icons.css"/>
+	<link rel="stylesheet" href="../lib/jqueryTypeahead/jquery.typeahead.css"/>
 </head>
 <body>
 	<header class="container">
@@ -18,53 +19,21 @@
 			</div>
 			<div class="col-sm-1"></div>
 			<div class="col-sm-8">
-				<div class="col-sm-8 well well-sm pull-right login" style="background: #fff; margin-top: 20px; margin-bottom: 0px; padding: 5px;">
-					<div class="row low-gutter row-low-gutter-main">
-						<div class="col-sm-9">
-							<div class="row">
-								<div class="col-sm-6">
-									<div class="form-group" style="margin-bottom: 8px">
-										<input class="form-control input-sm input-extra-sm height" type="text">
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="form-group" style="margin-bottom: 8px">
-										<input class="form-control input-sm input-extra-sm height" type="password">
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<button class="btn btn-info btn-sm btn-block pull-right input-extra-sm padding" data-toggle="modal" data-target="#myModal">Login</button>
-								</div>
+				<div class=" pull-right login" style="background: #fff;">
+					<div class="meta">
+					    <div class="logged">
+							<div class="username"><span>Welkom Henk Van Dunzelkamp</span></div>
 
-							</div>
-							
-							<div class="row">
-								<div class="col-sm-6">
-									<div class="checkbox" style="margin-top: 0; margin-bottom: 0;">
-										<label>
-											<input type="checkbox"> <a class="link-in-text" href="#">Onthoud mijn innologgegeven</a>
-										</label>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<a href="#" class="link-in-text" data-toggle="modal" data-target="#forgot-pass">Wachtwoord vergeten</a>
-								</div>
-							</div>
-							
-						</div>
-						<div class="col-sm-3 border-left">
-							<div class="row">
-								<div class="col-sm-12 text-center">
-									<p style="font-size: 11px;">Of log in met</p>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-12 text-center icons-img">
-									<a href="#" title="Deel via Facebook" class="facebook"></a>
-									<a href="#" title="Deel via Linked in" class="linkedin"></a>
-								</div>
-							</div>
-						</div>
+					        <div class="profile">
+					            <a href="javascript:void(0)"> › mijn profiel</a> 
+					            <a href="javascript:void(0)"> › uitloggen</a>
+					            <a href="javascript:void(0)"> › stel een vraag</a>
+					        </div>
+					    </div>
+
+					    <div class="user">
+					        <img src="../img/pasfoto.jpg"/>
+					    </div>
 					</div>
 				</div>
 			</div>
@@ -233,10 +202,10 @@
 							<div class="profile-data">
 								<label class="title">Aanbevolen voor jou:</label>
 								<ul>
-									<li>Update je CV<a href="javascript:void(0)"><span class="olympia-icon olympia-plus"></span></a></li>
-									<li>Maak een video CV<a href="javascript:void(0)"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Update je CV<a href="MijnOlympia-cv-ervaring.html"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Maak een video CV<a href="MijnOlympia-video-cv.html"><span class="olympia-icon olympia-plus"></span></a></li>
 									<li>Stel een e-mail alert in<a href="javascript:void(0)"><span class="olympia-icon olympia-plus"></span></a></li>
-									<li>Waar ben je naar op zoek?<a href="javascript:void(0)"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Waar ben je naar op zoek?<a href="MijnOlympia-voorkeuren.html"><span class="olympia-icon olympia-plus"></span></a></li>
 								</ul>
 							</div>
 						</div>
@@ -245,7 +214,7 @@
             </div>
 			<div class="col-lg-9 right-container alert-box">
 				<div class="well well-olympia">
-					<h1>MIJN ALERTS</h1>
+					<h1>Mijn e-mail alerts</h1>
 					<div class="box-inner">
 						<p>Lorem ipsum dolor sit amet, sea menandri indoctum periculis ea. Quot ullum harum sea ei, sint omnes consectetuer ex nec. Ne quo rebum dicat bonorum, quo case propriae at. Posse velit eum id, nonumy civibus intellegam eu sea. Mea nonumy causae eu, illud scaevola definitionem mel at.Populo fabulas liberavisse cum ut, etiam epicurei legendos eu vis.</p>
 					</div>
@@ -255,7 +224,7 @@
 						<label class="title">Job alerts</label>
 					</div>
 					<div class="box-inner accordion">
-						<ul class="accordion-data">
+						<ul class="accordion-data alerts">
 							<li>
 								<div class="header" onclick="toggleView(this)">
 									<div class="form-group" id="fromTO">
@@ -267,7 +236,7 @@
 										</label>
 									</div>
 									<div class="job-title">
-										<strong >(Automatisch) op basis van je voorkeuren</strong >
+										<strong id="alertname">(Automatisch) op basis van je voorkeuren</strong >
 									</div>
 									<span class="olympia-icon olympia-caret-down pull-right"></span>
 								</div>
@@ -275,35 +244,35 @@
 									<ul>
 										<li>
 											<strong>Dienstverband:</strong>
-											<span>Tijdelijk met uitzicht op vast, Vast</span>
+											<span id="dienstverband1">Tijdelijk met uitzicht op vast, Vast</span>
 										</li>
 										<li>
 											<strong>Uren per week:</strong>
-											<span>32-40</span>
+											<span id="weekHour1">32-40</span>
 										</li>
 										<li>
 											<strong>Locatie en afstand:</strong>
-											<span>Rotterdam (10 km), Den Haag (5 km)</span>
+											<span id="placeWithDistance">Rotterdam (10 km), Den Haag (5 km)</span>
 										</li>
 										<li>
 											<strong>Branche:</strong>
-											<span>Productie/ Industrie</span>
+											<span id="branche1">Productie/ Industrie</span>
 										</li>
 										<li>
 											<strong>Vakgebied:</strong>
-											<span>Logistiek</span>
+											<span id="vakgebied1">Logistiek</span>
 										</li>
 										<li>
 											<strong>Salaris:</strong>
-											<span>1600-2000</span>
+											<span id="salaris1">1600-2000</span>
 										</li>
 										<li>
 											<strong>Werk-en denkniveau:</strong>
-											<span>MBO</span>
+											<span id="denkniveau1">MBO</span>
 										</li>
 										<li>
 											<strong>Functies / trefwoorden:</strong>
-											<span>Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
+											<span id="trefwoorden">Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
 										</li>
 									</ul>
 									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">Job alert instellingen wijzigen</a></span>
@@ -474,9 +443,507 @@
 						
 					</div>
 					<div class="accordion-button">
-						<a href="javascript:void(0)">voeg een nieuwe job alert toe</a><br>
+						<a href="javascript:void(0)" onclick="toggleTheView()">voeg een nieuwe job alert toe</a><br>
 						<button class="btn btn-primary">Wijzigingen opslaan</button>
 					</div>
+				</div>
+			</div>
+			<div class="col-lg-9 right-container voorkeuren-box hidden">
+				<div class="well well-olympia">
+					<h1>Nieuwe Job alert instellen</h1>
+					<div class="box-inner">
+						<label>Geef deze job alert een naam:</label>
+						<div class="form-group">
+							<input type="text" class="alertname form-control" placeholder="type hier een naam voor deze alert"/>
+						</div>
+						<hr>
+						<label>Naar welke functies/ trefwoorden ben je op zoek?</label>
+						<div class="row vacatures">
+							<div class="col-lg-12">
+								<div class="well well-olympia trefwoorden">
+									
+								</div>
+							</div>
+							<div class="col-lg-9">
+								<form id="form-country_v1" name="form-country_v1" action="">
+								    <div class="typeahead-container">
+								        <div class="typeahead-field">
+								 
+								            <span class="typeahead-query">
+								                <input id="trefwoorden_v1-query" name="trefwoorden_v1[query]" type="search" placeholder="type hier een functie of trefwoord waar je naar op zoek bent" autocomplete="off">
+								            </span>
+								        </div>
+								    </div>
+								</form>
+							</div>
+							<div class="col-lg-3 buttons">
+								<button type="submit" class="btn btn-primary col-lg-12" id="VoegToetrefwoorden">Voeg toe +</button>
+							</div>
+						</div>
+
+
+						<hr>
+						<label>Waar zoek je naar vacatures?</label>
+						<div class="row vacatures">
+							<div class="col-lg-12">
+								<div class="well well-olympia placeWithDistance">
+									
+								</div>
+							</div>
+							<div class="col-lg-5">
+								<form id="form-country_v1" name="form-country_v1" action="">
+								    <div class="typeahead-container">
+								        <div class="typeahead-field">
+								 
+								            <span class="typeahead-query">
+								                <input id="country_v1-query" name="country_v1[query]" type="search" placeholder="type hier een plaatsnaam of postcode" autocomplete="off">
+								            </span>
+								            <!-- <span class="typeahead-button">
+								                <button type="submit">
+								                    <i class="typeahead-search-icon"></i>
+								                </button>
+								            </span> -->
+								        </div>
+								    </div>
+								</form>
+
+							</div>
+							<div class="col-lg-4">
+								<label class="afstand">Afstand:</label>
+								<select class="form-control distance">
+									<option value="5">5 km</option>
+									<option value="10">10 km</option>
+									<option value="20">20 km</option>
+									<option value="30">30 km</option>
+									<option selected="selected" value="50">50 km</option>
+									<option value="75">75 km</option>
+									<option value="100">100 km</option>
+									<option value="150">150 km</option>
+									<option value="200">200 km</option>
+								</select>
+							</div>
+							<div class="col-lg-3 buttons">
+								<button type="submit" class="btn btn-primary col-lg-12" id="VoegToeDistance">Voeg toe +</button>
+							</div>
+						</div>
+
+						<hr>
+						<label>Naar wat voor dienstverband ben je op zoek?</label>
+						<div class="row dienstverband">
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox1" data-values="Avondwerk" value="option1"> Avondwerk
+								</label>
+							</div>
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox2" data-values="Bijbaan" value="option2"> Bijbaan
+								</label>
+							</div>
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox3" data-values="Tijdelijk" value="option3"> Tijdelijk
+								</label>
+							</div>
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox4" data-values="Tijdelijk met uitzicht op vast" value="option4"> Tijdelijk met uitzicht op vast
+								</label>
+							</div>
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox5" data-values="Vast" value="option5"> Vast
+								</label>
+							</div>
+						</div>
+						
+						<hr>
+						<label>Hoeveel uren per week ben je beschikbaar?</label>
+						<div class="row weekHour">
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox11" data-values="0 - 16" value="option1"> 0 - 16
+								</label>
+							</div>
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox21" data-values="16 - 24" value="option2"> 16 - 24
+								</label>
+							</div>
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox31" data-values="24 - 32" value="option3"> 24 - 32
+								</label>
+							</div>
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox41" data-values="32 - 40" value="option4"> 32 - 40
+								</label>
+							</div>
+						</div>
+
+						<hr>
+						<label>Welke branche heeft je voorkeur?</label>
+						<div class="row branche">
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox12" data-values="Accountancy" value="Accountancy"> Accountancy
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox22" data-values="Advies / Consultancy" value="Advies / Consultancy"> Advies / Consultancy
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox32" data-values="Afvalverwerking (waste)Agrarisch" value="Afvalverwerking (waste)Agrarisch"> Afvalverwerking (waste)Agrarisch
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox42" data-values="Automatisering / ICT" value="Automatisering / ICT"> Automatisering / ICT
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox52" data-values="Banken / Financiële diensten" value="Banken / Financiële diensten"> Banken / Financiële diensten
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox62" data-values="Bouw / Installatie" value="Bouw / Installatie"> Bouw / Installatie
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox72" data-values="Chemische producten / Petro" value="Chemische producten / Petro"> Chemische producten / Petro
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox82" data-values="Detailhandel / Winkel" value="Detailhandel / Winkel"> Detailhandel / Winkel
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox92" data-values="Drukkerijen / Uitgeverijen" value="Drukkerijen / Uitgeverijen"> Drukkerijen / Uitgeverijen
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxA2" data-values="Facility / Schoonmaak / Catering" value="Facility / Schoonmaak / Catering"> Facility / Schoonmaak / Catering
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxB2" data-values="Farmacie" value="Farmacie"> Farmacie
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxC2" data-values="Gezondheidszorg / Welzijnssector" value="Gezondheidszorg / Welzijnssector"> Gezondheidszorg / Welzijnssector
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxD2" data-values="Handel / Groothandel" value="Handel / Groothandel"> Handel / Groothandel
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxE2" data-values="Horeca / Recreatie / Reizen" value="Horeca / Recreatie / Reizen"> Horeca / Recreatie / Reizen
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxF2" data-values="Juridisch" value="Juridisch"> Juridisch
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxG2" data-values="Kunst / Cultuur" value="Kunst / Cultuur"> Kunst / Cultuur
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxH2" data-values="Makelaardij / Vastgoed" value="Makelaardij / Vastgoed"> Makelaardij / Vastgoed
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxI2" data-values="Maritiem" value="Maritiem"> Maritiem
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxJ2" data-values="Onderwijs / Opleiding" value="Onderwijs / Opleiding"> Onderwijs / Opleiding
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxK2" data-values="Overheid / Non profit" value="Overheid / Non profit"> Overheid / Non profit
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxL2" data-values="Productie / Industrie" value="Productie / Industrie" > Productie / Industrie
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxM2" data-values="Reclame / Communicatie / Media" value="Reclame / Communicatie / Media"> Reclame / Communicatie / Media
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxN2" data-values="Techniek" value="Techniek"> Techniek
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxO2" data-values="Telecommunicatie" value="Telecommunicatie"> Telecommunicatie
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxP2" data-values="Transport / Logistiek / Luchtvaart" value="Transport / Logistiek / Luchtvaart" > Transport / Logistiek / Luchtvaart
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxQ2" data-values="Uitzendbureaus / Detachering / W&S" value="Uitzendbureaus / Detachering / W&S"> Uitzendbureaus / Detachering / W&S
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxR2" data-values="Verhuur" value="Verhuur"> Verhuur
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxS2" data-values="Verzekering / Assurantiën" value="Verzekering / Assurantiën"> Verzekering / Assurantiën
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxT2" data-values="Zakelijke dienstverlening" value="Zakelijke dienstverlening"> Zakelijke dienstverlening
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxU2" data-values="Accountancy" value="Accountancy"> Accountancy
+								</label>
+							</div>
+						</div>
+
+						<hr>
+						<label>Wat is jouw vakgebied?</label>
+						<div class="row vakgebied">
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox13" data-values="Administratief" value="Administratief"> Administratief
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox23" data-values="Advies / Staf / Beleid" value="Advies / Staf / Beleid"> Advies / Staf / Beleid
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox33" data-values="Arbeidsbemiddeling" value="Arbeidsbemiddeling"> Arbeidsbemiddeling
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox43" data-values="Automatisering & ICT" value="Automatisering & ICT"> Automatisering & ICT
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox53" data-values="Beveiliging / Defensie / Politie" value="Beveiliging / Defensie / Politie"> Beveiliging / Defensie / Politie
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox63" data-values="Arbeidsbemiddeling" value="Arbeidsbemiddeling"> Arbeidsbemiddeling
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox73" data-values="Bouw" value="Bouw"> Bouw
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox83" data-values="Callcenter / Receptie" value="Callcenter / Receptie"> Callcenter / Receptie
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox93" data-values="Commercieel / Verkoop" value="Commercieel / Verkoop"> Commercieel / Verkoop
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxA3" data-values="Directie / Management" value="Directie / Management"> Directie / Management
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxB3" data-values="Financieel" value="Financieel"> Financieel
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxC3" data-values="Financiële dienstverlening" value="Financiële dienstverlening"> Financiële dienstverlening
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxD3" data-values="Horeca / Catering / Detailhandel" value="Horeca / Catering / Detailhandel"> Horeca / Catering / Detailhandel
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxE3" data-values="Juridisch / Bestuurlijk" value="Juridisch / Bestuurlijk"> Juridisch / Bestuurlijk
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxF3" data-values="Logistiek" value="Logistiek"> Logistiek
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxG3" data-values="Marketing / PR / Reclame" value="Marketing / PR / Reclame"> Marketing / PR / Reclame
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxH3" data-values="Medisch / Zorg" value="Medisch / Zorg"> Medisch / Zorg
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxI3" data-values="Onderwijs / Onderzoek" value="Onderwijs / Onderzoek"> Onderwijs / Onderzoek
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxJ3" data-values="Overig" value="Overig"> Overig
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxK3" data-values="P&O / Training / Opleiding" value="P&O / Training / Opleiding"> P&O / Training / Opleiding
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxL3" data-values="Productie & Industrie" value="Productie & Industrie" > Productie & Industrie
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxM3" data-values="Schoonmaak" value="Schoonmaak"> Schoonmaak
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxN3" data-values="Secretarieel" value="Secretarieel"> Secretarieel
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckboxO3" data-values="Techniek" value="Techniek"> Techniek
+								</label>
+							</div>
+						</div>
+
+						<hr>
+						<label>Naar welk salaris ben je op zoek?</label>
+						<div class="row salaris">
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox11" data-values=">2500" value=">2500"> >2500
+								</label>
+							</div>
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox21" data-values="2000 - 2500" value="2000 - 2500"> 2000 - 2500
+								</label>
+							</div>
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox31" data-values="1500 - 2000" value="1500 - 2000" > 1500 - 2000
+								</label>
+							</div>
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox41" data-values="Minimum - 1500" value="Minimum - 1500"> Minimum - 1500
+								</label>
+							</div>
+						</div>
+
+						<hr>
+						<label>Wat is je werk- en denkniveau?</label>
+						<div class="row denkniveau">
+							<div class="col-lg-6">
+								<label class="radio-inline">
+									<input type="radio" name="denkniveau" id="inlineCheckbox16" data-values="Geen voorkeur" value="Geen voorkeur"> Geen voorkeur
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="radio-inline">
+									<input type="radio" name="denkniveau" id="inlineCheckbox26" data-values="Mavo" value="Mavo"> Mavo
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="radio-inline">
+									<input type="radio" name="denkniveau" id="inlineCheckbox26" data-values="Havo" value="Havo"> Havo
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="radio-inline">
+									<input type="radio" name="denkniveau" id="inlineCheckbox36" data-values="HBO" value="HBO"> HBO
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="radio-inline">
+									<input type="radio" name="denkniveau" id="inlineCheckbox46" data-values="LBO" value="LBO">LBO
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="radio-inline">
+									<input type="radio" name="denkniveau" id="inlineCheckbox16" data-values="MBO" value="MBO" > MBO
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="radio-inline">
+									<input type="radio" name="denkniveau" id="inlineCheckbox26" data-values="Havo" value="Havo"> Ongeschoold
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="radio-inline">
+									<input type="radio" name="denkniveau" id="inlineCheckbox36" data-values="Universitair" value="Universitair"> Universitair
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="radio-inline">
+									<input type="radio" name="denkniveau" id="inlineCheckbox46" data-values="VWO" value="VWO">VWO
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row margin-top-15">
+							<div class="col-lg-12">
+                            	<button type="submit" id="saveVoorkeurenDataAlertPage" class="btn btn-primary medium-text pull-right">Wijzigingen opslaan</button>
+                            </div>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</div>
@@ -495,6 +962,61 @@
 	<!-- Scripts -->
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
 	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../lib/jqueryTypeahead/jquery.typeahead.js"></script>
 	<script src="../js/main.js"></script>
+	<script src="../js/app.js"></script>
+	<script type="text/javascript">
+		$('#country_v1-query').typeahead({
+    	order: "desc",
+    	source: {
+        	data: [
+	            "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda",
+	            "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh",
+	            "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia",
+	            "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burma",
+	            "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Central African Republic", "Chad",
+	            "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic", "Congo, Republic of the",
+	            "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti",
+	            "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador",
+	            "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
+	            "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Greenland", "Grenada", "Guatemala", "Guinea",
+	            "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India",
+	            "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan",
+	            "Kazakhstan", "Kenya", "Kiribati", "Korea, North", "Korea, South", "Kuwait", "Kyrgyzstan", "Laos",
+	            "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg",
+	            "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands",
+	            "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Mongolia", "Morocco", "Monaco",
+	            "Mozambique", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger",
+	            "Nigeria", "Norway", "Oman", "Pakistan", "Panama", "Papua New Guinea", "Paraguay", "Peru",
+	            "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Samoa", "San Marino",
+	            "Sao Tome", "Saudi Arabia", "Senegal", "Serbia and Montenegro", "Seychelles", "Sierra Leone",
+	            "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "Spain",
+	            "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan",
+	            "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey",
+	            "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States",
+	            "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe", "Rotterdam", "Den Haag", "1200AB", "1200 AB", "1200 XY"
+	       	 ]
+	    },
+	    callback: {
+	        onInit: function (node) {
+	            console.log('Typeahead Initiated on ' + node.selector);
+	        	}
+	    	}
+		});
+
+		$('#trefwoorden_v1-query').typeahead({
+    	order: "desc",
+    	source: {
+        	data: [
+	            "Heftruckchauffeur", "Magazijnmedewerker", "Lader / losser", "Verhuizer (trefwoord)", "Online marketeer (trefwoord)", "Chauffeur", "Voorraadbeheerder", "Logistiek", "Transport", "Orderpicker"
+	       	 ]
+	    },
+	    callback: {
+	        onInit: function (node) {
+	            console.log('Typeahead Initiated on ' + node.selector);
+	        	}
+	    	}
+		});
+	</script>
 </body>
 </html>

@@ -16,7 +16,15 @@ function toggleView(obj) // the li element clicked in the current scope
     $('.accordion-data > li.show').find('.olympia-caret-down').addClass('olympia-caret-up').removeClass('olympia-caret-down');
     
     //this will scroll the page to the accordion where user has clicked
-    $this.scrollView();
+    $this.scrollView(10);
+}
+
+//for parsed query for overview sub sections
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
 //to work the tooltip
@@ -37,10 +45,28 @@ $('body').on('click', function (e) {
 });
 
 //to scroll to a point on the screen where user clicked
-$.fn.scrollView = function () {
+$.fn.scrollView = function (offsetValue) {
     return this.each(function () {
         $('html, body').animate({
-            scrollTop: $(this).offset().top -10
+            scrollTop: $(this).offset().top - offsetValue
         }, 1000);
     });
 }
+// for Navigation comes after scroll
+$(window).scroll(function() {
+    var secondaryNavigation = $('#secondary-navigation'), windows = $(this);
+    if(windows.scrollTop() > 190){
+        secondaryNavigation.addClass('translate-down').removeClass('translate-up');
+    } else {
+        secondaryNavigation.addClass('translate-up').removeClass('translate-down');
+    }
+});
+//for my account page to scroll to the particular section
+$('#secondary-navigation li a').on('click', function (e) {
+    $("#"+$(this).attr('name')).scrollView(70);
+    
+    if($("#secondary-navigation li a").hasClass('activeNav')){
+        $("#secondary-navigation li a").removeClass('activeNav')
+    }
+    $(this).addClass('activeNav');    
+});
