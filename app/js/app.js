@@ -9,7 +9,7 @@ $(document).ready(function(){
 	$('input[name=radioNieuw]').click(function() {
 		var selected = $(".nieuw input[type='radio']:checked");
 		if (selected.length > 0) {
-			console.log(selected.val())
+			// console.log(selected.val())
 		    if(selected.val() == 'option1'){
 		    	$(".nieuw #pop-startdatum-date-1").removeAttr("disabled");
 				$(".nieuw #pop-startdatum-maand-1").removeAttr("disabled");
@@ -44,7 +44,7 @@ $(document).ready(function(){
 	$('input[name=opzegtermijn]').click(function() {
 		var selected = $(".opzegtermijn input[type='radio']:checked");
 		if (selected.length > 0) {
-			console.log(selected.val())
+			// console.log(selected.val())
 			if(selected.val() == 'option1'){
 				voorkeurenString2 = 'Ja, ik heb een opzegtermijn van';
 			}else{
@@ -56,7 +56,7 @@ $(document).ready(function(){
 	$("#modal-voorkeuren-add").on("click", function(){
 		var selected = $(".nieuw input[type='radio']:checked");
 		if (selected.length > 0) {
-			console.log(selected.val())
+			// console.log(selected.val())
 			if(selected.val() == 'option1'){
 				voorkeurenString = 'Ja, ik ben op zoek naar werk. Ik ben beschikbaar'; 
 				voorkeurenString1 = $(".nieuw #pop-startdatum-date-1").val() + '-' + $(".nieuw #pop-startdatum-maand-1").val() + '-' + $(".nieuw #pop-startdatum-jaar-1").val() + ' tot en met ' + $(".nieuw #pop-enddatum-date-1").val() + '-' + $(".nieuw #pop-enddatum-maand-1").val() + '-' + $(".nieuw #pop-enddatum-jaar-1").val() + '.';
@@ -71,7 +71,7 @@ $(document).ready(function(){
 
 		var newselected = $(".opzegtermijn input[type='radio']:checked");
 		if (newselected.length > 0) {
-			console.log(newselected.val())
+			// console.log(newselected.val())
 			if(newselected.val() == 'option1'){
 				voorkeurenString2 = 'Ja, ik heb een opzegtermijn van';
 			}else{
