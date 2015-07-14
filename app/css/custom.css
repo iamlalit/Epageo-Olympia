@@ -673,6 +673,24 @@ label.title.black{
 .navbar-secondary .navigation li:nth-child(3) a{
 	width: 160px;
 }
+.cv .navbar-secondary .navigation li:nth-child(3) a{
+	width: 156px;
+}
+.cv .navbar-secondary .navigation li:nth-child(4) a{
+	width: 116px;
+}
+.cv .navbar-secondary .navigation li:nth-child(5) a{
+	width: 63px;
+}
+.cv .navbar-secondary .navigation li:nth-child(6) a{
+	width: 140px;
+}
+.cv .navbar-secondary .navigation li a {
+	height: 35px;
+}
+.cv .navbar-secondary .navigation {
+	width: 613px;
+}
 .navbar-secondary .navigation li:nth-child(4) a{
 	width: 111px;
 }
