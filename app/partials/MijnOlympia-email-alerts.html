@@ -221,46 +221,44 @@
 				</div>
 				<div class="well well-olympia">
 					<div class="label-container">
-						<label class="title">Job alerts</label>
+						<label class="title">E-mail alerts</label>
 					</div>
 					<div class="box-inner accordion">
 						<ul class="accordion-data alerts">
 							<li>
-								<div class="header" onclick="toggleView(this)">
+								<div class="header">
 									<div class="form-group" id="fromTO">
-										<label class="radio-inline">
-											<input type="radio" name="fromTO0" value="option1" checked=""> Aan
-										</label>
-										<label class="radio-inline">
-											<input type="radio" name="fromTO0" value="option2"> Uit
-										</label>
+										<div class="switch on">
+										    <input class="special-toggle" type="checkbox" name="toggleButton2" id="toggleButton2" checked="checked">
+										   	<label for="toggleButton2">
+											    <span></span>
+											    <span></span>
+										    </label>
+										</div>
 									</div>
-									<div class="job-title">
+									<div class="job-title" onclick="toggleView(this)">
 										<strong id="alertname">(Automatisch) op basis van je voorkeuren</strong >
+										<span class="olympia-icon olympia-caret-down pull-right"></span>
 									</div>
-									<span class="olympia-icon olympia-caret-down pull-right"></span>
+									
 								</div>
 								<div class="job-body">
 									<ul>
 										<li>
-											<strong>Dienstverband:</strong>
-											<span id="dienstverband1">Tijdelijk met uitzicht op vast, Vast</span>
-										</li>
-										<li>
-											<strong>Uren per week:</strong>
-											<span id="weekHour1">32-40</span>
+											<strong>Functies / trefwoorden:</strong>
+											<span id="trefwoorden">Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
 										</li>
 										<li>
 											<strong>Locatie en afstand:</strong>
 											<span id="placeWithDistance">Rotterdam (10 km), Den Haag (5 km)</span>
 										</li>
 										<li>
-											<strong>Branche:</strong>
-											<span id="branche1">Productie/ Industrie</span>
+											<strong>Uren per week:</strong>
+											<span id="weekHour1">32-40</span>
 										</li>
 										<li>
-											<strong>Vakgebied:</strong>
-											<span id="vakgebied1">Logistiek</span>
+											<strong>Dienstverband:</strong>
+											<span id="dienstverband1">Tijdelijk met uitzicht op vast, Vast</span>
 										</li>
 										<li>
 											<strong>Salaris:</strong>
@@ -271,49 +269,52 @@
 											<span id="denkniveau1">MBO</span>
 										</li>
 										<li>
-											<strong>Functies / trefwoorden:</strong>
-											<span id="trefwoorden">Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
+											<strong>Vakgebied:</strong>
+											<span id="vakgebied1">Logistiek</span>
+										</li>
+										<li>
+											<strong>Branche:</strong>
+											<span id="branche1">Productie/ Industrie</span>
 										</li>
 									</ul>
-									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">Job alert instellingen wijzigen</a></span>
+									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+									<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
 								</div>
 							</li>
 							<li>
-								<div class="header" onclick="toggleView(this)">
+								<div class="header">
 									<div class="form-group" id="fromTO">
-										<label class="radio-inline">
-											<input type="radio" name="fromTO1" value="option1" checked=""> Aan
-										</label>
-										<label class="radio-inline">
-											<input type="radio" name="fromTO1" value="option2"> Uit
-										</label>
+										<div class="switch on">
+										    <input class="special-toggle" type="checkbox" name="toggleButton2" id="toggleButton3" checked="checked">
+										   	<label for="toggleButton3">
+											    <span></span>
+											    <span></span>
+										    </label>
+										</div>
 									</div>
-									<div class="job-title">
+									<div class="job-title"  onclick="toggleView(this)">
 										<strong >Logistiek medewerker in Den Haag</strong >
+										<span class="olympia-icon olympia-caret-down pull-right"></span>
 									</div>
-									<span class="olympia-icon olympia-caret-down pull-right"></span>
+									
 								</div>
 								<div class="job-body">
 									<ul>
 										<li>
-											<strong>Dienstverband:</strong>
-											<span>Tijdelijk met uitzicht op vast, Vast</span>
-										</li>
-										<li>
-											<strong>Uren per week:</strong>
-											<span>32-40</span>
+											<strong>Functies / trefwoorden:</strong>
+											<span>Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
 										</li>
 										<li>
 											<strong>Locatie en afstand:</strong>
 											<span>Rotterdam (10 km), Den Haag (5 km)</span>
 										</li>
 										<li>
-											<strong>Branche:</strong>
-											<span>Productie/ Industrie</span>
+											<strong>Uren per week:</strong>
+											<span>32-40</span>
 										</li>
 										<li>
-											<strong>Vakgebied:</strong>
-											<span>Logistiek</span>
+											<strong>Dienstverband:</strong>
+											<span>Tijdelijk met uitzicht op vast, Vast</span>
 										</li>
 										<li>
 											<strong>Salaris:</strong>
@@ -324,49 +325,52 @@
 											<span>MBO</span>
 										</li>
 										<li>
-											<strong>Functies / trefwoorden:</strong>
-											<span>Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
+											<strong>Vakgebied:</strong>
+											<span>Logistiek</span>
+										</li>									
+										<li>
+											<strong>Branche:</strong>
+											<span>Productie/ Industrie</span>
 										</li>
 									</ul>
-									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">Job alert instellingen wijzigen</a></span>
+									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+									<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
 								</div>
 							</li>
 							<li>
-								<div class="header" onclick="toggleView(this)">
+								<div class="header">
 									<div class="form-group" id="fromTO">
-										<label class="radio-inline">
-											<input type="radio" name="fromTO2" value="option1"> Aan
-										</label>
-										<label class="radio-inline">
-											<input type="radio" name="fromTO2" value="option2"  checked=""> Uit
-										</label>
+										<div class="switch on">
+										    <input class="special-toggle" type="checkbox" name="toggleButton1" id="toggleButton1">
+										   	<label for="toggleButton1">
+											    <span></span>
+											    <span></span>
+										    </label>
+										</div>
 									</div>
-									<div class="job-title">
+									<div class="job-title" onclick="toggleView(this)">
 										<strong >Magazijnmedewerker in Gouda</strong >
+										<span class="olympia-icon olympia-caret-down pull-right"></span>
 									</div>
-									<span class="olympia-icon olympia-caret-down pull-right"></span>
+									
 								</div>
 								<div class="job-body">
 									<ul>
 										<li>
-											<strong>Dienstverband:</strong>
-											<span>Tijdelijk met uitzicht op vast, Vast</span>
-										</li>
-										<li>
-											<strong>Uren per week:</strong>
-											<span>32-40</span>
+											<strong>Functies / trefwoorden:</strong>
+											<span>Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
 										</li>
 										<li>
 											<strong>Locatie en afstand:</strong>
 											<span>Rotterdam (10 km), Den Haag (5 km)</span>
 										</li>
 										<li>
-											<strong>Branche:</strong>
-											<span>Productie/ Industrie</span>
+											<strong>Uren per week:</strong>
+											<span>32-40</span>
 										</li>
 										<li>
-											<strong>Vakgebied:</strong>
-											<span>Logistiek</span>
+											<strong>Dienstverband:</strong>
+											<span>Tijdelijk met uitzicht op vast, Vast</span>
 										</li>
 										<li>
 											<strong>Salaris:</strong>
@@ -377,49 +381,52 @@
 											<span>MBO</span>
 										</li>
 										<li>
-											<strong>Functies / trefwoorden:</strong>
-											<span>Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
+											<strong>Vakgebied:</strong>
+											<span>Logistiek</span>
+										</li>
+										<li>
+											<strong>Branche:</strong>
+											<span>Productie/ Industrie</span>
 										</li>
 									</ul>
-									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">Job alert instellingen wijzigen</a></span>
+									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+									<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
 								</div>
 							</li>
 							<li>
-								<div class="header" onclick="toggleView(this)">
+								<div class="header">
 									<div class="form-group" id="fromTO">
-										<label class="radio-inline">
-											<input type="radio" name="fromTO3" value="option1"> Aan
-										</label>
-										<label class="radio-inline">
-											<input type="radio" name="fromTO3" value="option2"  checked=""> Uit
-										</label>
+										<div class="switch on">
+										    <input class="special-toggle" type="checkbox" name="toggleButton4" id="toggleButton4">
+										   	<label for="toggleButton4">
+											    <span></span>
+											    <span></span>
+										    </label>
+										</div>
 									</div>
-									<div class="job-title">
+									<div class="job-title"  onclick="toggleView(this)">
 										<strong >Reachtruckchauffeur in Breda</strong>
+										<span class="olympia-icon olympia-caret-down pull-right"></span>
 									</div>
-									<span class="olympia-icon olympia-caret-down pull-right"></span>
+									
 								</div>
 								<div class="job-body">
 									<ul>
 										<li>
-											<strong>Dienstverband:</strong>
-											<span>Tijdelijk met uitzicht op vast, Vast</span>
-										</li>
-										<li>
-											<strong>Uren per week:</strong>
-											<span>32-40</span>
+											<strong>Functies / trefwoorden:</strong>
+											<span>Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
 										</li>
 										<li>
 											<strong>Locatie en afstand:</strong>
 											<span>Rotterdam (10 km), Den Haag (5 km)</span>
 										</li>
 										<li>
-											<strong>Branche:</strong>
-											<span>Productie/ Industrie</span>
+											<strong>Uren per week:</strong>
+											<span>32-40</span>
 										</li>
 										<li>
-											<strong>Vakgebied:</strong>
-											<span>Logistiek</span>
+											<strong>Dienstverband:</strong>
+											<span>Tijdelijk met uitzicht op vast, Vast</span>
 										</li>
 										<li>
 											<strong>Salaris:</strong>
@@ -430,14 +437,17 @@
 											<span>MBO</span>
 										</li>
 										<li>
-											<strong>Functies / trefwoorden:</strong>
-											<span>Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
+											<strong>Vakgebied:</strong>
+											<span>Logistiek</span>
+										</li>
+										<li>
+											<strong>Branche:</strong>
+											<span>Productie/ Industrie</span>
 										</li>
 									</ul>
-									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">Job alert instellingen wijzigen</a></span>
+									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+									<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
 								</div>
-							</li>
-							<li>
 							</li>
 						</ul>
 						
@@ -455,6 +465,30 @@
 						<label>Geef deze job alert een naam:</label>
 						<div class="form-group">
 							<input type="text" class="alertname form-control" placeholder="type hier een naam voor deze alert"/>
+						</div>
+						<hr>
+						<label>Hoe vaak wil je e-mails voor deze alert ontvangen?</label>
+						<div class="row">
+							<div class="col-lg-6">
+								<label class="radio-inline">
+									<input type="radio" name="emailFreq" id="inlineCheckbox1a" data-values="Direct als er een passende vacature is" value="Direct als er een passende vacature is"> Direct als er een passende vacature is
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="radio-inline">
+									<input type="radio" name="emailFreq" id="inlineCheckbox1c" data-values="1 x per week" value="1 x per week"> 1 x per week
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="radio-inline">
+									<input type="radio" name="emailFreq" id="inlineCheckbox1b" data-values="1 x per dag" value="1 x per dag"> 1 x per dag
+								</label>
+							</div>
+							<div class="col-lg-6">
+								<label class="radio-inline">
+									<input type="radio" name="emailFreq" id="inlineCheckbox1d" data-values="1 x per maand" value="1 x per maand"> 1 x per maand
+								</label>
+							</div>
 						</div>
 						<hr>
 						<label>Naar welke functies/ trefwoorden ben je op zoek?</label>
@@ -480,7 +514,6 @@
 								<button type="submit" class="btn btn-primary col-lg-12" id="VoegToetrefwoorden">Voeg toe +</button>
 							</div>
 						</div>
-
 
 						<hr>
 						<label>Waar zoek je naar vacatures?</label>

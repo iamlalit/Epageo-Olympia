@@ -292,13 +292,29 @@ a:focus{
 .alert-box.right-container .well.well-olympia .details ul li:last-child{
 	padding-bottom: 0;
 }
+.alert-box.right-container .well.well-olympia .box-inner{
+	padding: 0;
+	margin: 15px 0 0; 
+}
 .alert-box.right-container .well.well-olympia .accordion .job-title{
 	margin-left: 10px;
-	display: inline-block;
+	display: block;
+	width: 80%;
+	float: left;
+	position: relative;
+	line-height: 44px;
+	cursor: pointer;
+}
+.alert-box.right-container .well.well-olympia .accordion .job-title span.olympia-caret-down,
+.alert-box.right-container .well.well-olympia .accordion .job-title span.olympia-caret-up{
+	top: 15px;
 }
 .alert-box.right-container .well.well-olympia .accordion .header{
 	background: rgb(244, 244, 244);
 	border: 1px solid #dddddd;
+	width: 100%;
+	float: left;
+	margin-bottom: 10px;
 }
 .cv.right-container .well.well-olympia .accordion .header,
 .suggestie.right-container .well.well-olympia .accordion .header{
@@ -405,7 +421,9 @@ a:focus{
 	margin-bottom: 0;
 	display: inline-block;
 	border-right: 1px solid #DFDCDC;
-	padding: 12px;
+	padding: 10px 30px 7px;
+	float: left;
+	width: 17.8%;
 }
 .alert-box.right-container .well.well-olympia .accordion .job-body{
 	background: rgb(252, 252, 252);
@@ -431,22 +449,27 @@ a:focus{
 .alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li:first-child{
 	margin-top: 0;
 }
-.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .header{
-	cursor: pointer;
-}
 .alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li{
-	margin-top: 15px;
+	margin-bottom: 10px;
+	float: left;
+	width: 100%;
 }
 .alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .header span{
 	margin-right: 10px;
 	position: relative;
 	vertical-align: middle;
-	margin-top: 12px;
 	font-size: 16px;
 }
 .alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .job-body .bewerk{
 	margin-top: 10px;
-	display: block;
+	display: inline-block;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .job-body .bewerk + .bewerk{
+	margin-left: 20px;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .job-body .bewerk .olympia-edit,
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .job-body .bewerk .olympia-trash-o{
+	margin-right: 4px;
 }
 .alert-box.right-container .well.well-olympia .accordion-button{
 	text-align: right;
@@ -625,7 +648,7 @@ label.title.black{
 	z-index: 9999;
 }
 .navbar-secondary .navigation {
-	width: 717px;
+	width: 560px;
 	text-align: center;
 	margin: 0 auto;
 	overflow: hidden;
@@ -739,4 +762,104 @@ label.title.black{
 .meta .user img {
 	border-radius: 5px;
 	width: 46px;
+}
+
+/*Creating switch*/
+.switch {
+	position: relative;
+	display: inline-block;
+	border-radius: 20px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.6);
+}
+.switch.on {
+	width: 53px;
+}
+.switch input[type="checkbox"] {
+	display: none;
+}
+.switch label {
+	overflow: hidden;
+	cursor: pointer;
+	border-radius: 20px;
+	margin-bottom: 0;
+	font-weight: normal;
+}
+.switch input[type="checkbox"] + label {
+	display: block;
+	height: 22px;
+	padding: 0;
+	background: none;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:first-of-type {
+	width: 200%;
+	margin-left: -100%;
+	-webkit-transition: all 0.3s ease-in 0s;
+	-moz-transition: all 0.3s ease-in 0s;
+	transition: all 0.3s ease-in 0s;
+	display: inline-block;
+	margin-top: 0;
+	margin-right: 0;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:first-of-type:before,.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:first-of-type:after {
+	float: left;
+	width: 50%;
+	height: 22px;
+	line-height: 2.3;
+	font-size: 0.6495em;
+	color: white;
+	font-weight: 600;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:first-of-type:before {
+	padding-left: 6px;
+	color: #444444;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.22);
+	background-color: #6b8f1a;
+	background-image: -webkit-linear-gradient(#a5cd4e, #6b8f1a);
+	background-image: linear-gradient(#a5cd4e, #6b8f1a);
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:first-of-type:after {
+	padding-right: 6px;
+	background-color: #8f1a1a;
+	background-image: -webkit-linear-gradient(#cd4e54, #8f1a1a);
+	background-image: linear-gradient(#cd4e54, #8f1a1a);
+	color: #ffffff;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.22);
+	text-align: right;
+	letter-spacing: 1.1px;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch input[type="checkbox"]:checked + label span:first-of-type {
+	margin-left: 0;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch.on label span:first-of-type:before {
+	content: 'AAN';
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch.on label span:first-of-type:after {
+	content: 'UIT';
+}
+
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch input[type="checkbox"]:checked + label span:last-of-type {
+	right: 5px;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch.on label span:last-of-type {
+	right: 31px;
+}
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:last-of-type {
+	margin: 3px 0 0 0;
+	background-image: url("../img/icon-toggle-button.png");
+	background-repeat: no-repeat;
+	width: 17px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	-webkit-transition: all 0.3s ease-in 0s;
+	-moz-transition: all 0.3s ease-in 0s;
+	transition: all 0.3s ease-in 0s;
+	display: inline-block;
 }

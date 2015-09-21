@@ -1672,7 +1672,7 @@ $(document).ready(function(){
 		}
 	})
 });
-
+//email alert
 $(document).ready(function(){
 	$('#saveVoorkeurenDataAlertPage').click(function(){
 		var alertname = '',
@@ -1789,56 +1789,58 @@ $(document).ready(function(){
 		alertname = $(".alertname").val();
 		$(".alerts").append(
 			'<li>'+
-				'<div class="header" onclick="toggleView(this)">'+
+				'<div class="header">'+
 					'<div class="form-group" id="fromTO">'+
-						'<label class="radio-inline">'+
-							'<input type="radio" name="fromTO0" value="option1" checked=""> Aan'+
-						'</label>'+
-						'<label class="radio-inline">'+
-							'<input type="radio" name="fromTO0" value="option2"> Uit'+
-						'</label>'+
+						'<div class="switch on">'+
+						    '<input class="special-toggle" type="checkbox" name="toggleButton'+alertname+'" id="toggleButton'+alertname+'">'+
+						   	'<label for="toggleButton'+alertname+'">'+
+							    '<span></span>'+
+							    '<span></span>'+
+						    '</label>'+
+						'</div>'+
 					'</div>'+
-					'<div class="job-title">'+
+					'<div class="job-title" onclick="toggleView(this)">'+
 						'<strong id="alertname">'+alertname+'</strong >'+
+						'<span class="olympia-icon olympia-caret-down pull-right"></span>'+
 					'</div>'+
-					'<span class="olympia-icon olympia-caret-down pull-right"></span>'+
 				'</div>'+
 				'<div class="job-body">'+
 					'<ul>'+
 						'<li>'+
-							'<strong>Dienstverband:</strong>'+
-							'<span id="dienstverband1">'+dienstverband+'</span>'+
-						'</li>'+
-						'<li>'+
-							'<strong>Uren per week:</strong>'+
-							'<span id="weekHour1">'+weekHour+'</span>'+
+							'<strong>Functies / trefwoorden:</strong>'+
+							'<span id="trefwoorden"> '+trefwoorden+'</span>'+
 						'</li>'+
 						'<li>'+
 							'<strong>Locatie en afstand:</strong>'+
-							'<span id="placeWithDistance1">'+placeWithDistance+'</span>'+
+							'<span id="placeWithDistance1"> '+placeWithDistance+'</span>'+
 						'</li>'+
 						'<li>'+
-							'<strong>Branche:</strong>'+
-							'<span id="branche1">'+branche+'</span>'+
+							'<strong>Uren per week:</strong>'+
+							'<span id="weekHour1"> '+weekHour+'</span>'+
 						'</li>'+
 						'<li>'+
-							'<strong>Vakgebied:</strong>'+
-							'<span id="vakgebied1">'+vakgebied+'</span>'+
+							'<strong>Dienstverband:</strong>'+
+							'<span id="dienstverband1"> '+dienstverband+'</span>'+
 						'</li>'+
 						'<li>'+
 							'<strong>Salaris:</strong>'+
-							'<span id="salaris1">'+salaris+'</span>'+
+							'<span id="salaris1"> '+salaris+'</span>'+
 						'</li>'+
 						'<li>'+
 							'<strong>Werk-en denkniveau:</strong>'+
-							'<span id="denkniveau1">'+denkniveau+'</span>'+
+							'<span id="denkniveau1"> '+denkniveau+'</span>'+
 						'</li>'+
 						'<li>'+
-							'<strong>Functies / trefwoorden:</strong>'+
-							'<span id="trefwoorden">'+trefwoorden+'</span>'+
+							'<strong>Vakgebied:</strong>'+
+							'<span id="vakgebied1"> '+vakgebied+'</span>'+
+						'</li>'+
+						'<li>'+
+							'<strong>Branche:</strong> '+
+							'<span id="branche1"> '+branche+'</span>'+
 						'</li>'+
 					'</ul>'+
-					'<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">Job alert instellingen wijzigen</a></span>'+
+					'<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>'+
+					'<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>'+
 				'</div>'+
 			'</li>'
 		)
@@ -1846,4 +1848,14 @@ $(document).ready(function(){
 		$(".voorkeuren-box").addClass('hidden');
 		$(".alert-box").removeClass('hidden');
 	})
+
+	
 });
+//delete email alert
+function deleteThisEmailAlert(obj){
+	console.log($(this).parent)
+	var $this = $(obj); // This is the jQuery object being clicked
+
+	console.log($this.parents('li.show'));
+	$this.parents('li.show').remove();
+}
