@@ -947,3 +947,42 @@ label.title.black{
 .dashboard.right-container.alert-box .well-olympia .globalSwitch.header .switch span:first-of-type{
 	font-size: 1.3em;
 }
+/*hover editing*/
+
+.hoverEditing ul li:nth-child(2n){
+	margin-bottom: 7px;
+}
+.hoverEditing ul li:nth-child(2n) .data{
+	padding: 3px 3px 2px 0;
+}
+.hoverEditing ul li:nth-child(2n):hover .data{
+	background: #eeeeee;
+}
+.hoverEditing ul li:nth-child(2n) .olympia-icon{
+	float: none !important;
+	background: #eee;
+	visibility: hidden;
+	padding: 2px;
+	position: relative;
+	top: 2px;
+	margin-left: 1px;
+}
+.hoverEditing ul li:nth-child(2n):hover .olympia-icon{
+	visibility: visible;
+}
+.hoverEditing.details ul li{
+	padding-bottom: 0 !important;
+}
+.hoverEditing.details ul li:nth-child(2n) .data{
+	padding: 3px 3px 3px 0;
+	display: inline-block !important;
+}
+.hoverEditing.details ul li:nth-child(2n) .olympia-icon{
+	display: inline-block !important;
+	margin: 0 0 8px 1px;
+	font-size: 1.22em;
+	padding: 4px;
+	color: #666666;
+	cursor: pointer;
+	top: 3px;
+}

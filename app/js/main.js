@@ -65,6 +65,8 @@ $(window).scroll(function() {
 $('#secondary-navigation li a').on('click', function (e) {
     $("#"+$(this).attr('name')).scrollView(70);
     
+    console.log($(this).attr('name'));
+
     if($("#secondary-navigation li a").hasClass('activeNav')){
         $("#secondary-navigation li a").removeClass('activeNav')
     }

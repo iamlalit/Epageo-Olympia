@@ -200,6 +200,17 @@
 								</ul>
 							</div>
 						</div>
+						<div class="col-lg-12 col-md-12">
+							<div class="profile-data">
+								<label class="title">Maak je profiel compleet</label>
+								<ul>
+									<li>Update je CV<a href="MijnOlympia-cv-ervaring.html"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Maak een video CV<a href="MijnOlympia-video-cv.html"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Stel een e-mail alert in<a href="MijnOlympia-email-alerts.html"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Waar ben je naar op zoek?<a href="MijnOlympia-voorkeuren.html"><span class="olympia-icon olympia-plus"></span></a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
             </div>
@@ -1685,5 +1696,16 @@
 	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="../js/main.js"></script>
 	<script src="../js/app.js"></script>
+	<script type="text/javascript">
+		function getParameterByName(name) {
+	        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	            results = regex.exec(location.search);
+	        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	    }
+	    var scrollTo = getParameterByName('scrollTo');
+
+	    $("#"+scrollTo).scrollView(70);
+	</script>
 </body>/
 </html>

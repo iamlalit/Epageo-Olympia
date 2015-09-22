@@ -201,6 +201,17 @@
 								</ul>
 							</div>
 						</div>
+						<div class="col-lg-12 col-md-12">
+							<div class="profile-data">
+								<label class="title">Maak je profiel compleet</label>
+								<ul>
+									<li>Update je CV<a href="MijnOlympia-cv-ervaring.html"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Maak een video CV<a href="MijnOlympia-video-cv.html"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Stel een e-mail alert in<a href="MijnOlympia-email-alerts.html"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Waar ben je naar op zoek?<a href="MijnOlympia-voorkeuren.html"><span class="olympia-icon olympia-plus"></span></a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
             </div>
@@ -222,44 +233,61 @@
 							<span ><strong class="string2"></strong></span>
 						</span>
 					</div>
+					<p>&nbsp;</p>
 				</div>
 				<div class="well well-olympia">
 					<div class="label-container">
-						<label class="title">Waar ben je naar op zoek?</label><span class="pull-right bewerk"><i class="olympia-icon olympia-edit"></i>&nbsp;<a href="javascript:void(0)" onclick="toggleTheView()">Bewerken</a></span>
+						<label class="title">Waar ben je naar op zoek?</label>
 					</div>
-					<div class="box-inner details">
+					<div class="box-inner details hoverEditing">
 						<ul>
 							<li>
 								<strong>Naar welke functies / trefwoorden ben je op zoek?</strong>
-								<span id="trefwoorden">Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
+							</li>
+							<li>
+								<span id="trefwoorden" class="data">Heftruckchauffeur, Logistiek, Transport, Orderpicker</span><span class="olympia-icon olympia-pencil" data-name="trefwoorden">
 							</li>
 							<li>
 								<strong>Wat is je maximale reisafstand?</strong>
-								<span id="placeWithDistance">Rotterdam (10 km), Den Haag (5 km)</span>
+							</li>
+							<li>
+								<span id="placeWithDistance" class="data">Rotterdam (10 km), Den Haag (5 km)</span><span class="olympia-icon olympia-pencil" data-name="placeWithDistance">
 							</li>
 							<li>
 								<strong>Naar welk dienstverband ben je op zoek?</strong>
-								<span id="dienstverband">Tijdelijk met uitzicht op vast, Vast</span>
+							</li>
+							<li>
+								<span id="dienstverband" class="data">Tijdelijk met uitzicht op vast, Vast</span><span class="olympia-icon olympia-pencil" data-name="dienstverband">
 							</li>
 							<li>
 								<strong>Hoeveel uren per week ben je beschikbaar?</strong>
-								<span id="weekHour">32-40</span>
+							</li>
+							<li>
+								<span id="weekHour" class="data">32-40</span><span class="olympia-icon olympia-pencil" data-name="weekHour">
 							</li>
 							<li>
 								<strong>Welke branche heeft jouw voorkeur?</strong>
-								<span id="branche">Productie/ Industrie</span>
+							</li>
+							<li>
+								<span id="branche" class="data">Productie/ Industrie</span><span class="olympia-icon olympia-pencil" data-name="branche">
 							</li>
 							<li>
 								<strong>Wat is jouw vakgebied?</strong>
-								<span id="vakgebied">Logistiek</span>
+							</li>
+							<li>
+								<span id="vakgebied" class="data">Logistiek</span><span class="olympia-icon olympia-pencil" data-name="vakgebied">
 							</li>
 							<li>
 								<strong>Wat voor salaris wil je?</strong>
-								<span id="salaris">1600-2000</span>
+							</li>
+							<li>
+								<span id="salaris" class="data">1600-2000</span><span class="olympia-icon olympia-pencil" data-name="salaris">
 							</li>
 							<li>
 								<strong>Wat is je werk- en denkniveau?</strong>
-								<span id="denkniveau">MBO</span>
+							</li>
+							<li>
+								<span id="denkniveau" class="data">MBO</span><span class="olympia-icon olympia-pencil" data-name="denkniveau">
 							</li>
 						</ul>
 					</div>
@@ -1182,6 +1210,14 @@
 		// if(getParameterByName('voorkeurenModal') != '' && getParameterByName('voorkeurenModal') == 'true'){
 		// 	$("#bewerkenVoorkeuren").modal("show");
 		// }
+
+		//to edit the details
+	    $('.hoverEditing ul li:nth-child(2n) .olympia-icon').click(function(){
+	    	$(".voorkeuren-box").removeClass('hidden');
+			$(".alert-box").addClass('hidden');
+	   		var scrollTo = $(this).data()['name'];
+	   		$("."+scrollTo).scrollView(20);
+	    }) 
 	</script>
 </body>
 </html>
