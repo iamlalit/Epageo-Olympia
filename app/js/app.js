@@ -1683,7 +1683,8 @@ $(document).ready(function(){
 			salaris = '',
 			denkniveau = '',
 			placeWithDistance = '',
-			trefwoorden = '';
+			trefwoorden = '',
+			emailFreq = '';
 		
 		//get the values
 		if($('.dienstverband input[type=checkbox]:checked').length > 0){
@@ -1756,6 +1757,19 @@ $(document).ready(function(){
 			  denkniveau += $(this).data("values") + ', ';
 			});
 			denkniveau = denkniveau.slice(0,-2)
+			//$("#denkniveau1").text(denkniveau)
+		}else{
+			//to hide that particular li as nothing is selected
+			//$("#denkniveau1").closest('li').remove();
+		}
+
+		//get the values
+		if($('.emailFreq input[type=radio]:checked').length > 0){
+			//something is selected
+			$('.emailFreq input[type=radio]:checked').each(function() {
+			  emailFreq += $(this).data("values") + ', ';
+			});
+			emailFreq = emailFreq.slice(0,-2)
 			//$("#denkniveau1").text(denkniveau)
 		}else{
 			//to hide that particular li as nothing is selected
@@ -1837,6 +1851,14 @@ $(document).ready(function(){
 						'<li>'+
 							'<strong>Branche:</strong> '+
 							'<span id="branche1"> '+branche+'</span>'+
+						'</li>'+
+						'<li>'+
+							'<strong>&nbsp;</strong>'+
+							'<span>&nbsp;</span>'+
+						'</li>'+
+						'<li>'+
+							'<strong>Frequentie:</strong>'+
+							'<span> '+emailFreq+'</span>'+
 						'</li>'+
 					'</ul>'+
 					'<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>'+

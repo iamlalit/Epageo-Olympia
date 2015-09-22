@@ -231,8 +231,8 @@ a:focus{
 .right-container .well.well-olympia .half-box{
 	padding: 15px;
 }
-.right-container .well.well-olympia .half-box.last-box{
-	border-left: 1px solid #ccc;
+.right-container .well.well-olympia .half-box:not(.last-box){
+	border-right: 1px solid #ccc;
 }
 .right-container .well.well-olympia .half-box label.title{
 	font-size: 16px;
@@ -794,7 +794,8 @@ label.title.black{
 	padding: 0;
 	background: none;
 }
-.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:first-of-type {
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:first-of-type,
+.switch label span:first-of-type {
 	width: 200%;
 	margin-left: -100%;
 	-webkit-transition: all 0.3s ease-in 0s;
@@ -804,7 +805,8 @@ label.title.black{
 	margin-top: 0;
 	margin-right: 0;
 }
-.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:first-of-type:before,.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:first-of-type:after {
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:first-of-type:before,.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:first-of-type:after,
+.switch label span:first-of-type:before, .switch label span:first-of-type:after{
 	float: left;
 	width: 50%;
 	height: 22px;
@@ -816,7 +818,8 @@ label.title.black{
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:first-of-type:before {
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:first-of-type:before,
+.switch label span:first-of-type:before {
 	padding-left: 6px;
 	color: #444444;
 	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.22);
@@ -824,7 +827,8 @@ label.title.black{
 	background-image: -webkit-linear-gradient(#a5cd4e, #6b8f1a);
 	background-image: linear-gradient(#a5cd4e, #6b8f1a);
 }
-.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:first-of-type:after {
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:first-of-type:after,
+.switch label span:first-of-type:after {
 	padding-right: 6px;
 	background-color: #8f1a1a;
 	background-image: -webkit-linear-gradient(#cd4e54, #8f1a1a);
@@ -834,23 +838,29 @@ label.title.black{
 	text-align: right;
 	letter-spacing: 1.1px;
 }
-.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch input[type="checkbox"]:checked + label span:first-of-type {
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch input[type="checkbox"]:checked + label span:first-of-type,
+.switch input[type="checkbox"]:checked + label span:first-of-type {
 	margin-left: 0;
 }
-.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch.on label span:first-of-type:before {
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch.on label span:first-of-type:before,
+.switch.on label span:first-of-type:before {
 	content: 'AAN';
 }
-.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch.on label span:first-of-type:after {
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch.on label span:first-of-type:after,
+.switch.on label span:first-of-type:after {
 	content: 'UIT';
 }
 
-.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch input[type="checkbox"]:checked + label span:last-of-type {
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch input[type="checkbox"]:checked + label span:last-of-type,
+.switch input[type="checkbox"]:checked + label span:last-of-type {
 	right: 5px;
 }
-.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch.on label span:last-of-type {
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch.on label span:last-of-type,
+.switch.on label span:last-of-type {
 	right: 31px;
 }
-.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:last-of-type {
+.alert-box.right-container .well.well-olympia .accordion ul.accordion-data > li .switch label span:last-of-type,
+.switch label span:last-of-type {
 	margin: 3px 0 0 0;
 	background-image: url("../img/icon-toggle-button.png");
 	background-repeat: no-repeat;
@@ -862,4 +872,64 @@ label.title.black{
 	-moz-transition: all 0.3s ease-in 0s;
 	transition: all 0.3s ease-in 0s;
 	display: inline-block;
+}
+/*box on dahsboard at the bottom*/
+.boxes.dashboard{
+	margin-top: 10px;
+	width: 100%;
+	float: left;
+}
+.boxes.dashboard ul li{
+	width: 100%;
+	float: left;
+	margin-bottom: 10px;
+	line-height: normal;
+	background: rgb(244, 244, 244);
+	border: 1px solid #dddddd;
+	width: 100%;
+	float: left;
+	padding: 5px;
+}
+.boxes.dashboard ul li .box label{
+	float: left;
+	width: 71%;
+}
+.boxes.dashboard ul li .box span.right-side{
+	float: left;
+	width: 27%;
+	text-align: right;
+}
+.half-box #fromTO{
+	display: inline-block;
+	float: right;
+}
+.half-box #fromTO .switch label span{
+	font-size: 15px;	
+}
+.half-box #fromTO .switch label span:first-of-type:before,
+.half-box #fromTO .switch label span:first-of-type:after{
+	line-height: 22px;
+}
+.dashboard.right-container.alert-box{
+	margin: 15px 0 0;
+}
+.dashboard.right-container.alert-box .well-olympia{
+	float: left;
+}
+.dashboard.right-container.alert-box .well-olympia .alerts .header #fromTO{
+	display: none;
+}
+.dashboard.right-container.alert-box .well-olympia .alerts .header .job-title{
+	width: 98%;
+}
+.dashboard.right-container.alert-box .well-olympia h1.black{
+	display: inline-block;
+}
+.dashboard.right-container.alert-box .well-olympia .globalSwitch.header{
+	display: inline-block;
+	float: right;
+	margin-top: 16px;
+}
+.dashboard.right-container.alert-box .well-olympia .globalSwitch.header .switch span:first-of-type{
+	font-size: 1.3em;
 }

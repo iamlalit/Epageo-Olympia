@@ -248,7 +248,7 @@
 									<li><a href="MijnOlympia-video-cv.html">Mijn video CV</a></li>
 									<li><a href="MijnOlympia-cv-ervaring.html">Mijn CV &amp; ervaring</a></li>
 									<li><a href="MijnOlympia-voorkeuren.html">Mijn voorkeuren</a></li>
-									<li><a href="MijnOlympia-email-alerts.html">Mijn email alerts</a></li>
+									<li id="emailAlert"><a href="MijnOlympia-email-alerts.html">Mijn email alerts</a></li>
 									<li><a href="MijnOlympia-sollicitaties.html">Mijn sollicitaties (<span>3</span>)</a></li>
 									<li><a href="MijnOlympia-suggesties.html">Mijn suggesties (<spam>21</span>)</a></li>
 									<li class="hidden"><a href="MijnOlympia-competenties.html">Mijn competenties</a></li>
@@ -430,15 +430,52 @@
 						</div>
 					</div>
 				</div>
-				<div class="well well-olympia">
+				<div class="well well-olympia" style="display: none">
 					<div class="row">
 						<div class="col-lg-6 half-box">
-							<label class="title">Vacatures per mail</label>
-							<a id="tooltip1" class="website-icons small" data-container="body" data-toggle="popover" data-placement="top" data-original-title="Vacatures per mail" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu." style="cursor: pointer;"><i class="olympia-info3"></i></a>
-							<p>Stuur mij relevante vacatures op basis van mijn profiel per e-mail wanneer deze worden toegevoegd op de site.<br>&nbsp;</p>
-							<p class="margin-bottom-0">Frequentie: <span>3x per week</span><span class="pull-right bewerk"><i class="olympia-icon olympia-edit"></i>&nbsp;<a href="javascript:void(0)">Bewerken</a></span></p>
+							<label class="title">Mijn e-mail alerts</label>
+							<a id="tooltip1" class="website-icons small" data-container="body" data-toggle="popover" data-placement="top" data-original-title="Mijn e-mail alerts" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu." style="cursor: pointer;"><i class="olympia-info3"></i></a>
+							<div class="form-group" id="fromTO">
+								<div class="switch on" title="Met deze knop kun je in één keer al je e-mail alerts inschakelen of uitzetten.">
+								    <input class="special-toggle" type="checkbox" name="toggleButton4" id="toggleButton4" checked="checked">
+								   	<label for="toggleButton4">
+									    <span></span>
+									    <span></span>
+								    </label>
+								</div>
+							</div>
+							<p>Je kunt alerts instellen om per e-mail op de hoogte gehouden te worden van nieuwe vacatures.</p>
+							<p class="margin-bottom-0">Je huidige e-mail alerts</p>
+							<div class="boxes dashboard">
+								<ul>
+									<li>
+										<div class="box">
+											<label class="left-side">(Automatisch) op basis van je voorkeuren</label>
+											<span class="right-side bewerk"><i class="olympia-icon olympia-edit"></i>&nbsp;<a href="javascript:void(0)">Bewerken</a></span>
+										</div>
+									</li>
+									<li>
+										<div class="box">
+											<label class="left-side">Logistiek medewerker in Den Haag</label>
+											<span class="right-side bewerk"><i class="olympia-icon olympia-edit"></i>&nbsp;<a href="javascript:void(0)">Bewerken</a></span>
+										</div>
+									</li>
+									<li>
+										<div class="box">
+											<label class="left-side">Magazijnmedewerker in Gouda</label>
+											<span class="right-side bewerk"><i class="olympia-icon olympia-edit"></i>&nbsp;<a href="javascript:void(0)">Bewerken</a></span>
+										</div>
+									</li>
+									<li>
+										<div class="box">
+											<label class="left-side">Reachtruckchauffeur in Breda</label>
+											<span class="right-side bewerk"><i class="olympia-icon olympia-edit"></i>&nbsp;<a href="javascript:void(0)">Bewerken</a></span>
+										</div>
+									</li>
+								</ul>
+							</div>
 						</div>
-						<div class="col-lg-6 half-box last-box">
+						<div class="col-lg-6 half-box last-box" style="display: none">
 							<label class="title">Contact met intercedent</label>
 							<a id="tooltip2" class="website-icons small" data-container="body" data-toggle="popover" data-placement="top" data-original-title="Contact met intercedent" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu." style="cursor: pointer;"><i class="olympia-info3"></i></a>
 							<p>Een Olympia intercedent kan mij bij een geschikte vacature op de volgende manieren bereiken:</p>
@@ -451,6 +488,254 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="dashboard right-container alert-box">
+					<div class="well well-olympia" style="">
+						<h1 class="black">Mijn e-mail alerts <a id="tooltip1" class="website-icons small" data-container="body" data-toggle="popover" data-placement="top" data-original-title="Mijn e-mail alerts" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu." style="cursor: pointer;"><i class="olympia-info3"></i></a>
+						</h1>
+						<div class="header globalSwitch">
+							<div class="form-group" id="fromTO">
+								<div class="switch on globalCheck">
+								    <input class="special-toggle" type="checkbox" name="toggleButton5" id="toggleButton5" checked="checked">
+								   	<label for="toggleButton5">
+									    <span></span>
+									    <span></span>
+								    </label>
+								</div>
+							</div>
+						</div>
+						<p>&nbsp;</p>
+						<p>Je kunt alerts instellen om per e-mail op de hoogte gehouden te worden van nieuwe vacatures.</p>
+						<p>Je huidige e-mail alerts:</p>
+						<div class="box-inner accordion">
+							<ul class="accordion-data alerts">
+								<li>
+									<div class="header">
+										<div class="job-title" onclick="toggleView(this)">
+											<strong id="alertname">(Automatisch) op basis van je voorkeuren</strong >
+											<span class="olympia-icon olympia-caret-down pull-right"></span>
+										</div>
+										
+									</div>
+									<div class="job-body">
+										<ul>
+											<li>
+												<strong>Functies / trefwoorden:</strong>
+												<span id="trefwoorden">Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
+											</li>
+											<li>
+												<strong>Locatie en afstand:</strong>
+												<span id="placeWithDistance">Rotterdam (10 km), Den Haag (5 km)</span>
+											</li>
+											<li>
+												<strong>Uren per week:</strong>
+												<span id="weekHour1">32-40</span>
+											</li>
+											<li>
+												<strong>Dienstverband:</strong>
+												<span id="dienstverband1">Tijdelijk met uitzicht op vast, Vast</span>
+											</li>
+											<li>
+												<strong>Salaris:</strong>
+												<span id="salaris1">1600-2000</span>
+											</li>
+											<li>
+												<strong>Werk-en denkniveau:</strong>
+												<span id="denkniveau1">MBO</span>
+											</li>
+											<li>
+												<strong>Vakgebied:</strong>
+												<span id="vakgebied1">Logistiek</span>
+											</li>
+											<li>
+												<strong>Branche:</strong>
+												<span id="branche1">Productie/ Industrie</span>
+											</li>
+											<li>
+												<strong>&nbsp;</strong>
+												<span>&nbsp;</span>
+											</li>
+											<li>
+												<strong>Frequentie:</strong>
+												<span>1 x per dag</span>
+											</li>
+										</ul>
+										<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+										<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
+									</div>
+								</li>
+								<li>
+									<div class="header">
+										<div class="job-title"  onclick="toggleView(this)">
+											<strong >Logistiek medewerker in Den Haag</strong >
+											<span class="olympia-icon olympia-caret-down pull-right"></span>
+										</div>
+										
+									</div>
+									<div class="job-body">
+										<ul>
+											<li>
+												<strong>Functies / trefwoorden:</strong>
+												<span>Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
+											</li>
+											<li>
+												<strong>Locatie en afstand:</strong>
+												<span>Rotterdam (10 km), Den Haag (5 km)</span>
+											</li>
+											<li>
+												<strong>Uren per week:</strong>
+												<span>32-40</span>
+											</li>
+											<li>
+												<strong>Dienstverband:</strong>
+												<span>Tijdelijk met uitzicht op vast, Vast</span>
+											</li>
+											<li>
+												<strong>Salaris:</strong>
+												<span>1600-2000</span>
+											</li>
+											<li>
+												<strong>Werk-en denkniveau:</strong>
+												<span>MBO</span>
+											</li>
+											<li>
+												<strong>Vakgebied:</strong>
+												<span>Logistiek</span>
+											</li>									
+											<li>
+												<strong>Branche:</strong>
+												<span>Productie/ Industrie</span>
+											</li>
+											<li>
+												<strong>&nbsp;</strong>
+												<span>&nbsp;</span>
+											</li>
+											<li>
+												<strong>Frequentie:</strong>
+												<span>Direct als er een passende vacature is</span>
+											</li>
+										</ul>
+										<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+										<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
+									</div>
+								</li>
+								<li>
+									<div class="header">
+										<div class="job-title" onclick="toggleView(this)">
+											<strong >Magazijnmedewerker in Gouda</strong >
+											<span class="olympia-icon olympia-caret-down pull-right"></span>
+										</div>
+										
+									</div>
+									<div class="job-body">
+										<ul>
+											<li>
+												<strong>Functies / trefwoorden:</strong>
+												<span>Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
+											</li>
+											<li>
+												<strong>Locatie en afstand:</strong>
+												<span>Rotterdam (10 km), Den Haag (5 km)</span>
+											</li>
+											<li>
+												<strong>Uren per week:</strong>
+												<span>32-40</span>
+											</li>
+											<li>
+												<strong>Dienstverband:</strong>
+												<span>Tijdelijk met uitzicht op vast, Vast</span>
+											</li>
+											<li>
+												<strong>Salaris:</strong>
+												<span>1600-2000</span>
+											</li>
+											<li>
+												<strong>Werk-en denkniveau:</strong>
+												<span>MBO</span>
+											</li>
+											<li>
+												<strong>Vakgebied:</strong>
+												<span>Logistiek</span>
+											</li>
+											<li>
+												<strong>Branche:</strong>
+												<span>Productie/ Industrie</span>
+											</li>
+											<li>
+												<strong>&nbsp;</strong>
+												<span>&nbsp;</span>
+											</li>
+											<li>
+												<strong>Frequentie:</strong>
+												<span>Direct als er een passende vacature is</span>
+											</li>
+										</ul>
+										<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+										<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
+									</div>
+								</li>
+								<li>
+									<div class="header">
+										<div class="job-title"  onclick="toggleView(this)">
+											<strong >Reachtruckchauffeur in Breda</strong>
+											<span class="olympia-icon olympia-caret-down pull-right"></span>
+										</div>
+										
+									</div>
+									<div class="job-body">
+										<ul>
+											<li>
+												<strong>Functies / trefwoorden:</strong>
+												<span>Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
+											</li>
+											<li>
+												<strong>Locatie en afstand:</strong>
+												<span>Rotterdam (10 km), Den Haag (5 km)</span>
+											</li>
+											<li>
+												<strong>Uren per week:</strong>
+												<span>32-40</span>
+											</li>
+											<li>
+												<strong>Dienstverband:</strong>
+												<span>Tijdelijk met uitzicht op vast, Vast</span>
+											</li>
+											<li>
+												<strong>Salaris:</strong>
+												<span>1600-2000</span>
+											</li>
+											<li>
+												<strong>Werk-en denkniveau:</strong>
+												<span>MBO</span>
+											</li>
+											<li>
+												<strong>Vakgebied:</strong>
+												<span>Logistiek</span>
+											</li>
+											<li>
+												<strong>Branche:</strong>
+												<span>Productie/ Industrie</span>
+											</li>
+											<li>
+												<strong>&nbsp;</strong>
+												<span>&nbsp;</span>
+											</li>
+											<li>
+												<strong>Frequentie:</strong>
+												<span>1 x per week</span>
+											</li>
+										</ul>
+										<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+										<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
+									</div>
+								</li>
+							</ul>
+							
+						</div>
+					</div>
+				</div>
+
+
 			</div>
 		</div>
 	</div>
@@ -814,5 +1099,31 @@
 	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="../js/main.js"></script>
 	<script src="../js/app.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		var globalCheck = $('.globalCheck input[type=checkbox]').prop("checked");
+		$('#emailAlert a').prop('href', 'MijnOlympia-email-alerts.html?globalCheck='+globalCheck)
+		$('#toggleButton5').on('change', function(){
+			var globalCheck = $('.globalCheck input[type=checkbox]').prop("checked");
+			$('#emailAlert a').prop('href', 'MijnOlympia-email-alerts.html?globalCheck='+globalCheck);
+		})
+
+		function getParameterByName(name) {
+	        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	            results = regex.exec(location.search);
+	        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	    }
+
+	    var globalCheck = getParameterByName('globalCheck');
+	    if(globalCheck === 'false'){
+	    	$('#emailAlert a').prop('href', 'MijnOlympia-email-alerts.html?globalCheck='+false);
+	    	$('.globalCheck input[type=checkbox]').removeAttr("checked");
+	    }else{
+	    	$('#emailAlert a').prop('href', 'MijnOlympia-email-alerts.html?globalCheck='+true);
+	    	$('.globalCheck input[type=checkbox]').attr("checked", true);
+	    } 
+	})
+	</script>
 </body>
 </html>
