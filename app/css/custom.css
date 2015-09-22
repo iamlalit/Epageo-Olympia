@@ -73,6 +73,9 @@ a:focus{
 .left-container .well.well-olympia .profile-data{
 	padding: 5px 7px 0 7px;
 }
+.right-container .well.well-olympia .profile-data{
+	margin: 10px 0 7px;
+}
 .left-container .well.well-olympia .profile-data label.title{
 	font-size: 16px;
 	margin-bottom: 0;
@@ -86,12 +89,23 @@ a:focus{
 	list-style-type: none;
 	padding: 2px 0;
 }
+.right-container .well.well-olympia .profile-data ul{
+	list-style-type: none;
+	margin-top: 5px;
+}
 .left-container .well.well-olympia .profile-data ul li .olympia-icon{
 	float: right;
 	font-size: 1.22em;
 	color: #666666;
 	cursor: pointer;
 }
+.right-container .well.well-olympia .profile-data ul li .olympia-icon{
+	float: right;
+	font-size: 1.22em;
+	color: #666666;
+	cursor: pointer;
+}
+
 .left-container .well.well-olympia .profile-data ul li:first-child{
 	padding-top: 3px;
 }
@@ -119,7 +133,7 @@ a:focus{
 	width: 100%;
 }
 .left-container .well.well-olympia .side-menu ul li:first-child{
-	margin-bottom: 10px
+	margin: 10px 0;
 }
 .left-container .well.well-olympia .side-menu ul li:hover a,
 .left-container .well.well-olympia .side-menu ul li:focus a{
