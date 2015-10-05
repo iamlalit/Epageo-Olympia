@@ -923,7 +923,7 @@
 												<span>Direct als er een passende vacature is</span>
 											</li>
 										</ul>
-										<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+										<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="MijnOlympia-email-alerts.html?id=2">E-mail alert instellingen bewerken</a></span>
 										<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
 									</div>
 								</li>
@@ -978,7 +978,7 @@
 												<span>Direct als er een passende vacature is</span>
 											</li>
 										</ul>
-										<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+										<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="MijnOlympia-email-alerts.html?id=3">E-mail alert instellingen bewerken</a></span>
 										<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
 									</div>
 								</li>
@@ -1033,7 +1033,7 @@
 												<span>1 x per week</span>
 											</li>
 										</ul>
-										<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+										<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="MijnOlympia-email-alerts.html?id=4">E-mail alert instellingen bewerken</a></span>
 										<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
 									</div>
 								</li>
@@ -1442,16 +1442,17 @@
 
 			if(globalCheck == false){
 				$('.accordion-data.alerts').children("li").each(function (i) {
-	                console.log($(this).find('.circle').removeClass('green').removeClass('red').addClass('red'));
+	              $(this).find('.circle').removeClass('green').removeClass('red').addClass('red');
 	            });	
 			}else{
 				$('.accordion-data.alerts').children("li").each(function (i) {
-	                console.log($(this).find('.circle').removeClass('green').removeClass('red').addClass('green'));
+	              $(this).find('.circle').removeClass('green').removeClass('red').addClass('green');
 	            });	
 			}
 		})
 
-		$('#toggleButton5').trigger('change');
+
+
 
 		function getParameterByName(name) {
 	        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -1464,9 +1465,15 @@
 	    if(globalCheck === 'false'){
 	    	$('#emailAlert a').prop('href', 'MijnOlympia-email-alerts.html?globalCheck='+false);
 	    	$('.globalCheck input[type=checkbox]').removeAttr("checked");
-	    }else{
+	    	$('.accordion-data.alerts').children("li").each(function (i) {
+              $(this).find('.circle').removeClass('green').removeClass('red').addClass('red');
+            });	
+	    }else if(globalCheck === 'true'){
 	    	$('#emailAlert a').prop('href', 'MijnOlympia-email-alerts.html?globalCheck='+true);
 	    	$('.globalCheck input[type=checkbox]').attr("checked", true);
+	    	$('.accordion-data.alerts').children("li").each(function (i) {
+              $(this).find('.circle').removeClass('green').removeClass('red').addClass('green');
+            });	
 	    }
 
 	    //to edit the details

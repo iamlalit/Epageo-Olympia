@@ -2047,7 +2047,19 @@ $(document).ready(function(){
 
 		$(".voorkeuren-box").addClass('hidden');
 		$(".alert-box").removeClass('hidden');
-	})	
+	})
+
+	function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    var clickingId = getParameterByName('id');
+    if(clickingId >= 2){
+    	editEmailAlert(clickingId);
+    }	
 });
 //delete email alert
 function deleteThisEmailAlert(obj){
