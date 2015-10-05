@@ -22,15 +22,15 @@
 				<div class=" pull-right login" style="background: #fff;">
 					<div class="meta">
 					    <div class="logged">
-							<div class="username"><span>Welkom Henk Van Dunzelkamp</span></div>
-
+					        <div class="username"><span>Welkom <strong>Henk Van Dunzelkamp</strong></span></div>
 					        <div class="profile">
-					            <a href="javascript:void(0)"> › mijn profiel</a> 
 					            <a href="javascript:void(0)"> › uitloggen</a>
-					            <a href="javascript:void(0)"> › stel een vraag</a>
 					        </div>
 					    </div>
-
+					    <div class="logged bell" >
+					    	<span class="olympia-icon olympia-bell-o" onclick="location.href='MijnOlympia-dashboard.html?scrollTo=notification'"></span>
+					    	<span class="number">3</span>
+					    </div>
 					    <div class="user">
 					        <img src="../img/pasfoto.jpg"/>
 					    </div>
@@ -288,11 +288,10 @@
 											<span>1 x per dag</span>
 										</li>
 									</ul>
-									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
-									<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
+									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="MijnOlympia-voorkeuren.html?toggleThis=true">E-mail alert instellingen bewerken</a></span>
 								</div>
 							</li>
-							<li>
+							<li id="2">
 								<div class="header">
 									<div class="form-group" id="fromTO">
 										<div class="switch on">
@@ -311,52 +310,52 @@
 								</div>
 								<div class="job-body">
 									<ul>
-										<li>
+										<li class="functies">
 											<strong>Functies / trefwoorden:</strong>
 											<span>Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
 										</li>
-										<li>
+										<li class="locatie">
 											<strong>Locatie en afstand:</strong>
 											<span>Rotterdam (10 km), Den Haag (5 km)</span>
 										</li>
-										<li>
+										<li class="uren">
 											<strong>Uren per week:</strong>
-											<span>32-40</span>
+											<span>32 - 40</span>
 										</li>
-										<li>
+										<li class="dienstverband">
 											<strong>Dienstverband:</strong>
 											<span>Tijdelijk met uitzicht op vast, Vast</span>
 										</li>
-										<li>
+										<li class="salary">
 											<strong>Salaris:</strong>
-											<span>1600-2000</span>
+											<span>1500 - 2000</span>
 										</li>
-										<li>
+										<li class="werkand">
 											<strong>Werk-en denkniveau:</strong>
 											<span>MBO</span>
 										</li>
-										<li>
+										<li class="vakgebied">
 											<strong>Vakgebied:</strong>
 											<span>Logistiek</span>
 										</li>									
-										<li>
+										<li class="branch">
 											<strong>Branche:</strong>
-											<span>Productie/ Industrie</span>
+											<span>Productie / Industrie</span>
 										</li>
 										<li>
 											<strong>&nbsp;</strong>
 											<span>&nbsp;</span>
 										</li>
-										<li>
+										<li class="frequency">
 											<strong>Frequentie:</strong>
 											<span>Direct als er een passende vacature is</span>
 										</li>
 									</ul>
-									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+									<span class="bewerk" onclick="editEmailAlert(2)"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
 									<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
 								</div>
 							</li>
-							<li>
+							<li id="3">
 								<div class="header">
 									<div class="form-group" id="fromTO">
 										<div class="switch on">
@@ -375,52 +374,52 @@
 								</div>
 								<div class="job-body">
 									<ul>
-										<li>
+										<li class="functies">
 											<strong>Functies / trefwoorden:</strong>
 											<span>Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
 										</li>
-										<li>
+										<li class="locatie">
 											<strong>Locatie en afstand:</strong>
 											<span>Rotterdam (10 km), Den Haag (5 km)</span>
 										</li>
-										<li>
+										<li class="uren">
 											<strong>Uren per week:</strong>
-											<span>32-40</span>
+											<span>32 - 40</span>
 										</li>
-										<li>
+										<li class="dienstverband">
 											<strong>Dienstverband:</strong>
 											<span>Tijdelijk met uitzicht op vast, Vast</span>
 										</li>
-										<li>
+										<li class="salary">
 											<strong>Salaris:</strong>
-											<span>1600-2000</span>
+											<span>1500 - 2000</span>
 										</li>
-										<li>
+										<li class="werkand">
 											<strong>Werk-en denkniveau:</strong>
 											<span>MBO</span>
 										</li>
-										<li>
+										<li class="vakgebied">
 											<strong>Vakgebied:</strong>
 											<span>Logistiek</span>
-										</li>
-										<li>
+										</li>									
+										<li class="branch">
 											<strong>Branche:</strong>
-											<span>Productie/ Industrie</span>
+											<span>Productie / Industrie</span>
 										</li>
 										<li>
 											<strong>&nbsp;</strong>
 											<span>&nbsp;</span>
 										</li>
-										<li>
+										<li class="frequency">
 											<strong>Frequentie:</strong>
 											<span>Direct als er een passende vacature is</span>
 										</li>
 									</ul>
-									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+									<span class="bewerk" onclick="editEmailAlert(3)"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
 									<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
 								</div>
 							</li>
-							<li>
+							<li id="4">
 								<div class="header">
 									<div class="form-group" id="fromTO">
 										<div class="switch on">
@@ -439,48 +438,48 @@
 								</div>
 								<div class="job-body">
 									<ul>
-										<li>
+										<li class="functies">
 											<strong>Functies / trefwoorden:</strong>
 											<span>Heftruckchauffeur, Logistiek, Transport, Orderpicker</span>
 										</li>
-										<li>
+										<li class="locatie">
 											<strong>Locatie en afstand:</strong>
 											<span>Rotterdam (10 km), Den Haag (5 km)</span>
 										</li>
-										<li>
+										<li class="uren">
 											<strong>Uren per week:</strong>
-											<span>32-40</span>
+											<span>32 - 40</span>
 										</li>
-										<li>
+										<li class="dienstverband">
 											<strong>Dienstverband:</strong>
 											<span>Tijdelijk met uitzicht op vast, Vast</span>
 										</li>
-										<li>
+										<li class="salary">
 											<strong>Salaris:</strong>
-											<span>1600-2000</span>
+											<span>1500 - 2000</span>
 										</li>
-										<li>
+										<li class="werkand">
 											<strong>Werk-en denkniveau:</strong>
 											<span>MBO</span>
 										</li>
-										<li>
+										<li class="vakgebied">
 											<strong>Vakgebied:</strong>
 											<span>Logistiek</span>
-										</li>
-										<li>
+										</li>									
+										<li class="branch">
 											<strong>Branche:</strong>
-											<span>Productie/ Industrie</span>
+											<span>Productie / Industrie</span>
 										</li>
 										<li>
 											<strong>&nbsp;</strong>
 											<span>&nbsp;</span>
 										</li>
-										<li>
+										<li class="frequency">
 											<strong>Frequentie:</strong>
-											<span>1 x per week</span>
+											<span>Direct als er een passende vacature is</span>
 										</li>
 									</ul>
-									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+									<span class="bewerk" onclick="editEmailAlert(4)"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
 									<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
 								</div>
 							</li>
@@ -488,7 +487,7 @@
 						
 					</div>
 					<div class="accordion-button">
-						<a href="javascript:void(0)" onclick="toggleTheView()">voeg een nieuwe job alert toe</a>
+						<a href="javascript:void(0)" onclick="emptyTheForm()">voeg een nieuwe job alert toe</a>
 					</div>
 				</div>
 			</div>
@@ -496,6 +495,9 @@
 				<div class="well well-olympia">
 					<h1>Nieuwe Job alert instellen</h1>
 					<div class="box-inner">
+
+						<input type="hidden" id="clickedIdparam" />
+
 						<label>Geef deze job alert een naam:</label>
 						<div class="form-group">
 							<input type="text" class="alertname form-control" placeholder="type hier een naam voor deze alert"/>
@@ -1008,6 +1010,7 @@
 						<div class="row margin-top-15">
 							<div class="col-lg-12">
                             	<button type="submit" id="saveVoorkeurenDataAlertPage" class="btn btn-primary medium-text pull-right">Wijzigingen opslaan</button>
+                            	<button type="submit" id="updateVoorkeurenDataAlertPage" class="btn btn-primary medium-text pull-right hidden">Wijzigingen opslaan</button>
                             </div>
                         </div>
                     </div>
@@ -1119,6 +1122,12 @@
 			$('#emailAlert a').prop('href', 'MijnOlympia-dashboard.html?globalCheck='+newCheckVariable);
 	    }
 	    
+	    var toggleThis = getParameterByName('toggleThis')
+	    if(toggleThis == 'true'){
+	   		$(".voorkeuren-box").removeClass('hidden');
+			$(".alert-box").addClass('hidden'); 	
+	    }
+
 	</script>
 </body>
 </html>

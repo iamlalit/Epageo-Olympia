@@ -21,15 +21,15 @@
 				<div class=" pull-right login" style="background: #fff;">
 					<div class="meta">
 					    <div class="logged">
-					        <div class="username"><span>Welkom Henk Van Dunzelkamp</span></div>
-
+					        <div class="username"><span>Welkom <strong>Henk Van Dunzelkamp</strong></span></div>
 					        <div class="profile">
-					            <a href="javascript:void(0)"> › mijn profiel</a> 
 					            <a href="javascript:void(0)"> › uitloggen</a>
-					            <a href="javascript:void(0)"> › stel een vraag</a>
 					        </div>
 					    </div>
-
+					    <div class="logged bell" >
+					    	<span class="olympia-icon olympia-bell-o" onclick="location.href='MijnOlympia-dashboard.html?scrollTo=notification'"></span>
+					    	<span class="number">3</span>
+					    </div>
 					    <div class="user">
 					        <img src="../img/pasfoto.jpg"/>
 					    </div>
@@ -218,16 +218,17 @@
 				<div class="well well-olympia">
 					<h1>Goedemiddag Henk!</h1>
 					<div class="box-inner">
-						<p>Welkom op je MijnOlympia account. Je laatste bezoek was op dinsdag 23 maart 2015 om 19:34.</p>
+						<p>Welkom op je Mijn Olympia account. Je laatste bezoek was op dinsdag 23 maart 2015 om 19:34.</p>
 						<hr>
-						<label class="title black">Ben je momenteel op zoek naar werk?</label><span class="pull-right bewerk"><i class="olympia-icon olympia-edit"></i>&nbsp;<a href="#" data-toggle="modal" data-target="#bewerkenVoorkeuren">Bewerken</a></span>
-						<div>
+						<label class="title black">Ben je momenteel op zoek naar werk?</label>
+						<div id="pasteString1">
 							<span class="actualString">
 								<span class="string1"></span>
 								<span ><strong class="dates"></strong></span>
-								<span ><strong class="string2"></strong></span>
+								<span class="olympia-icon olympia-pencil"></span>
 							</span>
 						</div>
+
 						<hr>
 						<p>Olympia helpt je graag bij het zoeken naar een baan. Zorg er dus voor dat je gegevens altijd up to date zijn. Op die manier kan Olympia jou nog beter van dienst zijn.</p>
 						<div class="row">
@@ -238,7 +239,7 @@
 									<ul>
 										<li class="sub-title"><label class="sub-title">Naam:</label></li>
 										<li class="address"><span class="data">Henk van Dunzelkamp</span><span class="olympia-icon olympia-pencil" data-name="persoonlijke" data-href="MijnOlympia-account.html"></span></li>
-										<li class="sub-title"><label class="sub-title">Woonplats:</label></li>
+										<li class="sub-title"><label class="sub-title">Woonplaats:</label></li>
 										<li class="city"><span class="data">Amersfoort</span><span class="olympia-icon olympia-pencil" data-name="persoonlijke" data-href="MijnOlympia-account.html"></span></li>
 										<li class="sub-title"><label class="sub-title">Telefoon:</label></li>
 										<li class="phone"><span class="data" >06-35792468</span><span class="olympia-icon olympia-pencil" data-name="persoonlijke" data-href="MijnOlympia-account.html"></span></li>
@@ -251,7 +252,7 @@
 									<label class="title addresses black">&nbsp;</label>
 									<ul>
 										<li class="sub-title"><label class="sub-title">E-mail:</label></li>
-										<li class="email"><span class="data">henk.van.dunzelamp@outlook.com</span><span class="olympia-icon olympia-pencil" data-href="MijnOlympia-account.html" data-name="emailadres"></span></li>
+										<li class="email"><span class="data">henk.van.dunzelkamp@outlook.com</span><span class="olympia-icon olympia-pencil" data-href="MijnOlympia-account.html" data-name="emailadres"></span></li>
 										<li class="sub-title"><label class="sub-title">Wachtwoord:</label></li>
 										<li class="phone"><span class="data"><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span><span class="olympia-circle"></span></span><span class="olympia-icon olympia-pencil" data-name="Wachtwoordwijzigen" data-href="MijnOlympia-account.html"></span></li>
 									</ul>
@@ -276,82 +277,397 @@
 						</div>
 					</div>
 				</div>
+				<div class="well well-olympia notification">
+					<h1 class="black">Mijn berichten</h1>
+					<div class="box-inner accordion">
+						<div class="row">
+							<div class="col-lg-12">
+								<ul class="accordion-data">
+									<li>
+										<div class="header">
+											<div class="job-title" onclick="toggleView(this)">
+												<span class="olympia-icon olympia-bell-o"></span>
+												<strong>3 nieuwe vacature suggesties</strong>
+												<span class="olympia-icon olympia-caret-down pull-right"></span>
+											</div>
+										</div>
+										<div class="job-body">
+											<p>Er zijn 3 nieuwe vacatures geplaatst die aansluiten op jouw profiel of jouw e-mail alerts</p>
+											<div class="row">
+												<div class="col-sm-4">
+													<div class="small-box">
+														<label class="title black">Magazijnmedewerker</label>
+														<p>&nbsp;</p>
+														<ul style="margin-top: 17px">
+															<li><label>Werkgever:</label> <span>HEMA</span></li>
+															<li><label>Locatie:</label> <span>Woerdam</span></li>
+															<li><label>Match met jouw profiel: <span>95%</span></label></li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="small-box">
+														<label class="title black">Orderpicker</label>
+														<p>&nbsp;</p>
+														<ul style="margin-top: 17px">
+															<li><label>Werkgever:</label> <span>ROCKWOOL</span></li>
+															<li><label>Locatie:</label> <span>Tilburg</span></li>
+															<li><label>Match met jouw profiel: <span>90%</span></label></li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="small-box">
+														<label class="title black">Parttime logistiek Medewerker</label>
+														<ul style="margin-top: 10px">
+															<li><label>Werkgever:</label> <span>Kruidvat</span></li>
+															<li><label>Locatie:</label> <span>Naaldwijk</span></li>
+															<li><label>Match met jouw profiel: <span>75%</span></label></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="header">
+											<div class="job-title" onclick="toggleView(this)">
+												<span class="olympia-icon olympia-bell-o"></span>
+												<strong>Statusverandering sollicitatie - Magazijnmedewerker(m/v)</strong>
+												<span class="olympia-icon olympia-caret-down pull-right"></span>
+											</div>
+										</div>
+										<div class="job-body">
+											<p>Er zijn 3 nieuwe vacatures geplaatst die aansluiten op jouw profiel of jouw e-mail alerts</p>
+											<div class="row">
+												<div class="col-sm-4">
+													<div class="small-box">
+														<label class="title black">Magazijnmedewerker</label>
+														<p>&nbsp;</p>
+														<ul style="margin-top: 17px">
+															<li><label>Werkgever:</label> <span>HEMA</span></li>
+															<li><label>Locatie:</label> <span>Woerdam</span></li>
+															<li><label>Match met jouw profiel: <span>95%</span></label></li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="small-box">
+														<label class="title black">Orderpicker</label>
+														<p>&nbsp;</p>
+														<ul style="margin-top: 17px">
+															<li><label>Werkgever:</label> <span>ROCKWOOL</span></li>
+															<li><label>Locatie:</label> <span>Tilburg</span></li>
+															<li><label>Match met jouw profiel: <span>90%</span></label></li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="small-box">
+														<label class="title black">Parttime logistiek Medewerker</label>
+														<ul style="margin-top: 10px">
+															<li><label>Werkgever:</label> <span>Kruidvat</span></li>
+															<li><label>Locatie:</label> <span>Naaldwijk</span></li>
+															<li><label>Match met jouw profiel: <span>75%</span></label></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="header">
+											<div class="job-title" onclick="toggleView(this)">
+												<span class="olympia-icon olympia-bell-o"></span>
+												<strong>Statusverandering sollicitatie - Fulltime orderpicker</strong>
+												<span class="olympia-icon olympia-caret-down pull-right"></span>
+											</div>
+										</div>
+										<div class="job-body">
+											<p>Er zijn 3 nieuwe vacatures geplaatst die aansluiten op jouw profiel of jouw e-mail alerts</p>
+											<div class="row">
+												<div class="col-sm-4">
+													<div class="small-box">
+														<label class="title black">Magazijnmedewerker</label>
+														<p>&nbsp;</p>
+														<ul style="margin-top: 17px">
+															<li><label>Werkgever:</label> <span>HEMA</span></li>
+															<li><label>Locatie:</label> <span>Woerdam</span></li>
+															<li><label>Match met jouw profiel: <span>95%</span></label></li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="small-box">
+														<label class="title black">Orderpicker</label>
+														<p>&nbsp;</p>
+														<ul style="margin-top: 17px">
+															<li><label>Werkgever:</label> <span>ROCKWOOL</span></li>
+															<li><label>Locatie:</label> <span>Tilburg</span></li>
+															<li><label>Match met jouw profiel: <span>90%</span></label></li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="small-box">
+														<label class="title black">Parttime logistiek Medewerker</label>
+														<ul style="margin-top: 10px">
+															<li><label>Werkgever:</label> <span>Kruidvat</span></li>
+															<li><label>Locatie:</label> <span>Naaldwijk</span></li>
+															<li><label>Match met jouw profiel: <span>75%</span></label></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="well well-olympia sollicitaties">
 					<h1 class="black">Mijn sollicitaties 'track &amp; trace'</h1>
-					<div class="box-inner">
+					<div class="box-inner accordion">
 						<div class="row">
 							<div class="col-lg-12 text-center">
 								<label>Vandaag<br>08-07-2015</label><br>
 								<i class="olympia-icon olympia-map-marker"></i>
 							</div>
 							<div class="col-lg-12 solid-line">
-								<ul>
+								<span>&nbsp;</span>
+								<ul class="accordion-data">
 									<li>
-										<div class="heading">
-											<strong>Magazijnmedewerker (m/v)</strong>
-											<strong class="pull-right">81 anderen solliciteerden op deze functie</strong>
-										</div>
-										<div class="job-description">
-											<div class="row">
-												<div class="box pre box1" style="margin-left: 40px;">
-													<label>1. sollicitatie verstuurd<br><span>03-07-2015</span></label>
-												</div>
-												<div class="box center">
-													<label>2. geaccepteerd/ afgewezen<br><span>verwacht: 10-07-2015</span></label>
-												</div>
-												<div class="box post">
-													<label>3. voorgesteld werkgever<br><span>verwacht: 24-07-2015</span></label>
-												</div>
-												<div class="box post box1">
-													<label>4. eerste werkdag<br><span>verwacht: 07-08-2015</span></label>
+										<div class="heading" onclick="toggleView(this)">
+											<div>
+												<strong>Magazijnmedewerker (m/v)</strong>
+												<strong class="pull-right">meer dan 81 andere werkzoekenden solliciteerden ook op deze functie &nbsp;&nbsp;<span class="olympia-caret-down olympia-icon pull-right"></span></strong>
+											</div>
+											<div class="job-description">
+												<div class="row">
+													<div class="box pre box1" style="margin-left: 40px;">
+														<label>1. sollicitatie verstuurd<br><span>03-07-2015</span></label>
+													</div>
+													<div class="box center">
+														<label>2. geaccepteerd/ afgewezen<br><span>verwacht: 10-07-2015</span></label>
+													</div>
+													<div class="box post">
+														<label>3. voorgesteld werkgever<br><span>verwacht: 24-07-2015</span></label>
+													</div>
+													<div class="box post box1">
+														<label>4. eerste werkdag<br><span>verwacht: 07-08-2015</span></label>
+													</div>
 												</div>
 											</div>
 										</div>
-										<hr>
+										<div class="job-body">
+											<h1>Magazijnmedewerker</h1>
+											<ul class="accordion-li">
+												<li><strong>Plaats</strong><span>Woerden</span></li>
+												<li><strong>Dienstverband</strong><span>Vast</span></li>
+												<li><strong>Werkgever</strong><span>HEMA</span></li>
+												<li><strong>Werk/denkniveau</strong><span>MBO werk- en denkniveau</span></li>
+												<li><strong>Fulltime / parttime</strong><span>Fulltime</span></li>
+												<li><strong>Branche</strong><span>Transport</span></li>
+												<li><strong>Aantal uur</strong><span>40</span></li>
+												<li><strong>Vakgebied</strong><span>Magazijn</span></li>
+												<li><strong>Salaris</strong><span>1500 - 2000</span></li>
+												<li><strong>Vacaturenummer <a id="tooltip1" class="website-icons small" data-container="body" data-toggle="popover" data-placement="top" data-original-title="Vacaturenummer" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu." style="cursor: pointer;"><i class="olympia-info3"></i></a></strong><span>12345678</span></li>
+											</ul>
+											<div class="para with-image">
+												<label class="title">Organisatie-omschrijving</label>
+												<div class="row">
+													<p class="col-lg-10">Rockwool in Roermond fabriceert een breed scala aan steenwolproducten. In vier Business Units wordt een compleet assortiment isolatieproducten ten behoeve van utiliteits- en woningbouw en industrie geproduceerd alsmede groeimedia voor de glastuinbouw, systeemplafonds, gevelbekledingsmaterialen en steenwolvezels met materiaal versterkende eigenschappen.
+													</p>
+													<div class="col-lg-2 padding-left-0">
+														<div class="img-thumbnail">
+															<img src="../img/VacaturesRockwoolGroup.png"/>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="para">
+												<label class="title">Functie-omschrijving</label>
+												<p>Je bent verantwoordelijk voor het aan- en afvoeren van goederen, het beheren van de opslag en het verzendklaar maken van goederen. Ook is het belangrijk om affiniteit en ervaring te hebben met het bedienen van machines.</p>
+											</div>
+											
+											<div class="listed">
+												<label class="title">Ons aanbod</label>
+												<ul>
+													<li><span>Goed salaris en ploegentoeslagen</span></li>
+													<li><span>Reiskostenvergoeding</span></li>
+												</ul>
+												<p>Het betreft in eerste instantie een baan op oproepbasis.</p>
+											</div>
+
+											<div class="listed">
+												<label class="title">Wij vragen</label>
+												<ul>
+													<li><span>Ben je in het bezit van een Heftruckcertificaat?</span></li>
+													<li><span>Ben je in het bezit van eigen vervoer?</span></li>
+													<li><span>Hoeveel jaar heb je al ervaring als heftruckchauffeur?</span></li>
+												</ul>
+											</div>
+											<div class="listed">
+												<p><label class="title">Olympia contactpersoon voor deze vacature is:</label><br />Jesse van Geel<br />Heb je een vraag?<br />Bel mij op: 0781-567890 of <a href="javascript:void(0)">stuur mij een bericht</a></p>
+												<p><a href="javascript:void(0)">Toon vestiging</a><iframe width="610" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Rockwool%20B.V.%2C%20Industrieweg%2C%20Roermond%2C%20Netherlands&key=AIzaSyAxPR24fWAceFOtzwar79le2f7BtY_wLq4"></iframe></p>
+											</div>
+										</div>
+
 									</li>
 									<li>
-										<div class="heading">
-											<strong>Fulltime orderpicker</strong>
-											<strong class="pull-right">9 anderen solliciteerden op deze functie</strong>
-										</div>
-										<div class="job-description">
-											<div class="row">
-												<div class="box pre box1">
-													<label>1. sollicitatie verstuurd<br><span>01-07-2015</span></label>
-												</div>
-												<div class="box pre">
-													<label>2. geaccepteerd<br><span>07-07-2015</span></label>
-												</div>
-												<div class="box center">
-													<label>3. voorgesteld werkgever<br><span>verwacht: 20-07-2015</span></label>
-												</div>
-												<div class="box post box1">
-													<label>4. eerste werkdag<br><span>verwacht: 03-08-2015</span></label>
+										<div class="heading" onclick="toggleView(this)">
+											<div>
+												<strong>Fulltime orderpicker</strong>
+												<strong class="pull-right">minder dan 15 andere werkzoekenden solliciteerden ook op deze functie &nbsp;&nbsp;<span class="olympia-caret-down olympia-icon pull-right"></span></strong>
+											</div>
+											<div class="job-description">
+												<div class="row">
+													<div class="box pre box1">
+														<label>1. sollicitatie verstuurd<br><span>01-07-2015</span></label>
+													</div>
+													<div class="box pre">
+														<label>2. geaccepteerd<br><span>07-07-2015</span></label>
+													</div>
+													<div class="box center">
+														<label>3. voorgesteld werkgever<br><span>verwacht: 20-07-2015</span></label>
+													</div>
+													<div class="box post box1">
+														<label>4. eerste werkdag<br><span>verwacht: 03-08-2015</span></label>
+													</div>
 												</div>
 											</div>
 										</div>
-										<hr>
+										<div class="job-body">
+											<h1>Magazijnmedewerker</h1>
+											<ul class="accordion-li">
+												<li><strong>Plaats</strong><span>Woerden</span></li>
+												<li><strong>Dienstverband</strong><span>Vast</span></li>
+												<li><strong>Werkgever</strong><span>HEMA</span></li>
+												<li><strong>Werk/denkniveau</strong><span>MBO werk- en denkniveau</span></li>
+												<li><strong>Fulltime / parttime</strong><span>Fulltime</span></li>
+												<li><strong>Branche</strong><span>Transport</span></li>
+												<li><strong>Aantal uur</strong><span>40</span></li>
+												<li><strong>Vakgebied</strong><span>Magazijn</span></li>
+												<li><strong>Salaris</strong><span>1500 - 2000</span></li>
+												<li><strong>Vacaturenummer <a id="tooltip1" class="website-icons small" data-container="body" data-toggle="popover" data-placement="top" data-original-title="Vacaturenummer" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu." style="cursor: pointer;"><i class="olympia-info3"></i></a></strong><span>12345678</span></li>
+											</ul>
+											<div class="para with-image">
+												<label class="title">Organisatie-omschrijving</label>
+												<div class="row">
+													<p class="col-lg-10">Rockwool in Roermond fabriceert een breed scala aan steenwolproducten. In vier Business Units wordt een compleet assortiment isolatieproducten ten behoeve van utiliteits- en woningbouw en industrie geproduceerd alsmede groeimedia voor de glastuinbouw, systeemplafonds, gevelbekledingsmaterialen en steenwolvezels met materiaal versterkende eigenschappen.
+													</p>
+													<div class="col-lg-2 padding-left-0">
+														<div class="img-thumbnail">
+															<img src="../img/VacaturesRockwoolGroup.png"/>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="para">
+												<label class="title">Functie-omschrijving</label>
+												<p>Je bent verantwoordelijk voor het aan- en afvoeren van goederen, het beheren van de opslag en het verzendklaar maken van goederen. Ook is het belangrijk om affiniteit en ervaring te hebben met het bedienen van machines.</p>
+											</div>
+											
+											<div class="listed">
+												<label class="title">Ons aanbod</label>
+												<ul>
+													<li><span>Goed salaris en ploegentoeslagen</span></li>
+													<li><span>Reiskostenvergoeding</span></li>
+												</ul>
+												<p>Het betreft in eerste instantie een baan op oproepbasis.</p>
+											</div>
+
+											<div class="listed">
+												<label class="title">Wij vragen</label>
+												<ul>
+													<li><span>Ben je in het bezit van een Heftruckcertificaat?</span></li>
+													<li><span>Ben je in het bezit van eigen vervoer?</span></li>
+													<li><span>Hoeveel jaar heb je al ervaring als heftruckchauffeur?</span></li>
+												</ul>
+											</div>
+											<div class="listed">
+												<p><label class="title">Olympia contactpersoon voor deze vacature is:</label><br />Jesse van Geel<br />Heb je een vraag?<br />Bel mij op: 0781-567890 of <a href="javascript:void(0)">stuur mij een bericht</a></p>
+												<p><a href="javascript:void(0)">Toon vestiging</a><iframe width="610" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Rockwool%20B.V.%2C%20Industrieweg%2C%20Roermond%2C%20Netherlands&key=AIzaSyAxPR24fWAceFOtzwar79le2f7BtY_wLq4"></iframe></p>
+											</div>
+										</div>
+
 									</li>
 									<li>
-										<div class="heading">
-											<strong>Heftruckchauffeur (m/v)</strong>
-											<strong class="pull-right">44 anderen solliciteerden op deze functie</strong>
-										</div>
-										<div class="job-description">
-											<div class="row">
-												<div class="box pre-rejected box1">
-													<label>1. sollicitatie verstuurd<br><span>01-07-2015</span></label>
-												</div>
-												<div class="box pre-rejected">
-													<label>2. afgewezen<br><span>07-07-2015</span></label>
+										<div class="heading" onclick="toggleView(this)">
+											<div>
+												<strong>Heftruckchauffeur (m/v)</strong>
+												<strong class="pull-right">meer dan 44 andere werkzoekenden solliciteerden ook op deze functie &nbsp;&nbsp;<span class="olympia-caret-down olympia-icon pull-right"></span></strong>
+											</div>
+											<div class="job-description">
+												<div class="row">
+													<div class="box pre-rejected box1">
+														<label>1. sollicitatie verstuurd<br><span>01-07-2015</span></label>
+													</div>
+													<div class="box pre-rejected">
+														<label>2. afgewezen<br><span>07-07-2015</span></label>
+													</div>
 												</div>
 											</div>
 										</div>
-										<hr>
+										<div class="job-body">
+											<h1>Magazijnmedewerker</h1>
+											<ul class="accordion-li">
+												<li><strong>Plaats</strong><span>Woerden</span></li>
+												<li><strong>Dienstverband</strong><span>Vast</span></li>
+												<li><strong>Werkgever</strong><span>HEMA</span></li>
+												<li><strong>Werk/denkniveau</strong><span>MBO werk- en denkniveau</span></li>
+												<li><strong>Fulltime / parttime</strong><span>Fulltime</span></li>
+												<li><strong>Branche</strong><span>Transport</span></li>
+												<li><strong>Aantal uur</strong><span>40</span></li>
+												<li><strong>Vakgebied</strong><span>Magazijn</span></li>
+												<li><strong>Salaris</strong><span>1500 - 2000</span></li>
+												<li><strong>Vacaturenummer <a id="tooltip1" class="website-icons small" data-container="body" data-toggle="popover" data-placement="top" data-original-title="Vacaturenummer" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu." style="cursor: pointer;"><i class="olympia-info3"></i></a></strong><span>12345678</span></li>
+											</ul>
+											<div class="para with-image">
+												<label class="title">Organisatie-omschrijving</label>
+												<div class="row">
+													<p class="col-lg-10">Rockwool in Roermond fabriceert een breed scala aan steenwolproducten. In vier Business Units wordt een compleet assortiment isolatieproducten ten behoeve van utiliteits- en woningbouw en industrie geproduceerd alsmede groeimedia voor de glastuinbouw, systeemplafonds, gevelbekledingsmaterialen en steenwolvezels met materiaal versterkende eigenschappen.
+													</p>
+													<div class="col-lg-2 padding-left-0">
+														<div class="img-thumbnail">
+															<img src="../img/VacaturesRockwoolGroup.png"/>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="para">
+												<label class="title">Functie-omschrijving</label>
+												<p>Je bent verantwoordelijk voor het aan- en afvoeren van goederen, het beheren van de opslag en het verzendklaar maken van goederen. Ook is het belangrijk om affiniteit en ervaring te hebben met het bedienen van machines.</p>
+											</div>
+											
+											<div class="listed">
+												<label class="title">Ons aanbod</label>
+												<ul>
+													<li><span>Goed salaris en ploegentoeslagen</span></li>
+													<li><span>Reiskostenvergoeding</span></li>
+												</ul>
+												<p>Het betreft in eerste instantie een baan op oproepbasis.</p>
+											</div>
+
+											<div class="listed">
+												<label class="title">Wij vragen</label>
+												<ul>
+													<li><span>Ben je in het bezit van een Heftruckcertificaat?</span></li>
+													<li><span>Ben je in het bezit van eigen vervoer?</span></li>
+													<li><span>Hoeveel jaar heb je al ervaring als heftruckchauffeur?</span></li>
+												</ul>
+											</div>
+											<div class="listed">
+												<p><label class="title">Olympia contactpersoon voor deze vacature is:</label><br />Jesse van Geel<br />Heb je een vraag?<br />Bel mij op: 0781-567890 of <a href="javascript:void(0)">stuur mij een bericht</a></p>
+												<p><a href="javascript:void(0)">Toon vestiging</a><iframe width="610" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Rockwool%20B.V.%2C%20Industrieweg%2C%20Roermond%2C%20Netherlands&key=AIzaSyAxPR24fWAceFOtzwar79le2f7BtY_wLq4"></iframe></p>
+											</div>
+										</div>
+
 									</li>
 								</ul>
 							</div>
-							<div class="text-center"><a href="MijnOlympia-sollicitaties.html">Alle sollicitaties</a></div>
+							<div class="text-center"><a href="MijnOlympia-sollicitaties.html">Bekijk al je sollicitaties (3)</a></div>
 						</div>
 					</div>
 				</div>
@@ -393,7 +709,7 @@
 						<div class="text-center"><a href="MijnOlympia-suggesties.html">Alle suggesties</a></div>
 					</div>
 				</div>
-				<div class="well well-olympia orange-well">
+				<div class="well well-olympia orange-well hidden">
 					<h1 class="black">Vacatures zoeken</h1>
 					<div class="box-inner">
 						<div class="row">
@@ -485,7 +801,7 @@
 
 				<div class="dashboard right-container alert-box">
 					<div class="well well-olympia" style="">
-						<h1 class="black">Mijn e-mail alerts <a id="tooltip1" class="website-icons small" data-container="body" data-toggle="popover" data-placement="top" data-original-title="Mijn e-mail alerts" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu." style="cursor: pointer;"><i class="olympia-info3"></i></a>
+						<h1 class="black">Mijn e-mail alerts <a id="tooltip1" class="website-icons small" data-container="body" data-toggle="popover" data-placement="top" data-original-title="Mijn e-mail alerts" data-content="Je kunt e-mail alerts instellen om per e-mail op de hoogte gehouden te worden van nieuwe vacatures.<br><br>De eerste alert is aangemaakt op basis van je Mijn Voorkeuren. Deze kun je aanpassen in de Mijn Voorkeuren pagina van je Mijn Olympia account.<br><br>Naast deze e-mail alerts kun je additionele alerts aanmaken in de Mijn E-mail alerts sectie van je Mijn Olympia account. Dit kan handig zijn wanneer je los van je voorkeuren ook op open staat voor (andere) functies of werk in andere locaties.<br><br>Je kunt per e-mail alert ook instellen hoe vaak je wil dat wij je per e-mail op de hoogte houden van nieuwe vacatures. Met de Aan-uit knop hiernaast kun je alle e-mail alerts in één keer in- of uitschakelen." style="cursor: pointer;"><i class="olympia-info3"></i></a>
 						</h1>
 						<div class="header globalSwitch">
 							<div class="form-group" id="fromTO">
@@ -506,10 +822,9 @@
 								<li>
 									<div class="header">
 										<div class="job-title" onclick="toggleView(this)">
-											<strong id="alertname">(Automatisch) op basis van je voorkeuren</strong >
+											<small class="circle green"></small><strong id="alertname">(Automatisch) op basis van je voorkeuren</strong >
 											<span class="olympia-icon olympia-caret-down pull-right"></span>
 										</div>
-										
 									</div>
 									<div class="job-body">
 										<ul>
@@ -554,14 +869,13 @@
 												<span>1 x per dag</span>
 											</li>
 										</ul>
-										<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
-										<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
+										<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="MijnOlympia-voorkeuren.html?toggleThis=true">E-mail alert instellingen bewerken</a></span>
 									</div>
 								</li>
 								<li>
 									<div class="header">
 										<div class="job-title"  onclick="toggleView(this)">
-											<strong >Logistiek medewerker in Den Haag</strong >
+											<small class="circle green"></small><strong >Logistiek medewerker in Den Haag</strong >
 											<span class="olympia-icon olympia-caret-down pull-right"></span>
 										</div>
 										
@@ -616,7 +930,7 @@
 								<li>
 									<div class="header">
 										<div class="job-title" onclick="toggleView(this)">
-											<strong >Magazijnmedewerker in Gouda</strong >
+											<small class="circle red"></small><strong >Magazijnmedewerker in Gouda</strong >
 											<span class="olympia-icon olympia-caret-down pull-right"></span>
 										</div>
 										
@@ -671,7 +985,7 @@
 								<li>
 									<div class="header">
 										<div class="job-title"  onclick="toggleView(this)">
-											<strong >Reachtruckchauffeur in Breda</strong>
+											<small class="circle red"></small><strong >Reachtruckchauffeur in Breda</strong>
 											<span class="olympia-icon olympia-caret-down pull-right"></span>
 										</div>
 										
@@ -757,7 +1071,7 @@
 						<div class="form-group nieuw">
 							<div class="radio">
 								<label>
-									<input type="radio" name="radioNieuw" id="radio-nieuw1" value="option1" data-required="true" checked/> <strong>Ja</strong>, ik ben op zoek naar werk
+									<input type="radio" name="radioNieuw" id="radio-nieuw1" value="option1" data-required="true" checked/> <span>Ja, ik ben op zoek naar werk</span>
 								</label>
 							</div>
 							<div class="radio">
@@ -803,18 +1117,18 @@
 									<div class="col-lg-3 padding-r-0">
 										<select class="form-control" id="pop-startdatum-maand-1">
 											<option value="00">Maand</option>
-											<option value="01">Januari</option>
-											<option value="02">Februari</option>
-											<option value="03">Maart</option>
-											<option value="04">April</option>
-											<option value="05">Mei</option>
-											<option value="06" selected>Juni</option>
-											<option value="07">Juli</option>
-											<option value="08">Augustus</option>
-											<option value="09">September</option>
-											<option value="10">Oktober</option>
-											<option value="11">November</option>
-											<option value="12">December</option>
+											<option value="Januari">Januari</option>
+											<option value="Februari">Februari</option>
+											<option value="Maart">Maart</option>
+											<option value="April">April</option>
+											<option value="Mei">Mei</option>
+											<option value="Juni" selected>Juni</option>
+											<option value="Juli">Juli</option>
+											<option value="Augustus">Augustus</option>
+											<option value="September">September</option>
+											<option value="Oktober">Oktober</option>
+											<option value="November">November</option>
+											<option value="December">December</option>
 										</select>
 									</div>
 									<div class="col-lg-3">
@@ -907,10 +1221,10 @@
 									</div>
 									<div class="col-lg-2 padding-rl-0">
 										<select class="form-control" id="pop-enddatum-date-1">
-											<option value="0">Datum</option>
+											<option value="0" selected>Datum</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="3" selected>3</option>
+											<option value="3">3</option>
 											<option value="4">4</option>
 											<option value="5">5</option>
 											<option value="6">6</option>
@@ -942,25 +1256,25 @@
 									</div>
 									<div class="col-lg-3 padding-r-0">
 										<select class="form-control" id="pop-enddatum-maand-1">
-											<option value="00">Maand</option>
-											<option value="01">Januari</option>
-											<option value="02">Februari</option>
-											<option value="03">Maart</option>
-											<option value="04">April</option>
-											<option value="05">Mei</option>
-											<option value="06">Juni</option>
-											<option value="07">Juli</option>
-											<option value="08" selected>Augustus</option>
-											<option value="09">September</option>
-											<option value="10">Oktober</option>
-											<option value="11">November</option>
-											<option value="12">December</option>
+											<option value="00" selected>Maand</option>
+											<option value="Januari">Januari</option>
+											<option value="Februari">Februari</option>
+											<option value="Maart">Maart</option>
+											<option value="April">April</option>
+											<option value="Mei">Mei</option>
+											<option value="Juni">Juni</option>
+											<option value="Juli">Juli</option>
+											<option value="Augustus">Augustus</option>
+											<option value="September">September</option>
+											<option value="Oktober">Oktober</option>
+											<option value="November">November</option>
+											<option value="December">December</option>
 										</select>
 									</div>
 									<div class="col-lg-3">
 										<select class="form-control" id="pop-enddatum-jaar-1">
-											<option value="0" select="selected">Jaar</option>
-											<option value="2015" selected>2015</option>
+											<option value="0" selected>Jaar</option>
+											<option value="2015" >2015</option>
 											<option value="2014">2014</option>
 											<option value="2013">2013</option>
 											<option value="2012">2012</option>
@@ -1040,46 +1354,71 @@
 									</div>
 								</div>
 							</div>
+							<div class="row hidden error">
+								<div class="col-lg-12">
+									<span class="red">Je hebt een ongeldige datum ingevoerd</span>
+								</div>
+							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="radioNieuw" id="radio-nieuw2" value="option2" data-required="true"/> <strong>Nee</strong>, ik ben niet meer op zoek naar werk
+									<input type="radio" name="radioNieuw" id="radio-nieuw2" value="option2" data-required="true"/> Nee, ik ben niet op zoek naar werk maar ben wel geinteresseerd in vacatures en wil graag op de hoogte gehouden worden.
 								</label>
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="radioNieuw" id="radio-nieuw3" value="option3" data-required="true"/> <strong>Nee</strong>, ik ben niet meer op zoek naar werk en wil ook niet meer benaderd worden door Olympia
+									<input type="radio" name="radioNieuw" id="radio-nieuw3" value="option3" data-required="true"/> Nee, ik ben niet meer op zoek naar werk en wil ook niet meer benaderd worden door Olympia
 								</label>
 								<p>(dit schakelt ook je e-mail alerts uit)</p>
 							</div>
 						</div>
 						<div class="form-group opzegtermijn">
 							<hr>
-							<div class="radio">
-								<label>
-									<input type="radio" name="opzegtermijn" id="radio-opzegtermijn1" value="option1" data-required="true"/> Ja, ik heb een opzegtermijn van
-								</label>
+							<div class="radio row">
+								<div class="col-lg-5 text-label">
+									<label>
+										<input type="radio" name="opzegtermijn" id="radio-opzegtermijn1" value="option1" data-required="true"/> Ja, <span>ik heb een opzegtermijn van:</span>
+									</label>
+								</div>
+								<div class="col-lg-2 padding-rl-0">
+									<select class="form-control" id="pop-weken-1">
+										<option value="1" selected>1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+									</select>
+								</div>
+								<div class="col-lg-3 padding-r-0">
+									<select class="form-control" id="pop-maanden-1">
+										<option value="2" selected>week</option>
+										<option value="3" >maand</option>
+									</select>
+								</div>
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="opzegtermijn" id="radio-opzegtermijn2" value="option2" data-required="true" checked/> Nee, ik heb een opzegtermijn
+									<input type="radio" name="opzegtermijn" id="radio-opzegtermijn2" value="option2" data-required="true" checked/> Nee, <span>ik heb een opzegtermijn</span>
 								</label>
 							</div>
 						</div>
 						<div class="form-group">
 							<hr>
 							<div class="row">
-								<div class="col-lg-12">
+								<div class="col-lg-12" id="pasteString">
 									<span class="actualString">
 										<span class="string1"></span>
-										<span ><strong class="dates"></strong></span>
-										<span ><strong class="string2"></strong></span>
+										<span class="olympia-icon olympia-pencil">
 									</span>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
-								<button type="button" class="btn btn-primary pull-right" id="modal-voorkeuren-add">Wijzigingen opslaan</button>
+								<button type="button" class="btn btn-primary pull-right" id="modal-voorkeuren-add" data-dismiss="modal">Wijzigingen opslaan</button>
 							</div>
 						</div>
 					</div>
@@ -1100,7 +1439,19 @@
 		$('#toggleButton5').on('change', function(){
 			var globalCheck = $('.globalCheck input[type=checkbox]').prop("checked");
 			$('#emailAlert a').prop('href', 'MijnOlympia-email-alerts.html?globalCheck='+globalCheck);
+
+			if(globalCheck == false){
+				$('.accordion-data.alerts').children("li").each(function (i) {
+	                console.log($(this).find('.circle').removeClass('green').removeClass('red').addClass('red'));
+	            });	
+			}else{
+				$('.accordion-data.alerts').children("li").each(function (i) {
+	                console.log($(this).find('.circle').removeClass('green').removeClass('red').addClass('green'));
+	            });	
+			}
 		})
+
+		$('#toggleButton5').trigger('change');
 
 		function getParameterByName(name) {
 	        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -1122,6 +1473,11 @@
 	    $('.hoverEditing ul li:nth-child(2n) .olympia-icon').click(function(){
 	    	window.location.href = $(this).data()['href'] + '?scrollTo=' + $(this).data()['name']
 	    }) 
+
+	    var scrollTonotification = getParameterByName('scrollTo');
+	    if(scrollTonotification === 'notification'){
+	    	$("."+scrollTonotification).scrollView(10);
+	    }
 	})
 	</script>
 </body>

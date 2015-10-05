@@ -22,15 +22,15 @@
 				<div class=" pull-right login" style="background: #fff;">
 					<div class="meta">
 					    <div class="logged">
-					        <div class="username"><span>Welkom Henk Van Dunzelkamp</span></div>
-
+					        <div class="username"><span>Welkom <strong>Henk Van Dunzelkamp</strong></span></div>
 					        <div class="profile">
-					            <a href="javascript:void(0)"> › mijn profiel</a> 
 					            <a href="javascript:void(0)"> › uitloggen</a>
-					            <a href="javascript:void(0)"> › stel een vraag</a>
 					        </div>
 					    </div>
-
+					    <div class="logged bell" >
+					    	<span class="olympia-icon olympia-bell-o" onclick="location.href='MijnOlympia-dashboard.html?scrollTo=notification'"></span>
+					    	<span class="number">3</span>
+					    </div>
 					    <div class="user">
 					        <img src="../img/pasfoto.jpg"/>
 					    </div>
@@ -224,13 +224,13 @@
 				</div>
 				<div class="well well-olympia">
 					<div class="label-container">
-						<label class="title">Ben je momenteel op zoek naar werk?</label><span class="pull-right bewerk"><i class="olympia-icon olympia-edit"></i>&nbsp;<a href="#" data-toggle="modal" data-target="#bewerkenVoorkeuren">Bewerken</a></span>
+						<label class="title">Ben je momenteel op zoek naar werk?</label>
 					</div>
-					<div class="box-inner">
+					<div id="pasteString1">
 						<span class="actualString">
 							<span class="string1"></span>
 							<span ><strong class="dates"></strong></span>
-							<span ><strong class="string2"></strong></span>
+							<span class="olympia-icon olympia-pencil"></span>
 						</span>
 					</div>
 					<p>&nbsp;</p>
@@ -816,7 +816,7 @@
 						<div class="form-group nieuw">
 							<div class="radio">
 								<label>
-									<input type="radio" name="radioNieuw" id="radio-nieuw1" value="option1" data-required="true" checked/> <strong>Ja</strong>, ik ben op zoek naar werk
+									<input type="radio" name="radioNieuw" id="radio-nieuw1" value="option1" data-required="true" checked/> <span>Ja, ik ben op zoek naar werk</span>
 								</label>
 							</div>
 							<div class="radio">
@@ -862,18 +862,18 @@
 									<div class="col-lg-3 padding-r-0">
 										<select class="form-control" id="pop-startdatum-maand-1">
 											<option value="00">Maand</option>
-											<option value="01">Januari</option>
-											<option value="02">Februari</option>
-											<option value="03">Maart</option>
-											<option value="04">April</option>
-											<option value="05">Mei</option>
-											<option value="06" selected>Juni</option>
-											<option value="07">Juli</option>
-											<option value="08">Augustus</option>
-											<option value="09">September</option>
-											<option value="10">Oktober</option>
-											<option value="11">November</option>
-											<option value="12">December</option>
+											<option value="Januari">Januari</option>
+											<option value="Februari">Februari</option>
+											<option value="Maart">Maart</option>
+											<option value="April">April</option>
+											<option value="Mei">Mei</option>
+											<option value="Juni" selected>Juni</option>
+											<option value="Juli">Juli</option>
+											<option value="Augustus">Augustus</option>
+											<option value="September">September</option>
+											<option value="Oktober">Oktober</option>
+											<option value="November">November</option>
+											<option value="December">December</option>
 										</select>
 									</div>
 									<div class="col-lg-3">
@@ -966,10 +966,10 @@
 									</div>
 									<div class="col-lg-2 padding-rl-0">
 										<select class="form-control" id="pop-enddatum-date-1">
-											<option value="0">Datum</option>
+											<option value="0" selected>Datum</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
-											<option value="3" selected>3</option>
+											<option value="3">3</option>
 											<option value="4">4</option>
 											<option value="5">5</option>
 											<option value="6">6</option>
@@ -1001,25 +1001,25 @@
 									</div>
 									<div class="col-lg-3 padding-r-0">
 										<select class="form-control" id="pop-enddatum-maand-1">
-											<option value="00">Maand</option>
-											<option value="01">Januari</option>
-											<option value="02">Februari</option>
-											<option value="03">Maart</option>
-											<option value="04">April</option>
-											<option value="05">Mei</option>
-											<option value="06">Juni</option>
-											<option value="07">Juli</option>
-											<option value="08" selected>Augustus</option>
-											<option value="09">September</option>
-											<option value="10">Oktober</option>
-											<option value="11">November</option>
-											<option value="12">December</option>
+											<option value="00" selected>Maand</option>
+											<option value="Januari">Januari</option>
+											<option value="Februari">Februari</option>
+											<option value="Maart">Maart</option>
+											<option value="April">April</option>
+											<option value="Mei">Mei</option>
+											<option value="Juni">Juni</option>
+											<option value="Juli">Juli</option>
+											<option value="Augustus">Augustus</option>
+											<option value="September">September</option>
+											<option value="Oktober">Oktober</option>
+											<option value="November">November</option>
+											<option value="December">December</option>
 										</select>
 									</div>
 									<div class="col-lg-3">
 										<select class="form-control" id="pop-enddatum-jaar-1">
-											<option value="0" select="selected">Jaar</option>
-											<option value="2015" selected>2015</option>
+											<option value="0" selected>Jaar</option>
+											<option value="2015" >2015</option>
 											<option value="2014">2014</option>
 											<option value="2013">2013</option>
 											<option value="2012">2012</option>
@@ -1099,46 +1099,71 @@
 									</div>
 								</div>
 							</div>
+							<div class="row hidden error">
+								<div class="col-lg-12">
+									<span class="red">Je hebt een ongeldige datum ingevoerd</span>
+								</div>
+							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="radioNieuw" id="radio-nieuw2" value="option2" data-required="true"/> <strong>Nee</strong>, ik ben niet meer op zoek naar werk
+									<input type="radio" name="radioNieuw" id="radio-nieuw2" value="option2" data-required="true"/> Nee, ik ben niet op zoek naar werk maar ben wel geinteresseerd in vacatures en wil graag op de hoogte gehouden worden.
 								</label>
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="radioNieuw" id="radio-nieuw3" value="option3" data-required="true"/> <strong>Nee</strong>, ik ben niet meer op zoek naar werk en wil ook niet meer benaderd worden door Olympia
+									<input type="radio" name="radioNieuw" id="radio-nieuw3" value="option3" data-required="true"/> Nee, ik ben niet meer op zoek naar werk en wil ook niet meer benaderd worden door Olympia
 								</label>
 								<p>(dit schakelt ook je e-mail alerts uit)</p>
 							</div>
 						</div>
 						<div class="form-group opzegtermijn">
 							<hr>
-							<div class="radio">
-								<label>
-									<input type="radio" name="opzegtermijn" id="radio-opzegtermijn1" value="option1" data-required="true"/> Ja, ik heb een opzegtermijn van
-								</label>
+							<div class="radio row">
+								<div class="col-lg-5 text-label">
+									<label>
+										<input type="radio" name="opzegtermijn" id="radio-opzegtermijn1" value="option1" data-required="true"/> Ja, <span>ik heb een opzegtermijn van:</span>
+									</label>
+								</div>
+								<div class="col-lg-2 padding-rl-0">
+									<select class="form-control" id="pop-weken-1">
+										<option value="1" selected>1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+									</select>
+								</div>
+								<div class="col-lg-3 padding-r-0">
+									<select class="form-control" id="pop-maanden-1">
+										<option value="2" selected>week</option>
+										<option value="3" >maand</option>
+									</select>
+								</div>
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="opzegtermijn" id="radio-opzegtermijn2" value="option2" data-required="true" checked/> Nee, ik heb een opzegtermijn
+									<input type="radio" name="opzegtermijn" id="radio-opzegtermijn2" value="option2" data-required="true" checked/> Nee, <span>ik heb een opzegtermijn</span>
 								</label>
 							</div>
 						</div>
 						<div class="form-group">
 							<hr>
 							<div class="row">
-								<div class="col-lg-12">
+								<div class="col-lg-12" id="pasteString">
 									<span class="actualString">
 										<span class="string1"></span>
-										<span ><strong class="dates"></strong></span>
-										<span ><strong class="string2"></strong></span>
+										<span class="olympia-icon olympia-pencil">
 									</span>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
-								<button type="button" class="btn btn-primary pull-right" id="modal-voorkeuren-add">Wijzigingen opslaan</button>
+								<button type="button" class="btn btn-primary pull-right" id="modal-voorkeuren-add" data-dismiss="modal">Wijzigingen opslaan</button>
 							</div>
 						</div>
 					</div>
@@ -1146,6 +1171,7 @@
 			</div>
 		</div>
 	</div>
+
 
 	<!-- Scripts -->
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
@@ -1217,7 +1243,20 @@
 			$(".alert-box").addClass('hidden');
 	   		var scrollTo = $(this).data()['name'];
 	   		$("."+scrollTo).scrollView(20);
-	    }) 
+	    })
+
+	    function getParameterByName(name) {
+	        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	            results = regex.exec(location.search);
+	        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	    }
+
+	    var toggleThis = getParameterByName('toggleThis')
+	    if(toggleThis == 'true'){
+	   		$(".voorkeuren-box").removeClass('hidden');
+			$(".alert-box").addClass('hidden'); 	
+	    }
 	</script>
 </body>
 </html>

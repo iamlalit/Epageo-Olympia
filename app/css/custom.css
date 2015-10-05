@@ -421,11 +421,13 @@ a:focus{
 .suggestie.right-container .well.well-olympia .accordion .job-body .listed p{
 	margin-top: 10px;
 }
+.notification.well .accordion-data li.show .job-body,
 .right-container .sollicitaties.well.well-olympia .accordion ul.accordion-data li.show .job-body,
 .cv.right-container .well.well-olympia .accordion ul.accordion-data li.show .job-body,
 .suggestie.right-container .well.well-olympia .accordion ul.accordion-data li.show .job-body{
 	display: block;
 }
+.notification.well .accordion-data li .job-body,
 .right-container .sollicitaties.well.well-olympia .accordion ul.accordion-data li .job-body,
 .cv.right-container .well.well-olympia .accordion ul.accordion-data li .job-body,
 .suggestie.right-container .well.well-olympia .accordion ul.accordion-data li .job-body{
@@ -439,6 +441,7 @@ a:focus{
 	float: left;
 	width: 17.8%;
 }
+.notification.well .accordion-data li .job-body,
 .alert-box.right-container .well.well-olympia .accordion .job-body{
 	background: rgb(252, 252, 252);
 	border: 1px solid #ccc;
@@ -525,9 +528,26 @@ a:focus{
 }
 .right-container .well.well-olympia.sollicitaties .solid-line .heading{
 	margin-bottom: 10px;
+	position: relative;
+}
+.right-container .well.well-olympia.sollicitaties .solid-line .heading strong:last-child{
+	position: absolute;
+	right: 0;
+	top: -9px;
+	width: 34%
 }
 .right-container .well.well-olympia.sollicitaties .accordion .solid-line .heading{
 	margin-bottom: 0px;
+	padding: 15px 10px;
+}
+.right-container .well.well-olympia.sollicitaties .accordion .solid-line .heading strong:last-child{
+	top: 4px;
+	width: 36%
+}
+.right-container .well.well-olympia.sollicitaties .accordion .solid-line .heading strong:last-child .olympia-icon{
+	position: relative;
+	top: 24px;
+	right: 6px;
 }
 .right-container .well.well-olympia.sollicitaties .job-description{
 	border: 1px solid #ccc;
@@ -575,6 +595,9 @@ h1.black{
 }
 #bewerkenVoorkeuren .modal-content .modal-body p{
 	font-size: 11px;
+}
+.padding-l-0{
+	padding-left: 0;
 }
 .padding-r-0{
 	padding-right: 0;
@@ -761,6 +784,28 @@ label.title.black{
 	font-size: 10px;
 	border-right: 1px solid #e2e7e3;
 	text-align: left;
+}
+.logged.bell{
+	position: relative;
+}
+.logged.bell .olympia-icon{
+	font-size: 2.5em;
+	color: #444444;
+	cursor: pointer;
+}
+.logged.bell .number{
+	position: absolute;
+	cursor: pointer;
+	top: 7px;
+	right: 2px;
+	background: #ff4400;
+	width: 15px;
+	height: 15px;
+	border-radius: 100%;
+	font-size: 10px;
+	padding: 2px 5px;
+	color: #fff;
+	font-weight: bold;
 }
 .username {
 	margin-bottom: 2px;
@@ -985,4 +1030,85 @@ label.title.black{
 	color: #666666;
 	cursor: pointer;
 	top: 3px;
+}
+/*dashboard notifications*/
+.notification.well .accordion-data .header{
+	background: rgb(244, 244, 244);
+	border: 1px solid #dddddd;
+	width: 100%;
+	float: left;
+	margin-bottom: 10px;
+}
+.notification.well .accordion-data .header .job-title{
+	padding: 15px 20px;
+	cursor: pointer;
+}
+.notification.well .accordion-data .header .job-title .olympia-bell-o{
+	font-size: 1.5em;
+	margin-right: 20px;
+	color: #ff4400;
+}
+.notification.well .accordion-data .header .job-title .olympia-caret-down,
+.notification.well .accordion-data .header .job-title .olympia-caret-up{
+	position: relative;
+	top: 5px;
+	right: -12px;
+}
+.notification.well .accordion-data .header .job-title strong{
+	position: relative;
+	top: -3px;
+}
+.notification.well .accordion-data li .job-body .small-box{
+	border: 1px solid #bbb;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 3px 0px rgba(166, 166, 166, 0.25);
+	box-shadow: 0px 0px 5px 0px #f6f6f6\9;
+}
+#pasteString1 .actualString{
+	display: inline;
+	line-height: 22px;
+	margin-right: 1px;
+	padding: 4px 0;
+	padding-right: 5px;
+}
+#pasteString1:hover .actualString{
+	background: #eeeeee;
+}
+#pasteString1 .olympia-pencil{
+	font-size: 1.22em;
+	color: #666666;
+	cursor: pointer;
+	visibility: hidden;
+	background: #eee;
+	margin-left: 1px;
+	padding: 4px 4px;
+	position: relative;
+	top: 3px;
+}
+#pasteString1:hover .olympia-pencil{
+	visibility: visible;
+}
+small.circle{
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	border-radius: 100%;
+	margin-right: 10px;
+	position: relative;
+	top: 3px;
+}
+small.circle.green{
+	background-color: #6b8f1a;
+	background-image: -webkit-linear-gradient(#a5cd4e, #6b8f1a);
+	background-image: linear-gradient(#a5cd4e, #6b8f1a);
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.22);
+}
+small.circle.red{
+	background-color: #8f1a1a;
+	background-image: -webkit-linear-gradient(#cd4e54, #8f1a1a);
+	background-image: linear-gradient(#cd4e54, #8f1a1a);
+}
+.error .red{
+	color: rgb(202, 63, 63);
 }

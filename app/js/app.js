@@ -40,52 +40,114 @@ $(document).ready(function(){
 		    }
 		}
 	});
-
-	$('input[name=opzegtermijn]').click(function() {
-		var selected = $(".opzegtermijn input[type='radio']:checked");
-		if (selected.length > 0) {
-			// console.log(selected.val())
-			if(selected.val() == 'option1'){
-				voorkeurenString2 = 'Ja, ik heb een opzegtermijn van';
-			}else{
-				voorkeurenString2 = 'Nee, ik heb een opzegtermijn';
-			}
+	
+	$('#pop-weken-1').on('change', function(){
+		daysLeft = $("#pop-weken-1").val();
+		if(daysLeft != '1'){
+			$('#pop-maanden-1').remove('option');
+			$('#pop-maanden-1').html('<option value="0" selected>weken</option>'+
+									 '<option value="1">maanden</option>')	
+		}else{
+			$('#pop-maanden-1').remove('option');
+			$('#pop-maanden-1').html('<option value="2" selected>week</option>'+
+									 '<option value="3">maand</option>')	
 		}
+	})
+
+	$('input[name=radioNieuw], input[name=opzegtermijn], #pop-weken-1, #pop-maanden-1, #pop-startdatum-date-1, #pop-startdatum-maand-1, #pop-startdatum-jaar-1, #pop-enddatum-date-1, #pop-enddatum-maand-1, #pop-enddatum-jaar-1').on('change', function(){
+		var firstSelected = $("input[name='radioNieuw']:checked");
+		var secondSelected = $("input[name='opzegtermijn']:checked");
+		if(firstSelected.val() == 'option3'){
+			$('.opzegtermijn').addClass('hidden');
+		}else{
+			$('.opzegtermijn').removeClass('hidden');
+		}
+		var startDate = $(".nieuw #pop-startdatum-date-1").val(),
+			startMonth = $(".nieuw #pop-startdatum-maand-1").val(),
+			startYear = $(".nieuw #pop-startdatum-jaar-1").val(),
+			endDate = $(".nieuw #pop-enddatum-date-1").val(),
+			endMonth = $(".nieuw #pop-enddatum-maand-1").val(),
+			endYear = $(".nieuw #pop-enddatum-jaar-1").val(),
+			daysLeft = $("#pop-weken-1").val(),
+			chooseOption = $("#pop-maanden-1").val();
+
+
+
+		var newStringToPaste = '';
+		if(firstSelected.val() == 'option1' && secondSelected.val() == 'option2'){
+			if(endYear >= startYear && endMonth >= startMonth && endDate >= startDate){
+				$('.row.error').removeClass('hidden');
+				$('#modal-voorkeuren-add').attr('disabled', 'disabled');
+			}else{
+				$('#modal-voorkeuren-add').removeAttr('disabled');
+				$('.row.error').addClass('hidden');
+				if(endDate == '0' || endMonth == '00' || endYear == '0'){
+					newStringToPaste = "<span class='actualString'><strong>Ja</strong>, ik ben <strong>op zoek</strong> naar werk. <br>Ik ben <strong>beschikbaar vanaf "+startDate+" "+startMonth+" "+startYear+" </strong>. Ik heb <strong>geen opzegtermijn</strong>.</span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+				}else if(endDate != '0' && endMonth != '00' && endYear != '0'){
+					newStringToPaste = "<span class='actualString'><strong>Ja</strong>, ik ben <strong>op zoek</strong> naar werk. <br>Ik ben <strong>beschikbaar vanaf "+startDate+" "+startMonth+" "+startYear+" tot "+endDate+" "+endMonth+" "+endYear+" </strong>. Ik heb <strong>geen opzegtermijn</strong>.</span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+				}else{
+					newStringToPaste = "<span class='actualString'><strong>Ja</strong>, ik ben <strong>op zoek</strong> naar werk. <br>Ik ben <strong>beschikbaar vanaf "+startDate+" "+startMonth+" "+startYear+" </strong>. Ik heb <strong>geen opzegtermijn</strong>.</span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+				}
+			}			
+		}else if(firstSelected.val() == 'option1' && secondSelected.val() == 'option1'){
+			if(endYear >= startYear && endMonth >= startMonth && endDate >= startDate){
+				$('.row.error').removeClass('hidden');
+				$('#modal-voorkeuren-add').attr('disabled', 'disabled');
+			}else{
+				$('#modal-voorkeuren-add').removeAttr('disabled');
+				if(endDate == '0' || endMonth == '00' || endYear == '0'){
+					if(daysLeft != '1' && chooseOption == '0'){
+						newStringToPaste = "<span class='actualString'><strong>Ja</strong>, ik ben <strong>op zoek</strong> naar werk. <br>Ik ben <strong>beschikbaar vanaf "+startDate+" "+startMonth+" "+startYear+" </strong>. Ik heb <strong>een opzegtermijn van "+ daysLeft +" weken.</strong><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+					}else if(daysLeft != '1' && chooseOption == '1'){
+						newStringToPaste = "<span class='actualString'><strong>Ja</strong>, ik ben <strong>op zoek</strong> naar werk. <br>Ik ben <strong>beschikbaar vanaf "+startDate+" "+startMonth+" "+startYear+" </strong>. Ik heb <strong>een opzegtermijn van "+ daysLeft +" maanden.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+					}else if(daysLeft == '1' && chooseOption == '2'){
+						newStringToPaste = "<span class='actualString'><strong>Ja</strong>, ik ben <strong>op zoek</strong> naar werk. <br>Ik ben <strong>beschikbaar vanaf "+startDate+" "+startMonth+" "+startYear+" </strong>. Ik heb <strong>een opzegtermijn van "+ daysLeft +" week.</strong><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+					}else if(daysLeft == '1' && chooseOption == '3'){
+						newStringToPaste = "<span class='actualString'><strong>Ja</strong>, ik ben <strong>op zoek</strong> naar werk. <br>Ik ben <strong>beschikbaar vanaf "+startDate+" "+startMonth+" "+startYear+" </strong>. Ik heb <strong>een opzegtermijn van "+ daysLeft +" maand.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+					}
+				}else{
+					if(daysLeft != '1' && chooseOption == '0'){
+						newStringToPaste = "<span class='actualString'><strong>Ja</strong>, ik ben <strong>op zoek</strong> naar werk. <br>Ik ben <strong>beschikbaar vanaf "+startDate+" "+startMonth+" "+startYear+" tot "+endDate+" "+endMonth+" "+endYear+" </strong>. Ik heb <strong>een opzegtermijn van "+ daysLeft +" weken.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+					}else if(daysLeft != '1' && chooseOption == '1'){
+						newStringToPaste = "<span class='actualString'><strong>Ja</strong>, ik ben <strong>op zoek</strong> naar werk. <br>Ik ben <strong>beschikbaar vanaf "+startDate+" "+startMonth+" "+startYear+" tot "+endDate+" "+endMonth+" "+endYear+" </strong>. Ik heb <strong>een opzegtermijn van "+ daysLeft +" maanden.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+					}else if(daysLeft == '1' && chooseOption == '2'){
+						newStringToPaste = "<span class='actualString'><strong>Ja</strong>, ik ben <strong>op zoek</strong> naar werk. <br>Ik ben <strong>beschikbaar vanaf "+startDate+" "+startMonth+" "+startYear+" tot "+endDate+" "+endMonth+" "+endYear+" </strong>. Ik heb <strong>een opzegtermijn van "+ daysLeft +" week.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+					}else if(daysLeft == '1' && chooseOption == '3'){
+						newStringToPaste = "<span class='actualString'><strong>Ja</strong>, ik ben <strong>op zoek</strong> naar werk. <br>Ik ben <strong>beschikbaar vanaf "+startDate+" "+startMonth+" "+startYear+" tot "+endDate+" "+endMonth+" "+endYear+" </strong>. Ik heb <strong>een opzegtermijn van "+ daysLeft +" maand.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+
+					}
+				}
+			}
+			
+		}else if(firstSelected.val() == 'option2' && secondSelected.val() == 'option1'){
+			if(daysLeft != '1' && chooseOption == '0'){
+				newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet op zoek</strong> naar werk maar ben wel geinteresseerd in vacatures <strong>en wil graag op de hoogte gehouden worden</strong>. <br>Ik heb <strong>een opzegtermijn van "+daysLeft+" weken.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+			}else if(daysLeft != '1' && chooseOption == '1'){
+				newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet op zoek</strong> naar werk maar ben wel geinteresseerd in vacatures <strong>en wil graag op de hoogte gehouden worden</strong>. <br>Ik heb <strong>een opzegtermijn van "+daysLeft+" maanden.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+			}else if(daysLeft == '1' && chooseOption == '2'){
+				newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet op zoek</strong> naar werk maar ben wel geinteresseerd in vacatures <strong>en wil graag op de hoogte gehouden worden</strong>. <br>Ik heb <strong>een opzegtermijn van "+daysLeft+" week.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+			}else if(daysLeft == '1' && chooseOption == '3'){
+				newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet op zoek</strong> naar werk maar ben wel geinteresseerd in vacatures <strong>en wil graag op de hoogte gehouden worden</strong>. <br>Ik heb <strong>een opzegtermijn van "+daysLeft+" maand.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+			}
+		}else if(firstSelected.val() == 'option2' && secondSelected.val() == 'option2'){
+			newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet op zoek</strong> naar werk maar ben wel geinteresseerd in vacatures en <strong>wil graag op de hoogte gehouden worden</strong>. <br>Ik heb <strong>geen opzegtermijn</strong>.</span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+		}else if(firstSelected.val() == 'option3'){
+			$('.globalCheck input[type=checkbox]').removeAttr("checked");
+			$('#emailAlert a').prop('href', 'MijnOlympia-email-alerts.html?globalCheck='+false);
+			newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet (meer) op zoek</strong> naar werk en wil ook <strong>niet meer benaderd worden door Olympia.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>"
+		}
+
+		$('#pasteString .actualString').remove();
+		$('#pasteString').append(newStringToPaste);
+		$('#pasteString .olympia-pencil').remove();
+
+		$('#pasteString1 .actualString').remove();
+		$('#pasteString1 .olympia-pencil').remove();
+		$('#pasteString1').append(newStringToPaste);
 	});
 
-	$("#modal-voorkeuren-add").on("click", function(){
-		var selected = $(".nieuw input[type='radio']:checked");
-		if (selected.length > 0) {
-			// console.log(selected.val())
-			if(selected.val() == 'option1'){
-				voorkeurenString = 'Ja, ik ben op zoek naar werk. Ik ben beschikbaar'; 
-				voorkeurenString1 = $(".nieuw #pop-startdatum-date-1").val() + '-' + $(".nieuw #pop-startdatum-maand-1").val() + '-' + $(".nieuw #pop-startdatum-jaar-1").val() + ' tot en met ' + $(".nieuw #pop-enddatum-date-1").val() + '-' + $(".nieuw #pop-enddatum-maand-1").val() + '-' + $(".nieuw #pop-enddatum-jaar-1").val() + '.';
-		    }else if(selected.val() == 'option2'){
-				voorkeurenString = 'Nee, ik ben niet meer op zoek naar werk. ';
-				voorkeurenString1 = '';
-		    }else if(selected.val() == 'option3'){
-				voorkeurenString = 'Nee, ik ben niet meer op zoek naar werk en wil ook niet meer benaderd worden door Olympia. ';
-				voorkeurenString1 = '';
-		    }
-		}
-
-		var newselected = $(".opzegtermijn input[type='radio']:checked");
-		if (newselected.length > 0) {
-			// console.log(newselected.val())
-			if(newselected.val() == 'option1'){
-				voorkeurenString2 = 'Ja, ik heb een opzegtermijn van';
-			}else{
-				voorkeurenString2 = 'Nee, ik heb een opzegtermijn';
-			}
-		}
-		$(".actualString .string1").text(voorkeurenString);
-		$(".actualString span .dates").text(voorkeurenString1);
-		$(".actualString span .string2").text(voorkeurenString2);
-
-		$("#bewerkenVoorkeuren").modal("hide");
-
-	})	
-
+	$('input[name=radioNieuw], input[name=opzegtermijn], #pop-weken-1, #pop-maanden-1, #pop-startdatum-date-1, #pop-startdatum-maand-1, #pop-startdatum-jaar-1, #pop-enddatum-date-1, #pop-enddatum-maand-1, #pop-enddatum-jaar-1').trigger('change');
+	
 	$('#phoneToggler').hide();
 	$('#phoneToggle').click(function(){
 		$(this).hide();
@@ -1513,10 +1575,6 @@ $(document).ready(function(){
 });
 
 var currentView = '';
-function toggleTheView(){
-	$(".voorkeuren-box").removeClass('hidden');
-	$(".alert-box").addClass('hidden');
-}
 
 //for form 3
 $(document).ready(function(){
@@ -1672,6 +1730,21 @@ $(document).ready(function(){
 		}
 	})
 });
+var $index = 5;
+function emptyTheForm(){
+	//replace the save button with update buttom
+  	$('#updateVoorkeurenDataAlertPage').addClass('hidden');
+  	$('#saveVoorkeurenDataAlertPage').removeClass('hidden');
+  	$index++;
+  	$(".voorkeuren-box").removeClass('hidden');
+	$(".alert-box").addClass('hidden');
+
+	$('.alertname').val('');
+	$('.emailFreq input[type=radio], .denkniveau input[type=radio]').removeAttr('checked');
+	$('.dienstverband input[type=checkbox], .weekHour input[type=checkbox], .branche input[type=checkbox], .vakgebied input[type=checkbox], .salaris input[type=checkbox]').removeAttr('checked');
+	$('.trefwoorden span').remove();
+	$('.placeWithDistance span').remove();
+}
 //email alert
 $(document).ready(function(){
 	$('#saveVoorkeurenDataAlertPage').click(function(){
@@ -1802,7 +1875,7 @@ $(document).ready(function(){
 
 		alertname = $(".alertname").val();
 		$(".alerts").append(
-			'<li>'+
+			'<li id="'+$index+'">'+
 				'<div class="header">'+
 					'<div class="form-group" id="fromTO">'+
 						'<div class="switch on">'+
@@ -1820,35 +1893,35 @@ $(document).ready(function(){
 				'</div>'+
 				'<div class="job-body">'+
 					'<ul>'+
-						'<li>'+
+						'<li class="functies">'+
 							'<strong>Functies / trefwoorden:</strong>'+
 							'<span id="trefwoorden"> '+trefwoorden+'</span>'+
 						'</li>'+
-						'<li>'+
+						'<li class="locatie">'+
 							'<strong>Locatie en afstand:</strong>'+
 							'<span id="placeWithDistance1"> '+placeWithDistance+'</span>'+
 						'</li>'+
-						'<li>'+
+						'<li class="uren">'+
 							'<strong>Uren per week:</strong>'+
 							'<span id="weekHour1"> '+weekHour+'</span>'+
 						'</li>'+
-						'<li>'+
+						'<li class="dienstverband">'+
 							'<strong>Dienstverband:</strong>'+
 							'<span id="dienstverband1"> '+dienstverband+'</span>'+
 						'</li>'+
-						'<li>'+
+						'<li class="salary">'+
 							'<strong>Salaris:</strong>'+
 							'<span id="salaris1"> '+salaris+'</span>'+
 						'</li>'+
-						'<li>'+
+						'<li class="werkand">'+
 							'<strong>Werk-en denkniveau:</strong>'+
 							'<span id="denkniveau1"> '+denkniveau+'</span>'+
 						'</li>'+
-						'<li>'+
+						'<li class="vakgebied">'+
 							'<strong>Vakgebied:</strong>'+
 							'<span id="vakgebied1"> '+vakgebied+'</span>'+
 						'</li>'+
-						'<li>'+
+						'<li class="branch">'+
 							'<strong>Branche:</strong> '+
 							'<span id="branche1"> '+branche+'</span>'+
 						'</li>'+
@@ -1856,12 +1929,12 @@ $(document).ready(function(){
 							'<strong>&nbsp;</strong>'+
 							'<span>&nbsp;</span>'+
 						'</li>'+
-						'<li>'+
+						'<li class="frequency">'+
 							'<strong>Frequentie:</strong>'+
 							'<span> '+emailFreq+'</span>'+
 						'</li>'+
 					'</ul>'+
-					'<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>'+
+					'<span class="bewerk" onclick="editEmailAlert('+$index+')"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>'+
 					'<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>'+
 				'</div>'+
 			'</li>'
@@ -1870,14 +1943,191 @@ $(document).ready(function(){
 		$(".voorkeuren-box").addClass('hidden');
 		$(".alert-box").removeClass('hidden');
 	})
+	$('#updateVoorkeurenDataAlertPage').click(function(){
+		var alertname = '',
+		dienstverband = '',
+		weekHour = '',
+		branche = '',
+		vakgebied = '',
+		salaris = '',
+		denkniveau = '',
+		placeWithDistance = '',
+		trefwoorden = '',
+		emailFreq = '';
+		
+		//get the values
+		if($('.alertname').length > 0){
+			alertname = $('.alertname').val();
+		}
+		//get the values
+		if($('.dienstverband input[type=checkbox]:checked').length > 0){
+			//something is selected
+			$('.dienstverband input[type=checkbox]:checked').each(function() {
+			  dienstverband += $(this).data("values") + ', ';
+			});
+			dienstverband = dienstverband.slice(0,-2);
+		}
+		//get the values
+		if($('.weekHour input[type=checkbox]:checked').length > 0){
+			//something is selected
+			$('.weekHour input[type=checkbox]:checked').each(function() {
+			  weekHour += $(this).data("values") + ', ';
+			});
+			weekHour = weekHour.slice(0,-2);
+			$("#weekHour1").text(weekHour);
+		}
+		//get the values
+		if($('.branche input[type=checkbox]:checked').length > 0){
+			//something is selected
+			$('.branche input[type=checkbox]:checked').each(function() {
+			  branche += $(this).data("values") + ', ';
+			});
+			branche = branche.slice(0,-2);
+		}
+		//get the values
+		if($('.vakgebied input[type=checkbox]:checked').length > 0){
+			//something is selected
+			$('.vakgebied input[type=checkbox]:checked').each(function() {
+			  vakgebied += $(this).data("values") + ', ';
+			});
+			vakgebied = vakgebied.slice(0,-2);
+		}
+		//get the values
+		if($('.salaris input[type=checkbox]:checked').length > 0){
+			//something is selected
+			$('.salaris input[type=checkbox]:checked').each(function() {
+			  salaris += $(this).data("values") + ', ';
+			});
+			salaris = salaris.slice(0,-2);
+		}
+		//get the values
+		if($('.denkniveau input[type=radio]:checked').length > 0){
+			//something is selected
+			$('.denkniveau input[type=radio]:checked').each(function() {
+			  denkniveau += $(this).data("values") + ', ';
+			});
+			denkniveau = denkniveau.slice(0,-2);
+		}
+		//get the values
+		if($('.emailFreq input[type=radio]:checked').length > 0){
+			//something is selected
+			$('.emailFreq input[type=radio]:checked').each(function() {
+			  emailFreq += $(this).data("values") + ', ';
+			});
+			emailFreq = emailFreq.slice(0,-2);
+		}
 
-	
+		//get the values
+		if($(".placeWithDistance span strong").length > 0){
+			$(".placeWithDistance span strong").each(function() {
+			  placeWithDistance += $(this).text() + ', '
+			});
+			placeWithDistance = placeWithDistance.slice(0,-2);
+		}
+
+		//get the values
+		if($(".trefwoorden span strong").length > 0){
+			$(".trefwoorden span strong").each(function() {
+			  trefwoorden += $(this).text() + ', '
+			});
+			trefwoorden = trefwoorden.slice(0,-2);
+		}
+		var obj = $('#clickedIdparam').val();
+		var $parent = $('#'+obj);
+		$parent.find('.job-title strong').text(alertname);
+		$parent.find('.functies span').text(trefwoorden);
+		$parent.find('.locatie span').text(placeWithDistance);
+		$parent.find('.uren span').text(weekHour);
+		$parent.find('.dienstverband span').text(dienstverband);
+		$parent.find('.salary span').text(salaris);
+		$parent.find('.werkand span').text(denkniveau);
+		$parent.find('.vakgebied span').text(vakgebied);
+		$parent.find('.branch span').text(branche);
+		$parent.find('.frequency span').text(emailFreq);
+
+		$(".voorkeuren-box").addClass('hidden');
+		$(".alert-box").removeClass('hidden');
+	})	
 });
 //delete email alert
 function deleteThisEmailAlert(obj){
-	console.log($(this).parent)
 	var $this = $(obj); // This is the jQuery object being clicked
 
 	console.log($this.parents('li.show'));
 	$this.parents('li.show').remove();
+}
+
+//edit email alert
+function editEmailAlert(obj){
+	//empty the form first
+	$('.alertname').val('');
+	$('.emailFreq input[type=radio], .denkniveau input[type=radio]').removeAttr('checked');
+	$('.dienstverband input[type=checkbox], .weekHour input[type=checkbox], .branche input[type=checkbox], .vakgebied input[type=checkbox], .salaris input[type=checkbox]').removeAttr('checked');
+	$('.trefwoorden span').remove();
+	$('.placeWithDistance span').remove();
+
+	var $parent = $('#'+obj); // This is the jQuery object being clicked
+	//get all the values
+	var jobTitle,
+		clickedId,
+		jobBody,
+		functies,
+		locatiem,
+		uren,
+		dienstverband,
+		salary,
+		werkand,
+		vakgebied,
+		branch,
+		frequency;
+
+	jobTitle = $parent.find('.job-title strong').html();
+	clickedId = $parent.attr('id');
+	jobBody = $parent.find('.job-body');
+	functies = jobBody.find('.functies span').html();
+	locatie = jobBody.find('.locatie span').html();
+	uren = jobBody.find('.uren span').html();
+	salary = jobBody.find('.salary span').html();
+	werkand = jobBody.find('.werkand span').html();
+	vakgebied = jobBody.find('.vakgebied span').html();
+	dienstverband = jobBody.find('.dienstverband span').html();
+	branch = jobBody.find('.branch span').html();
+	frequency = jobBody.find('.frequency span').html();
+
+	$(".voorkeuren-box").removeClass('hidden');
+	$(".alert-box").addClass('hidden');
+
+	$("#clickedIdparam").val(obj);
+
+	$('.alertname').val(jobTitle);
+	$('.emailFreq input[value="'+frequency+'"]').prop('checked', true);
+	dienstverband.split(',').forEach(function(frequency) {
+    	$('.dienstverband input[data-values="'+frequency.trim()+'"]').prop('checked', true);
+  	});
+  	uren.split(',').forEach(function(weekhour) {
+    	$('.weekHour input[data-values="'+weekhour.trim()+'"]').prop('checked', true);
+  	});
+  	branch.split(',').forEach(function(branch) {
+  		$('.branche input[data-values="'+branch.trim()+'"]').prop('checked', true);
+  	});
+  	vakgebied.split(',').forEach(function(vakgebied) {
+  		$('.vakgebied input[data-values="'+vakgebied.trim()+'"]').prop('checked', true);
+  	});
+  	salary.split(',').forEach(function(salary) {
+  		$('.salaris input[data-values="'+salary.trim()+'"]').prop('checked', true);
+  	});
+  	werkand.split(',').forEach(function(werkand) {
+  		$('.denkniveau input[data-values="'+werkand.trim()+'"]').prop('checked', true);
+  	});
+  	functies.split(',').forEach(function(functionName) {
+  		$('.trefwoorden').append('<span><strong>'+functionName.trim()+'</strong><a href="javascript:void(0)" onclick="removeText(this)"><i>×</i></a></span>')
+  	});
+  	locatie.split(',').forEach(function(location) {
+  		$('.placeWithDistance').append('<span><strong>'+location.trim()+' </strong><a href="javascript:void(0)" onclick="removeText(this)"><i>×</i></a></span>')
+  	})
+
+  	//replace the save button with update buttom
+  	$('#updateVoorkeurenDataAlertPage').removeClass('hidden');
+  	$('#saveVoorkeurenDataAlertPage').addClass('hidden');
+
 }
