@@ -1112,3 +1112,109 @@ small.circle.red{
 .error .red{
 	color: rgb(202, 63, 63);
 }
+.tabs .left-tab,
+.tabs .right-tab{
+	display: inline-block;
+	width: 49%;
+	margin: 10px 0 0;
+}
+.tabs .left-tab span,
+.tabs .right-tab span{
+	width: 100%;
+	display: block;
+	font-weight: 600;
+	color: #666666;
+	font-size: 13px;
+	cursor: pointer;
+	text-align: center;
+	padding: 10px;
+	border: 1px solid #ced7d1;
+	border-bottom: none;
+	background: #e9e9e9 url(../img/nav-bg.png) repeat-x 0 0; 
+	border-radius: 5px 5px 0 0;
+}
+.tabs .left-tab.active span,
+.tabs .right-tab.active span{
+	background: #ffffff;
+	color: #ff4400;
+}
+.tabs .left-tab span:hover,
+.tabs .right-tab span:hover{
+	color: #ff4400;	
+}
+.data ul > li {
+	width: 98.5%;
+	margin-top: 10px;
+}
+.data ul > li.well-olympia{
+	padding: 0 15px 15px !important;
+}
+.data ul > li.well-olympia .heading h4{
+	width: 86%;
+}
+.data ul > li.well-olympia .heading h4 span.olympia{
+	color: #aaaaaa;
+	margin-left: 10px;
+	cursor: pointer;
+}
+.data ul > li.well-olympia .heading > div{
+	margin: 10px 0;
+	float: left;
+	width: 100%;
+}
+.data ul > li.well-olympia .heading > div strong{
+	float: left;
+	width: 80%;
+}
+.data ul > li.well-olympia .jobBody > span{
+	color: #ff4400;
+}
+.data .actualData ul > li,
+.data .right-tab-data ul > li{
+	background: #fafafa !important;
+}
+
+.favourite{
+	color: #ff4400 !important;
+}
+.job-details-logo{
+	float: right;
+	margin-left: 10px;
+}
+.data .right-tab-data span.noData{
+	width: 98.5%;
+	display: block;
+	padding: 15px;
+	background: #ffffff;
+	border: 1px solid #d2d2d2;
+	border-radius: 5px;
+	box-shadow: 0px 0px 3px 0px rgba(166, 166, 166, 0.25);
+	box-shadow: 0px 0px 5px 0px #f6f6f6\9;
+	margin: 0;
+	position: relative;
+	top: -10px;
+	font-style: italic ;
+}
+.data .paging{
+	text-align: center;
+}
+.data .pagination > li > a,.data .pagination > li > span{
+	border: none;
+	color: #333333;
+}
+.data .pagination > li:hover > a,.data .pagination > li:focus > a{
+	background: #ffffff;
+}
+.data .pagination > li.active > a,.data .pagination > li.active > span{
+	background: #ffffff;
+	font-weight: bold;
+}
+.data .pagination > li:first-child > a,
+.data .pagination > li:last-child > a{
+	color: #ff4400;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+	background: #ffffff !important;
+	font-weight: bold;
+	color: #333333;	
+}

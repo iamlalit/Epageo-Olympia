@@ -72,3 +72,67 @@ $('#secondary-navigation li a').on('click', function (e) {
     }
     $(this).addClass('activeNav');    
 });
+
+//for suggestie page
+$('.tabs div span').on('click', function (e) {
+    $(this).parents('.tabs').children('div').removeClass('active');
+    $(this).closest('div').addClass('active');
+
+    if($('.left-tab').hasClass('active')){
+        $('.right-tab-data').addClass('hidden');
+        $('.left-tab-data').removeClass('hidden');
+    }else{
+        $('.left-tab-data').addClass('hidden');
+        $('.right-tab-data').removeClass('hidden');
+    }
+});
+
+
+//job body ellipsis
+$('.left-tab-data ul > li .jobBody p span').text(function(index, currentText) {
+    return currentText.substr(0, 250);
+});
+
+//pagination
+var itemsOnPage = 5;
+var items = 15;
+$(function() {
+    $('.pagination').pagination({
+        items: items,
+        itemsOnPage: itemsOnPage,
+        hrefTextPrefix: '#',
+        prevText: '< vorige',
+        nextText: 'volgende >',
+        cssStyle: 'light-theme',
+        onPageClick: function(){
+            var valueHash = $('.pagination').pagination('getCurrentPage');
+            var itemsPage = itemsOnPage * valueHash;
+            var initializaedPage = itemsPage - itemsOnPage;
+            for (var i = 1; i <= items ; i++) {
+                if(i > initializaedPage && i <= itemsPage){
+                    $('.left-tab-data .actualData ul > li:nth-child('+i+')').removeClass('hidden');    
+                }else{
+                    $('.left-tab-data .actualData ul > li:nth-child('+i+')').addClass('hidden');    
+                }
+                
+            };
+        }
+    });
+
+    
+});
+
+setTimeout(function(){
+  var valueHash = $('.pagination').pagination('getCurrentPage');
+    var itemsPage = itemsOnPage * valueHash;
+    var initializaedPage = itemsPage - itemsOnPage;
+    
+    for (var i = 1; i <= items ; i++) {
+        if(i > initializaedPage && i <= itemsPage){
+            $('.left-tab-data .actualData ul > li:nth-child('+i+')').removeClass('hidden');    
+        }else{
+            $('.left-tab-data .actualData ul > li:nth-child('+i+')').addClass('hidden');    
+        }
+        
+    };
+}, 100);

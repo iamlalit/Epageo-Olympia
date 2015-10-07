@@ -195,7 +195,7 @@
 									<li><a href="MijnOlympia-voorkeuren.html">Mijn voorkeuren</a></li>
 									<li class="active"><a href="MijnOlympia-email-alerts.html">Mijn email alerts</a></li>
 									<li><a href="MijnOlympia-sollicitaties.html">Mijn sollicitaties (<span>3</span>)</a></li>
-									<li><a href="MijnOlympia-suggesties.html">Mijn suggesties (<spam>21</span>)</a></li>
+									<li><a href="MijnOlympia-suggesties.html">Mijn suggesties (<spam>14</span>)</a></li>
 									<li class="hidden"><a href="MijnOlympia-competenties.html">Mijn competenties</a></li>
 									<li class="hidden"><a href="MijnOlympia-administratie.html">Mijn administratie</a></li>
 								</ul>
@@ -1113,13 +1113,18 @@
 	    }
 	    $('#emailAlert a').prop('href', 'MijnOlympia-dashboard.html?globalCheck='+newCheckVariable);
 	    function onChangeAlert(){
+	    	var listToPass = '';
 	    	$.each( $('.alerts li input[type=checkbox]'), function( i, value ) {
 	    		i++;
 	    		var dummy = $('.alerts li:nth-child('+i+') input[type=checkbox]').prop('checked')
 			  	newCheckVariable = false || dummy;
+			  	if(newCheckVariable == false){
+			  		listToPass = listToPass + 0;
+			  	}else if(newCheckVariable == true){
+			  		listToPass = listToPass + 1;
+			  	}
 			});
-			console.log(newCheckVariable);
-			$('#emailAlert a').prop('href', 'MijnOlympia-dashboard.html?globalCheck='+newCheckVariable);
+			$('#emailAlert a').prop('href', 'MijnOlympia-dashboard.html?globalCheck='+listToPass);
 	    }
 	    
 	    var toggleThis = getParameterByName('toggleThis')
@@ -1127,6 +1132,8 @@
 	   		$(".voorkeuren-box").removeClass('hidden');
 			$(".alert-box").addClass('hidden'); 	
 	    }
+
+
 
 	</script>
 </body>

@@ -2143,3 +2143,31 @@ function editEmailAlert(obj){
   	$('#saveVoorkeurenDataAlertPage').addClass('hidden');
 
 }
+
+//add to favourite
+$('.left-tab-data .favouriteAdd').on('click', function() {
+	var $this = $(this);
+	var clonedValue = $this.closest('li.well').clone();
+	$('.right-tab-data ul').append(clonedValue);
+	$this.closest('li.well').find('.olympia').addClass('favourite');
+	$('.right-tab-data ul li').find('.olympia').addClass('favourite').removeClass('favouriteAdd').attr('onclick', 'favouriteDelete(this)');
+	$('.right-tab-data ul li').find('.favouriteAdd').removeClass('favouriteAdd').attr('onclick', 'favouriteDelete(this)');
+	checkLengthRightTab();
+});
+
+function favouriteDelete(obj){
+	var $this = $(obj);
+	var clickedWellID = $this.closest('li.well').attr('id');
+	$this.closest('li.well').remove();
+	$('.left-tab-data').find('#'+clickedWellID).find('.olympia').removeClass('favourite');
+	checkLengthRightTab();
+}
+
+function checkLengthRightTab(){
+	console.log($('.right-tab-data ul li').length == 0);
+	if($('.right-tab-data ul li').length == 0){
+		$('.right-tab-data .noData').removeClass('hidden');
+	}else{
+		$('.right-tab-data .noData').addClass('hidden');
+	}
+}
