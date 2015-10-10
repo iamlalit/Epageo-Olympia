@@ -1125,7 +1125,7 @@
 			  	}
 			});
 			$('#emailAlert a').prop('href', 'MijnOlympia-dashboard.html?globalCheck='+listToPass);
-	    }
+	    }			
 	    
 	    var toggleThis = getParameterByName('toggleThis')
 	    if(toggleThis == 'true'){
@@ -1134,6 +1134,19 @@
 	    }
 
 
+
+		//to scroll to a point on the screen where user clicked
+		$.fn.scrollView = function (offsetValue) {
+		    return this.each(function () {
+		        $('html, body').animate({
+		            scrollTop: $(this).offset().top - offsetValue
+		        }, 1000);
+		    });
+		}
+
+	    var clickedValue = getParameterByName('clickedvalue');
+	    $('#'+clickedValue).addClass('show');
+	    $('#'+clickedValue).scrollView('10');
 
 	</script>
 </body>
