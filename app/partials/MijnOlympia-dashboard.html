@@ -681,7 +681,7 @@
 									<ul>
 										<li class="well well-olympia" id="1">
 											<div class="heading">
-												<h4><a href="MijnOlympia-suggesties.html?clickedId=1">Met spoed op zoek naar magazijnkrachten!</a><span class="olympia olympia-star favouriteAdd"></span></h4>
+												<h4><a href="MijnOlympia-suggesties.html?clickedId=1&viewed=true" class="favourite">Met spoed op zoek naar magazijnkrachten!</a><span class="olympia olympia-star favouriteAdd"></span></h4>
 												<h6>Match: 95%</h6>
 												<div>
 													<strong>Amersfoort | Fulltime | 40 uur | MAVO werk- en denkniveau</strong>
@@ -691,7 +691,7 @@
 										</li>
 										<li class="well well-olympia" id="2">
 											<div class="heading">
-												<h4><a href="MijnOlympia-suggesties.html?clickedId=2">Gestopt met je studie?</a><span class="olympia olympia-star favouriteAdd"></span></h4>
+												<h4><a href="MijnOlympia-suggesties.html?clickedId=2&viewed=true" class="favourite">Gestopt met je studie?</a><span class="olympia olympia-star favouriteAdd"></span></h4>
 												<h6>Match: 90%</h6>
 												<div>
 													<strong>Amersfoort | Fulltime | 40 uur | MBO werk- en denkniveau</strong>
@@ -701,7 +701,7 @@
 										</li>
 										<li class="well well-olympia" id="3">
 											<div class="heading">
-												<h4><a href="MijnOlympia-suggesties.html?clickedId=3">Reachtruckchauffeur/ Allround Magazijnmedewerker</a><span class="olympia olympia-star favouriteAdd"></span></h4>
+												<h4><a href="MijnOlympia-suggesties.html?clickedId=3&viewed=true" class="favourite">Reachtruckchauffeur/ Allround Magazijnmedewerker</a><span class="olympia olympia-star favouriteAdd"></span></h4>
 												<h6>Match: 90%</h6>
 												<div>
 													<strong>Zeist | Fulltime | 38 uur | MBO werk- en denkniveau</strong>
@@ -1396,6 +1396,13 @@
     	console.log(globalCheck);			
     	location.href='MijnOlympia-email-alerts.html?clickedvalue='+id+'&globalCheck='+globalCheck;
     }
+
+    var viewed = getParameterByName('viewed');
+	if(viewed == 'true'){
+		$('.actualData ul > li').each(function(){
+			$(this).find('h4 a').removeClass('favourite');
+		})
+	}    
 
 	</script>
 </body>

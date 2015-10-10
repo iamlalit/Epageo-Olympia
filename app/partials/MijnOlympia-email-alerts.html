@@ -1098,6 +1098,7 @@
 
 	    var globalCheck = getParameterByName('globalCheck');
 	    var newCheckVariable = globalCheck;
+	    
 	    if(globalCheck === 'false'){
 	    	$.each( $('.alerts li input[type=checkbox]'), function( i, value ) {
 			  i++;
@@ -1147,6 +1148,7 @@
 	    var clickedValue = getParameterByName('clickedvalue');
 	    $('#'+clickedValue).addClass('show');
 	    $('#'+clickedValue).scrollView('10');
+
 
 	</script>
 </body>

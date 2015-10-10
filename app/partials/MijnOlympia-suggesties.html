@@ -551,12 +551,13 @@
 			}
 		}
 
+		var viewed = getParameterByName('viewed');
 		$('.side-menu li:first-child a').click(function(){
 			var emptyList = [];
 			$('.right-tab-data > ul > li').each(function( index ) {
 				emptyList.push($(this).attr('id'));
 			});
-			$('.side-menu li:first-child a').attr('href', $('.side-menu li:first-child a').attr('href') + '?clickedId=' + emptyList)
+			$('.side-menu li:first-child a').attr('href', $('.side-menu li:first-child a').attr('href') + '?clickedId=' + emptyList + '&viewed=' + viewed)
 		})
 
 		//pagination
@@ -613,6 +614,8 @@
 				checkLengthRightTab();
 	    	})
 		}, 400);
+
+
 
 	    
 
