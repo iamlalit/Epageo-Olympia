@@ -1,0 +1,42 @@
+/*
+*Static Page Styles
+*/
+
+h1.olympia-static1 {
+	color:#ff6600;
+	font-size: 24px;
+	font-weight: normal;
+}
+h2.olympia-static1, h3.olympia-static1 {
+	color:#ff6600;
+	font-size: 13px;
+	margin: 0
+}
+p.olympia-static1 {
+	margin-bottom: 16px;
+}
+p.olympia-static1 + ul.olympia-static1 {
+	margin-top: -16px;
+}
+ul.olympia-static1 + ul.olympia-static1 {
+	margin-top: -16px;
+}
+
+div.job-paragraph ul.olympia-static1{
+	margin-bottom: 0;
+}
+
+ul.olympia-static1 {
+	list-style: none;
+	padding:0;
+}
+ul.olympia-static1 li {
+	padding-left: 23px;
+	background: url(../images/bullet.png) no-repeat 0 6px;
+}
+
+ul.olympia-static1 ul {
+	margin: 0;
+	list-style: none;
+	padding:0px 0px 0px 23px;
+}

@@ -1,0 +1,5 @@
+﻿div#print-modal{display: none; background-color: white;overflow: auto; padding: 15px 15px 15px 15px;}
+div#print-buttons{text-align: center; vertical-align: middle;}
+div#print-modal a:hover{ text-decoration: none;}
+
+

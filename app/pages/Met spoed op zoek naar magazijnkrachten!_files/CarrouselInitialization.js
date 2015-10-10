@@ -1,0 +1,1 @@
+﻿$.fn.cycle.defaults.autoSelector = '.slideshow';

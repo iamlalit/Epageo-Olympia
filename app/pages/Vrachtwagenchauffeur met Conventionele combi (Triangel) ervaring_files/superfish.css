@@ -1,0 +1,50 @@
+﻿/*
+ * Navigation
+ */
+nav { padding-top: 20px; font-size: 12px; background-color: #FFF}
+nav li { float: left; height: 34px; line-height: 34px; position: relative; }
+nav a { display: block; text-decoration: none; color:#666666; }
+nav > ul { display: inline-block; }
+nav > ul { display: block; }
+nav > ul:after { content:'.'; clear: both; height: 0; display: block; visibility: hidden; }
+nav > ul > li { width: 227px; border: 1px solid #ced7d1; border-radius: 5px 5px 0 0; margin-left: 5px; position: relative; text-align: center; font-weight: bold; }
+nav > ul > li:first-child { margin: 0; }
+nav > ul > li > a { background: #e9e9e9 url(../images/nav-bg.png) repeat-x 0 0; text-transform: uppercase; border-radius: 5px 5px 0 0; position: relative; z-index: 10; }
+nav > ul > li *:first-child { z-index: 5; }
+
+nav ul ul { background:#fff; position: absolute; left: -1px; top: 34px; display: none; z-index: 1000; border: 1px solid #e2e7e3; width: 100%; font-size: 10px; text-transform: uppercase; }
+nav ul ul li { border-top: 1px solid #e2e7e3; float: none; display: block; line-height: 38px; height: auto; padding: 2px 0; }
+nav ul ul li a { display: block; }
+
+nav ul ul ul, nav ul ul ul ul { background:#fff; position: absolute; left: 100%; top: -1px; display: none; z-index: 1000; border: 1px solid #e2e7e3; width: 100%; font-size: 10px; text-transform: uppercase; }
+
+nav a:hover, nav a:focus, nav .active a { color:#f75726; text-decoration: none; }
+nav+.content { margin-top: 30px; }
+
+nav ul ul li:hover, nav ul ul li:hover > a, nav ul ul li.selected:hover > a { background:#f7f9f8; }
+nav ul ul li:hover a { color:#f75726 !important; }
+nav li:hover ul { display: block; }
+
+nav ul ul li:first-child { border: 0; }
+nav li:hover span { display: block; }
+
+nav li.selected { border-bottom: 1px solid #fff; }
+nav li.selected a { background: #fff; }
+
+/*
+ * Nav results
+ */
+.nav-results { padding: 15px 0 0 20px; font-size: 11px; font-weight: bold; display: inline-block; overflow: hidden; }
+.nav-results { display: block; }
+.nav-results .content-wrap { line-height: 42px; text-align: center;  }
+.nav-results h1 { margin: 0; }
+
+.navpath { margin: 15px 0; font-size: 12px; }
+.navpath span a {  color:#ff4400; }
+.navpath span:before { content: ">";color: #ccc; margin: 0 5px; display: inline-block; }
+.navpath span:last-child a { color: #999999; text-decoration: none; }
+/*.navpath a:hover, .navpath a:focus { color:#f75726 }*/
+
+.sort { float: right; vertical-align: middle; font-size: 10px; font-weight: bold; text-transform: uppercase; }
+.sort select { width: 173px; padding: 5px; margin-left: 10px; }
+

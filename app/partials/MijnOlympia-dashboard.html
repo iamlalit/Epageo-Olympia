@@ -675,38 +675,65 @@
 					<h1 class="black">Suggesties op basis van jouw voorkeuren</h1>
 					<div class="box-inner">
 						<div class="text-right"><strong>Match</strong> &nbsp;<a id="tooltip6" class="website-icons small" data-container="body" data-toggle="popover" data-placement="top" data-original-title="Match" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu." style="cursor: pointer;"><i class="olympia-info3"></i></a></div>
-						<ul>
-							<li>
-								<hr>
-								<div class="job-title">
-									<strong>Magazijnmedewerker, HEMA, Woerden</strong>
-									<strong class="pull-right">Jouw match met deze vacature: 95%</span></strong>
+						<div class="dashboard data">
+							<div class="left-tab-data">
+								<div class="actualData">
+									<ul>
+										<li class="well well-olympia" id="1">
+											<div class="heading">
+												<h4><a href="MijnOlympia-suggesties.html?clickedId=1">Met spoed op zoek naar magazijnkrachten!</a><span class="olympia olympia-star favouriteAdd"></span></h4>
+												<h6>Match: 95%</h6>
+												<div>
+													<strong>Amersfoort | Fulltime | 40 uur | MAVO werk- en denkniveau</strong>
+													<span class="pull-right">22 september 2015</span>
+												</div>
+											</div>
+										</li>
+										<li class="well well-olympia" id="2">
+											<div class="heading">
+												<h4><a href="MijnOlympia-suggesties.html?clickedId=2">Gestopt met je studie?</a><span class="olympia olympia-star favouriteAdd"></span></h4>
+												<h6>Match: 90%</h6>
+												<div>
+													<strong>Amersfoort | Fulltime | 40 uur | MBO werk- en denkniveau</strong>
+													<span class="pull-right">21 september 2015</span>
+												</div>
+											</div>
+										</li>
+										<li class="well well-olympia" id="3">
+											<div class="heading">
+												<h4><a href="MijnOlympia-suggesties.html?clickedId=3">Reachtruckchauffeur/ Allround Magazijnmedewerker</a><span class="olympia olympia-star favouriteAdd"></span></h4>
+												<h6>Match: 90%</h6>
+												<div>
+													<strong>Zeist | Fulltime | 38 uur | MBO werk- en denkniveau</strong>
+													<span class="pull-right">19 september 2015</span>
+												</div>
+											</div>
+										</li>
+										<li class="well well-olympia" id="4">
+											<div class="heading">
+												<h4><a href="MijnOlympia-suggesties.html?clickedId=4">Allround Magazijnmedewerker</a><span class="olympia olympia-star favouriteAdd"></span></h4>
+												<h6>Match: 80%</h6>
+												<div>
+													<strong>Nieuwegein | Fulltime | 37.5 uur | MBO werk- en denkniveau</strong>
+													<span class="pull-right">19 september 2015</span>
+												</div>
+											</div>
+										</li>
+										<li class="well well-olympia" id="5">
+											<div class="heading">
+												<h4><a href="MijnOlympia-suggesties.html?clickedId=5">Ervaring opdoen in de logistiek of al ervaring als magazijnmedewerker, dan zoeken we jou!</a><span class="olympia olympia-star favouriteAdd"></span></h4>
+												<h6>Match: 80%</h6>
+												<div>
+													<strong>Heteren | Fulltime, Parttime | 40 uur | LBO, MAVO, HAVO, VWO, MBO, HBO, Universitair, Ongeschoold</strong>
+													<span class="pull-right">19 september 2015</span>
+												</div>
+											</div>
+										</li>
+									</ul>
 								</div>
-								<hr>
-							</li>
-							<li>
-								<div class="job-title">
-									<strong>Orderpicker, Cool Blue, Tilburg</strong>
-									<strong class="pull-right">Jouw match met deze vacature: 90%</strong >
-								</div>
-								<hr>
-							</li>
-							<li>
-								<div class="job-title">
-									<strong>Parttime logistiek medewerker, Kruidvat, Naaldwijk</strong>
-									<strong class="pull-right">Jouw match met deze vacature: 90%</strong >
-								</div>
-								<hr>
-							</li>
-							<li>
-								<div class="job-title">
-									<strong>Warehouse supervisor, DHL, Leiden</strong>
-									<strong class="pull-right">Jouw match met deze vacature: 90%</strong >
-								</div>
-								<hr>
-							</li>
-						</ul>
-						<div class="text-center"><a href="MijnOlympia-suggesties.html">Alle suggesties</a></div>
+							</div>
+						</div>
+						<div class="text-center"><a href="MijnOlympia-suggesties.html">Alle suggesties (14)</a></div>
 					</div>
 				</div>
 				<div class="well well-olympia orange-well hidden">
@@ -1477,21 +1504,80 @@
 	    if(scrollTonotification === 'notification'){
 	    	$("."+scrollTonotification).scrollView(10);
 	    }
-
-	    var listToPass = window.location.search.split('=')[1];
+	    var listToPass = '';
+	    if(window.location.search != ''){
+	    	listToPass = window.location.search.split('=')[1];	
+	    }
+	    console.log(listToPass);
+	    
 	    
 	    for (var i = 1; i <= listToPass.length; i++) {
-	    	console.log(listToPass[i]);
 	    	if(listToPass[i-1] === '1'){
-	    		$('.accordion-data.alerts #'+i).find('.circle').removeClass('green').removeClass('red').addClass('green');
+	    		$('.accordion-data.alerts').find('#'+i +' .circle').removeClass('green').removeClass('red').addClass('green');
+	    		
 	    	}else if(listToPass[i-1] === '0'){
-	    		$('.accordion-data.alerts #'+i).find('.circle').removeClass('green').removeClass('red').addClass('red');
+	    		$('.accordion-data.alerts').find('#'+i +' .circle').removeClass('green').removeClass('red').addClass('red');
 	    	}
 	    };
 	    if(listToPass === '1111'){
 	    	$('.globalCheck input[type=checkbox]').attr("checked", true);
 	    }else if(listToPass === '0000'){
 	    	$('.globalCheck input[type=checkbox]').removeAttr("checked");
+	    }
+
+	    Array.prototype.contains = function(v) {
+		    for(var i = 0; i < this.length; i++) {
+		        if(this[i] === v) return true;
+		    }
+		    return false;
+		};
+
+		Array.prototype.unique = function() {
+		    var arr = [];
+		    for(var i = 0; i < this.length; i++) {
+		        if(!arr.contains(this[i])) {
+		            arr.push(this[i]);
+		        }
+		    }
+		    return arr; 
+		}
+
+
+	    var StarredList = [];
+	    $('.dashboard .favouriteAdd').on('click', function(){
+	    	var clickedId = $(this).closest('li').attr('id');
+	    	
+	    	if(clickedId == '1'){
+	    		StarredList.push('1');
+	    	}else if(clickedId == '2'){
+	    		StarredList.push('2');
+	    	}else if(clickedId == '3'){
+	    		StarredList.push('3');
+	    	}else if(clickedId == '4'){
+	    		StarredList.push('4');
+	    	}else if(clickedId == '5'){
+	    		StarredList.push('5');
+	    	}
+	    })
+	    $('.dashboard .heading h4 a').on('click', function(){
+	    	$(this).closest('ul').find('li').each(function(){
+	    		var hrefValue = $(this).find('h4 a').attr('href');
+	    		var UpdatedHref = hrefValue + "&starredItems=" + StarredList.unique().join();
+	    		$(this).find('h4 a').attr('href', UpdatedHref);
+	    	})
+	    })
+
+	    var clickedId = getParameterByName('clickedId');
+	    if(clickedId != ''){
+	    	if(clickedId.length > 1){
+	    		clickedId.split(',').forEach(function(item){
+	    			$('#'+item).find('h4 a').attr('href', $('#'+item).find('h4 a').attr('href')+'&starredItems='+clickedId)
+	    			$('#'+item).find('.olympia-star').addClass('favourite');
+	    		})
+	    	}else{
+	    		$('#'+clickedId).find('.olympia-star').addClass('favourite');
+	    		$('#'+clickedId).find('h4 a').attr('href', $('#'+clickedId).find('h4 a').attr('href')+'&starredItems='+clickedId)
+	    	}
 	    }
 	})
 	</script>

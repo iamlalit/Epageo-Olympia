@@ -2147,12 +2147,16 @@ function editEmailAlert(obj){
 //add to favourite
 $('.left-tab-data .favouriteAdd').on('click', function() {
 	var $this = $(this);
-	var clonedValue = $this.closest('li.well').clone();
-	$('.right-tab-data ul').append(clonedValue);
-	$this.closest('li.well').find('.olympia').addClass('favourite');
-	$('.right-tab-data ul li').find('.olympia').addClass('favourite').removeClass('favouriteAdd').attr('onclick', 'favouriteDelete(this)');
-	$('.right-tab-data ul li').find('.favouriteAdd').removeClass('favouriteAdd').attr('onclick', 'favouriteDelete(this)');
-	checkLengthRightTab();
+	console.log($(this).hasClass('favourite'));
+	if(!$(this).hasClass('favourite') && !$this.closest('li.well').find('.jobBody .favouriteAdd').hasClass('favourite')){
+		var clonedValue = $this.closest('li.well').clone();
+		$('.right-tab-data ul').append(clonedValue);
+		$this.closest('li.well').find('.jobBody .favouriteAdd').addClass('favourite');
+		$this.closest('li.well').find('.olympia').addClass('favourite');
+		$('.right-tab-data ul li').find('.olympia').addClass('favourite').removeClass('favouriteAdd').attr('onclick', 'favouriteDelete(this)');
+		$('.right-tab-data ul li').find('.favouriteAdd').removeClass('favouriteAdd').attr('onclick', 'favouriteDelete(this)');
+		checkLengthRightTab();
+	}
 });
 
 function favouriteDelete(obj){
@@ -2160,6 +2164,7 @@ function favouriteDelete(obj){
 	var clickedWellID = $this.closest('li.well').attr('id');
 	$this.closest('li.well').remove();
 	$('.left-tab-data').find('#'+clickedWellID).find('.olympia').removeClass('favourite');
+	$('.left-tab-data').find('#'+clickedWellID).find('.jobBody .favouriteAdd').removeClass('favourite');
 	checkLengthRightTab();
 }
 

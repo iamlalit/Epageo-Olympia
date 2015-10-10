@@ -1151,6 +1151,10 @@ small.circle.red{
 }
 .data ul > li.well-olympia .heading h4{
 	width: 86%;
+	font-size: 13px;
+}
+.data ul > li.well-olympia .heading h4 a{
+	color: #333333;
 }
 .data ul > li.well-olympia .heading h4 span.olympia{
 	color: #aaaaaa;
@@ -1169,10 +1173,7 @@ small.circle.red{
 .data ul > li.well-olympia .jobBody > span{
 	color: #ff4400;
 }
-.data .actualData ul > li,
-.data .right-tab-data ul > li{
-	background: #fafafa !important;
-}
+
 
 .favourite{
 	color: #ff4400 !important;
@@ -1217,4 +1218,25 @@ small.circle.red{
 	background: #ffffff !important;
 	font-weight: bold;
 	color: #333333;	
+}
+.dashboard.data .left-tab-data .actualData ul li{
+	width: 100%;
+}
+.dashboard.data ul > li.well-olympia .heading > div{
+	float: none;
+	padding-bottom: 6px;
+}
+.dashboard.data ul > li.well-olympia:last-child .heading > div{
+	padding-bottom: 20px;
+}
+.dashboard.data ul > li .heading h4{
+	display: inline-block;
+}
+.dashboard.data ul > li .heading h6{
+	display: inline-block;
+	text-align: right;
+	width: 13%;
+	float: right;
+	padding: 5px 0 0;
+	font-weight: bold;
 }
