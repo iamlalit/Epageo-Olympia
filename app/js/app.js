@@ -1497,7 +1497,7 @@ $(document).ready(function(){
 					'</div>'+
 				'</li>'
 			);
-			$('#educationPopEdit').modal('hide');
+			$('#educationPop').modal('hide');
 		}
 	});
 });
