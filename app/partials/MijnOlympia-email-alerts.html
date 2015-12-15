@@ -45,77 +45,9 @@
 			<nav>
 				<ul class="menu sf-menu" id="menu-227">
 					<li>
-						<a href="javascript:void(0)" class="title">Ik zoek werk</a>
-						<ul>
-							<li>
-								<a href="/Vacatures" class="title">Alle vacatures</a>
-							</li>
-							<li>
-								<a href="/vacaturesperbranche" class="title">Vacatures per branche</a>
-							</li>
-							<li>
-								<a href="/werkgevers" class="title">Vacatures bij topbedrijven</a>
-							</li>
-							<li>
-								<a href="/Registration/RegisterIntro" class="title">Direct inschrijven bij Olympia</a>
-							</li>
-							<li>
-								<a href="/Vestigingen-Olympia-Uitzendbureau" class="title">Vestiging zoeken</a>
-							</li>
-						</ul>
+						<span><a href="https://olympia.nl" target="_blank" class="olympia olympia-home" title="Ga terug naar Olympia.nl"></a></span>
 					</li>
-					<li>
-						<a href="javascript:void(0)" class="title">Ik zoek personeel</a>
-						<ul>
-							<li>
-								<a href="/voorendoorondernemers" class="title">Voor en door ondernemers</a>
-							</li>
-							<li>
-								<a href="http://www.olympia.nl/toptalent" target="_blank" class="title">ONZE VISIE OP TOPTALENT</a>
-							</li>
-							<li>
-								<div class="title">Onze diensten</div>
-								<ul>
-									<li>
-										<a href="/onzediensten/uitzenden" class="title">Uitzenden</a>
-									</li>
-									<li>
-										<a href="/payrollservice" class="title">Payroll service</a>
-									</li>
-									<li>
-										<a href="/wervingenselectie" class="title">Werving en selectie</a>
-									</li>
-									<li>
-										<a href="/mastervendorservice" class="title">Master vendor service</a>
-									</li>
-									<li>
-										<a href="/inhouseservice" class="title">Inhouse Service</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="/vacatureplaatsen" class="title">Vacature aanmelden</a>
-							</li>
-							<li>
-								<a href="/Vestigingen-Olympia-Uitzendbureau?radius=25" class="title">Vestiging zoeken</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="javascript:void(0)" class="title">Over Olympia</a>
-						<ul>
-							<li>
-								<a href="/welovetoworkforyou" class="title">We love to work for you</a>
-							</li>
-							<li>
-								<a href="http://www.ondernemenbijolympia.nl" target="_blank" class="title">Ondernemer worden?</a>
-							</li>
-							<li>
-								<a href="/contact" class="title">Contact</a>
-							</li>
-						</ul>
-					</li>
-					<li class="current">
+					<li class="current right">
 						<a href="/mijn-olympia" class="title">Mijn Olympia</a>
 					</li>
 				</ul>
@@ -176,12 +108,15 @@
 							<div class="dashboard-image">
 								<img src="../img/pasfoto.jpg"/>
 								<div class="overlay-container">
-									<label>Compleetheid profiel <span>60%</span></label> 
+									<label class="text1">Bewerk je profielfoto </label>
+									<label class="text2">Maak je profiel compleet </label>
 									<div class="progress" style="margin-bottom: 0px;">
-										<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+										<div class="progress-bar progress-bar-success text-right" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+											<span class="percentage">60%</span>
 											<span class="sr-only"></span>
 										</div>
 									</div>
+									<span class="olympia olympia-camera"></span>
 								</div>
 							</div>
 						</div>
@@ -193,7 +128,7 @@
 									<li><a href="MijnOlympia-video-cv.html">Mijn video CV</a></li>
 									<li><a href="MijnOlympia-cv-ervaring.html">Mijn CV &amp; ervaring</a></li>
 									<li><a href="MijnOlympia-voorkeuren.html">Mijn voorkeuren</a></li>
-									<li class="active"><a href="MijnOlympia-email-alerts.html">Mijn email alerts</a></li>
+									<li class="active"><a href="MijnOlympia-email-alerts.html">Mijn email alerts (<span>4</span>)</a></li>
 									<li><a href="MijnOlympia-sollicitaties.html">Mijn sollicitaties (<span>3</span>)</a></li>
 									<li><a href="MijnOlympia-suggesties.html">Mijn suggesties (<spam>14</span>)</a></li>
 									<li class="hidden"><a href="MijnOlympia-competenties.html">Mijn competenties</a></li>
@@ -215,7 +150,7 @@
 					</div>
 				</div>
             </div>
-			<div class="col-lg-9 right-container alert-box">
+			<div class="col-lg-9 right-container alert-box hidden">
 				<div class="well well-olympia">
 					<h1>Mijn e-mail alerts</h1>
 					<div class="box-inner">
@@ -228,7 +163,7 @@
 					</div>
 					<div class="box-inner accordion">
 						<ul class="accordion-data alerts">
-							<li>
+							<li id="1">
 								<div class="header">
 									<div class="form-group" id="fromTO">
 										<div class="switch on">
@@ -288,7 +223,7 @@
 											<span>1 x per dag</span>
 										</li>
 									</ul>
-									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="MijnOlympia-voorkeuren.html?toggleThis=true">E-mail alert instellingen bewerken</a></span>
+									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="MijnOlympia-voorkeuren.html?toggleThis=true">Mijn voorkeuren bewerken</a></span>
 								</div>
 							</li>
 							<li id="2">
@@ -351,7 +286,7 @@
 											<span>Direct als er een passende vacature is</span>
 										</li>
 									</ul>
-									<span class="bewerk" onclick="editEmailAlert(2)"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+									<span class="bewerk" onclick="editEmailAlert(2)"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen wijzigen</a></span>
 									<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
 								</div>
 							</li>
@@ -415,7 +350,7 @@
 											<span>Direct als er een passende vacature is</span>
 										</li>
 									</ul>
-									<span class="bewerk" onclick="editEmailAlert(3)"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+									<span class="bewerk" onclick="editEmailAlert(3)"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen wijzigen</a></span>
 									<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
 								</div>
 							</li>
@@ -479,7 +414,7 @@
 											<span>Direct als er een passende vacature is</span>
 										</li>
 									</ul>
-									<span class="bewerk" onclick="editEmailAlert(4)"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen bewerken</a></span>
+									<span class="bewerk" onclick="editEmailAlert(4)"><i class="olympia-icon olympia-edit"></i><a href="javascript:void(0)">E-mail alert instellingen wijzigen</a></span>
 									<span class="bewerk" onclick="deleteThisEmailAlert(this)"><i class="olympia-icon olympia-trash-o"></i><a href="javascript:void(0)">E-mail alert verwijderen</a></span>
 								</div>
 							</li>
@@ -487,13 +422,13 @@
 						
 					</div>
 					<div class="accordion-button">
-						<a href="javascript:void(0)" onclick="emptyTheForm()">voeg een nieuwe job alert toe</a>
+						<a href="javascript:void(0)" onclick="emptyTheForm()">Nieuwe e-mail alert maken</a>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-9 right-container voorkeuren-box hidden">
+			<div class="col-lg-9 right-container voorkeuren-box">
 				<div class="well well-olympia">
-					<h1>Nieuwe Job alert instellen</h1>
+					<h1>E-mail alert instellingen wijzigen</h1>
 					<div class="box-inner">
 
 						<input type="hidden" id="clickedIdparam" />
@@ -521,9 +456,38 @@
 								</label>
 							</div>
 							<div class="col-lg-6">
-								<label class="radio-inline">
-									<input type="radio" name="emailFreq" id="inlineCheckbox1d" data-values="1 x per maand" value="1 x per maand"> 1 x per maand
-								</label>
+								<label>&nbsp;</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-2">
+								<select class="form-control" id="timeHour" name="timeHour">
+									<option value="0">Uur</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+								</select>
 							</div>
 						</div>
 						<hr>
@@ -1136,6 +1100,7 @@
 
 
 
+
 		//to scroll to a point on the screen where user clicked
 		$.fn.scrollView = function (offsetValue) {
 		    return this.each(function () {
@@ -1149,7 +1114,14 @@
 	    $('#'+clickedValue).addClass('show');
 	    $('#'+clickedValue).scrollView('10');
 
-
+	    $('.alerts input[type=checkbox]').on('change', function(){
+	    	if($(this).prop('checked')){
+	    		$(this).closest('.switch').find('label').prop('title', 'Deze alert is ingeschakeld, klik de knop om deze alert uit te schakelen');
+	    	}else{
+	    		$(this).closest('.switch').find('label').prop('title', 'Deze alert is uitgeschakeld, klik de knop om deze alert in te schakelen');
+	    	}
+	    })
+	    $('.alerts input[type=checkbox]').trigger('change');
 	</script>
 </body>
 </html>

@@ -54,6 +54,31 @@ $(document).ready(function(){
 		}
 	})
 
+	function computeMontheInNumber(month){
+		var monthNames = ["Januari", "Februari", "Maart", "April", "Mei", "Juni","Juli", "Augustus", "September", "Oktober", "November", "December"];
+		for (var i = 1; i < monthNames.length; i++) {
+			if(monthNames[i] == month){
+				return i;
+			}
+		};
+	}
+	function checkForDate(date1, date2, month1, month2, year1, year2){
+		month1 = computeMontheInNumber(month1);
+		month2 = computeMontheInNumber(month2);
+		console.log(month1)
+		var newdate1 = Date.parse(year1+"/"+month1+"/"+date1);
+		var newdate2 = Date.parse(year2+"/"+month2+"/"+date2);
+		
+		if(!isNaN(newdate2)){
+			if(newdate2 >= newdate1 ){
+				return false;
+			}else{
+				return true;
+			}	
+		}
+		return undefined;
+	}
+
 	$('input[name=radioNieuw], input[name=opzegtermijn], #pop-weken-1, #pop-maanden-1, #pop-startdatum-date-1, #pop-startdatum-maand-1, #pop-startdatum-jaar-1, #pop-enddatum-date-1, #pop-enddatum-maand-1, #pop-enddatum-jaar-1').on('change', function(){
 		var firstSelected = $("input[name='radioNieuw']:checked");
 		var secondSelected = $("input[name='opzegtermijn']:checked");
@@ -71,11 +96,11 @@ $(document).ready(function(){
 			daysLeft = $("#pop-weken-1").val(),
 			chooseOption = $("#pop-maanden-1").val();
 
-
+			var checkDate = checkForDate(startDate, endDate, startMonth, endMonth, startYear, endYear);
 
 		var newStringToPaste = '';
 		if(firstSelected.val() == 'option1' && secondSelected.val() == 'option2'){
-			if(endYear >= startYear && endMonth >= startMonth && endDate >= startDate){
+			if(checkDate){
 				$('.row.error').removeClass('hidden');
 				$('#modal-voorkeuren-add').attr('disabled', 'disabled');
 			}else{
@@ -90,7 +115,7 @@ $(document).ready(function(){
 				}
 			}			
 		}else if(firstSelected.val() == 'option1' && secondSelected.val() == 'option1'){
-			if(endYear >= startYear && endMonth >= startMonth && endDate >= startDate){
+			if(checkDate){
 				$('.row.error').removeClass('hidden');
 				$('#modal-voorkeuren-add').attr('disabled', 'disabled');
 			}else{
@@ -1744,6 +1769,10 @@ function emptyTheForm(){
 	$('.dienstverband input[type=checkbox], .weekHour input[type=checkbox], .branche input[type=checkbox], .vakgebied input[type=checkbox], .salaris input[type=checkbox]').removeAttr('checked');
 	$('.trefwoorden span').remove();
 	$('.placeWithDistance span').remove();
+
+	formTitle = $('.alert-box').find('.accordion-button a').html();
+	console.log(formTitle);
+	$(".voorkeuren-box").find('h1').html(formTitle);
 }
 //email alert
 $(document).ready(function(){
@@ -2105,6 +2134,8 @@ function editEmailAlert(obj){
 	dienstverband = jobBody.find('.dienstverband span').html();
 	branch = jobBody.find('.branch span').html();
 	frequency = jobBody.find('.frequency span').html();
+	formTitle = jobBody.find('.bewerk a').html();
+	
 
 	$(".voorkeuren-box").removeClass('hidden');
 	$(".alert-box").addClass('hidden');
@@ -2137,6 +2168,8 @@ function editEmailAlert(obj){
   	locatie.split(',').forEach(function(location) {
   		$('.placeWithDistance').append('<span><strong>'+location.trim()+' </strong><a href="javascript:void(0)" onclick="removeText(this)"><i>×</i></a></span>')
   	})
+
+  	$(".voorkeuren-box").find('h1').html(formTitle);
 
   	//replace the save button with update buttom
   	$('#updateVoorkeurenDataAlertPage').removeClass('hidden');

@@ -43,7 +43,7 @@ a:focus{
 	width: 100%;
 }
 .left-container .well.well-olympia .overlay-container{
-	padding: 5px 10px;
+	padding: 5px 10px 0px;
 	position: absolute;
 	bottom: 0;
 	background: rgb(0, 0, 0); /* fallback color */
@@ -281,7 +281,7 @@ a:focus{
 .right-container .half-well .well.well-olympia ul li span{
 	color: #333333;
 }
-.right-container .half-well .well.well-olympia .video-box{
+.right-container .well.well-olympia .video-box{
 	padding: 10px;
 	text-align: center;
 	border: 2px dashed #aaa;
@@ -324,11 +324,18 @@ a:focus{
 	top: 15px;
 }
 .alert-box.right-container .well.well-olympia .accordion .header{
-	background: rgb(244, 244, 244);
-	border: 1px solid #dddddd;
 	width: 100%;
 	float: left;
 	margin-bottom: 10px;
+	background: #ffffff;
+	border: 1px solid #d2d2d2;
+	border-radius: 5px;
+	box-shadow: 0px 0px 3px 0px rgba(166, 166, 166, 0.25);
+	box-shadow: 0px 0px 5px 0px #f6f6f6\9;
+}
+.alert-box.right-container .well.well-olympia .accordion .show .header{
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
 }
 .dashboard.alert-box.right-container .well.well-olympia .accordion .header{
 	background: rgb(244, 244, 244);
@@ -345,18 +352,32 @@ a:focus{
     box-shadow: 0px 0px 5px 0px #f6f6f6\9;
     margin: 0;
 }
+.dashboard.alert-box.right-container .well.well-olympia .accordion .header:hover{
+	background: rgba(244,244,244,0.7);
+}
 .cv.right-container .well.well-olympia .accordion .header,
 .suggestie.right-container .well.well-olympia .accordion .header{
-	background: rgb(244, 244, 244);
-	border: 1px solid #dddddd;
 	padding: 15px;
 	cursor: pointer;
+	background: #ffffff;
+	border: 1px solid #d2d2d2;
+	border-radius: 5px;
+	box-shadow: 0px 0px 3px 0px rgba(166, 166, 166, 0.25);
+	box-shadow: 0px 0px 5px 0px #f6f6f6\9;
+}
+.cv.right-container .well.well-olympia .accordion .show .header{
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0; 
 }
 .sollicitaties.well-olympia .accordion ul.accordion-data > li .heading{
 	background: rgba(244,244,244,0.7);
 	padding: 10px;
 	border: 1px solid #dddddd;
 	cursor: pointer;
+}
+.right-container .sollicitaties h1.black{
+	display: inline-block;
+	padding-right: 10px;
 }
 .right-container .sollicitaties.well.well-olympia .accordion .job-description {
 	border: 0;
@@ -384,6 +405,9 @@ a:focus{
 	padding: 15px;
 	border-top: none;
 	background: rgb(252, 252, 252);
+}
+.cv.right-container .well.well-olympia .accordion .job-body{
+	background: #ffffff;
 }
 .right-container .sollicitaties.well.well-olympia .accordion .job-body ul.accordion-li,
 .suggestie.right-container .well.well-olympia .accordion .job-body ul.accordion-li{
@@ -441,6 +465,8 @@ a:focus{
 .cv.right-container .well.well-olympia .accordion ul.accordion-data li.show .job-body,
 .suggestie.right-container .well.well-olympia .accordion ul.accordion-data li.show .job-body{
 	display: block;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 .notification.well .accordion-data li .job-body,
 .right-container .sollicitaties.well.well-olympia .accordion ul.accordion-data li .job-body,
@@ -463,6 +489,13 @@ a:focus{
 	padding: 15px;
 	border-top: none;
 }
+.alert-box.right-container .well.well-olympia .accordion .job-body{
+	background: #ffffff;
+}
+.alert-box.right-container .well.well-olympia .accordion .job-body strong{
+	width: 140px;
+	display: inline-block;
+}
 .row-centered {
     text-align:center;
 }
@@ -474,6 +507,8 @@ a:focus{
 }
 .alert-box.right-container .well.well-olympia .accordion ul.accordion-data li.show .job-body{
 	display: block;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 .alert-box.right-container .well.well-olympia .accordion ul.accordion-data li .job-body{
 	display: none;
@@ -700,7 +735,7 @@ label.title.black{
 	z-index: 9999;
 }
 .navbar-secondary .navigation {
-	width: 560px;
+	width: 650px;
 	text-align: center;
 	margin: 0 auto;
 	overflow: hidden;
@@ -749,22 +784,28 @@ label.title.black{
 	width: 160px;
 }
 .cv .navbar-secondary .navigation li:nth-child(3) a{
-	width: 156px;
+	width: 105px;
 }
 .cv .navbar-secondary .navigation li:nth-child(4) a{
-	width: 116px;
+	width: 186px;
 }
 .cv .navbar-secondary .navigation li:nth-child(5) a{
-	width: 63px;
+	width: 116px;
 }
 .cv .navbar-secondary .navigation li:nth-child(6) a{
+	width: 63px;
+}
+.cv .navbar-secondary .navigation li:nth-child(7) a{
 	width: 140px;
 }
-.cv .navbar-secondary .navigation li a {
-	height: 35px;
-}
 .cv .navbar-secondary .navigation {
-	width: 613px;
+	width: 826px;
+}
+.topLink .navbar-secondary .navigation {
+	width: 140px;
+}
+.navbar-secondary .navigation li:nth-child(1) a{
+	width: 116px;
 }
 .navbar-secondary .navigation li:nth-child(4) a{
 	width: 111px;
@@ -773,7 +814,7 @@ label.title.black{
 	width: 118px;
 }
 .navbar-secondary .navigation li:nth-child(6) a{
-	width: 86px;
+	width: 107px;
 }
 
 .logo {
@@ -1048,11 +1089,17 @@ label.title.black{
 }
 /*dashboard notifications*/
 .notification.well .accordion-data .header{
-	background: rgb(244, 244, 244);
-	border: 1px solid #dddddd;
 	width: 100%;
 	float: left;
 	margin-bottom: 10px;
+	background: #ffffff;
+	border: 1px solid #d2d2d2;
+	border-radius: 5px;
+	box-shadow: 0px 0px 3px 0px rgba(166, 166, 166, 0.25);
+	box-shadow: 0px 0px 5px 0px #f6f6f6\9;
+}
+.notification.well .accordion-data .header:hover{
+	background: rgba(244,244,244,0.7);
 }
 .notification.well .accordion-data .header .job-title{
 	padding: 15px 20px;
@@ -1237,6 +1284,9 @@ small.circle.red{
 .dashboard.data .left-tab-data .actualData ul li{
 	width: 100%;
 }
+.dashboard.data .left-tab-data .actualData ul li:hover{
+	background: rgba(244,244,244,0.7);
+}
 .dashboard.data ul > li.well-olympia .heading > div{
 	float: none;
 	padding-bottom: 6px;
@@ -1254,4 +1304,61 @@ small.circle.red{
 	float: right;
 	padding: 5px 0 0;
 	font-weight: bold;
+}
+nav a {
+	display: block;
+	text-decoration: none;
+	color: #D7D7D7;
+}
+.list-style-square{
+	padding: 10px 15px;
+	list-style-type: square !important;
+	color: #ff4400;
+}
+.list-style-square li span{
+	color: #333333;
+}
+.progress-bar{
+	text-align: right
+}
+.dashboard-image .progress-bar .percentage{
+	padding-right: 5px;
+}
+.dashboard-image .progress{
+	width: 85%;
+	display: inline-block;
+}
+.dashboard-image .olympia-camera{
+	font-size: 18px;
+	padding: 0 3px;
+	position: relative;
+	top: -2px;
+	right: -6px;
+	color: #cccccc;
+	cursor: pointer;
+}
+/*.left-container .well.well-olympia .overlay-container .text1,
+.left-container .well.well-olympia .overlay-container .text2{
+	display: none;
+}*/
+.left-container .well.well-olympia .overlay-container .olympia-camera:hover{
+	color: #ffffff;
+}
+nav > ul > li:first-child{
+	float: left;
+	border: none;
+}
+nav > ul > li:first-child span{
+	text-align: left;
+	font-size: 40px;
+	color: #ff4400;
+}
+nav > ul > li:first-child span a{
+	color: #ff4400;
+}
+nav > ul > li:last-child{
+	float: right;
+}
+#motivatie .box-inner .olympia{
+	color: #333333;
 }

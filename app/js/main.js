@@ -91,3 +91,17 @@ $('.tabs div span').on('click', function (e) {
 $('.left-tab-data ul > li .jobBody p span').text(function(index, currentText) {
     return currentText.substr(0, 250);
 });
+
+var text11 = false;
+$('.olympia-camera').mouseover(function(){
+    $('.text1').removeClass('hidden');
+})
+$('.olympia-camera').mouseout(function(){
+    $('.text1').addClass('hidden');
+})
+$('.progress').mouseover(function(){
+    $('.text2').removeClass('hidden');
+})
+$('.progress').mouseout(function(){
+    $('.text2').addClass('hidden');
+})
