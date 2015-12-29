@@ -38,7 +38,11 @@
 			</div>
 		</div>
 	</header>
-
+	<div class="notificationSaveMessage hidden">
+		<div class="box">
+			<p>Your changes have been saved!</p><span class="olympia olympia-check-circle"></span>
+		</div>
+	</div>
 	<div class="full-width-border" style="margin-top: 15px;">
 		<div class="container">
 			<nav>
@@ -131,7 +135,7 @@
 									<li><a href="MijnOlympia-sollicitaties.html">Mijn sollicitaties (<span>3</span>)</a></li>
 									<li><a href="MijnOlympia-suggesties.html">Mijn suggesties (<spam>14</span>)</a></li>
 									<li class="hidden"><a href="MijnOlympia-competenties.html">Mijn competenties</a></li>
-									<li class="hidden"><a href="MijnOlympia-administratie.html">Mijn administratie</a></li>
+									<li><a href="https://www.e-flexer.nl/olympia/index.ewb" target="_blank">Mijn administratie</a></li>
 								</ul>
 							</div>
 						</div>
@@ -199,26 +203,6 @@
 								<input type="radio" name="Gaslachet" value="option2"> Vrouw
 							</label>
 						</div>
-
-						<div class="form-group">
-							<label for="month">Burgerlijke staat</label>
-							<div class="row">
-								<div class="col-sm-4">
-									<select class="form-control" id="martialStatus" name="martialStatus">
-										<option value="Ongehuwd" selected="selected">Ongehuwd</option>
-										<option value="Getrouwd">Getrouwd</option>
-										<option value="Gescheiden">Gescheiden</option>
-									</select>
-								</div>
-								<div class="col-sm-4">
-									&nbsp;
-								</div>
-								<div class="col-sm-4">
-									&nbsp;
-								</div>
-							</div>
-						</div>
-
 						<div class="form-group">
 							<label for="month">Geboortedatum</label>
 							<div class="row">
@@ -394,52 +378,68 @@
 								</div>
 								<div class="col-sm-4">
 									<label for="11">Woonplaats</label>
-									<input type="text" name="Woonplaats" class="form-control" id="11" value="Rotterdam"/>
+									<input type="text" name="Woonplaats" class="form-control" id="11" value="Rotterdam" disabled/>
 								</div>
 							</div>
 						</div>
 
 
 						<div class="form-group margin-top-15">
-							<label>Rijbewijs</label>
-							<div class="row">
-								<div class="col-sm-8">
+							<label>Rijbewijs (optioneel)</label>
+							<div class="row" id="rijbewijs1">
+								<div class="col-sm-12">
 									<label class="col-sm-2 checkbox-inline">
 										<input type="checkbox" id="inlineCheckbox1" value="option1" checked="checked"> A
 									</label>
 									<label class="col-sm-2 checkbox-inline">
-										<input type="checkbox" id="inlineCheckbox2" value="option2"> BE
+										<input type="checkbox" id="inlineCheckbox2" value="option2"> B
 									</label>
 									<label class="col-sm-2 checkbox-inline">
-										<input type="checkbox" id="inlineCheckbox3" value="option3"> CE
+										<input type="checkbox" id="inlineCheckbox3" value="option3"> C
 									</label>
 									<label class="col-sm-2 checkbox-inline">
-										<input type="checkbox" id="inlineCheckbox4" value="option4"> DE
+										<input type="checkbox" id="inlineCheckbox4" value="option4"> D
 									</label>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row" id="rijbewijs2">
+								<div class="col-sm-12">
+									<label class="col-sm-2 checkbox-inline">
+										<input type="checkbox" id="inlineCheckbox5" value="option5"> BE
+									</label>
+									<label class="col-sm-2 checkbox-inline">
+										<input type="checkbox" id="inlineCheckbox6" value="option6"> CE
+									</label>
+									<label class="col-sm-2 checkbox-inline">
+										<input type="checkbox" id="inlineCheckbox7" value="option7"> DE
+									</label>
+									<label class="col-sm-2 checkbox-inline">
+										<input type="checkbox" id="inlineCheckbox8" value="option8"> G
+									</label>
+								</div>
+							</div>
+							<div class="row geen-rijbewijs">
 								<div class="col-sm-8">
-									<label class="col-sm-2 checkbox-inline">
-										<input type="checkbox" id="inlineCheckbox5" value="option5"> B
-									</label>
-									<label class="col-sm-2 checkbox-inline">
-										<input type="checkbox" id="inlineCheckbox6" value="option6"> C
-									</label>
-									<label class="col-sm-2 checkbox-inline">
-										<input type="checkbox" id="inlineCheckbox7" value="option7"> D
-									</label>
-									<label class="col-sm-2 checkbox-inline">
-										<input type="checkbox" id="inlineCheckbox8" value="option8"> Geen
+									<label class="col-sm-4 checkbox-inline">
+										<input type="checkbox" id="inlineCheckbox9" value="option8"> Geen rijbewijs
 									</label>
 								</div>
 							</div>
 						</div>
-
+						<div class="form-group">
+                        	<label>&nbsp;</label>
+                        	<div class="row">
+                        		<div class="col-sm-12">
+									<label class="checkbox-inline">
+										<input type="checkbox" id="inlineCheckbox1" value="option1" checked="checked"> Ik verleen hierbij toestemming om de door mij verstrekte gegevens op te slaan en verklaar mij akkoord met de <a href="https://www.olympia.nl/privacystatement" target="_blank">privacyverklaring</a>
+									</label>
+								</div>
+                        	</div>
+                        </div>
 						<div class="form-group">
 							<div class="row margin-top-15">
 								<div class="col-lg-12">
-	                            	<button type="submit" class="btn btn-primary medium-text pull-right">Gegevens opslaan</button>
+	                            	<button type="submit" class="btn btn-primary medium-text pull-right notificationSaveMessage1">Gegevens opslaan</button>
 	                            </div>
 	                        </div>
                         </div>
@@ -555,8 +555,8 @@
 							<div class="row">
 								<div class="col-sm-8">
 									<div class="form-group">
-										<label for="confirmPassword">Bevestig met je wachtwoord</label>
-										<input type="text" class="form-control" name="confirmPassword" id="confirmPassword"/>
+										<label for="confirmEmail">Bevestig nieuwe e-mail adres</label>
+										<input type="text" class="form-control" name="confirmEmail" id="confirmEmail"/>
 									</div>
 								</div>
 								<div class="col-sm-4">
@@ -567,9 +567,36 @@
 						<div class="form-group">
 							<div class="row margin-top-15">
 								<div class="col-lg-12">
-	                            	<button type="submit" class="btn btn-primary medium-text pull-right">Wijzig e-mail adres</button>
+	                            	<button type="submit" class="btn btn-primary medium-text pull-right notificationSaveMessage1" id="confirm-email">Wijzig e-mail adres</button>
 	                            </div>
 	                        </div>
+                        </div>
+					</div>
+					<div class="box-inner" id="emailadres-submitted">
+						<div class="row">
+							<div class="col-sm-12">
+								<p class="newHeadingEmail">Bevestiging gewijzigde e-mail <span></span></p>
+							</div>
+						</div>
+						<div class="row margin-top-10">
+							<div class="col-sm-12">
+								<p>Jouw e-mailadres is niet bevestigd en is pas actief nadat het bevestigd is. Je mag de verificatie-mail opnieuw verzenden als het eerste e-mailadres onjuist was, of annuleer de wijziging.</p>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row margin-top-15">
+								<div class="col-lg-12">
+	                            	<button type="submit" class="btn btn-default medium-text pull-right" id="revert-to-form">Annuleer wijziging</button>
+	                            	<button type="submit" class="btn btn-primary medium-text pull-right margin-right-5 notificationSaveMessage1" id="confirmation-email-sent">Verzend e-mail opnieuw</button>
+	                            </div>
+	                        </div>
+                        </div>
+                        <div class="form-group confirmation-text">
+                        	<div class="row">
+                        		<div class="col-lg-12">
+                        			<p class="bold pull-right newHeadingEmail1">Er is een bevestigingse-mail verzonden naar <span></span></p>
+                        		</div>
+                        	</div>
                         </div>
 					</div>
 				</div>
@@ -614,7 +641,7 @@
 						<div class="form-group">
 							<div class="row margin-top-15">
 								<div class="col-lg-12">
-	                            	<button type="submit" class="btn btn-primary medium-text pull-right">Wijzig wachtwoord</button>
+	                            	<button type="submit" class="btn btn-primary medium-text pull-right notificationSaveMessage1">Wijzig wachtwoord</button>
 	                            </div>
 	                        </div>
                         </div>
@@ -627,15 +654,30 @@
 							<div class="col-sm-12">
 								<div class="form-group">
 									<label class="checkbox-inline">
-										<input type="checkbox" id="inlineCheckbox8" value="option8"> Ja ik wil mijn account verwijderen. Al mijn gegevens bij Olympia zullen onherstelbaar verloren gaan.
+										<input type="checkbox" id="inlineCheckbox-delete" value="option8"> Weet je zeker dat je je registratie (profiel) wilt verwijderen? Wanneer je profiel is verwijderd kun je niet meer solliciteren op onze vacatures, wordt je niet meer op de hoogte gehouden en sta je niet meer bij ons ingeschreven. Ook de behaalde resultaten van bij ons verrichte tests zullen worden verwijderd.
 									</label>
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="box-inner hidden padding-top-0">
+						<div class="row margin-top-10">
+							<div class="col-sm-8">
+								<div class="form-group">
+									<label for="email">Wachtwoord</label>
+									<input type="password" class="form-control" name="deletePassword" id="deletePassword"/>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								&nbsp;
+							</div>
+						</div>
+
 						<div class="form-group">
 							<div class="row margin-top-15">
 								<div class="col-lg-12">
-	                            	<button type="submit" class="btn btn-primary medium-text pull-right">Verwijder account</button>
+	                            	<button type="submit" class="btn btn-default medium-text pull-right" id="cancel-delete">Annuleer</button>
+	                            	<button type="submit" class="btn btn-primary medium-text pull-right margin-right-5 notificationSaveMessage1" id="submit-delete">Verwijder registratie</button>
 	                            </div>
 	                        </div>
                         </div>
@@ -671,6 +713,7 @@
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
 	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="../js/main.js"></script>
+	<script src="../js/app.js"></script>
 	<script type="text/javascript">
 		function getParameterByName(name) {
 	        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -681,6 +724,57 @@
 	    var scrollTo = getParameterByName('scrollTo');
 
 	    $("#"+scrollTo).scrollView(70);
+
+	    $(document).ready(function(){
+		    $(window).scroll(function(event){
+		        var height = $(window).scrollTop();
+		        var width = $(window).width();
+		        var top = $('.right-container').position().top;
+		        var element1 = $('#persoonlijke').position().top;
+		        var element2 = $('#emailadres').position().top;
+		        var element3 = $('#Wachtwoordwijzigen').position().top;
+		        var element4 = $('#accountwijzigen').position().top;
+
+		        var height1 = (height - (top + element1));
+		        var height2 = (height + 70 - (top + element2));
+		        var height3 = (height + 70 - (top + element3));
+		        var height4 = (height + 70 - (top + element4));
+
+		        if(height1 > 0 && height2 < 0){
+		            $("#secondary-navigation li").each(function(){
+		                if($(this).find('a').attr('name') == 'persoonlijke'){
+		                    $(this).find('a').addClass('activeNav')
+		                }else{
+		                    $(this).find('a').removeClass('activeNav')
+		                }
+		            })
+		        }else if(height1 > 0 && height2 > 0 && height3 < 0){
+		            $("#secondary-navigation li").each(function(){
+		                if($(this).find('a').attr('name') == 'emailadres'){
+		                    $(this).find('a').addClass('activeNav')
+		                }else{
+		                    $(this).find('a').removeClass('activeNav')
+		                }
+		            })
+		        }else if(height1 > 0 && height2 > 0 && height3 > 0 && height4 < 0){
+		            $("#secondary-navigation li").each(function(){
+		                if($(this).find('a').attr('name') == 'Wachtwoordwijzigen'){
+		                    $(this).find('a').addClass('activeNav')
+		                }else{
+		                    $(this).find('a').removeClass('activeNav')
+		                }
+		            })
+		        }else if(height1 > 0 && height2 > 0 && height3 > 0 && height4 > 0){
+		            $("#secondary-navigation li").each(function(){
+		                if($(this).find('a').attr('name') == 'accountwijzigen'){
+		                    $(this).find('a').addClass('activeNav')
+		                }else{
+		                    $(this).find('a').removeClass('activeNav')
+		                }
+		            })
+		        }
+		    });
+		});
 	</script>
 </body>
 </html>

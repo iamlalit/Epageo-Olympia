@@ -38,7 +38,11 @@
 			</div>
 		</div>
 	</header>
-
+	<div class="notificationSaveMessage hidden">
+		<div class="box">
+			<p>Your changes have been saved!</p><span class="olympia olympia-check-circle"></span>
+		</div>
+	</div>
 	<div class="full-width-border" style="margin-top: 15px;">
 		<div class="container">
 			<nav>
@@ -131,7 +135,7 @@
 									<li><a href="MijnOlympia-sollicitaties.html">Mijn sollicitaties (<span>3</span>)</a></li>
 									<li><a href="MijnOlympia-suggesties.html">Mijn suggesties (<spam>14</span>)</a></li>
 									<li class="hidden"><a href="MijnOlympia-competenties.html">Mijn competenties</a></li>
-									<li class="hidden"><a href="MijnOlympia-administratie.html">Mijn administratie</a></li>
+									<li><a href="https://www.e-flexer.nl/olympia/index.ewb" target="_blank">Mijn administratie</a></li>
 								</ul>
 							</div>
 						</div>
@@ -172,34 +176,54 @@
 				<div class="well well-olympia" id="jouwcv">
 					<h1 class="black">Jouw cv</h1>
 					<div class="box-inner accordion">
-						<ul class="accordion-data">
-							<li>
-								<div class="header" onclick="toggleView(this)">
-									<div class="job-title">
-										<strong>CV-bestand</strong>
-										<strong class="pull-right"><span class="olympia-caret-up olympia-icon pull-right"></span></strong >
-									</div>
-								</div>
-								<div class="job-body">
+						<div class="form-group">
+						<div class="row margin-top-10">
+							<div class="col-sm-12">
+								<label>CV toevoegen</label>
+								<p class="shift--5x">Voeg je CV toe door een bestand te uploaden of maak hieronder een nieuw CV.
+									<a href="#" id="zoomTextarea" class="website-icons small" data-toggle="modal" data-target="#cvHelp"><i class="olympia-question-circle"></i></a>
+									</p>
+							</div>
+							
+							<div class="col-sm-10 shift--5x">
+								<label class="radio-inline">
+									<input type="radio" name="cvChoice" value="cvUpload" checked> CV uploaden
+								</label>
+							</div>
+
+							<div class="col-sm-10 shift--5x">
+								<label class="radio-inline">
+									<input type="radio" name="cvChoice" value="cvWrite"> Nieuw CV aanmaken
+								</label>
+							</div>
+							
+							<div class="clearfix"></div>
+
+							<div class="col-sm-12 margin-top-10" id="cvContainer">
+								<div class="well margin-bottom-0" style="background:#fff;" id="cvUpload">
 									<div class="row">
 										<div class="col-sm-12">
+											<label>CV uploaden</label>
+										</div>
+										<div class="col-sm-12">
+
 											<div class="row">
 												<div class="col-sm-3">
 													<button type="button" for="cvUpload" class="btn btn-default" onclick="document.getElementById('input-cvUpload').click()">CV uploaden</button> 
 												</div>
-												<div class="col-sm-9">CV creëeren (handmatig of met jouw linkedin profiel) of sleep een bestand in dit gebied. (alleen .doc, .docx, .pdf bestanden)</div>
+												<div class="col-sm-9">Upload een CV-bestand met één de volgende formaten: Pdf, Doc, Docx, Rtf, Html, Txt, Tif.</div>
 											</div>
 											<input type="file" class="cvUpload" id="input-cvUpload" name="cv" />
 										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-12" id="cvVal-div">
+
+										<div class="col-sm-12 hide" id="cvVal-div">
+
 											<div class="row">
-												<div class="col-sm-9">
+												<div class="col-sm-5">
 													<br>
-													<span id="cvVal"><a href="javascript:void(0)">CV_Henk_van_Dunzelkamp_10-03-2015.pdf</a></span>
+													<span id="cvVal"></span>
 												</div>
-												<div class="col-sm-3 text-right">
+												<div class="col-sm-7">
 													<br>
 													<a class="link-in-text" id="removeCv" href="javascript:void(0)">Verwijderen</a>
 												</div>
@@ -207,16 +231,15 @@
 										</div>
 									</div>
 								</div>
-							</li>
-							<li>
-								<div class="header" onclick="toggleView(this)">
-									<div class="job-title">
-										<strong>Handmatig aangemaakt CV</strong>
-										<strong class="pull-right"><span class="olympia-caret-up olympia-icon pull-right"></span></strong >
+								<div class="well margin-bottom-0" style="background:#fff;" id="cvWrite">
+									<div class="row">
+										<div class="col-sm-12">
+											<label>Nieuw CV aanmaken</label>
+											<p>Maak je CV hier handmatig aan</p>
+											<p>Je kunt een CV-bestand laten genereren nadat je opleiding en ervaring hebt ingevuld. Door de knop "download CV preview" te klikken zie je je gegenereerde CV en kun je aanpassen doen. Je kunt het aangepaste bestand oploaden of het formulier afronden als er niets aan het bestand veranderd hoeft te worden. Het CV-bestand wordt automatisch geupload en is terug te vinden op je profielpagina.</p>
+											<p>De handmatig toegevoegde opleidings- en ervaringsinformatie zal onderdeel zijn van je CV-bestand na opslag van je profiel. Je kunt je huidige CV altijd aanpassen en opnieuw uploaden, of een nieuw bestand maken.</p>
+										</div>
 									</div>
-								</div>
-								<div class="job-body">
-									<p>Let op: maak alleen handmatig een CV aan wanneer je niet beschikt over een CV-bestand!</p>
 									<div class="work">
 										<label>Werk</label>
 										<div class="well well-lg cv-well">
@@ -239,7 +262,6 @@
 												</li>
 											</ul>
 										</div>
-										
 									</div>
 									<div class="work">
 										<label>Opleiding</label>
@@ -263,18 +285,11 @@
 												</li>
 											</ul>
 										</div>
-										
 									</div>
-									<div class="form-group">
-										<div class="row margin-top-15">
-											<div class="col-lg-12">
-				                            	<button type="submit" class="btn btn-primary medium-text pull-right">Wijzigingen opslaan</button>
-				                            </div>
-				                        </div>
-			                        </div>
 								</div>
-							</li>
-						</ul>
+
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="well well-olympia" id="overigebestanden">
@@ -308,7 +323,7 @@
 						<div class="form-group">
 							<div class="row margin-top-15">
 								<div class="col-lg-12">
-	                            	<button type="submit" class="btn btn-primary medium-text pull-right">Wijzigingen opslaan</button>
+	                            	<button type="submit" class="btn btn-primary medium-text pull-right notificationSaveMessage1">Wijzigingen opslaan</button>
 	                            </div>
 	                        </div>
                         </div>
@@ -324,6 +339,13 @@
 								<p class="margin-bottom-0">Aantal karakters: <span id="text-content-count">0</span> (max 4000 karakters)</p>
 							</div>
 						</div>
+						<div class="form-group">
+							<div class="row margin-top-15">
+								<div class="col-lg-12">
+	                            	<button type="submit" class="btn btn-primary medium-text pull-right notificationSaveMessage1">Wijzigingen opslaan</button>
+	                            </div>
+	                        </div>
+                        </div>
 					</div>
 				</div>
 				<div class="well well-olympia" id="competenties">
@@ -410,7 +432,7 @@
 				       </div>
 				       <div class="row margin-top-15">
 					       	<div class="col-lg-12">
-					       		<button type="submit" class="btn btn-primary medium-text pull-right">Wijzigingen opslaan</button>
+					       		<button type="submit" class="btn btn-primary medium-text pull-right notificationSaveMessage1">Wijzigingen opslaan</button>
 					       	</div>
 				       </div>
 					</div>
@@ -506,7 +528,7 @@
 						</div>
 						<div class="row margin-top-15">
 					       	<div class="col-lg-12">
-					       		<button type="submit" class="btn btn-primary medium-text pull-right">Wijzigingen opslaan</button>
+					       		<button type="submit" class="btn btn-primary medium-text pull-right notificationSaveMessage1">Wijzigingen opslaan</button>
 					       	</div>
 				       </div>
 					</div>
@@ -602,7 +624,7 @@
 						</div>
 						<div class="row margin-top-15">
 					       	<div class="col-lg-12">
-					       		<button type="submit" class="btn btn-primary medium-text pull-right">Wijzigingen opslaan</button>
+					       		<button type="submit" class="btn btn-primary medium-text pull-right notificationSaveMessage1">Wijzigingen opslaan</button>
 					       	</div>
 				       </div>
 					</div>
@@ -1668,6 +1690,30 @@
 		</div>
 	</div>
 
+	<!-- modal popup for CV delete -->
+	<div class="modal fade margin-top65 overflow-y" id="CVDelete" tabindex="-1" role="dialog" aria-labelledby="CVDelete" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Weet je zeker dat je dit CV wil verwijderen?</h4>
+				</div>
+				<form role="form">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-sm-3">
+							</div>
+							<div class="col-sm-6">
+								<button type="button" class="btn btn-primary pull-right" data-dismiss="modal" onclick="DeleteOrNotCV('ja')">Ja</button>
+								<button style="margin: 0 10px 0 0;" type="button" class="btn btn-default pull-right" data-dismiss="modal" aria-hidden="true" onclick="DeleteOrNotCV('nee')">Nee</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
 	<!-- Scripts -->
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
 	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -1695,6 +1741,76 @@
 			$('#text-content').val(text);
 			$('#text-content-count-pop').text(text.length);
 			$('#text-content-count').text(text.length);
+		});
+		$(document).ready(function(){
+		    $(window).scroll(function(event){
+		        var height = $(window).scrollTop();
+		        var width = $(window).width();
+		        var top = $('.right-container').position().top;
+		        var element1 = $('#jouwcv').position().top;
+		        var element2 = $('#overigebestanden').position().top;
+		        var element3 = $('#motivatie').position().top;
+		        var element4 = $('#competenties').position().top;
+		        var element5 = $('#talen').position().top;
+		        var element6 = $('#computerkennis').position().top;
+
+		        var height1 = (height - (top + element1));
+		        var height2 = (height + 70 - (top + element2));
+		        var height3 = (height + 70 - (top + element3));
+		        var height4 = (height + 70 - (top + element4));
+		        var height5 = (height + 70 - (top + element5));
+		        var height6 = (height + 70 - (top + element6));
+
+		        if(height1 > 0 && height2 < 0){
+		            $("#secondary-navigation li").each(function(){
+		                if($(this).find('a').attr('name') == 'jouwcv'){
+		                    $(this).find('a').addClass('activeNav')
+		                }else{
+		                    $(this).find('a').removeClass('activeNav')
+		                }
+		            })
+		        }else if(height1 > 0 && height2 > 0 && height3 < 0){
+		            $("#secondary-navigation li").each(function(){
+		                if($(this).find('a').attr('name') == 'overigebestanden'){
+		                    $(this).find('a').addClass('activeNav')
+		                }else{
+		                    $(this).find('a').removeClass('activeNav')
+		                }
+		            })
+		        }else if(height1 > 0 && height2 > 0 && height3 > 0 && height4 < 0){
+		            $("#secondary-navigation li").each(function(){
+		                if($(this).find('a').attr('name') == 'motivatie'){
+		                    $(this).find('a').addClass('activeNav')
+		                }else{
+		                    $(this).find('a').removeClass('activeNav')
+		                }
+		            })
+		        }else if(height1 > 0 && height2 > 0 && height3 > 0 && height4 > 0 && height5 < 0){
+		            $("#secondary-navigation li").each(function(){
+		                if($(this).find('a').attr('name') == 'competenties'){
+		                    $(this).find('a').addClass('activeNav')
+		                }else{
+		                    $(this).find('a').removeClass('activeNav')
+		                }
+		            })
+		        }else if(height1 > 0 && height2 > 0 && height3 > 0 && height4 > 0 && height5 > 0 && height6 < 0){
+		            $("#secondary-navigation li").each(function(){
+		                if($(this).find('a').attr('name') == 'talen'){
+		                    $(this).find('a').addClass('activeNav')
+		                }else{
+		                    $(this).find('a').removeClass('activeNav')
+		                }
+		            })
+		        }else if(height1 > 0 && height2 > 0 && height3 > 0 && height4 > 0 && height5 > 0 && height6 > 0){
+		            $("#secondary-navigation li").each(function(){
+		                if($(this).find('a').attr('name') == 'computerkennis'){
+		                    $(this).find('a').addClass('activeNav')
+		                }else{
+		                    $(this).find('a').removeClass('activeNav')
+		                }
+		            })
+		        }
+		    });
 		});
 	</script>
 </body>/

@@ -73,6 +73,7 @@ $('#secondary-navigation li a').on('click', function (e) {
     $(this).addClass('activeNav');    
 });
 
+
 //for suggestie page
 $('.tabs div span').on('click', function (e) {
     $(this).parents('.tabs').children('div').removeClass('active');
@@ -104,4 +105,8 @@ $('.progress').mouseover(function(){
 })
 $('.progress').mouseout(function(){
     $('.text2').addClass('hidden');
+})
+$('.notificationSaveMessage1').click(function(){
+    $('.notificationSaveMessage').removeClass('hidden');
+    setTimeout(function(){ $('.notificationSaveMessage').addClass('hidden'); }, 3000);
 })

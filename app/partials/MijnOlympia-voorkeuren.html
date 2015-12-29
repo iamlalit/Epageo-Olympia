@@ -39,7 +39,11 @@
 			</div>
 		</div>
 	</header>
-
+	<div class="notificationSaveMessage hidden">
+		<div class="box">
+			<p>Your changes have been saved!</p><span class="olympia olympia-check-circle"></span>
+		</div>
+	</div>
 	<div class="full-width-border" style="margin-top: 15px;">
 		<div class="container">
 			<nav>
@@ -132,7 +136,7 @@
 									<li><a href="MijnOlympia-sollicitaties.html">Mijn sollicitaties (<span>3</span>)</a></li>
 									<li><a href="MijnOlympia-suggesties.html">Mijn suggesties (<spam>14</span>)</a></li>
 									<li class="hidden"><a href="MijnOlympia-competenties.html">Mijn competenties</a></li>
-									<li class="hidden"><a href="MijnOlympia-administratie.html">Mijn administratie</a></li>
+									<li><a href="https://www.e-flexer.nl/olympia/index.ewb" target="_blank">Mijn administratie</a></li>
 								</ul>
 							</div>
 						</div>
@@ -198,7 +202,13 @@
 								<strong>Hoeveel uren per week ben je beschikbaar?</strong>
 							</li>
 							<li>
-								<span id="weekHour" class="data">32-40</span><span class="olympia-icon olympia-pencil" data-name="weekHour">
+								<span id="weekHourMinimal" class="data">32 - </span><span id="weekHourMaximal" class="data">40</span><span class="olympia-icon olympia-pencil" data-name="weekHour">
+							</li>
+							<li>
+								<strong>Fulltime/Parttime?</strong>
+							</li>
+							<li>
+								<span id="fullPartTimeJob" class="data">Fulltime</span><span class="olympia-icon olympia-pencil" data-name="fullPartTimeJob">
 							</li>
 							<li>
 								<strong>Welke branche heeft jouw voorkeur?</strong>
@@ -307,7 +317,7 @@
 						</div>
 
 						<hr>
-						<label>Naar wat voor dienstverband ben je op zoek?</label>
+						<label>Naar wat voor dienstverband ben je op zoek? (optioneel)</label>
 						<div class="row dienstverband">
 							<div class="col-lg-12">
 								<label class="checkbox-inline">
@@ -334,35 +344,51 @@
 									<input type="checkbox" id="inlineCheckbox5" data-values="Vast" value="option5" checked> Vast
 								</label>
 							</div>
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox6" data-values="Vakantiewerk" value="option6"> Vakantiewerk
+								</label>
+							</div>
 						</div>
 						
 						<hr>
 						<label>Hoeveel uren per week ben je beschikbaar?</label>
-						<div class="row weekHour">
+						<div class="weekHour">
+							<div class="row">
+								<div class="col-lg-4">
+									<div class="form-group">
+										<span>Minimaal aantal uren per week:</span>
+										<input type="text" class="form-control" value="32" id="minimum"/>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-4">
+									<div class="form-group">
+										<span>Maximaal aantal uren per week:</span>
+										<input type="text" class="form-control" value="40" id="maximum"/>
+									</div>
+								</div>
+							</div>
+						</div>
+						<hr>
+
+						<label>Fulltime/Parttime? (optioneel)</label>
+						<div class="row fullPartTimeJob">
 							<div class="col-lg-12">
 								<label class="checkbox-inline">
-									<input type="checkbox" id="inlineCheckbox11" data-values="0 - 16" value="option1"> 0 - 16
+									<input type="checkbox" id="inlineCheckbox41a" data-values="Fulltime" value="option4" checked="checked"> Fulltime
 								</label>
 							</div>
 							<div class="col-lg-12">
 								<label class="checkbox-inline">
-									<input type="checkbox" id="inlineCheckbox21" data-values="16 - 24" value="option2"> 16 - 24
-								</label>
-							</div>
-							<div class="col-lg-12">
-								<label class="checkbox-inline">
-									<input type="checkbox" id="inlineCheckbox31" data-values="24 - 32" value="option3"> 24 - 32
-								</label>
-							</div>
-							<div class="col-lg-12">
-								<label class="checkbox-inline">
-									<input type="checkbox" id="inlineCheckbox41" data-values="32 - 40" value="option4" checked> 32 - 40
+									<input type="checkbox" id="inlineCheckbox41b" data-values="Parttime" value="option3"> Parttime
 								</label>
 							</div>
 						</div>
-
 						<hr>
-						<label>Welke branche heeft je voorkeur?</label>
+
+						<label>Welke branche heeft je voorkeur? (optioneel)</label>
 						<div class="row branche">
 							<div class="col-lg-6">
 								<label class="checkbox-inline">
@@ -517,7 +543,7 @@
 						</div>
 
 						<hr>
-						<label>Wat is jouw vakgebied?</label>
+						<label>Wat is jouw vakgebied? (optioneel)</label>
 						<div class="row vakgebied">
 							<div class="col-lg-6">
 								<label class="checkbox-inline">
@@ -642,7 +668,7 @@
 						</div>
 
 						<hr>
-						<label>Naar welk salaris ben je op zoek?</label>
+						<label>Naar welk salaris ben je op zoek? (optioneel)</label>
 						<div class="row salaris">
 							<div class="col-lg-12">
 								<label class="checkbox-inline">
@@ -719,7 +745,7 @@
 					<div class="form-group">
 						<div class="row margin-top-15">
 							<div class="col-lg-12">
-                            	<button type="submit" id="saveVoorkeurenData" class="btn btn-primary medium-text pull-right">Wijzigingen opslaan</button>
+                            	<button type="submit" id="saveVoorkeurenData" class="btn btn-primary medium-text pull-right notificationSaveMessage1">Wijzigingen opslaan</button>
                             </div>
                         </div>
                     </div>

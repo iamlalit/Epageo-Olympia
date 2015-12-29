@@ -39,7 +39,11 @@
 			</div>
 		</div>
 	</header>
-
+	<div class="notificationSaveMessage hidden">
+		<div class="box">
+			<p>Your changes have been saved!</p><span class="olympia olympia-check-circle"></span>
+		</div>
+	</div>
 	<div class="full-width-border" style="margin-top: 15px;">
 		<div class="container">
 			<nav>
@@ -132,7 +136,7 @@
 									<li><a href="MijnOlympia-sollicitaties.html">Mijn sollicitaties (<span>3</span>)</a></li>
 									<li><a href="MijnOlympia-suggesties.html">Mijn suggesties (<spam>14</span>)</a></li>
 									<li class="hidden"><a href="MijnOlympia-competenties.html">Mijn competenties</a></li>
-									<li class="hidden"><a href="MijnOlympia-administratie.html">Mijn administratie</a></li>
+									<li><a href="https://www.e-flexer.nl/olympia/index.ewb" target="_blank">Mijn administratie</a></li>
 								</ul>
 							</div>
 						</div>
@@ -150,7 +154,7 @@
 					</div>
 				</div>
             </div>
-			<div class="col-lg-9 right-container alert-box hidden">
+			<div class="col-lg-9 right-container alert-box">
 				<div class="well well-olympia">
 					<h1>Mijn e-mail alerts</h1>
 					<div class="box-inner">
@@ -192,7 +196,11 @@
 										</li>
 										<li>
 											<strong>Uren per week:</strong>
-											<span id="weekHour1">32-40</span>
+											<span id="weekHour1">32 - 40</span>
+										</li>
+										<li>
+											<strong>Fulltime/parttime:</strong>
+											<span id="weekHour1">Fulltime</span>
 										</li>
 										<li>
 											<strong>Dienstverband:</strong>
@@ -255,7 +263,11 @@
 										</li>
 										<li class="uren">
 											<strong>Uren per week:</strong>
-											<span>32 - 40</span>
+											<span id="weekHour1">32 - 40</span>
+										</li>
+										<li class="fullPartTime">
+											<strong>Fulltime/parttime:</strong>
+											<span id="weekHour1">Fulltime</span>
 										</li>
 										<li class="dienstverband">
 											<strong>Dienstverband:</strong>
@@ -319,7 +331,11 @@
 										</li>
 										<li class="uren">
 											<strong>Uren per week:</strong>
-											<span>32 - 40</span>
+											<span id="weekHour1">32 - 40</span>
+										</li>
+										<li class="fullPartTime">
+											<strong>Fulltime/parttime:</strong>
+											<span id="weekHour1">Fulltime</span>
 										</li>
 										<li class="dienstverband">
 											<strong>Dienstverband:</strong>
@@ -383,7 +399,11 @@
 										</li>
 										<li class="uren">
 											<strong>Uren per week:</strong>
-											<span>32 - 40</span>
+											<span id="weekHour1">32 - 40</span>
+										</li>
+										<li class="fullPartTime">
+											<strong>Fulltime/parttime:</strong>
+											<span>Fulltime</span>
 										</li>
 										<li class="dienstverband">
 											<strong>Dienstverband:</strong>
@@ -426,7 +446,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-9 right-container voorkeuren-box">
+			<div class="col-lg-9 right-container voorkeuren-box hidden">
 				<div class="well well-olympia">
 					<h1>E-mail alert instellingen wijzigen</h1>
 					<div class="box-inner">
@@ -459,8 +479,8 @@
 								<label>&nbsp;</label>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-sm-2">
+						<div class="row hidden perDay">
+							<div class="col-sm-3">
 								<select class="form-control" id="timeHour" name="timeHour">
 									<option value="0">Uur</option>
 									<option value="1">1</option>
@@ -489,7 +509,181 @@
 									<option value="24">24</option>
 								</select>
 							</div>
+							<div class="col-sm-3">
+								<select class="form-control" id="timeMinutes" name="timeMinutes">
+									<option value="0">notulen</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+									<option value="25">25</option>
+									<option value="26">26</option>
+									<option value="27">27</option>
+									<option value="28">28</option>
+									<option value="29">29</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
+									<option value="32">32</option>
+									<option value="33">33</option>
+									<option value="34">34</option>
+									<option value="35">35</option>
+									<option value="36">36</option>
+									<option value="37">37</option>
+									<option value="38">38</option>
+									<option value="39">39</option>
+									<option value="40">40</option>
+									<option value="41">41</option>
+									<option value="42">42</option>
+									<option value="43">43</option>
+									<option value="44">44</option>
+									<option value="45">45</option>
+									<option value="46">46</option>
+									<option value="47">47</option>
+									<option value="48">48</option>
+									<option value="49">49</option>
+									<option value="50">50</option>
+									<option value="51">51</option>
+									<option value="52">52</option>
+									<option value="53">53</option>
+									<option value="54">54</option>
+									<option value="55">55</option>
+									<option value="56">56</option>
+									<option value="57">57</option>
+									<option value="58">58</option>
+									<option value="59">59</option>
+									<option value="60">60</option>
+								</select>
+							</div>
 						</div>
+						<div class="row hidden perWeek">
+							<div class="col-sm-3">
+								<select class="form-control" id="timeWeekDay" name="timeWeekDay">
+									<option value="0">Week</option>
+									<option value="maandag">maandag</option>
+									<option value="dinsdag">dinsdag</option>
+									<option value="woensdag">woensdag</option>
+									<option value="donderdag">donderdag</option>
+									<option value="vrijdag">vrijdag</option>
+									<option value="zaterdag">zaterdag</option>
+									<option value="zondag">zondag</option>
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<select class="form-control" id="timeHour" name="timeHour">
+									<option value="0">Uur</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<select class="form-control" id="timeMinutes" name="timeMinutes">
+									<option value="0">notulen</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+									<option value="25">25</option>
+									<option value="26">26</option>
+									<option value="27">27</option>
+									<option value="28">28</option>
+									<option value="29">29</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
+									<option value="32">32</option>
+									<option value="33">33</option>
+									<option value="34">34</option>
+									<option value="35">35</option>
+									<option value="36">36</option>
+									<option value="37">37</option>
+									<option value="38">38</option>
+									<option value="39">39</option>
+									<option value="40">40</option>
+									<option value="41">41</option>
+									<option value="42">42</option>
+									<option value="43">43</option>
+									<option value="44">44</option>
+									<option value="45">45</option>
+									<option value="46">46</option>
+									<option value="47">47</option>
+									<option value="48">48</option>
+									<option value="49">49</option>
+									<option value="50">50</option>
+									<option value="51">51</option>
+									<option value="52">52</option>
+									<option value="53">53</option>
+									<option value="54">54</option>
+									<option value="55">55</option>
+									<option value="56">56</option>
+									<option value="57">57</option>
+									<option value="58">58</option>
+									<option value="59">59</option>
+									<option value="60">60</option>
+								</select>
+							</div>
+						</div>
+
 						<hr>
 						<label>Naar welke functies/ trefwoorden ben je op zoek?</label>
 						<div class="row vacatures">
@@ -561,7 +755,7 @@
 						</div>
 
 						<hr>
-						<label>Naar wat voor dienstverband ben je op zoek?</label>
+						<label>Naar wat voor dienstverband ben je op zoek? (optioneel)</label>
 						<div class="row dienstverband">
 							<div class="col-lg-12">
 								<label class="checkbox-inline">
@@ -588,19 +782,19 @@
 									<input type="checkbox" id="inlineCheckbox5" data-values="Vast" value="option5"> Vast
 								</label>
 							</div>
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox6" data-values="Vakantiewerk" value="option6"> Vakantiewerk
+								</label>
+							</div>
 						</div>
 						
 						<hr>
-						<label>Hoeveel uren per week ben je beschikbaar?</label>
+						<label>Hoeveel uren per week ben je beschikbaar? (optioneel)</label>
 						<div class="row weekHour">
 							<div class="col-lg-12">
 								<label class="checkbox-inline">
-									<input type="checkbox" id="inlineCheckbox11" data-values="0 - 16" value="option1"> 0 - 16
-								</label>
-							</div>
-							<div class="col-lg-12">
-								<label class="checkbox-inline">
-									<input type="checkbox" id="inlineCheckbox21" data-values="16 - 24" value="option2"> 16 - 24
+									<input type="checkbox" id="inlineCheckbox41" data-values="32 - 40" value="option4"> 32 - 40
 								</label>
 							</div>
 							<div class="col-lg-12">
@@ -610,13 +804,33 @@
 							</div>
 							<div class="col-lg-12">
 								<label class="checkbox-inline">
-									<input type="checkbox" id="inlineCheckbox41" data-values="32 - 40" value="option4"> 32 - 40
+									<input type="checkbox" id="inlineCheckbox21" data-values="16 - 24" value="option2"> 16 - 24
+								</label>
+							</div>
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox11" data-values="00 - 16" value="option1"> 00 - 16
 								</label>
 							</div>
 						</div>
-
 						<hr>
-						<label>Welke branche heeft je voorkeur?</label>
+
+						<label>Fulltime/parttime? (optioneel)</label>
+						<div class="row fullPartTimeJob">
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox41a" data-values="Fulltime" value="option4"> Fulltime
+								</label>
+							</div>
+							<div class="col-lg-12">
+								<label class="checkbox-inline">
+									<input type="checkbox" id="inlineCheckbox41b" data-values="Parttime" value="option3"> Parttime
+								</label>
+							</div>
+						</div>
+						<hr>
+
+						<label>Welke branche heeft je voorkeur? (optioneel)</label>
 						<div class="row branche">
 							<div class="col-lg-6">
 								<label class="checkbox-inline">
@@ -771,7 +985,7 @@
 						</div>
 
 						<hr>
-						<label>Wat is jouw vakgebied?</label>
+						<label>Wat is jouw vakgebied? (optioneel)</label>
 						<div class="row vakgebied">
 							<div class="col-lg-6">
 								<label class="checkbox-inline">
@@ -896,7 +1110,7 @@
 						</div>
 
 						<hr>
-						<label>Naar welk salaris ben je op zoek?</label>
+						<label>Naar welk salaris ben je op zoek? (optioneel)</label>
 						<div class="row salaris">
 							<div class="col-lg-12">
 								<label class="checkbox-inline">
@@ -921,51 +1135,51 @@
 						</div>
 
 						<hr>
-						<label>Wat is je werk- en denkniveau?</label>
+						<label>Wat is je werk- en denkniveau? (optioneel)</label>
 						<div class="row denkniveau">
 							<div class="col-lg-6">
-								<label class="radio-inline">
-									<input type="radio" name="denkniveau" id="inlineCheckbox16" data-values="Geen voorkeur" value="Geen voorkeur"> Geen voorkeur
+								<label class="checkbox-inline">
+									<input type="checkbox" name="denkniveau" id="inlineCheckbox16" data-values="Geen voorkeur" value="Geen voorkeur"> Geen voorkeur
 								</label>
 							</div>
 							<div class="col-lg-6">
-								<label class="radio-inline">
-									<input type="radio" name="denkniveau" id="inlineCheckbox26" data-values="Mavo" value="Mavo"> Mavo
+								<label class="checkbox-inline">
+									<input type="checkbox" name="denkniveau" id="inlineCheckbox26" data-values="Mavo" value="Mavo"> Mavo
 								</label>
 							</div>
 							<div class="col-lg-6">
-								<label class="radio-inline">
-									<input type="radio" name="denkniveau" id="inlineCheckbox26" data-values="Havo" value="Havo"> Havo
+								<label class="checkbox-inline">
+									<input type="checkbox" name="denkniveau" id="inlineCheckbox26" data-values="Havo" value="Havo"> Havo
 								</label>
 							</div>
 							<div class="col-lg-6">
-								<label class="radio-inline">
-									<input type="radio" name="denkniveau" id="inlineCheckbox36" data-values="HBO" value="HBO"> HBO
+								<label class="checkbox-inline">
+									<input type="checkbox" name="denkniveau" id="inlineCheckbox36" data-values="HBO" value="HBO"> HBO
 								</label>
 							</div>
 							<div class="col-lg-6">
-								<label class="radio-inline">
-									<input type="radio" name="denkniveau" id="inlineCheckbox46" data-values="LBO" value="LBO">LBO
+								<label class="checkbox-inline">
+									<input type="checkbox" name="denkniveau" id="inlineCheckbox46" data-values="LBO" value="LBO">LBO
 								</label>
 							</div>
 							<div class="col-lg-6">
-								<label class="radio-inline">
-									<input type="radio" name="denkniveau" id="inlineCheckbox16" data-values="MBO" value="MBO" > MBO
+								<label class="checkbox-inline">
+									<input type="checkbox" name="denkniveau" id="inlineCheckbox16" data-values="MBO" value="MBO" > MBO
 								</label>
 							</div>
 							<div class="col-lg-6">
-								<label class="radio-inline">
-									<input type="radio" name="denkniveau" id="inlineCheckbox26" data-values="Havo" value="Havo"> Ongeschoold
+								<label class="checkbox-inline">
+									<input type="checkbox" name="denkniveau" id="inlineCheckbox26" data-values="Ongeschoold" value="Ongeschoold"> Ongeschoold
 								</label>
 							</div>
 							<div class="col-lg-6">
-								<label class="radio-inline">
-									<input type="radio" name="denkniveau" id="inlineCheckbox36" data-values="Universitair" value="Universitair"> Universitair
+								<label class="checkbox-inline">
+									<input type="checkbox" name="denkniveau" id="inlineCheckbox36" data-values="Universitair" value="Universitair"> Universitair
 								</label>
 							</div>
 							<div class="col-lg-6">
-								<label class="radio-inline">
-									<input type="radio" name="denkniveau" id="inlineCheckbox46" data-values="VWO" value="VWO">VWO
+								<label class="checkbox-inline">
+									<input type="checkbox" name="denkniveau" id="inlineCheckbox46" data-values="VWO" value="VWO">VWO
 								</label>
 							</div>
 						</div>
@@ -973,8 +1187,9 @@
 					<div class="form-group">
 						<div class="row margin-top-15">
 							<div class="col-lg-12">
-                            	<button type="submit" id="saveVoorkeurenDataAlertPage" class="btn btn-primary medium-text pull-right">Wijzigingen opslaan</button>
-                            	<button type="submit" id="updateVoorkeurenDataAlertPage" class="btn btn-primary medium-text pull-right hidden">Wijzigingen opslaan</button>
+                            	<button type="submit" id="annuleerAlertPage" class="btn btn-default medium-text pull-right">Annuleer</button>
+                            	<button type="submit" id="saveVoorkeurenDataAlertPage" class="btn btn-primary medium-text pull-right margin-right-5 notificationSaveMessage1">Wijzigingen opslaan</button>
+                            	<button type="submit" id="updateVoorkeurenDataAlertPage" class="btn btn-primary medium-text pull-right hidden margin-right-5 notificationSaveMessage1">Wijzigingen opslaan</button>
                             </div>
                         </div>
                     </div>
@@ -992,6 +1207,74 @@
 		<br/>
 		<br/>
 	</footer>
+
+	<!-- modal popup for Email alert delete -->
+	<div class="modal fade margin-top65 overflow-y" id="emailAlertDelete" tabindex="-1" role="dialog" aria-labelledby="emailAlertDelete" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Weet je zeker dat je deze e-mail alert wil verwijderen?</h4>
+				</div>
+				<form role="form">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-sm-3">
+							</div>
+							<div class="col-sm-6">
+								<button type="button" class="btn btn-primary pull-right" data-dismiss="modal" onclick="DeleteOrNot('ja')">Ja</button>
+								<button style="margin: 0 10px 0 0;" type="button" class="btn btn-default pull-right" data-dismiss="modal" aria-hidden="true" onclick="DeleteOrNot('nee')">Nee</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- modal popup for Email alert save -->
+	<div class="modal fade margin-top65 overflow-y" id="okSaveIT" tabindex="-1" role="dialog" aria-labelledby="okSaveIT" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Je nieuwe e-mail alerts is aangemaakt en ingeschakeld</h4>
+				</div>
+				<form role="form">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-sm-4">
+							</div>
+							<div class="col-sm-4">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- modal popup for Email alert update -->
+	<div class="modal fade margin-top65 overflow-y" id="okUpdateIT" tabindex="-1" role="dialog" aria-labelledby="okUpdateIT" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Je wijzigingen voor deze e-mail alert zijn opgeslagen</h4>
+				</div>
+				<form role="form">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-sm-4">
+							</div>
+							<div class="col-sm-4">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 
 	<!-- Scripts -->
 	<script src="../lib/jquery/dist/jquery.min.js"></script>

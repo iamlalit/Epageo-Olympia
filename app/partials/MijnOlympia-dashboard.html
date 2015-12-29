@@ -131,7 +131,7 @@
 									<li><a href="MijnOlympia-sollicitaties.html">Mijn sollicitaties (<span>3</span>)</a></li>
 									<li><a href="MijnOlympia-suggesties.html">Mijn suggesties (<spam>14</span>)</a></li>
 									<li class="hidden"><a href="MijnOlympia-competenties.html">Mijn competenties</a></li>
-									<li class="hidden"><a href="MijnOlympia-administratie.html">Mijn administratie</a></li>
+									<li><a href="https://www.e-flexer.nl/olympia/index.ewb" target="_blank">Mijn administratie</a></li>
 								</ul>
 							</div>
 						</div>
@@ -503,9 +503,9 @@
 							<div class="left-tab-data">
 								<div class="actualData">
 									<ul>
-										<li class="well well-olympia" id="1">
+										<li class="well well-olympia" id="1" onclick="window.location.href='MijnOlympia-suggesties.html?clickedId=1&viewed=true'">
 											<div class="heading">
-												<h4><a href="MijnOlympia-suggesties.html?clickedId=1&viewed=true" class="favourite">Met spoed op zoek naar magazijnkrachten!</a><span class="olympia olympia-star favouriteAdd"></span></h4>
+												<h4><span class="favourite black">Met spoed op zoek naar magazijnkrachten!</span></h4>
 												<h6>Match: 95%</h6>
 												<div>
 													<strong>Amersfoort | Fulltime | 40 uur | MAVO werk- en denkniveau</strong>
@@ -513,9 +513,9 @@
 												</div>
 											</div>
 										</li>
-										<li class="well well-olympia" id="2">
+										<li class="well well-olympia" id="2" onclick="window.location.href='MijnOlympia-suggesties.html?clickedId=2&viewed=true'">
 											<div class="heading">
-												<h4><a href="MijnOlympia-suggesties.html?clickedId=2&viewed=true" class="favourite">Gestopt met je studie?</a><span class="olympia olympia-star favouriteAdd"></span></h4>
+												<h4><span class="favourite">Gestopt met je studie?</span></h4>
 												<h6>Match: 90%</h6>
 												<div>
 													<strong>Amersfoort | Fulltime | 40 uur | MBO werk- en denkniveau</strong>
@@ -523,9 +523,9 @@
 												</div>
 											</div>
 										</li>
-										<li class="well well-olympia" id="3">
+										<li class="well well-olympia" id="3" onclick="window.location.href='MijnOlympia-suggesties.html?clickedId=3&viewed=true'">
 											<div class="heading">
-												<h4><a href="MijnOlympia-suggesties.html?clickedId=3&viewed=true" class="favourite">Reachtruckchauffeur/ Allround Magazijnmedewerker</a><span class="olympia olympia-star favouriteAdd"></span></h4>
+												<h4><span class="favourite">Reachtruckchauffeur/ Allround Magazijnmedewerker</span></h4>
 												<h6>Match: 90%</h6>
 												<div>
 													<strong>Zeist | Fulltime | 38 uur | MBO werk- en denkniveau</strong>
@@ -533,9 +533,9 @@
 												</div>
 											</div>
 										</li>
-										<li class="well well-olympia" id="4">
+										<li class="well well-olympia" id="4" onclick="window.location.href='MijnOlympia-suggesties.html?clickedId=4&viewed=true'">
 											<div class="heading">
-												<h4><a href="MijnOlympia-suggesties.html?clickedId=4">Allround Magazijnmedewerker</a><span class="olympia olympia-star favouriteAdd"></span></h4>
+												<h4><span class="black">Allround Magazijnmedewerker</span></h4>
 												<h6>Match: 80%</h6>
 												<div>
 													<strong>Nieuwegein | Fulltime | 37.5 uur | MBO werk- en denkniveau</strong>
@@ -543,9 +543,9 @@
 												</div>
 											</div>
 										</li>
-										<li class="well well-olympia" id="5">
+										<li class="well well-olympia" id="5" onclick="window.location.href='MijnOlympia-suggesties.html?clickedId=5&viewed=true'">
 											<div class="heading">
-												<h4><a href="MijnOlympia-suggesties.html?clickedId=5">Ervaring opdoen in de logistiek of al ervaring als magazijnmedewerker, dan zoeken we jou!</a><span class="olympia olympia-star favouriteAdd"></span></h4>
+												<h4><span>Ervaring opdoen in de logistiek of al ervaring als magazijnmedewerker, dan zoeken we jou!</span></h4>
 												<h6>Match: 80%</h6>
 												<div>
 													<strong>Heteren | Fulltime, Parttime | 40 uur | LBO, MAVO, HAVO, VWO, MBO, HBO, Universitair, Ongeschoold</strong>
@@ -1093,7 +1093,7 @@
     var viewed = getParameterByName('viewed');
 	if(viewed == 'true'){
 		$('.actualData ul > li').each(function(){
-			$(this).find('h4 a').removeClass('favourite');
+			$(this).find('h4 span').removeClass('favourite');
 		})
 	}    
 	

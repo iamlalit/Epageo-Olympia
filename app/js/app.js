@@ -232,14 +232,26 @@ $(document).ready(function(){
 		);
 	});
 
+	//to show the CV delete modal popup
 	$('#removeCv').click(function(){
+		$('#CVDelete').modal('show');
+	});
+})
+//to call on modal button clicked to delete the button
+function DeleteOrNotCV(check){
+	if(check == 'ja'){
 		$('input[name=cv]').val() === '';
 		$('#cvVal').empty();
 		$('#cvVal-div').addClass('hide');
-	});
-
-	
-})
+	}else{
+		//do nothing
+	}
+}
+var $deleteObject = '';
+//to delete education and work experience
+function deleteThis(obj){
+	$deleteObject = $(obj);
+}
 
 function removeCertificates(obj){
 	$this = $(obj);
@@ -1600,7 +1612,7 @@ $(document).ready(function(){
 });
 
 var currentView = '';
-
+// debugger;
 //for form 3
 $(document).ready(function(){
 	$('#jobForm-section3').addClass('grey-link');
@@ -1613,18 +1625,18 @@ $(document).ready(function(){
 		window.location.href='callcentre-test.html'; 
 	});
 });
-
 $(document).ready(function(){
 	$('#saveVoorkeurenData').click(function(){
 		var dienstverband = '',
-			weekHour = '',
+			weekHourMinimal = '',
+			weekHourMaximal = '',
+			fullPartTimeJob = '',
 			branche = '',
 			vakgebied = '',
 			salaris = '',
 			denkniveau = '',
 			placeWithDistance = '',
 			trefwoorden = '';
-		
 		//get the values
 		if($('.dienstverband input[type=checkbox]:checked').length > 0){
 			//something is selected
@@ -1636,17 +1648,24 @@ $(document).ready(function(){
 		}else{
 			//to hide that particular li as nothing is selected
 		}
+		if($('.weekHour #minimum').val() != ''){
+			weekHourMinimal = $('.weekHour #minimum').val();
+			$("#weekHourMinimal").text(weekHourMinimal + ' - ');
+		}
+		if($('.weekHour #maximum').val() != ''){
+			weekHourMaximal = $('.weekHour #maximum').val();
+			$("#weekHourMaximal").text(weekHourMaximal);
+		}
 
 		//get the values
-		if($('.weekHour input[type=checkbox]:checked').length > 0){
+		if($('.fullPartTimeJob input[type=checkbox]:checked').length > 0){
 			//something is selected
-			$('.weekHour input[type=checkbox]:checked').each(function() {
-			  weekHour += $(this).data("values") + ', ';
+			$('.fullPartTimeJob input[type=checkbox]:checked').each(function() {
+			  fullPartTimeJob += $(this).data("values") + ', ';
 			});
-			weekHour = weekHour.slice(0,-2);
-			$("#weekHour").text(weekHour);
+			fullPartTimeJob = fullPartTimeJob.slice(0,-2);
+			$("#fullPartTimeJob").text(fullPartTimeJob);
 		}else{
-			//to hide that particular li as nothing is selected
 		}
 
 		//get the values
@@ -1764,9 +1783,9 @@ function emptyTheForm(){
   	$(".voorkeuren-box").removeClass('hidden');
 	$(".alert-box").addClass('hidden');
 
-	$('.alertname').val('');
-	$('.emailFreq input[type=radio], .denkniveau input[type=radio]').removeAttr('checked');
-	$('.dienstverband input[type=checkbox], .weekHour input[type=checkbox], .branche input[type=checkbox], .vakgebied input[type=checkbox], .salaris input[type=checkbox]').removeAttr('checked');
+	$('.alertname, #minimum, #maximum').val('');
+	$('.emailFreq input[type=radio], .denkniveau input[type=checkbox]').removeAttr('checked');
+	$('.dienstverband input[type=checkbox], .weekHour input[type=checkbox], .fullPartTimeJob input[type=checkbox], .branche input[type=checkbox], .vakgebied input[type=checkbox], .salaris input[type=checkbox]').removeAttr('checked');
 	$('.trefwoorden span').remove();
 	$('.placeWithDistance span').remove();
 
@@ -1776,10 +1795,18 @@ function emptyTheForm(){
 }
 //email alert
 $(document).ready(function(){
+	$('#annuleerAlertPage').click(function(){
+		emptyTheForm();
+
+		$(".voorkeuren-box").addClass('hidden');
+		$(".alert-box").removeClass('hidden');
+	});
+
 	$('#saveVoorkeurenDataAlertPage').click(function(){
 		var alertname = '',
 			dienstverband = '',
 			weekHour = '',
+			fullPartTimeJob = '',
 			branche = '',
 			vakgebied = '',
 			salaris = '',
@@ -1800,6 +1827,7 @@ $(document).ready(function(){
 			//to hide that particular li as nothing is selected
 			//$("#dienstverband1").closest('li').remove();
 		}
+		
 		//get the values
 		if($('.weekHour input[type=checkbox]:checked').length > 0){
 			//something is selected
@@ -1808,6 +1836,18 @@ $(document).ready(function(){
 			});
 			weekHour = weekHour.slice(0,-2);
 			$("#weekHour1").text(weekHour);
+		}else{
+			//to hide that particular li as nothing is selected
+			//$("#weekHour1").closest('li').remove();
+		}
+
+		//get the values
+		if($('.fullPartTimeJob input[type=checkbox]:checked').length > 0){
+			//something is selected
+			$('.fullPartTimeJob input[type=checkbox]:checked').each(function() {
+			  fullPartTimeJob += $(this).data("values") + ', ';
+			});
+			fullPartTimeJob = fullPartTimeJob.slice(0,-2);
 		}else{
 			//to hide that particular li as nothing is selected
 			//$("#weekHour1").closest('li').remove();
@@ -1853,9 +1893,9 @@ $(document).ready(function(){
 		}
 
 		//get the values
-		if($('.denkniveau input[type=radio]:checked').length > 0){
+		if($('.denkniveau input[type=checkbox]:checked').length > 0){
 			//something is selected
-			$('.denkniveau input[type=radio]:checked').each(function() {
+			$('.denkniveau input[type=checkbox]:checked').each(function() {
 			  denkniveau += $(this).data("values") + ', ';
 			});
 			denkniveau = denkniveau.slice(0,-2)
@@ -1908,7 +1948,7 @@ $(document).ready(function(){
 				'<div class="header">'+
 					'<div class="form-group" id="fromTO">'+
 						'<div class="switch on">'+
-						    '<input class="special-toggle" type="checkbox" name="toggleButton'+alertname+'" id="toggleButton'+alertname+'">'+
+						    '<input class="special-toggle" type="checkbox" name="toggleButton'+alertname+'" id="toggleButton'+alertname+'" checked="checked">'+
 						   	'<label for="toggleButton'+alertname+'">'+
 							    '<span></span>'+
 							    '<span></span>'+
@@ -1933,6 +1973,10 @@ $(document).ready(function(){
 						'<li class="uren">'+
 							'<strong>Uren per week:</strong>'+
 							'<span id="weekHour1"> '+weekHour+'</span>'+
+						'</li>'+
+						'<li class="fullPartTime">'+
+							'<strong>Fulltime/parttime:</strong>'+
+							'<span> '+fullPartTimeJob+'</span>'+
 						'</li>'+
 						'<li class="dienstverband">'+
 							'<strong>Dienstverband:</strong>'+
@@ -1968,14 +2012,17 @@ $(document).ready(function(){
 				'</div>'+
 			'</li>'
 		)
+	
 
-		$(".voorkeuren-box").addClass('hidden');
+	    $(".voorkeuren-box").addClass('hidden');
 		$(".alert-box").removeClass('hidden');
+
 	})
 	$('#updateVoorkeurenDataAlertPage').click(function(){
 		var alertname = '',
 		dienstverband = '',
 		weekHour = '',
+		fullPartTimeJob = '',
 		branche = '',
 		vakgebied = '',
 		salaris = '',
@@ -2006,6 +2053,14 @@ $(document).ready(function(){
 			$("#weekHour1").text(weekHour);
 		}
 		//get the values
+		if($('.fullPartTimeJob input[type=checkbox]:checked').length > 0){
+			//something is selected
+			$('.fullPartTimeJob input[type=checkbox]:checked').each(function() {
+			  fullPartTimeJob += $(this).data("values") + ', ';
+			});
+			fullPartTimeJob = fullPartTimeJob.slice(0,-2);
+		}
+		//get the values
 		if($('.branche input[type=checkbox]:checked').length > 0){
 			//something is selected
 			$('.branche input[type=checkbox]:checked').each(function() {
@@ -2030,9 +2085,9 @@ $(document).ready(function(){
 			salaris = salaris.slice(0,-2);
 		}
 		//get the values
-		if($('.denkniveau input[type=radio]:checked').length > 0){
+		if($('.denkniveau input[type=checkbox]:checked').length > 0){
 			//something is selected
-			$('.denkniveau input[type=radio]:checked').each(function() {
+			$('.denkniveau input[type=checkbox]:checked').each(function() {
 			  denkniveau += $(this).data("values") + ', ';
 			});
 			denkniveau = denkniveau.slice(0,-2);
@@ -2067,6 +2122,7 @@ $(document).ready(function(){
 		$parent.find('.functies span').text(trefwoorden);
 		$parent.find('.locatie span').text(placeWithDistance);
 		$parent.find('.uren span').text(weekHour);
+		$parent.find('.fullPartTime span').text(fullPartTimeJob);
 		$parent.find('.dienstverband span').text(dienstverband);
 		$parent.find('.salary span').text(salaris);
 		$parent.find('.werkand span').text(denkniveau);
@@ -2074,7 +2130,7 @@ $(document).ready(function(){
 		$parent.find('.branch span').text(branche);
 		$parent.find('.frequency span').text(emailFreq);
 
-		$(".voorkeuren-box").addClass('hidden');
+	    $(".voorkeuren-box").addClass('hidden');
 		$(".alert-box").removeClass('hidden');
 	})
 
@@ -2091,19 +2147,24 @@ $(document).ready(function(){
     }	
 });
 //delete email alert
+var $deleteEmailAlert = 'nee';
 function deleteThisEmailAlert(obj){
-	var $this = $(obj); // This is the jQuery object being clicked
-
-	console.log($this.parents('li.show'));
-	$this.parents('li.show').remove();
+	$deleteEmailAlert = $(obj); // This is the jQuery object being clicked
+	$('#emailAlertDelete').modal('show');
 }
-
+function DeleteOrNot(check){
+	if(check == 'ja'){
+		$deleteEmailAlert.parents('li.show').remove();
+	}else{
+		//do nothing
+	}
+}
 //edit email alert
 function editEmailAlert(obj){
 	//empty the form first
 	$('.alertname').val('');
-	$('.emailFreq input[type=radio], .denkniveau input[type=radio]').removeAttr('checked');
-	$('.dienstverband input[type=checkbox], .weekHour input[type=checkbox], .branche input[type=checkbox], .vakgebied input[type=checkbox], .salaris input[type=checkbox]').removeAttr('checked');
+	$('.emailFreq input[type=radio], .denkniveau input[type=checkbox]').removeAttr('checked');
+	$('.dienstverband input[type=checkbox], .weekHour input[type=checkbox], .fullPartTimeJob input[type=checkbox], .branche input[type=checkbox], .vakgebied input[type=checkbox], .salaris input[type=checkbox]').removeAttr('checked');
 	$('.trefwoorden span').remove();
 	$('.placeWithDistance span').remove();
 
@@ -2120,20 +2181,23 @@ function editEmailAlert(obj){
 		werkand,
 		vakgebied,
 		branch,
-		frequency;
+		frequency,
+		fullPartTime;
 
 	jobTitle = $parent.find('.job-title strong').html();
 	clickedId = $parent.attr('id');
 	jobBody = $parent.find('.job-body');
 	functies = jobBody.find('.functies span').html();
 	locatie = jobBody.find('.locatie span').html();
+	//debugger;
 	uren = jobBody.find('.uren span').html();
+	fullPartTime = jobBody.find('.fullPartTime span').html();
 	salary = jobBody.find('.salary span').html();
 	werkand = jobBody.find('.werkand span').html();
 	vakgebied = jobBody.find('.vakgebied span').html();
 	dienstverband = jobBody.find('.dienstverband span').html();
 	branch = jobBody.find('.branch span').html();
-	frequency = jobBody.find('.frequency span').html();
+	frequency = jobBody.find('.frequency span').html().trim();
 	formTitle = jobBody.find('.bewerk a').html();
 	
 
@@ -2143,12 +2207,16 @@ function editEmailAlert(obj){
 	$("#clickedIdparam").val(obj);
 
 	$('.alertname').val(jobTitle);
+	
 	$('.emailFreq input[value="'+frequency+'"]').prop('checked', true);
 	dienstverband.split(',').forEach(function(frequency) {
     	$('.dienstverband input[data-values="'+frequency.trim()+'"]').prop('checked', true);
   	});
   	uren.split(',').forEach(function(weekhour) {
     	$('.weekHour input[data-values="'+weekhour.trim()+'"]').prop('checked', true);
+  	});
+  	fullPartTime.split(',').forEach(function(fullPart) {
+    	$('.fullPartTimeJob input[data-values="'+fullPart.trim()+'"]').prop('checked', true);
   	});
   	branch.split(',').forEach(function(branch) {
   		$('.branche input[data-values="'+branch.trim()+'"]').prop('checked', true);
@@ -2167,7 +2235,7 @@ function editEmailAlert(obj){
   	});
   	locatie.split(',').forEach(function(location) {
   		$('.placeWithDistance').append('<span><strong>'+location.trim()+' </strong><a href="javascript:void(0)" onclick="removeText(this)"><i>×</i></a></span>')
-  	})
+  	});
 
   	$(".voorkeuren-box").find('h1').html(formTitle);
 
@@ -2182,12 +2250,11 @@ $('.left-tab-data .favouriteAdd').on('click', function() {
 	var $this = $(this);
 	console.log($(this).hasClass('favourite'));
 	if(!$(this).hasClass('favourite') && !$this.closest('li.well').find('.jobBody .favouriteAdd').hasClass('favourite')){
+		$this.closest('li.well').find('.jobBody .favouriteAdd').addClass('favourite').attr('onclick', 'favouriteDelete(this)').html('verwijder uit favorieten');
+		$this.closest('li.well').find('.olympia').addClass('favourite').attr('onclick', 'favouriteDelete(this)');
+
 		var clonedValue = $this.closest('li.well').clone();
 		$('.right-tab-data ul').append(clonedValue);
-		$this.closest('li.well').find('.jobBody .favouriteAdd').addClass('favourite');
-		$this.closest('li.well').find('.olympia').addClass('favourite');
-		$('.right-tab-data ul li').find('.olympia').addClass('favourite').removeClass('favouriteAdd').attr('onclick', 'favouriteDelete(this)');
-		$('.right-tab-data ul li').find('.favouriteAdd').removeClass('favouriteAdd').attr('onclick', 'favouriteDelete(this)');
 		checkLengthRightTab();
 	}
 });
@@ -2195,9 +2262,10 @@ $('.left-tab-data .favouriteAdd').on('click', function() {
 function favouriteDelete(obj){
 	var $this = $(obj);
 	var clickedWellID = $this.closest('li.well').attr('id');
-	$this.closest('li.well').remove();
+	$('.right-tab-data').find('#'+clickedWellID).remove();
+
 	$('.left-tab-data').find('#'+clickedWellID).find('.olympia').removeClass('favourite');
-	$('.left-tab-data').find('#'+clickedWellID).find('.jobBody .favouriteAdd').removeClass('favourite');
+	$('.left-tab-data').find('#'+clickedWellID).find('.jobBody .favouriteAdd').removeClass('favourite').html('bewaar als favoriet');
 	checkLengthRightTab();
 }
 
@@ -2209,3 +2277,83 @@ function checkLengthRightTab(){
 		$('.right-tab-data .noData').addClass('hidden');
 	}
 }
+
+//email address confirmation
+$(document).ready(function(){
+	$('.confirmation-text').addClass('hidden');
+	$('#emailadres-submitted').addClass('hidden');
+
+	$('#confirm-email').click(function(){
+		var newEmailAddress = $('#emailadres input[name=newEmail]').val();
+		$('#emailadres-submitted .newHeadingEmail span').html(newEmailAddress);
+		$('#emailadres-submitted .newHeadingEmail1 span').html(newEmailAddress);
+		$('.confirmation-text').addClass('hidden');
+		$('#emailadres-submitted').removeClass('hidden');	
+		$('#emailadres').find('.box-inner').first().addClass('hidden');
+	});
+	$('#confirmation-email-sent').click(function(){
+		$('.confirmation-text').removeClass('hidden');
+	});
+	$('#revert-to-form').click(function(){
+		$('.confirmation-text').addClass('hidden');
+		$('#emailadres-submitted').addClass('hidden');
+		$('#emailadres').find('.box-inner').first().removeClass('hidden');	
+
+		$('#emailadres input[name=newEmail]').val('');
+		$('#emailadres input[name=confirmEmail]').val('');
+	});
+
+	//delete profile
+	$('#inlineCheckbox-delete').on('change', function(){
+		debugger;
+		$('input[name=deletePassword]').val('');
+		if($('#inlineCheckbox-delete').prop('checked') == true){
+			$('#accountwijzigen').find('.box-inner').last().removeClass('hidden');	
+		}else{
+			$('#accountwijzigen').find('.box-inner').last().addClass('hidden');	
+		}
+	});
+	$('#cancel-delete').click(function(){
+		$('input[name=deletePassword]').val('');
+		$('#inlineCheckbox-delete').prop('checked', false);
+		$('#accountwijzigen').find('.box-inner').last().addClass('hidden');
+	});
+
+	//driver license
+	$('.geen-rijbewijs #inlineCheckbox9').on('change', function(){
+		if($('.geen-rijbewijs #inlineCheckbox9').prop('checked') == true){
+			$('#rijbewijs1 input[type=checkbox]:checked').each(function() {
+			  $(this).prop('checked', false);
+			});
+			$('#rijbewijs2 input[type=checkbox]:checked').each(function() {
+			  $(this).prop('checked', false);
+			});
+		}
+	});
+	$('#rijbewijs1 input[type=checkbox],#rijbewijs2 input[type=checkbox]').on('change', function(){
+		var checkedCheckBoxDriver = false;
+		$('#rijbewijs1 input[type=checkbox]:checked').each(function() {
+		  checkedCheckBoxDriver = checkedCheckBoxDriver || $(this).prop('checked');
+		});
+		$('#rijbewijs2 input[type=checkbox]:checked').each(function() {
+		  checkedCheckBoxDriver = checkedCheckBoxDriver || $(this).prop('checked');
+		});
+		if(checkedCheckBoxDriver == true){
+			$('.geen-rijbewijs #inlineCheckbox9').prop('checked', false);
+		}
+	});
+
+	//change in frequency
+	$('.emailFreq input[type="radio"]').on('change', function(){
+		if($(this).attr('id') == 'inlineCheckbox1b'){
+			$('.perDay').removeClass('hidden');
+			$('.perWeek').addClass('hidden');
+		}else if($(this).attr('id') == 'inlineCheckbox1c'){
+			$('.perDay').addClass('hidden');
+			$('.perWeek').removeClass('hidden');
+		}else{
+			$('.perWeek').addClass('hidden');
+			$('.perDay').addClass('hidden');
+		}
+	})
+});
