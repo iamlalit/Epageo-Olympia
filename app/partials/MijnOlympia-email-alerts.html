@@ -28,8 +28,35 @@
 					        </div>
 					    </div>
 					    <div class="logged bell" >
-					    	<span class="olympia-icon olympia-bell-o" onclick="location.href='MijnOlympia-dashboard.html?scrollTo=notification'"></span>
+					    	<span class="olympia-icon olympia-bell-o"></span>
 					    	<span class="number">3</span>
+					    	<div class="notificationBalloon hidden">
+					    		<ul>
+					    			<li>
+					    				<a href="MijnOlympia-suggesties.html">3 nieuwe vacature suggesties</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Magazijnmedewerker(m/v)</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Fulltime orderpicker</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-suggesties.html">3 nieuwe vacature suggesties</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Magazijnmedewerker(m/v)</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-notificaties.html">Bekijk alle notificaties</a>
+					    			</li>
+					    		</ul>
+					    	</div>
 					    </div>
 					    <div class="user">
 					        <img src="../img/pasfoto.jpg"/>
@@ -41,7 +68,7 @@
 	</header>
 	<div class="notificationSaveMessage hidden">
 		<div class="box">
-			<p>Your changes have been saved!</p><span class="olympia olympia-check-circle"></span>
+			<p>Je wijzigingen zijn opgeslagen!</p><span class="olympia olympia-check-circle"></span>
 		</div>
 	</div>
 	<div class="full-width-border" style="margin-top: 15px;">
@@ -154,7 +181,12 @@
 					</div>
 				</div>
             </div>
-			<div class="col-lg-9 right-container alert-box">
+			<div class="col-lg-9 right-container alert-box topLink">
+				<div class="navbar-secondary translate-up" id="secondary-navigation">
+			        <ul class="navigation">
+			          <li><a href="#" name="document">Terug naar boven</a></li>
+			        </ul>
+			    </div>
 				<div class="well well-olympia">
 					<h1>Mijn e-mail alerts</h1>
 					<div class="box-inner">
@@ -482,16 +514,17 @@
 						<div class="row hidden perDay">
 							<div class="col-sm-3">
 								<select class="form-control" id="timeHour" name="timeHour">
-									<option value="0">Uur</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-									<option value="9">9</option>
+									<option value="uur">Uur</option>
+									<option value="0">00</option>
+									<option value="1">01</option>
+									<option value="2">02</option>
+									<option value="3">03</option>
+									<option value="4">04</option>
+									<option value="5">05</option>
+									<option value="6">06</option>
+									<option value="7">07</option>
+									<option value="8">08</option>
+									<option value="9">09</option>
 									<option value="10">10</option>
 									<option value="11">11</option>
 									<option value="12">12</option>
@@ -506,21 +539,21 @@
 									<option value="21">21</option>
 									<option value="22">22</option>
 									<option value="23">23</option>
-									<option value="24">24</option>
 								</select>
 							</div>
 							<div class="col-sm-3">
 								<select class="form-control" id="timeMinutes" name="timeMinutes">
-									<option value="0">notulen</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-									<option value="9">9</option>
+									<option value="notulen">notulen</option>
+									<option value="00">00</option>
+									<option value="1">01</option>
+									<option value="2">02</option>
+									<option value="3">03</option>
+									<option value="4">04</option>
+									<option value="5">05</option>
+									<option value="6">06</option>
+									<option value="7">07</option>
+									<option value="8">08</option>
+									<option value="9">09</option>
 									<option value="10">10</option>
 									<option value="11">11</option>
 									<option value="12">12</option>
@@ -571,7 +604,6 @@
 									<option value="57">57</option>
 									<option value="58">58</option>
 									<option value="59">59</option>
-									<option value="60">60</option>
 								</select>
 							</div>
 						</div>
@@ -590,16 +622,17 @@
 							</div>
 							<div class="col-sm-3">
 								<select class="form-control" id="timeHour" name="timeHour">
-									<option value="0">Uur</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-									<option value="9">9</option>
+									<option value="uur">Uur</option>
+									<option value="0">00</option>
+									<option value="1">01</option>
+									<option value="2">02</option>
+									<option value="3">03</option>
+									<option value="4">04</option>
+									<option value="5">05</option>
+									<option value="6">06</option>
+									<option value="7">07</option>
+									<option value="8">08</option>
+									<option value="9">09</option>
 									<option value="10">10</option>
 									<option value="11">11</option>
 									<option value="12">12</option>
@@ -614,21 +647,21 @@
 									<option value="21">21</option>
 									<option value="22">22</option>
 									<option value="23">23</option>
-									<option value="24">24</option>
 								</select>
 							</div>
 							<div class="col-sm-3">
 								<select class="form-control" id="timeMinutes" name="timeMinutes">
-									<option value="0">notulen</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-									<option value="9">9</option>
+									<option value="notulen">notulen</option>
+									<option value="00">00</option>
+									<option value="1">01</option>
+									<option value="2">02</option>
+									<option value="3">03</option>
+									<option value="4">04</option>
+									<option value="5">05</option>
+									<option value="6">06</option>
+									<option value="7">07</option>
+									<option value="8">08</option>
+									<option value="9">09</option>
 									<option value="10">10</option>
 									<option value="11">11</option>
 									<option value="12">12</option>
@@ -679,7 +712,6 @@
 									<option value="57">57</option>
 									<option value="58">58</option>
 									<option value="59">59</option>
-									<option value="60">60</option>
 								</select>
 							</div>
 						</div>

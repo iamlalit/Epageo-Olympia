@@ -107,6 +107,21 @@ $('.progress').mouseout(function(){
     $('.text2').addClass('hidden');
 })
 $('.notificationSaveMessage1').click(function(){
+    var windowHeight = $(window).height();
     $('.notificationSaveMessage').removeClass('hidden');
+    var elementHeight = $('.notificationSaveMessage').height();
+    var newTop = windowHeight - elementHeight;
+    newTop = newTop/2;
+    $('.notificationSaveMessage').css('top', newTop+'px');
     setTimeout(function(){ $('.notificationSaveMessage').addClass('hidden'); }, 3000);
 })
+
+// $('.notificationBalloon ul li a').each(function(){
+//     var tempText = $(this).text();
+//     if(tempText.length > 40){
+//         var newSubText = tempText.substr(0, 40) + '...';    
+//     }else{
+//         newSubText = tempText;
+//     }
+//     $(this).html(newSubText);
+// });

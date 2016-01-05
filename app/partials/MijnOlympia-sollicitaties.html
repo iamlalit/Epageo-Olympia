@@ -27,8 +27,35 @@
 					        </div>
 					    </div>
 					    <div class="logged bell" >
-					    	<span class="olympia-icon olympia-bell-o" onclick="location.href='MijnOlympia-dashboard.html?scrollTo=notification'"></span>
+					    	<span class="olympia-icon olympia-bell-o"></span>
 					    	<span class="number">3</span>
+					    	<div class="notificationBalloon hidden">
+					    		<ul>
+					    			<li>
+					    				<a href="MijnOlympia-suggesties.html">3 nieuwe vacature suggesties</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Magazijnmedewerker(m/v)</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Fulltime orderpicker</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-suggesties.html">3 nieuwe vacature suggesties</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Magazijnmedewerker(m/v)</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-notificaties.html">Bekijk alle notificaties</a>
+					    			</li>
+					    		</ul>
+					    	</div>
 					    </div>
 					    <div class="user">
 					        <img src="../img/pasfoto.jpg"/>
@@ -149,7 +176,12 @@
 					</div>
 				</div>
             </div>
-			<div class="col-lg-9 right-container">
+			<div class="col-lg-9 right-container topLink">
+				<div class="navbar-secondary translate-up" id="secondary-navigation">
+			        <ul class="navigation">
+			          <li><a href="#" name="document">Terug naar boven</a></li>
+			        </ul>
+			    </div>
 				<div class="well well-olympia sollicitaties">
 					<h1>Mijn sollicitaties 'track &amp; trace'</h1>
 					<div class="box-inner accordion">
@@ -417,5 +449,6 @@
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
 	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="../js/main.js"></script>
+	<script src="../js/app.js"></script>
 </body>
 </html>

@@ -28,8 +28,35 @@
 					        </div>
 					    </div>
 					    <div class="logged bell" >
-					    	<span class="olympia-icon olympia-bell-o" onclick="location.href='MijnOlympia-dashboard.html?scrollTo=notification'"></span>
+					    	<span class="olympia-icon olympia-bell-o"></span>
 					    	<span class="number">3</span>
+					    	<div class="notificationBalloon hidden">
+					    		<ul>
+					    			<li>
+					    				<a href="MijnOlympia-suggesties.html">3 nieuwe vacature suggesties</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Magazijnmedewerker(m/v)</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Fulltime orderpicker</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-suggesties.html">3 nieuwe vacature suggesties</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Magazijnmedewerker(m/v)</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-notificaties.html">Bekijk alle notificaties</a>
+					    			</li>
+					    		</ul>
+					    	</div>
 					    </div>
 					    <div class="user">
 					        <img src="../img/pasfoto.jpg"/>
@@ -41,7 +68,7 @@
 	</header>
 	<div class="notificationSaveMessage hidden">
 		<div class="box">
-			<p>Your changes have been saved!</p><span class="olympia olympia-check-circle"></span>
+			<p>Je wijzigingen zijn opgeslagen!</p><span class="olympia olympia-check-circle"></span>
 		</div>
 	</div>
 	<div class="full-width-border" style="margin-top: 15px;">
@@ -154,7 +181,12 @@
 					</div>
 				</div>
             </div>
-			<div class="col-lg-9 right-container alert-box">
+			<div class="col-lg-9 right-container alert-box topLink">
+				<div class="navbar-secondary translate-up" id="secondary-navigation">
+			        <ul class="navigation">
+			          <li><a href="#" name="document">Terug naar boven</a></li>
+			        </ul>
+			    </div>
 				<div class="well well-olympia">
 					<h1>Mijn voorkeuren</h1>
 					<div class="box-inner">
@@ -745,7 +777,8 @@
 					<div class="form-group">
 						<div class="row margin-top-15">
 							<div class="col-lg-12">
-                            	<button type="submit" id="saveVoorkeurenData" class="btn btn-primary medium-text pull-right notificationSaveMessage1">Wijzigingen opslaan</button>
+								<button type="submit" id="annuleerAlertPage" class="btn btn-default medium-text pull-right">Annuleer</button>
+                            	<button type="submit" id="saveVoorkeurenData" class="btn btn-primary medium-text pull-right notificationSaveMessage1 margin-right-5">Wijzigingen opslaan</button>
                             </div>
                         </div>
                     </div>

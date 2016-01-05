@@ -2245,38 +2245,6 @@ function editEmailAlert(obj){
 
 }
 
-//add to favourite
-$('.left-tab-data .favouriteAdd').on('click', function() {
-	var $this = $(this);
-	console.log($(this).hasClass('favourite'));
-	if(!$(this).hasClass('favourite') && !$this.closest('li.well').find('.jobBody .favouriteAdd').hasClass('favourite')){
-		$this.closest('li.well').find('.jobBody .favouriteAdd').addClass('favourite').attr('onclick', 'favouriteDelete(this)').html('verwijder uit favorieten');
-		$this.closest('li.well').find('.olympia').addClass('favourite').attr('onclick', 'favouriteDelete(this)');
-
-		var clonedValue = $this.closest('li.well').clone();
-		$('.right-tab-data ul').append(clonedValue);
-		checkLengthRightTab();
-	}
-});
-
-function favouriteDelete(obj){
-	var $this = $(obj);
-	var clickedWellID = $this.closest('li.well').attr('id');
-	$('.right-tab-data').find('#'+clickedWellID).remove();
-
-	$('.left-tab-data').find('#'+clickedWellID).find('.olympia').removeClass('favourite');
-	$('.left-tab-data').find('#'+clickedWellID).find('.jobBody .favouriteAdd').removeClass('favourite').html('bewaar als favoriet');
-	checkLengthRightTab();
-}
-
-function checkLengthRightTab(){
-	console.log($('.right-tab-data ul li').length == 0);
-	if($('.right-tab-data ul li').length == 0){
-		$('.right-tab-data .noData').removeClass('hidden');
-	}else{
-		$('.right-tab-data .noData').addClass('hidden');
-	}
-}
 
 //email address confirmation
 $(document).ready(function(){
@@ -2355,5 +2323,131 @@ $(document).ready(function(){
 			$('.perWeek').addClass('hidden');
 			$('.perDay').addClass('hidden');
 		}
-	})
+	});
+
+	//header notification balloon
+	$('body').on('click', function (e) {
+	    console.log($(e.target).closest('notificationBalloon'));
+	    if($(e.target).hasClass('olympia-bell-o')){
+	    	$('.notificationBalloon').toggleClass('hidden');
+	    }else if($(e.target).hasClass('olympia-times')){
+	    	e.stopPropagation();
+	    }else{
+	    	$('.notificationBalloon').addClass('hidden');
+	    }
+	});
+	$('.notificationBalloon .olympia-times').click(function(){
+		$(this).closest('li').remove();
+	});
+	$('.notificationPage .olympia-times').click(function(){
+		$(this).closest('li').remove();
+	});
 });
+
+$(document).ready(function(){
+	var phrases = [];
+	var sortByMatch = [];
+	var sortByDate = [];
+	function sortTheList(list, by, order){
+		sortBy = [];
+		var phrases = [];
+		var sortByMatch = [];
+		var sortByDate = [];
+			$('.'+list+' li.well').each(function(){
+		        var current = $(this);
+		        var matchRating = $(this).find('.match span').html();
+		        var dates = $(this).find('.date').data('date');
+				var dsplit = dates.split("-");
+				var d = new Date(dsplit[0],dsplit[2],dsplit[1]-1);
+		        var dateTimeStamp = d.getTime();
+		        phrases.push({'html': current[0],
+		    				  'match': matchRating,
+		    				  'date': dateTimeStamp});
+		    });
+		    
+		    function sortResults(prop, asc) {
+			    phrases = phrases.sort(function(a, b) {
+			        if (asc) return (a[prop] > b[prop]) ? 1 : ((a[prop] < b[prop]) ? -1 : 0);
+			        else return (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
+			    });
+			    return phrases;
+			}
+			sortBy = sortResults(by, order);
+			console.log(sortBy);
+			$('.'+list+' li.well').remove();
+			for (var i = 0; i < sortBy.length; i++) {
+				$('.'+list+' .actualData ul').append(sortBy[i].html);
+				$('.pagination').pagination('nextPage');
+				$('.pagination').pagination('prevPage');
+				
+			};
+
+	}
+
+	var activeTab = $('.MijnOlympia-suggesties .box-inner.accordion').find('.active').attr('class');
+	if(typeof activeTab !== "undefined"){
+		var list = activeTab.split(' ')[0] + '-data';	
+	}
+	$('#sortingOrder').on('change', function(){
+		var selectedOption = $( "#sortingOrder option:selected" ).text();
+		var activeTab = $('.box-inner.accordion').find('.active').attr('class');
+		var list = activeTab.split(' ')[0] + '-data';
+		if(selectedOption == 'Datum'){
+			window.location.href = "#datedesc";
+			sortTheList(list, 'date', false);
+		}else if(selectedOption == 'Date ascending'){
+			window.location.href = "#dateAsc";
+			sortTheList(list, 'date', true);		
+		}else if(selectedOption == 'Match ascending'){
+			window.location.href = "#matchAsc";
+			sortTheList(list, 'match', true);		
+		}else if(selectedOption == 'Match'){
+			window.location.href = "#matchDesc";
+			sortTheList(list, 'match', false);		
+		}
+		//location.reload();
+	});
+
+	
+});
+//add to favourite
+	$('.left-tab-data').delegate('.favouriteAdd.favourite','click', function() {		
+		var $this = $(this);
+		var clickedWellID = $this.closest('li.well').attr('id');
+		$('.right-tab-data').find('#'+clickedWellID).remove();
+
+		$('.left-tab-data').find('#'+clickedWellID).find('.olympia').removeClass('favourite').addClass('favouriteDelete');
+		$('.left-tab-data').find('#'+clickedWellID).find('.jobBody .favouriteAdd').removeClass('favourite').addClass('favouriteDelete').html('bewaar als favoriet');
+		checkLengthRightTab();
+	});
+	$('.right-tab-data').delegate('.favouriteAdd.favourite','click', function() {		
+		var $this = $(this);
+		var clickedWellID = $this.closest('li.well').attr('id');
+		$('.right-tab-data').find('#'+clickedWellID).remove();
+
+		$('.left-tab-data').find('#'+clickedWellID).find('.olympia').removeClass('favourite').addClass('favouriteDelete');
+		$('.left-tab-data').find('#'+clickedWellID).find('.jobBody .favouriteAdd').removeClass('favourite').addClass('favouriteDelete').html('bewaar als favoriet');
+		checkLengthRightTab();
+	});
+	$('.left-tab-data').delegate('.favouriteAdd.favouriteDelete','click', function() {
+		console.log('here');
+		var $this = $(this);
+		console.log($(this).hasClass('favourite'));
+		if(!$(this).hasClass('favourite') && !$this.closest('li.well').find('.jobBody .favouriteAdd').hasClass('favourite')){
+			$this.closest('li.well').find('.jobBody .favouriteAdd').addClass('favourite').removeClass('favouriteDelete').html('verwijder uit favorieten');
+			$this.closest('li.well').find('.olympia').addClass('favourite').removeClass('favouriteDelete');
+
+			var clonedValue = $this.closest('li.well').clone();
+			$('.right-tab-data ul').append(clonedValue);
+			checkLengthRightTab();
+		}
+	});
+
+	function checkLengthRightTab(){
+		console.log($('.right-tab-data ul li').length == 0);
+		if($('.right-tab-data ul li').length == 0){
+			$('.right-tab-data .noData').removeClass('hidden');
+		}else{
+			$('.right-tab-data .noData').addClass('hidden');
+		}
+	}

@@ -27,8 +27,35 @@
 					        </div>
 					    </div>
 					    <div class="logged bell" >
-					    	<span class="olympia-icon olympia-bell-o" onclick="location.href='MijnOlympia-dashboard.html?scrollTo=notification'"></span>
+					    	<span class="olympia-icon olympia-bell-o"></span>
 					    	<span class="number">3</span>
+					    	<div class="notificationBalloon hidden">
+					    		<ul>
+					    			<li>
+					    				<a href="MijnOlympia-suggesties.html">3 nieuwe vacature suggesties</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Magazijnmedewerker(m/v)</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Fulltime orderpicker</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-suggesties.html">3 nieuwe vacature suggesties</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Magazijnmedewerker(m/v)</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-notificaties.html">Bekijk alle notificaties</a>
+					    			</li>
+					    		</ul>
+					    	</div>
 					    </div>
 					    <div class="user">
 					        <img src="../img/pasfoto.jpg"/>
@@ -215,7 +242,7 @@
 					</div>
 				</div>
 				<div class="well well-olympia notification">
-					<h1 class="black">Mijn berichten <a id="tooltip1" class="website-icons small" data-container="body" data-toggle="popover" data-placement="top" data-original-title="Mijn berichten" data-content="Je hebt op dit moment 3 nieuwe berichten." style="cursor: pointer;"><i class="olympia-info3"></i></a></h1>
+					<h1 class="black">Mijn notificaties <a id="tooltip1" class="website-icons small" data-container="body" data-toggle="popover" data-placement="top" data-original-title="Mijn notificaties" data-content="Je hebt op dit moment 3 nieuwe notificaties." style="cursor: pointer;"><i class="olympia-info3"></i></a></h1>
 					<div class="box-inner accordion">
 						<div class="row">
 							<div class="col-lg-12">
@@ -246,6 +273,7 @@
 									</li>
 								</ul>
 							</div>
+							<div class="text-center"><a href="MijnOlympia-notificaties.html">Bekijk alle notificaties</a></div>
 						</div>
 					</div>
 				</div>
@@ -536,7 +564,7 @@
 										<li class="well well-olympia" id="4" onclick="window.location.href='MijnOlympia-suggesties.html?clickedId=4&viewed=true'">
 											<div class="heading">
 												<h4><span class="black">Allround Magazijnmedewerker</span></h4>
-												<h6>Match: 80%</h6>
+												<h6>Match: 95%</h6>
 												<div>
 													<strong>Nieuwegein | Fulltime | 37.5 uur | MBO werk- en denkniveau</strong>
 													<span class="pull-right">19 september 2015</span>
@@ -546,7 +574,7 @@
 										<li class="well well-olympia" id="5" onclick="window.location.href='MijnOlympia-suggesties.html?clickedId=5&viewed=true'">
 											<div class="heading">
 												<h4><span>Ervaring opdoen in de logistiek of al ervaring als magazijnmedewerker, dan zoeken we jou!</span></h4>
-												<h6>Match: 80%</h6>
+												<h6>Match: 90%</h6>
 												<div>
 													<strong>Heteren | Fulltime, Parttime | 40 uur | LBO, MAVO, HAVO, VWO, MBO, HBO, Universitair, Ongeschoold</strong>
 													<span class="pull-right">19 september 2015</span>
@@ -891,12 +919,12 @@
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="radioNieuw" id="radio-nieuw2" value="option2" data-required="true"/> Nee, ik ben niet op zoek naar werk maar ben wel geinteresseerd in vacatures en wil graag op de hoogte gehouden worden.
+									<input type="radio" name="radioNieuw" id="radio-nieuw2" value="option2" data-required="true"/> Nee, ik ben niet actief op zoek naar werk maar Olympia mag wel contact met mij opnemen.
 								</label>
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="radioNieuw" id="radio-nieuw3" value="option3" data-required="true"/> Nee, ik ben niet meer op zoek naar werk en wil ook niet meer benaderd worden door Olympia
+									<input type="radio" name="radioNieuw" id="radio-nieuw3" value="option3" data-required="true"/> Nee, ik ben niet meer op zoek naar werk en wil niet dat Olympia contact met mij opneemt.
 								</label>
 								<p>(dit schakelt ook je e-mail alerts uit)</p>
 							</div>

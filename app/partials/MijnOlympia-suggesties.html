@@ -27,8 +27,35 @@
 					        </div>
 					    </div>
 					    <div class="logged bell" >
-					    	<span class="olympia-icon olympia-bell-o" onclick="location.href='MijnOlympia-dashboard.html?scrollTo=notification'"></span>
+					    	<span class="olympia-icon olympia-bell-o"></span>
 					    	<span class="number">3</span>
+					    	<div class="notificationBalloon hidden">
+					    		<ul>
+					    			<li>
+					    				<a href="MijnOlympia-suggesties.html">3 nieuwe vacature suggesties</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Magazijnmedewerker(m/v)</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Fulltime orderpicker</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-suggesties.html">3 nieuwe vacature suggesties</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Magazijnmedewerker(m/v)</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-notificaties.html">Bekijk alle notificaties</a>
+					    			</li>
+					    		</ul>
+					    	</div>
 					    </div>
 					    <div class="user">
 					        <img src="../img/pasfoto.jpg"/>
@@ -150,7 +177,7 @@
 				</div>
             </div>
 			<div class="col-lg-9 right-container suggestie topLink MijnOlympia-suggesties">
-				<div class="navbar-secondary translate-up hidden" id="secondary-navigation">
+				<div class="navbar-secondary translate-up" id="secondary-navigation">
 			        <ul class="navigation">
 			          <li><a href="#" name="document">Terug naar boven</a></li>
 			        </ul>
@@ -162,7 +189,22 @@
 					</div>
 				</div>
 				<div class="well well-olympia">
-					<div class="box-inner accordion">
+					<div class="sortingOrder form-group margin-top-10 margin-bottom-0">
+						<div class="row">
+							<div class="col-sm-7">&nbsp;</div>
+							<div class="col-sm-2 text-right margin-top-8">
+								<label>Sorteer op: </label>
+							</div>
+							<div class="col-sm-3 padding-left-0" style="padding-right:25px;">
+								<select id="sortingOrder" class="form-control">
+								  <option value="dateDesc">Datum</option>
+								  <option value="matchDesc">Match</option>
+								</select>
+							</div>
+							
+						</div>
+					</div>
+					<div class="box-inner accordion padding-top-0">
 						<div class="tabs">
 							<div class="left-tab active">
 								<span>Toon alle suggesties</span>
@@ -172,50 +214,50 @@
 							</div>
 						</div>
 						<div class="data">
-							<div class="left-tab-data">
+							<div class="left-tab-data" id="leftTabular">
 								<div class="actualData">
 									<ul>
 										<li class="well well-olympia hidden" id="1">
 											<div class="heading">
 												<div>
-													<h4><a href="../pages/Met_spoed_op_zoek_naar_magazijnkrachten!.html" target="_blank" class="favourite">Met spoed op zoek naar magazijnkrachten!</a><span class="olympia olympia-star favouriteAdd" ></span></h4>
-													<span class="match">Match: 95%</span>
+													<h4><a href="../pages/Met_spoed_op_zoek_naar_magazijnkrachten!.html" target="_blank" class="favourite">Met spoed op zoek naar magazijnkrachten!</a><span class="olympia olympia-star favouriteAdd favouriteDelete" ></span></h4>
+													<span class="match">Match: <span>95</span>%</span>
 												</div>
 												<div>
 													<strong>Amersfoort | Fulltime | 40 uur | MAVO werk- en denkniveau</strong>
-													<span class="pull-right">22 september 2015</span>
+													<span class="pull-right date" data-date="2015-22-09">22 september 2015</span>
 												</div>
 											</div>
 											<div class="jobBody">
 												<p><span>Zoek jij een ondersteunende functie binnen een klein en gezellig team met enthousiaste collega's? Vind jij het leuk om zorg te dragen voor het inpakken van producten en het up-to-date houden van de voorraad? Zie jij een uitdaging in het verwerken van webwinkelbestellingen? Solliciteer dan op deze functie van junior logistiek medewerker!</span><span class="ellipsis">...</span></p>
-												<span><a href="../pages/Met spoed op zoek naar magazijnkrachten!.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd" href="javascript:void(0)">bewaar als favoriet</a></span>
+												<span><a href="../pages/Met spoed op zoek naar magazijnkrachten!.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd favouriteDelete" href="javascript:void(0)">bewaar als favoriet</a></span>
 											</div>
 										</li>
 										<li class="well well-olympia hidden" id="2">
 											<div class="heading">
 												<div>
-													<h4><a href="../pages/Gestopt_met_je_studie.html" target="_blank" class="favourite">Gestopt met je studie?</a><span class="olympia olympia-star favouriteAdd" ></span></h4>
-													<span class="match">Match: 90%</span>
+													<h4><a href="../pages/Gestopt_met_je_studie.html" target="_blank" class="favourite">Gestopt met je studie?</a><span class="olympia olympia-star favouriteAdd favouriteDelete" ></span></h4>
+													<span class="match">Match: <span>90</span>%</span>
 												</div>
 												<div>
 													<strong>Amersfoort | Fulltime | 40 uur | MBO werk- en denkniveau</strong>
-													<span class="pull-right">21 september 2015</span>
+													<span class="pull-right date" data-date="2015-21-09">21 september 2015</span>
 												</div>
 											</div>
 											<div class="jobBody">
 												<p><span>Heb jij gekozen voor een tussenjaar, de verkeerde studiekeuze gemaakt of net afgestudeerd? Dan ben je bij ons aan het juiste adres. Wij krijgen regelmatig vacatures binnen voor tijdelijke, maar ook vaste functies. Hierbij kun je denken aan functies als magazijnmedewerker, productiemedewerker, administratief medewerker of commercieel medewerker. Mocht je voor dergelijke functies in aanmerking willen komen, dan vragen wij je om te solliciteren op deze vacature.</span><span class="ellipsis">...</span></p>
-												<span><a href="../pages/Gestopt_met_je_studie.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd" href="javascript:void(0)">bewaar als favoriet</a></span>
+												<span><a href="../pages/Gestopt_met_je_studie.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd favouriteDelete" href="javascript:void(0)">bewaar als favoriet</a></span>
 											</div>
 										</li>
 										<li class="well well-olympia hidden" id="3">
 											<div class="heading">
 												<div>
-													<h4><a href="../pages/Reachtruckchauffeur_Allround_Magazijnmedewerker.html" target="_blank" class="favourite">Reachtruckchauffeur/ Allround Magazijnmedewerker</a><span class="olympia olympia-star favouriteAdd" ></span></h4>
-													<span class="match">Match: 90%</span>
+													<h4><a href="../pages/Reachtruckchauffeur_Allround_Magazijnmedewerker.html" target="_blank" class="favourite">Reachtruckchauffeur/ Allround Magazijnmedewerker</a><span class="olympia olympia-star favouriteAdd favouriteDelete" ></span></h4>
+													<span class="match">Match: <span>90</span>%</span>
 												</div>
 												<div>
 													<strong>Zeist | Fulltime | 38 uur | MBO werk- en denkniveau</strong>
-													<span class="pull-right">19 september 2015</span>
+													<span class="pull-right date" data-date="2015-19-09">19 september 2015</span>
 												</div>
 											</div>
 											<div class="jobBody">
@@ -226,18 +268,18 @@
 								                </figure>
 												<p><span>XPO Logistics is met de overname van Norbert Dentressangle uitgegroeid tot een van 's werelds grootste aanbieders van logistieke en vervoersdiensten. XPO staat bekend om de volgende kernactiviteiten:
 												De grootste aanbieder van aansluitingsvervoer voor zware goederen;Beheerder van het grootste aantal snelle zendingen;De op één na grootste scheepsmakelaar;</span><span class="ellipsis">...</span></p>
-												<span><a href="../pages/Reachtruckchauffeur_Allround_Magazijnmedewerker.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd" href="javascript:void(0)">bewaar als favoriet</a></span>
+												<span><a href="../pages/Reachtruckchauffeur_Allround_Magazijnmedewerker.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd favouriteDelete" href="javascript:void(0)">bewaar als favoriet</a></span>
 											</div>
 										</li>
 										<li class="well well-olympia hidden" id="4">
 											<div class="heading">
 												<div>
-													<h4><a href="../pages/Allround_Magazijnmedewerker.html" target="_blank">Allround Magazijnmedewerker</a><span class="olympia olympia-star favouriteAdd" ></span></h4>
-													<span class="match">Match: 80%</span>
+													<h4><a href="../pages/Allround_Magazijnmedewerker.html" target="_blank">Allround Magazijnmedewerker</a><span class="olympia olympia-star favouriteAdd favouriteDelete" ></span></h4>
+													<span class="match">Match: <span>95</span>%</span>
 												</div>
 												<div>
 													<strong>Nieuwegein | Fulltime | 37.5 uur | MBO werk- en denkniveau</strong>
-													<span class="pull-right">19 september 2015</span>
+													<span class="pull-right date" data-date="2015-19-09">19 september 2015</span>
 												</div>
 											</div>
 											<div class="jobBody">
@@ -247,18 +289,18 @@
 								                    </div>
 								                </figure>
 												<p><span>XPO Logistics is met de overname van Norbert Dentressangle uitgegroeid tot een van 's werelds grootste aanbieders van logistieke en vervoersdiensten. XPO staat bekend om de volgende kernactiviteiten:De grootste aanbieder van aansluitingsvervoer voor zware goederen;Beheerder van het grootste aantal snelle zendingen;De op één na grootste scheepsmakelaar;</span><span class="ellipsis">...</span></p>
-												<span><a href="../pages/Allround_Magazijnmedewerker.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd" href="javascript:void(0)">bewaar als favoriet</a></span>
+												<span><a href="../pages/Allround_Magazijnmedewerker.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd favouriteDelete" href="javascript:void(0)">bewaar als favoriet</a></span>
 											</div>
 										</li>
 										<li class="well well-olympia hidden" id="5">
 											<div class="heading">
 												<div>
-													<h4><a href="../pages/Ervaring_opdoen_in_de_logistiek_of_al_ervaring_als_magazijnmedewerker_dan_zoeken_we_jou.html" target="_blank">Ervaring opdoen in de logistiek of al ervaring als magazijnmedewerker, dan zoeken we jou!</a><span class="olympia olympia-star favouriteAdd" ></span></h4>
-													<span class="match">Match: 80%</span>
+													<h4><a href="../pages/Ervaring_opdoen_in_de_logistiek_of_al_ervaring_als_magazijnmedewerker_dan_zoeken_we_jou.html" target="_blank">Ervaring opdoen in de logistiek of al ervaring als magazijnmedewerker, dan zoeken we jou!</a><span class="olympia olympia-star favouriteAdd favouriteDelete" ></span></h4>
+													<span class="match">Match: <span>90</span>%</span>
 												</div>
 												<div>
 													<strong>Heteren | Fulltime, Parttime | 40 uur | LBO, MAVO, HAVO, VWO, MBO, HBO, Universitair, Ongeschoold</strong>
-													<span class="pull-right">19 september 2015</span>
+													<span class="pull-right date" data-date="2015-19-09">19 september 2015</span>
 												</div>
 											</div>
 											<div class="jobBody">
@@ -268,18 +310,18 @@
 								                    </div>
 								                </figure>
 												<p><span>Watson Health &amp; Beauty Benelux is een onderdeel van A.S. Watson Group en is ’s werelds grootste retailer in Health &amp; Beauty. Het hypermoderne distributiecentrum van A.S. Watson in Heteren zorgt voor de dagelijkse bevoorrading van de winkels van Kruidvat, Trekpleister, Prijsmepper en ICI Paris XL. Onder de beste arbeidsomstandigheden zijn er in het logistieke centrum dagelijks ruim 500 medewerkers actief. Samen met jouw team zorg jij voor een juiste belevering aan alle vestigingen in Nederland.A.S. Watson Benelux is winnaar van de HR Proffie 2014: dè prijs voor het beste en meest professionele HR-beleid van Nederland.</span><span class="ellipsis">...</span></p>
-												<span><a href="../pages/Ervaring_opdoen_in_de_logistiek_of_al_ervaring_als_magazijnmedewerker_dan_zoeken_we_jou.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd" href="javascript:void(0)">bewaar als favoriet</a></span>
+												<span><a href="../pages/Ervaring_opdoen_in_de_logistiek_of_al_ervaring_als_magazijnmedewerker_dan_zoeken_we_jou.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd favouriteDelete" href="javascript:void(0)">bewaar als favoriet</a></span>
 											</div>
 										</li>
-										<li class="well well-olympia hidden" id="6" style="margin-top:0px;">
+										<li class="well well-olympia hidden" id="6">
 											<div class="heading">
 												<div>
-													<h4><a href="../pages/Sporten_en_werken_tegelijkertijd_en_in_het_bezit_van_een_auto_lees_dan_verder.html" target="_blank">Sporten en werken tegelijkertijd en in het bezit van een auto, lees dan verder</a><span class="olympia olympia-star favouriteAdd" ></span></h4>
-													<span class="match">Match: 75%</span>
+													<h4><a href="../pages/Sporten_en_werken_tegelijkertijd_en_in_het_bezit_van_een_auto_lees_dan_verder.html" target="_blank">Sporten en werken tegelijkertijd en in het bezit van een auto, lees dan verder</a><span class="olympia olympia-star favouriteAdd favouriteDelete" ></span></h4>
+													<span class="match">Match: <span>75</span>%</span>
 												</div>
 												<div>
 													<strong>Heteren | Fulltime, Parttime | 40 uur | LBO, MAVO, HAVO, VWO, MBO, HBO, Universitair, Ongeschoold</strong>
-													<span class="pull-right">11 september 2015</span>
+													<span class="pull-right date" data-date="2015-11-09">11 september 2015</span>
 												</div>
 											</div>
 											<div class="jobBody">
@@ -289,18 +331,18 @@
 								                    </div>
 								                </figure>
 												<p><span>Watson Health &amp; Beauty Benelux is een onderdeel van A.S. Watson Group en is ’s werelds grootste retailer in Health &amp; Beauty. Het hypermoderne distributiecentrum van A.S. Watson in Heteren zorgt voor de dagelijkse bevoorrading van de winkels van Kruidvat, Trekpleister, Prijsmepper en ICI Paris XL. Onder de beste arbeidsomstandigheden zijn er in het logistieke centrum dagelijks ruim 500 medewerkers actief. Samen met jouw team zorg jij voor een juiste belevering aan alle vestigingen in Nederland.A.S. Watson Benelux is winnaar van de HR Proffie 2014: dè prijs voor het beste en meest professionele HR-beleid van Nederland.</span><span class="ellipsis">...</span></p>
-												<span><a href="../pages/Sporten_en_werken_tegelijkertijd_en_in_het_bezit_van_een_auto_lees_dan_verder.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd" href="javascript:void(0)">bewaar als favoriet</a></span>
+												<span><a href="../pages/Sporten_en_werken_tegelijkertijd_en_in_het_bezit_van_een_auto_lees_dan_verder.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd favouriteDelete" href="javascript:void(0)">bewaar als favoriet</a></span>
 											</div>
 										</li>
 										<li class="well well-olympia hidden" id="7">
 											<div class="heading">
 												<div>
-													<h4><a href="../pages/Allround_Magazijnmedewerker1.html" target="_blank">Allround Magazijnmedewerker</a><span class="olympia olympia-star favouriteAdd" ></span></h4>
-													<span class="match">Match: 75%</span>
+													<h4><a href="../pages/Allround_Magazijnmedewerker1.html" target="_blank">Allround Magazijnmedewerker</a><span class="olympia olympia-star favouriteAdd favouriteDelete" ></span></h4>
+													<span class="match">Match: <span>40</span>%</span>
 												</div>
 												<div>
 													<strong>Heteren | Fulltime, Parttime | 35 uur | LBO, MAVO, HAVO, VWO, MBO, HBO, Universitair, Ongeschoold</strong>
-													<span class="pull-right">11 september 2015</span>
+													<span class="pull-right date" data-date="2015-11-09">11 september 2015</span>
 												</div>
 											</div>
 											<div class="jobBody">
@@ -310,34 +352,34 @@
 								                    </div>
 								                </figure>
 												<p><span>Watson Health &amp; Beauty Benelux is een onderdeel van A.S. Watson Group en is ’s werelds grootste retailer in Health &amp; Beauty. Het hypermoderne distributiecentrum van A.S. Watson in Heteren zorgt voor de dagelijkse bevoorrading van de winkels van Kruidvat, Trekpleister, Prijsmepper en ICI Paris XL. Onder de beste arbeidsomstandigheden zijn er in het logistieke centrum dagelijks ruim 500 medewerkers actief. Samen met jouw team zorg jij voor een juiste belevering aan alle vestigingen in Nederland.A.S. Watson Benelux is winnaar van de HR Proffie 2014: dè prijs voor het beste en meest professionele HR-beleid van Nederland.</span><span class="ellipsis">...</span></p>
-												<span><a href="../pages/Allround_Magazijnmedewerker1.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd" href="javascript:void(0)">bewaar als favoriet</a></span>
+												<span><a href="../pages/Allround_Magazijnmedewerker1.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd favouriteDelete" href="javascript:void(0)">bewaar als favoriet</a></span>
 											</div>
 										</li>
 										<li class="well well-olympia hidden" id="8">
 											<div class="heading">
 												<div>
-													<h4><a href="../pages/Flexibele_vrachtwagenchauffeur_C_E.html" target="_blank">Flexibele vrachtwagenchauffeur C/E</a><span class="olympia olympia-star favouriteAdd" ></span></h4>
-													<span class="match">Match: 70%</span>
+													<h4><a href="../pages/Flexibele_vrachtwagenchauffeur_C_E.html" target="_blank">Flexibele vrachtwagenchauffeur C/E</a><span class="olympia olympia-star favouriteAdd favouriteDelete" ></span></h4>
+													<span class="match">Match: <span>70</span>%</span>
 												</div>
 												<div>
 													<strong>Utrecht | Fulltime | 40 uur | LBO werk-en denkniveau</strong>
-													<span class="pull-right">8 september 2015</span>
+													<span class="pull-right date" data-date="2015-08-09">8 september 2015</span>
 												</div>
 											</div>
 											<div class="jobBody">
 												<p><span>Voor verschillende relaties van ons zijn wij op zoek naar ZZP chauffeurs C/E. Deze chauffeurs worden flexibel bij verschillende klanten ingezet. Wij streven erna de chauffeurs zoveel mogelijk uren te geven zolang dit niet in strijd komt met de rij- en rusttijden wet. Ben jij een Zelfstandige Zonder Personeel (ZZP)? Zit jij graag op de weg? Wil jij elke dag afwisseling? Vind jij het niet erg om flexibel ingezet te worden? Dan zoeken wij jou!!! Voor verschillende klanten zijn wij op zoek naar chauffeur met C of C/E rijbewijs. Als flexibele chauffeur word je ingezet bij klanten die distributie rijden maar ook bij klanten die huisvuil ophalen.</span><span class="ellipsis">...</span></p>
-												<span><a href="../pages/Flexibele_vrachtwagenchauffeur_C_E.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd" href="javascript:void(0)">bewaar als favoriet</a></span>
+												<span><a href="../pages/Flexibele_vrachtwagenchauffeur_C_E.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd favouriteDelete" href="javascript:void(0)">bewaar als favoriet</a></span>
 											</div>
 										</li>
 										<li class="well well-olympia hidden" id="9">
 											<div class="heading">
 												<div>
-													<h4><a href="../pages/Klantadviseur.html" target="_blank">Klantadviseur</a><span class="olympia olympia-star favouriteAdd" ></span></h4>
-													<span class="match">Match: 70%</span>
+													<h4><a href="../pages/Klantadviseur.html" target="_blank">Klantadviseur</a><span class="olympia olympia-star favouriteAdd favouriteDelete" ></span></h4>
+													<span class="match">Match: <span>80</span>%</span>
 												</div>
 												<div>
 													<strong>Utrecht | Fulltime | 40 uur | HBO werk- en denkniveau</strong>
-													<span class="pull-right">1 september 2015</span>
+													<span class="pull-right date" data-date="2015-01-09">1 september 2015</span>
 												</div>
 											</div>
 											<div class="jobBody">
@@ -347,18 +389,18 @@
 								                    </div>
 								                </figure>
 												<p><span>Voor het klantencontact center van een grote Nederlandse bank, zijn wij op zoek naar klantadviseurs. Ben jij geïnteresseerd in de financiële wereld en heb je affiniteit met allerlei bankproducten? Ben je daarnaast commercieel ingesteld en sta je graag klanten te woord? Dan is deze vacature voor jou interessant!Als klantadviseur ben jij hét visitekaartje van de bank: het eerste aanspreekpunt voor klanten. Je beantwoordt telefonisch vragen van klanten en dat doe je uiteraard met veel enthousiasme en kundigheid. Je handelt de servicevragen efficiënt en vlot af en je adviseert daarnaast over de producten van onze opdrachtgever (denk hierbij aan betalen, sparen, verzekeren, lenen, hypotheken, etc). Ook bepaal je samen met de klant welke producten het beste voor hem zijn. Daarbij heb je klantvriendelijkheid hoog in het vaandel staan.</span><span class="ellipsis">...</span></p>
-												<span><a href="../pages/Klantadviseur.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd" href="javascript:void(0)">bewaar als favoriet</a></span>
+												<span><a href="../pages/Klantadviseur.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd favouriteDelete" href="javascript:void(0)">bewaar als favoriet</a></span>
 											</div>
 										</li>
 										<li class="well well-olympia hidden" id="10">
 											<div class="heading">
 												<div>
-													<h4><a href="../pages/Onderhoudsmonteur_Storingsmonteur_voor_modern_warehouse_DC_in_Utrecht.html" target="_blank">Onderhoudsmonteur/ Storingsmonteur voor modern warehouse/DC in Utrecht</a><span class="olympia olympia-star favouriteAdd" ></span></h4>
-													<span class="match">Match: 60%</span>
+													<h4><a href="../pages/Onderhoudsmonteur_Storingsmonteur_voor_modern_warehouse_DC_in_Utrecht.html" target="_blank">Onderhoudsmonteur/ Storingsmonteur voor modern warehouse/DC in Utrecht</a><span class="olympia olympia-star favouriteAdd favouriteDelete" ></span></h4>
+													<span class="match">Match: <span>90</span>%</span>
 												</div>
 												<div>
 													<strong>Utrecht | Fulltime | 35 uur | MBO werk- en denkniveau</strong>
-													<span class="pull-right">1 september 2015</span>
+													<span class="pull-right date" data-date="2015-01-09">1 september 2015</span>
 												</div>
 											</div>
 											<div class="jobBody">
@@ -368,18 +410,18 @@
 								                    </div>
 								                </figure>
 												<p><span>De werklocatie is in het distributiecentrum van een bekend warenhuis. In dit warenhuis is het logistieke proces volledig geautomatiseerd met de modernste technieken. Je bent onderdeel van een team dat gezamenlijk verantwoordelijk is voor alle techniek en automatisering op de locatie.Heb jij altijd al als TD Monteur willen werken voor het nummer 1 warenhuis in Nederland in een technische functie met veel ontwikkel- en doorgroeimogelijkheden?</span><span class="ellipsis">...</span></p>
-												<span><a href="../pages/Onderhoudsmonteur_Storingsmonteur_voor_modern_warehouse_DC_in_Utrecht.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd" href="javascript:void(0)">bewaar als favoriet</a></span>
+												<span><a href="../pages/Onderhoudsmonteur_Storingsmonteur_voor_modern_warehouse_DC_in_Utrecht.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd favouriteDelete" href="javascript:void(0)">bewaar als favoriet</a></span>
 											</div>
 										</li>
-										<li class="well well-olympia hidden" id="11" style="margin-top:0px;">
+										<li class="well well-olympia hidden" id="11">
 											<div class="heading">
 												<div>
-													<h4><a href="../pages/Vrachtwagenchauffeur_met_Conventionele_combi_(Triangel)_ervaring.html" target="_blank">Vrachtwagenchauffeur met Conventionele combi (Triangel) ervaring</a><span class="olympia olympia-star favouriteAdd" ></span></h4>
-													<span class="match">Match: 50%</span>
+													<h4><a href="../pages/Vrachtwagenchauffeur_met_Conventionele_combi_(Triangel)_ervaring.html" target="_blank">Vrachtwagenchauffeur met Conventionele combi (Triangel) ervaring</a><span class="olympia olympia-star favouriteAdd favouriteDelete" ></span></h4>
+													<span class="match">Match: <span>50</span>%</span>
 												</div>
 												<div>
 													<strong>Utrecht | Fulltime | 36 uur | MBO werk- en denkniveau</strong>
-													<span class="pull-right">29 august 2015</span>
+													<span class="pull-right date" data-date="2015-29-08">29 august 2015</span>
 												</div>
 											</div>
 											<div class="jobBody">
@@ -389,18 +431,18 @@
 								                    </div>
 								                </figure>
 												<p><span>De HEMA is een Nederlands warenhuis met vestigingen in Nederland, België, Luxemburg, Duitsland, Frankrijk, Spanje en sinds juni 2014 Engeland. Hier in Utrecht bevindt zich het logistieke hart van deze enorme organisatie, het distributiecentrum. Dit DC geldt als een van de modernste distributiesystemen ter wereld, met een vrijwel volledig geautomatiseerde verwerking van alle goederen. Als vrachtwagenchauffeur is het natuurlijk jouw taak om al deze goederen te transporteren en de winkels te bevoorraden. Deze continue goederenstroom leidt ertoe dat de Hema-chauffeurs gezamenlijk ongeveer vijf miljoen vrachtwagenkilometers per jaar rijden!</span><span class="ellipsis">...</span></p>
-												<span><a href="../pages/Vrachtwagenchauffeur_met_Conventionele_combi_(Triangel)_ervaring.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd" href="javascript:void(0)">bewaar als favoriet</a></span>
+												<span><a href="../pages/Vrachtwagenchauffeur_met_Conventionele_combi_(Triangel)_ervaring.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd favouriteDelete" href="javascript:void(0)">bewaar als favoriet</a></span>
 											</div>
 										</li>
 										<li class="well well-olympia hidden" id="12">
 											<div class="heading">
 												<div>
-													<h4><a href="../pages/Goederenontvanger_(heftruck).html" target="_blank">Goederenontvanger (heftruck)</a><span class="olympia olympia-star favouriteAdd" ></span></h4>
-													<span class="match">Match: 45%</span>
+													<h4><a href="../pages/Goederenontvanger_(heftruck).html" target="_blank">Goederenontvanger (heftruck)</a><span class="olympia olympia-star favouriteAdd favouriteDelete" ></span></h4>
+													<span class="match">Match: <span>85</span>%</span>
 												</div>
 												<div>
 													<strong>De Meern | Fulltime | 40 uur | LBO werk-en denkniveau</strong>
-													<span class="pull-right">28 august 2015</span>
+													<span class="pull-right date" data-date="2015-28-08">28 august 2015</span>
 												</div>
 											</div>
 											<div class="jobBody">
@@ -410,34 +452,34 @@
 								                    </div>
 								                </figure>
 												<p><span>Bavaria NV heeft als onafhankelijke familiebrouwerij een unieke positie op de internationale biermarkt. Al zeven generaties lang wordt het bedrijf geleid door de familie Swinkels. Naast de brouwerij in Lieshout beschikt Bavaria over een eigen trappistenbrouwerij. Doordat de organisatie ook beschikt over twee mouterijen is het gehele brouwproces in eigen beheer. Bavaria is de enige grote brouwer in Nederland die haar bier brouwt met zuiver natuurlijk mineraalwater uit eigen bronnen. Dit kenmerkt de belangrijkste filosofie van Bavaria: een constante hoge kwaliteit van haar bieren. Van de zes miljoen hectoliter bier die de in Brabant gewortelde organisatie jaarlijks produceert, is bijna 70% bestemd voor de buitenlandse markt. Inmiddels genieten consumenten in meer dan 100 landen van Bavaria bier.</span><span class="ellipsis">...</span></p>
-												<span><a href="../pages/Goederenontvanger_(heftruck).html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd" href="javascript:void(0)">bewaar als favoriet</a></span>
+												<span><a href="../pages/Goederenontvanger_(heftruck).html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd favouriteDelete" href="javascript:void(0)">bewaar als favoriet</a></span>
 											</div>
 										</li>
 										<li class="well well-olympia hidden" id="13">
 											<div class="heading">
 												<div>
-													<h4><a href="../pages/Electromonteur.html" target="_blank">Electromonteur</a><span class="olympia olympia-star favouriteAdd" ></span></h4>
-													<span class="match">Match: 30%</span>
+													<h4><a href="../pages/Electromonteur.html" target="_blank">Electromonteur</a><span class="olympia olympia-star favouriteAdd favouriteDelete" ></span></h4>
+													<span class="match">Match: <span>70</span>%</span>
 												</div>
 												<div>
 													<strong>De Meern | Fulltime | 40 uur | MBO werk- en denkniveau</strong>
-													<span class="pull-right">27 august 2015</span>
+													<span class="pull-right date" data-date="2015-27-08">27 august 2015</span>
 												</div>
 											</div>
 											<div class="jobBody">
 												<p><span>Deze klant houd zich bezig met verschillende werkzaamheden. Mechanische ventilatie, data en telecommunicatie, beveiligingsinstallaties, en renovaties van elektra van jaren 70 panden. Voor een van onze relaties zijn wij op zoek naar elctromonteur. De voornaamste werkzaamheden zullen zijn in de renovatiebouw zoals: Oude elektra verwijderen en nieuwe aanleggen. het aanleggen van een buizensysteem/ ventilatie systeem en hier ook de elektra voor doen. het maken van verschillende aansluitingen op verschillende plekken.</span><span class="ellipsis">...</span></p>
-												<span><a href="../pages/Electromonteur.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd" href="javascript:void(0)">bewaar als favoriet</a></span>
+												<span><a href="../pages/Electromonteur.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd favouriteDelete" href="javascript:void(0)">bewaar als favoriet</a></span>
 											</div>
 										</li>
 										<li class="well well-olympia hidden" id="14">
 											<div class="heading">
 												<div>
-													<h4><a href="../pages/Teamleider_logistiek.html" target="_blank">Teamleider logistiek</a><span class="olympia olympia-star favouriteAdd" ></span></h4>
-													<span class="match">Match: 30%</span>
+													<h4><a href="../pages/Teamleider_logistiek.html" target="_blank">Teamleider logistiek</a><span class="olympia olympia-star favouriteAdd favouriteDelete" ></span></h4>
+													<span class="match">Match: <span>30</span>%</span>
 												</div>
 												<div>
 													<strong>Wijchen | Fulltime | 40 uur | MBO werk- en denkniveau</strong>
-													<span class="pull-right">27 august 2015</span>
+													<span class="pull-right date" data-date="2015-27-08">27 august 2015</span>
 												</div>
 											</div>
 											<div class="jobBody">
@@ -447,7 +489,7 @@
 								                    </div>
 								                </figure>
 												<p><span>Een modern, toonaangevend familiebedrijf in logistieke dienstverlening, met vestigingen in Nederland, België, Duitsland &amp; Polen. De meeste van onze opdrachtgevers zitten in de Fast Moving Consumer Goods, en dan met name levensmiddelen. Voor een logistiek bedrijf in Wijchen zijn we op zoek naar een Teamleider Logistiek. Je bent werkzaam in 2-ploegen en stuurt een team aan van ca. 10 - 20 personen.</span><span class="ellipsis">...</span></p>
-												<span><a href="../pages/Teamleider_logistiek.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd" href="javascript:void(0)">bewaar als favoriet</a></span>
+												<span><a href="../pages/Teamleider_logistiek.html" target="_blank">bekijk vacature</a> - <a href="">solliciteer</a> - <a class="favouriteAdd favouriteDelete" href="javascript:void(0)">bewaar als favoriet</a></span>
 											</div>
 										</li>
 									</ul>
@@ -504,55 +546,7 @@
 	        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	    }
 
-	    $('.left-tab-data .favouriteAdd').on('click', function() {
-			var $this = $(this);
-			console.log($(this).hasClass('favourite'));
-			if(!$(this).hasClass('favourite') && !$this.closest('li.well').find('.jobBody .favouriteAdd').hasClass('favourite')){
-				$this.closest('li.well').find('.jobBody .favouriteAdd').addClass('favourite').attr('onclick', 'favouriteDelete(this)').html('verwijder uit favorieten');
-				$this.closest('li.well').find('.olympia').addClass('favourite').attr('onclick', 'favouriteDelete(this)');
-
-				var clonedValue = $this.closest('li.well').clone();
-				$('.right-tab-data ul').append(clonedValue);
-				checkLengthRightTab();
-			}
-		});
-
-		function favouriteDelete(obj){
-			var $this = $(obj);
-			var clickedWellID = $this.closest('li.well').attr('id');
-			$('.right-tab-data').find('#'+clickedWellID).remove();
-
-			$('.left-tab-data').find('#'+clickedWellID).find('.olympia').removeClass('favourite');
-			$('.left-tab-data').find('#'+clickedWellID).find('.jobBody .favouriteAdd').removeClass('favourite').html('bewaar als favoriet');
-			checkLengthRightTab();
-		}
-
-
-		//add to favourite
-		// $('.left-tab-data .favouriteAdd').on('click', function() {
-		// 	var $this = $(this);
-		// 	console.log($(this).hasClass('favourite'));
-		// 	if(!$(this).hasClass('favourite') && !$this.closest('li.well').find('.jobBody .favouriteAdd').hasClass('favourite')){
-		// 		var clonedValue = $this.closest('li.well').clone();
-		// 		$('.right-tab-data ul').append(clonedValue);
-		// 		$this.closest('li.well').find('.jobBody .favouriteAdd').addClass('favourite');
-		// 		$this.closest('li.well').find('.olympia').addClass('favourite');
-		// 		$('.right-tab-data ul li').find('.olympia').addClass('favourite').removeClass('favouriteAdd').attr('onclick', 'favouriteDelete(this)');
-		// 		$('.right-tab-data ul li').find('.favouriteAdd').removeClass('favouriteAdd').attr('onclick', 'favouriteDelete(this)');
-		// 		checkLengthRightTab();
-		// 	}
-		// });
-
-		// function favouriteDelete(obj){
-		// 	var $this = $(obj);
-		// 	var clickedWellID = $this.closest('li.well').attr('id');
-		// 	$this.closest('li.well').remove();
-		// 	$('.left-tab-data').find('#'+clickedWellID).find('.olympia').removeClass('favourite');
-		// 	$('.left-tab-data').find('#'+clickedWellID).find('.jobBody .favouriteAdd').removeClass('favourite');
-		// 	checkLengthRightTab();
-		// }
-
-		function checkLengthRightTab(){
+	    function checkLengthRightTab(){
 			if($('.right-tab-data ul li').length == 0){
 				$('.right-tab-data .noData').removeClass('hidden');
 			}else{
@@ -613,13 +607,12 @@
 	    	var starredItems = getParameterByName('starredItems');
 	    	
 	    	starredItems.split(',').forEach(function(item) {
-	    		$('#'+item)
 	    		var $this = $('#'+item);
 				var clonedValue = $this.closest('li.well').clone();
 				$('.right-tab-data ul').append(clonedValue);
 				$this.closest('li.well').find('.olympia').addClass('favourite');
-				$('.right-tab-data ul li').find('.olympia').addClass('favourite').removeClass('favouriteAdd').attr('onclick', 'favouriteDelete(this)');
-				$('.right-tab-data ul li').find('.favouriteAdd').removeClass('favouriteAdd').attr('onclick', 'favouriteDelete(this)');
+				$('.right-tab-data ul li').find('.olympia').addClass('favourite').removeClass('favouriteAdd')
+				$('.right-tab-data ul li').find('.favouriteAdd').removeClass('favouriteAdd')
 				checkLengthRightTab();
 	    	})
 		}, 400);
