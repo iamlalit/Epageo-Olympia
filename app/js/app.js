@@ -65,7 +65,6 @@ $(document).ready(function(){
 	function checkForDate(date1, date2, month1, month2, year1, year2){
 		month1 = computeMontheInNumber(month1);
 		month2 = computeMontheInNumber(month2);
-		console.log(month1)
 		var newdate1 = Date.parse(year1+"/"+month1+"/"+date1);
 		var newdate2 = Date.parse(year2+"/"+month2+"/"+date2);
 		
@@ -146,20 +145,20 @@ $(document).ready(function(){
 			
 		}else if(firstSelected.val() == 'option2' && secondSelected.val() == 'option1'){
 			if(daysLeft != '1' && chooseOption == '0'){
-				newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet op zoek</strong> naar werk maar ben wel geinteresseerd in vacatures <strong>en wil graag op de hoogte gehouden worden</strong>. <br>Ik heb <strong>een opzegtermijn van "+daysLeft+" weken.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+				newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet actief op zoek</strong> naar werk maar Olympia mag <strong>wel</strong> contact met mij opnemen. <br>Ik heb <strong>een opzegtermijn van "+daysLeft+" weken.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
 			}else if(daysLeft != '1' && chooseOption == '1'){
-				newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet op zoek</strong> naar werk maar ben wel geinteresseerd in vacatures <strong>en wil graag op de hoogte gehouden worden</strong>. <br>Ik heb <strong>een opzegtermijn van "+daysLeft+" maanden.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+				newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet actief op zoek</strong> naar werk maar Olympia mag <strong>wel</strong> contact met mij opnemen. <br>Ik heb <strong>een opzegtermijn van "+daysLeft+" maanden.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
 			}else if(daysLeft == '1' && chooseOption == '2'){
-				newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet op zoek</strong> naar werk maar ben wel geinteresseerd in vacatures <strong>en wil graag op de hoogte gehouden worden</strong>. <br>Ik heb <strong>een opzegtermijn van "+daysLeft+" week.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+				newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet actief op zoek</strong> naar werk maar Olympia mag <strong>wel</strong> contact met mij opnemen. <br>Ik heb <strong>een opzegtermijn van "+daysLeft+" week.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
 			}else if(daysLeft == '1' && chooseOption == '3'){
-				newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet op zoek</strong> naar werk maar ben wel geinteresseerd in vacatures <strong>en wil graag op de hoogte gehouden worden</strong>. <br>Ik heb <strong>een opzegtermijn van "+daysLeft+" maand.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+				newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet actief op zoek</strong> naar werk maar Olympia mag <strong>wel</strong> contact met mij opnemen. <br>Ik heb <strong>een opzegtermijn van "+daysLeft+" maand.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
 			}
 		}else if(firstSelected.val() == 'option2' && secondSelected.val() == 'option2'){
-			newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet op zoek</strong> naar werk maar ben wel geinteresseerd in vacatures en <strong>wil graag op de hoogte gehouden worden</strong>. <br>Ik heb <strong>geen opzegtermijn</strong>.</span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
+			newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet actief op zoek</strong> naar werk maar Olympia mag <strong>wel</strong> contact met mij opnemen. <br>Ik heb <strong>geen opzegtermijn</strong>.</span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>";
 		}else if(firstSelected.val() == 'option3'){
 			$('.globalCheck input[type=checkbox]').removeAttr("checked");
 			$('#emailAlert a').prop('href', 'MijnOlympia-email-alerts.html?globalCheck='+false);
-			newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet (meer) op zoek</strong> naar werk en wil ook <strong>niet meer benaderd worden door Olympia.</strong></span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>"
+			newStringToPaste = "<span class='actualString'><strong>Nee</strong>, ik ben <strong>niet (meer) op zoek</strong> naar werk en wil <strong>niet</strong> dat Olympia contact met mij opneemt.</span><span class='olympia-icon olympia-pencil' data-toggle='modal' data-target='#bewerkenVoorkeuren'></span>"
 		}
 
 		$('#pasteString .actualString').remove();
@@ -1636,7 +1635,8 @@ $(document).ready(function(){
 			salaris = '',
 			denkniveau = '',
 			placeWithDistance = '',
-			trefwoorden = '';
+			trefwoorden = '',
+			emailFreq = '';
 		//get the values
 		if($('.dienstverband input[type=checkbox]:checked').length > 0){
 			//something is selected
@@ -1738,8 +1738,26 @@ $(document).ready(function(){
 			//to hide that particular li as nothing is selected
 		}
 		
-		$(".voorkeuren-box").addClass('hidden');
-		$(".alert-box").removeClass('hidden');
+		//get the values
+		if($('.emailFreq input[type=radio]:checked').length > 0){
+			//something is selected
+			$('.emailFreq input[type=radio]:checked').each(function() {
+			  emailFreq += $(this).data("values") + ', ';
+			});
+			emailFreq = emailFreq.slice(0,-2)
+			//$("#denkniveau1").text(denkniveau)
+		}else{
+			//to hide that particular li as nothing is selected
+			//$("#denkniveau1").closest('li').remove();
+		}
+		// 'dienstverband='+dienstverband'&weekHourMinimal='+weekHourMinimal+'&weekHourMaximal='+weekHourMaximal+'&fullPartTimeJob='+fullPartTimeJob+'&branche'=branche+'&vakgebied='+vakgebied+'&salaris='+salaris+'&denkniveau='+denkniveau+'&placeWithDistance='+placeWithDistance+'&trefwoorden='+trefwoorden+'&emailFreq'=emailFreq;
+		var SetFrequency = getParameterByName('SetFrequency');
+	    if(SetFrequency == '1'){
+    		window.location.href = 'MijnOlympia-email-alerts.html?dienstverband='+dienstverband+'&weekHourMinimal='+weekHourMinimal+'&weekHourMaximal='+weekHourMaximal+'&fullPartTimeJob='+fullPartTimeJob+'&branche='+branche+'&vakgebied='+vakgebied+'&salaris='+salaris+'&denkniveau='+denkniveau+'&placeWithDistance='+placeWithDistance+'&trefwoorden='+trefwoorden+'&emailFreq='+emailFreq;
+	    }else{
+	    	$(".voorkeuren-box").addClass('hidden');
+			$(".alert-box").removeClass('hidden');
+	    }
 	})
 });
 
@@ -2327,7 +2345,6 @@ $(document).ready(function(){
 
 	//header notification balloon
 	$('body').on('click', function (e) {
-	    console.log($(e.target).closest('notificationBalloon'));
 	    if($(e.target).hasClass('olympia-bell-o')){
 	    	$('.notificationBalloon').toggleClass('hidden');
 	    }else if($(e.target).hasClass('olympia-times')){
@@ -2349,6 +2366,7 @@ $(document).ready(function(){
 	var sortByMatch = [];
 	var sortByDate = [];
 	function sortTheList(list, by, order){
+		debugger;
 		sortBy = [];
 		var phrases = [];
 		var sortByMatch = [];
@@ -2389,6 +2407,7 @@ $(document).ready(function(){
 		var list = activeTab.split(' ')[0] + '-data';	
 	}
 	$('#sortingOrder').on('change', function(){
+		debugger;
 		var selectedOption = $( "#sortingOrder option:selected" ).text();
 		var activeTab = $('.box-inner.accordion').find('.active').attr('class');
 		var list = activeTab.split(' ')[0] + '-data';

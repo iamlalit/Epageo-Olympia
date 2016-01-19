@@ -157,7 +157,14 @@
 									<li id="emailAlert"><a href="MijnOlympia-dashboard.html">Mijn dashboard</a></li>
 									<li><a href="MijnOlympia-account.html">Mijn account</a></li>
 									<li><a href="MijnOlympia-video-cv.html">Mijn video CV</a></li>
-									<li><a href="MijnOlympia-cv-ervaring.html">Mijn CV &amp; ervaring</a></li>
+									<li id="mijnCV">
+										<a href="MijnOlympia-cv-ervaring.html">Mijn CV &amp; ervaring</a>
+										<div class="submenuCV">
+											<ul>
+												<li><a href="MijnOlympia-cv-tips.html">CV tips</a></li>
+											</ul>
+										</div>
+									</li>
 									<li><a href="MijnOlympia-voorkeuren.html">Mijn voorkeuren</a></li>
 									<li class="active"><a href="MijnOlympia-email-alerts.html">Mijn email alerts (<span>4</span>)</a></li>
 									<li><a href="MijnOlympia-sollicitaties.html">Mijn sollicitaties (<span>3</span>)</a></li>
@@ -263,7 +270,7 @@
 											<span>1 x per dag</span>
 										</li>
 									</ul>
-									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="MijnOlympia-voorkeuren.html?toggleThis=true">Mijn voorkeuren bewerken</a></span>
+									<span class="bewerk"><i class="olympia-icon olympia-edit"></i><a href="MijnOlympia-voorkeuren.html?toggleThis=true&SetFrequency=1">Mijn voorkeuren bewerken</a></span>
 								</div>
 							</li>
 							<li id="2">
@@ -512,6 +519,43 @@
 							</div>
 						</div>
 						<div class="row hidden perDay">
+							<div class="col-sm-12">
+								<div class="clock">
+									<div class="hour">
+										<span class="olympia olympia-arrow-up"></span>
+										<input type="text" class="value" value="uur" maxlength="2"/>
+										<span class="olympia olympia-arrow-down"></span>
+									</div>
+									<div class="minutes">
+										<span class="olympia olympia-arrow-up"></span>
+										<input type="text" class="value" value="minuten" maxlength="2"/>
+										<span class="olympia olympia-arrow-down"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row hidden perWeek">
+							<div class="col-sm-12">
+								<div class="clock">
+									<div class="day">
+										<span class="olympia olympia-arrow-up"></span>
+										<span class="value">dag</span>
+										<span class="olympia olympia-arrow-down"></span>
+									</div>
+									<div class="hour">
+										<span class="olympia olympia-arrow-up"></span>
+										<input type="text" class="value" value="uur"/>
+										<span class="olympia olympia-arrow-down"></span>
+									</div>
+									<div class="minutes">
+										<span class="olympia olympia-arrow-up"></span>
+										<input type="text" class="value" value="minuten"/>
+										<span class="olympia olympia-arrow-down"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row hidden">
 							<div class="col-sm-3">
 								<select class="form-control" id="timeHour" name="timeHour">
 									<option value="uur">Uur</option>
@@ -607,7 +651,7 @@
 								</select>
 							</div>
 						</div>
-						<div class="row hidden perWeek">
+						<div class="row hidden">
 							<div class="col-sm-3">
 								<select class="form-control" id="timeWeekDay" name="timeWeekDay">
 									<option value="0">Week</option>
@@ -1412,10 +1456,6 @@
 	   		$(".voorkeuren-box").removeClass('hidden');
 			$(".alert-box").addClass('hidden'); 	
 	    }
-
-
-
-
 		//to scroll to a point on the screen where user clicked
 		$.fn.scrollView = function (offsetValue) {
 		    return this.each(function () {
@@ -1437,6 +1477,32 @@
 	    	}
 	    })
 	    $('.alerts input[type=checkbox]').trigger('change');
+
+	    var emailFreq = getParameterByName('emailFreq');
+	    var dienstverband = getParameterByName('dienstverband');
+	    var fullPartTimeJob = getParameterByName('fullPartTimeJob');
+	    var branche = getParameterByName('branche');
+	    var vakgebied = getParameterByName('vakgebied');
+	    var salaris = getParameterByName('salaris');
+	    var denkniveau = getParameterByName('denkniveau');
+	    var placeWithDistance = getParameterByName('placeWithDistance');
+	    var trefwoorden = getParameterByName('trefwoorden');
+	    var weekHourMinimal = getParameterByName('weekHourMinimal');
+	    var weekHourMaximal = getParameterByName('weekHourMaximal');
+	    if(emailFreq !== ''){
+	    	debugger;
+	    	$('.alert-box li#1 .job-body ul li:nth-child(5) span').html(dienstverband);
+	    	$('.alert-box li#1 .job-body ul li:nth-child(4) span').html(fullPartTimeJob);
+	    	$('.alert-box li#1 .job-body ul li:nth-child(9) span').html(branche);
+	    	$('.alert-box li#1 .job-body ul li:nth-child(6) span').html(salaris);
+	    	$('.alert-box li#1 .job-body ul li:nth-child(2) span').html(placeWithDistance);
+	    	$('.alert-box li#1 .job-body ul li:nth-child(1) span').html(trefwoorden);
+	    	$('.alert-box li#1 .job-body ul li:nth-child(7) span').html(denkniveau);
+	    	$('.alert-box li#1 .job-body ul li:nth-child(8) span').html(vakgebied);
+	    	$('.alert-box li#1 .job-body ul li:nth-child(3) span').html(weekHourMinimal + ' - ' +weekHourMaximal);
+	    	$('.alert-box li#1 .job-body ul li:last-child span').html(emailFreq);
+	    }
+
 	</script>
 </body>
 </html>

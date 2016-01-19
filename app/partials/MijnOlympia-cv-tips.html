@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<title>Mijn cv ervaring</title>
+	<link rel="stylesheet" href="../css/app.css"/>
+	<link rel="stylesheet" href="../css/custom.css"/>
+	<link rel="stylesheet" href="../css/olympia-icons.css"/>
+	<link rel="stylesheet" href="../lib/jqueryTypeahead/jquery.typeahead.css"/>
+	<link rel="stylesheet" href="../lib/slick-1.5.9/slick/slick.css"/>
+</head>
+<body>
+	<header class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<a href="#" class="logo">
+					<img src="../img/logo.png" alt="Olympia"/>
+				</a>
+			</div>
+			<div class="col-sm-1"></div>
+			<div class="col-sm-8">
+				<div class=" pull-right login" style="background: #fff;">
+					<div class="meta">
+					    <div class="logged">
+					        <div class="username"><span>Welkom <strong>Henk Van Dunzelkamp</strong></span></div>
+					        <div class="profile">
+					            <a href="javascript:void(0)"> › uitloggen</a>
+					        </div>
+					    </div>
+					    <div class="logged bell" >
+					    	<span class="olympia-icon olympia-bell-o"></span>
+					    	<span class="number">3</span>
+					    	<div class="notificationBalloon hidden">
+					    		<ul>
+					    			<li>
+					    				<a href="MijnOlympia-suggesties.html">3 nieuwe vacature suggesties</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Magazijnmedewerker(m/v)</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Fulltime orderpicker</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-suggesties.html">3 nieuwe vacature suggesties</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Magazijnmedewerker(m/v)</a>
+					    				<span class="olympia olympia-times"></span>
+					    			</li>
+					    			<li>
+					    				<a href="MijnOlympia-notificaties.html">Bekijk alle notificaties</a>
+					    			</li>
+					    		</ul>
+					    	</div>
+					    </div>
+					    <div class="user">
+					        <img src="../img/pasfoto.jpg"/>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="notificationSaveMessage hidden">
+		<div class="box">
+			<p>Je wijzigingen zijn opgeslagen!</p><span class="olympia olympia-check-circle"></span>
+		</div>
+	</div>
+	<div class="full-width-border" style="margin-top: 15px;">
+		<div class="container">
+			<nav>
+				<ul class="menu sf-menu" id="menu-227">
+					<li>
+						<span><a href="https://olympia.nl" target="_blank" class="olympia olympia-home" title="Ga terug naar Olympia.nl"></a></span>
+					</li>
+					<li class="current right">
+						<a href="/mijn-olympia" class="title">Mijn Olympia</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div><!-- // navigation -->
+
+	<div class="container">
+		<div class="alert alert-info fade in email-subs-wrapper" role="alert">
+            <div class="row">
+                <div class="col-sm-5">
+                    <span class="olympia-mail4"></span>
+                    <div class="left">
+                        <h4>E-mail mij nieuwe vacatures voor:</h4>
+                        <p class="nederlang-text">
+                            'Nederland' en 'Heftruckchauffeurs' <a href="#">Geavanceerd</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <form role="form">
+                        <div class="form-group">
+                            <label>E-mailadres</label>
+                            <input type="email" class="form-control" placeholder="E-mailadres">
+                            <button type="submit" class="btn btn-primary medium-text">Zoekopdracht bewaren</button>
+                        </div>
+                        
+                        <p class="email-subs-text">Als je verder gaat, ga je akkoord met het gebruik van  cookie door Olympia en ga je akkoord met de 
+                            <a href="#">Gebruiksvoorwaarden</a> en 
+                            <a href="#">Privacyverklaring</a> van Olympia.
+                        </p>
+                    </form>                   
+                </div>
+                <div class="col-sm-1">
+                    <button type="button" class="close" id="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+			</div>
+			<div class="row hidden">
+				<div class="col-sm-6">
+					<div class="row">
+						<div class="col-sm-1">
+							<i class="olympia-mail4" style="font-size: 40px;"></i>
+						</div>
+						<div class="col-sm-11">
+							<h4>E-mail mij nieuwe vacatures voor:</h4>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">sdfsad</div>
+			</div>
+		</div>
+		<!--main container starts -->
+		<div class="row margin-top-30">
+			<div class="col-lg-3 left-container">
+				<div class="well well-olympia">
+					<div class="row">
+						<div class="col-lg-12 col-md-12">
+							<div class="dashboard-image">
+								<img src="../img/pasfoto.jpg"/>
+								<div class="overlay-container">
+									<label class="text1 hidden">Bewerk je profielfoto </label>
+									<label class="text2 hidden">Maak je profiel compleet </label>
+									<div class="progress" style="margin-bottom: 0px;">
+										<div class="progress-bar progress-bar-success text-right" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+											<span class="percentage">60%</span>
+											<span class="sr-only"></span>
+										</div>
+									</div>
+									<span class="olympia olympia-camera"></span>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-12">
+							<div class="side-menu">
+								<ul>
+									<li><a href="MijnOlympia-dashboard.html">Mijn dashboard</a></li>
+									<li><a href="MijnOlympia-account.html">Mijn account</a></li>
+									<li><a href="MijnOlympia-video-cv.html">Mijn video CV</a></li>
+									<li id="mijnCV">
+										<a href="MijnOlympia-cv-ervaring.html" class="activeX">Mijn CV &amp; ervaring</a>
+										<div class="submenuCV in">
+											<ul>
+												<li><a href="#">CV tips</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><a href="MijnOlympia-voorkeuren.html">Mijn voorkeuren</a></li>
+									<li><a href="MijnOlympia-email-alerts.html">Mijn email alerts (<span>4</span>)</a></li>
+									<li><a href="MijnOlympia-sollicitaties.html">Mijn sollicitaties (<span>3</span>)</a></li>
+									<li><a href="MijnOlympia-suggesties.html">Mijn suggesties (<spam>14</span>)</a></li>
+									<li class="hidden"><a href="MijnOlympia-competenties.html">Mijn competenties</a></li>
+									<li><a href="https://www.e-flexer.nl/olympia/index.ewb" target="_blank">Mijn administratie</a></li>
+								</ul>
+							</div>
+							
+						</div>
+						<div class="col-lg-12 col-md-12">
+							<div class="profile-data">
+								<label class="title">Maak je profiel compleet</label>
+								<ul>
+									<li>Update je CV<a href="MijnOlympia-cv-ervaring.html"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Maak een video CV<a href="MijnOlympia-video-cv.html"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Stel een e-mail alert in<a href="MijnOlympia-email-alerts.html"><span class="olympia-icon olympia-plus"></span></a></li>
+									<li>Waar ben je naar op zoek?<a href="MijnOlympia-voorkeuren.html"><span class="olympia-icon olympia-plus"></span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+			<div class="col-lg-9 right-container cv">
+				
+				<div class="well well-olympia">
+					<h1>CV tips</h1>
+					<div class="box-inner">
+						<p>Op deze pagina vind je handige tips over hoe je een CV kunt opstellen of je bestaande CV kunt verbeteren. Waar moet je op letten? Wat zet je wel en niet in je CV? Allemaal vragen die wij graag voor jou beantwoorden. </p>
+						<p>Omdat veel verschillende banen vaak om verschillende CV's vragen, heeft Olympia per functie de belangrijkste tip's en trucks voor jou op een rijtje gezet. Bekijk de standaard CV tips of zoek hieronder dus naar tips voor specifieke functies.</p>
+					</div>
+				</div>
+				<div class="well well-olympia orange-well">
+					<div class="box-inner">
+						<div class="row">
+							<div class="col-sm-9 input-box">
+								<label>Functie / trefwoord</label>
+								<form id="form-country_v1" name="form-country_v1" action="">
+								    <div class="typeahead-container cv-tips">
+								        <div class="typeahead-field">
+								            <span class="typeahead-query">
+								                <input id="trefwoord_v1-query" name="country_v1[query]" class="form-control" type="search" placeholder="Functie / trefwoord" autocomplete="off">
+								            </span>
+								            <!-- <span class="typeahead-button">
+								                <button type="submit">
+								                    <i class="typeahead-search-icon"></i>
+								                </button>
+								            </span> -->
+								        </div>
+								    </div>
+								</form>
+							</div>
+							<div class="col-sm-3">
+								<label>&nbsp;</label>
+								<button type="submit" class="btn btn-primary"><i class="olympia-search"></i>Bekijk CV tips</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="well well-olympia tips">
+					<h1 class="black"><span></span>CV tips</h1>
+					<div class="box-inner accordion">
+						<div class="form-group tipsC">
+							<div class="tips-heading">
+								<span><a>Lengte</a></span><span> - </span><span><a>Tailor it</a></span><span> - </span><span><a>Persoonlijke noot</a></span><span> - </span><span><a>Vermijd gaten</a></span><span> - </span><span><a>Up-to-date</a></span><span> - </span><span><a>Spelling</a></span><span> - </span><span><a>Waarheid</a></span><span> - </span><span><a>Getallen</a></span><span> - </span><span><a>Layout</a></span>
+							</div>
+							<hr>
+							<div class="tips-description">
+								<div>
+									<label>Lengte</label>
+									<p>Lorem ipsum dolor sit amet, suavitate reformidans id sit, ex phaedrum postulant referrentur mei. Aliquip vocibus expetenda vix cu. Has graecis oportere necessitatibus te. Per dicant praesent iracundia ex.</p>
+									<p>Cibo regione inimicus vel et. Et vero errem aliquip has, vim id invenire facilisis disputationi. Nam pertinax omittantur ne. Ea eam nibh affert eirmod, usu decore delicata et. Qui in prompta postulant sadipscing, ei nonumes apeirian tincidunt nam, elit consul dissentias eu usu. Qui ex debet zril offendit, ne sed etiam recusabo.</p>
+								</div>
+								<br>
+								<div>
+									<label>Tailor it</label>
+									<p>Cibo regione inimicus vel et. Et vero errem aliquip has, vim id invenire facilisis disputationi. Nam pertinax omittantur ne. Ea eam nibh affert eirmod, usu decore delicata et. Qui in prompta postulant sadipscing, ei nonumes apeirian tincidunt nam, elit consul dissentias eu usu. Qui ex debet zril offendit, ne sed etiam recusabo.</p>
+								</div>
+								<br>
+								<div>
+									<label>Persoonlijke noot</label>
+									<p>Per ut ipsum oblique. Facete nominavi voluptatum cum id, pri ei omnis appetere, nusquam fierent ea duo. Est enim everti oblique ea, eam ea unum everti, ex mei liber tritani. Duo maiorum signiferumque at, animal corpora quo no, mel putent alienum id. Sea tantas appetere in, duo et quas augue mediocrem, cum ne magna complectitur.</p>
+								</div>
+								<br>
+								<div>
+									<label>Vermijd gaten</label>
+									<p>Dicant utamur nostrud vis eu. Dicta sensibus complectitur te sit, ne dicunt malorum deseruisse qui. Cum erat dolore et, eruditi molestiae voluptaria id nec, oratio utamur in pri. Vel et diam elit eligendi.</p>
+									<p>Cum consul graeci principes no, sit tale essent et, sit et omnes definiebas. Pro ex eros vivendo, et pri periculis consequuntur, eam an decore essent delicata. Agam appareat vituperatoribus ut mel, nec purto labore explicari ea, utroque admodum volutpat eu ius. Choro dignissim complectitur no sea, stet gubergren liberavisse has ad, ne pericula maluisset cum.</p>
+								</div>
+								<br>
+								<div>
+									<label>Up-to-date</label>
+									<p>Cum consul graeci principes no, sit tale essent et, sit et omnes definiebas. Pro ex eros vivendo, et pri periculis consequuntur, eam an decore essent delicata. Agam appareat vituperatoribus ut mel, nec purto labore explicari ea, utroque admodum volutpat eu ius. Choro dignissim complectitur no sea, stet gubergren liberavisse has ad, ne pericula maluisset cum.</p>
+								</div>
+								<br>
+								<div>
+									<label>Spelling</label>
+									<p>Lorem ipsum dolor sit amet, suavitate reformidans id sit, ex phaedrum postulant referrentur mei. Aliquip vocibus expetenda vix cu. Has graecis oportere necessitatibus te. Per dicant praesent iracundia ex.</p>
+								</div>
+								<br>
+								<div>
+									<label>Waarheid</label>
+									<p>Dicant utamur nostrud vis eu. Dicta sensibus complectitur te sit, ne dicunt malorum deseruisse qui. Cum erat dolore et, eruditi molestiae voluptaria id nec, oratio utamur in pri. Vel et diam elit eligendi.</p>
+								</div>
+								<br>
+								<div>
+									<label>Getallen</label>
+									<p>Facete nominavi voluptatum cum id, pri ei omnis appetere, nusquam fierent ea duo. Est enim everti oblique ea, eam ea unum everti, ex mei liber tritani. Duo maiorum signiferumque at, animal corpora quo no, mel putent alienum id. Sea tantas appetere in, duo et quas augue mediocrem, cum ne magna complectitur.</p>
+								</div>
+								<br>
+								<div>
+									<label>Layout</label>
+									<p>Cibo regione inimicus vel et. Et vero errem aliquip has, vim id invenire facilisis disputationi. Nam pertinax omittantur ne. Ea eam nibh affert eirmod, usu decore delicata et. Qui in prompta postulant sadipscing, ei nonumes apeirian tincidunt nam, elit consul dissentias eu usu. Qui ex debet zril offendit, ne sed etiam recusabo.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="recommendations">
+					<div class="recommendation">
+					    <div class="list">
+					    	<div class="headline" title="Heftruckchauffeur">
+					    		Heftruckchauffeur
+					    	</div>
+					    	<div class="description">
+					    		Facete nominavi voluptatum cum id, pri ei omnis appetere, nusquam fierent ea duo. Est enim everti oblique ea, eam ea unum everti, ex mei liber tritani. Duo maiorum signiferumque at, animal corpora quo no, mel putent alienum id.
+					    	</div>
+					    </div>
+					    <div class="list">
+					    	<div class="headline" title="Magazijnmedewerker">
+					    		Magazijnmedewerker
+					    	</div>
+					    	<div class="description">
+					    		Facete nominavi voluptatum cum id, pri ei omnis appetere, nusquam fierent ea duo. Est enim everti oblique ea, eam ea unum everti, ex mei liber tritani. Duo maiorum signiferumque at, animal corpora quo no, mel putent alienum id.
+					    	</div>
+					    </div>
+					    <div class="list">
+					    	<div class="headline" title="Lader / losser">
+					    		Lader / losser
+					    	</div>
+					    	<div class="description">
+					    		Facete nominavi voluptatum cum id, pri ei omnis appetere, nusquam fierent ea duo. Est enim everti oblique ea, eam ea unum everti, ex mei liber tritani. Duo maiorum signiferumque at, animal corpora quo no, mel putent alienum id.
+					    	</div>
+					    </div>
+					    <div class="list">
+					    	<div class="headline" title="Online marketeer (trefwoord)">
+					    		Online marketeer<span>...</span>
+					    	</div>
+					    	<div class="description">
+					    		Facete nominavi voluptatum cum id, pri ei omnis appetere, nusquam fierent ea duo. Est enim everti oblique ea, eam ea unum everti, ex mei liber tritani. Duo maiorum signiferumque at, animal corpora quo no, mel putent alienum id.
+					    	</div>
+					    </div>
+					    <div class="list">
+					    	<div class="headline" title="Chauffeur">
+					    		Chauffeur
+					    	</div>
+					    	<div class="description">
+					    		Facete nominavi voluptatum cum id, pri ei omnis appetere, nusquam fierent ea duo. Est enim everti oblique ea, eam ea unum everti, ex mei liber tritani. Duo maiorum signiferumque at, animal corpora quo no, mel putent alienum id.
+					    	</div>
+					    </div>
+					    <div class="list">
+					    	<div class="headline" title="Productie Industrie Vacatures">
+					    		Productie Industrie<span>...</span>
+					    	</div>
+					    	<div class="description">
+					    		Facete nominavi voluptatum cum id, pri ei omnis appetere, nusquam fierent ea duo. Est enim everti oblique ea, eam ea unum everti, ex mei liber tritani. Duo maiorum signiferumque at, animal corpora quo no, mel putent alienum id.
+					    	</div>
+					    </div>
+				  	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="container" style="font-size: 13px;">
+		<hr/>
+		<p class="info-text">
+			&copy; COPYRIGHT OLYMPIA UITZENDBUREAU
+			&nbsp;
+			<a class="info-text" href="#">Privacy statement</a> | <a class="info-text" href="#">Disclaimer</a> | <a class="info-text" href="#">Contact</a>
+		</p>
+		<br/>
+		<br/>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="../lib/jquery/dist/jquery.min.js"></script>
+	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../lib/jqueryTypeahead/jquery.typeahead.js"></script>
+	<script src="../lib/slick-1.5.9/slick/slick.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="../js/app.js"></script>
+	<script type="text/javascript">
+		function getParameterByName(name) {
+	        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	            results = regex.exec(location.search);
+	        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	    }
+	    $('#trefwoord_v1-query').typeahead({
+    	order: "desc",
+    	source: {
+        	data: [
+	            "Heftruckchauffeur", "Magazijnmedewerker", "Lader / losser", "Verhuizer (trefwoord)", "Online marketeer (trefwoord)", "Chauffeur", "Voorraadbeheerder", "Logistiek", "Transport", "Orderpicker", "Techniek", "Productie Industrie Vacatures"
+	       	 ]
+	    },
+	    callback: {
+	        onInit: function (node) {
+	            console.log('Typeahead Initiated on ' + node.selector);
+	        	}
+	    	}
+		});
+
+		$(document).ready(function(){
+			$('.recommendations .recommendation .list').on('click', function(){
+				var recommendation = $(this).find('.headline').attr('title');
+				$( "#trefwoord_v1-query" ).val(recommendation);	
+				$(".tips h1.black span").html(recommendation + " ");
+				$(".tips").scrollView(120);
+			});
+			$('.orange-well .btn-primary').on('click', function(){
+				var recommendation = $( "#trefwoord_v1-query" ).val();
+				$(".tips h1.black span").html(recommendation + " ");
+			});
+			$('.recommendation').slick({
+				slidesToShow: 3,
+				arrows: true,
+				slidesToScroll: 1,
+				dots: false,
+				centerMode: false,
+				focusOnSelect: false
+			});
+	    });
+	</script>
+</body>/
+</html>

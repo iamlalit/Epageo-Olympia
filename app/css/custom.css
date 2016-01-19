@@ -233,7 +233,6 @@ a:focus{
 	cursor: pointer;
 }
 .right-container .well.well-olympia.orange-well .row .btn{
-	width: 52%;
 	margin-left: 10px;
 	height: 35px;
 	position: relative;
@@ -692,6 +691,26 @@ h1.black{
 .typeahead-field{
 	padding-top: 15px;
 	border-radius: 5px;
+}
+.cv-tips .typeahead-field{
+	padding-top: 0;
+}
+.cv-tips .typeahead-result{
+	position: absolute;
+	width: 98%;
+    background: white;
+    border-left: 1px solid #b2b2b2;
+    border-right: 1px solid #b2b2b2;
+}
+.cv-tips .typeahead-result ul li a{
+	color: #333333 !important;
+}
+.cv-tips .typeahead-field input{
+	height: 34px;
+	border-radius: 5px;
+}
+.cv-tips .typeahead-field > span{
+	border-radius: 5px;	
 }
 .afstand{
 	position: relative;
@@ -1547,4 +1566,184 @@ nav > ul > li:last-child{
 }
 .left-tab-data .actualData ul li.well:nth-child(5n+1){
 	margin-top: 0 !important;
+}
+.globalSwitch .switch label span:first-child{
+    font-size: 1.3em;
+}
+.switched .globalSwitch{
+	display: inline-block;
+    margin-left: 6px;
+    vertical-align: middle;
+    top: 6px;
+    position: relative;
+}
+.switched .greenLengthDependent{
+	display: block;
+}
+.clock .hour,
+.clock .separator,
+.clock .minutes,
+.clock .day{
+	float: left;
+	width: 68px;
+	text-align: center;
+    border: 1px solid #bbbbbb;
+    padding: 10px 0;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+.clock .separator{
+	width: 10px;
+}
+.clock{
+	margin-top: 10px;
+}
+.clock .hour span,
+.clock .separator span,
+.clock .minutes span,
+.clock .day span{
+	display: block;
+}
+.clock .hour span:nth-child(2),
+.clock .minutes span:nth-child(2),
+.clock .day span:nth-child(2){
+	margin: 10px 0;
+}
+.clock .separator span:nth-child(2){
+	margin: 4px 0;
+}
+.clock .hour span:first-child,
+.clock .hour span:last-child,
+.clock .minutes span:first-child,
+.clock .minutes span:last-child,
+.clock .day span:first-child,
+.clock .day span:last-child{
+	cursor: pointer;
+}
+.clock .hour span:first-child:hover,
+.clock .hour span:last-child:hover,
+.clock .minutes span:first-child:hover,
+.clock .minutes span:last-child:hover,
+.clock .day span:first-child:hover,
+.clock .day span:last-child:hover{
+	color: #ff4400;
+}
+.clock .day input,
+.clock .hour input,
+.clock .minutes input{
+    width: 61px;
+    text-align: center;
+    margin: 10px 0;
+    border: 0;
+
+}
+#mijnCV .submenuCV{
+	display: none;
+}
+#mijnCV.active .submenuCV,
+#mijnCV:hover .submenuCV{
+	display: block;
+}
+#mijnCV .submenuCV.in{
+	display: block;
+}
+.left-container .well.well-olympia .side-menu ul li .submenuCV ul li{
+	margin: 0;
+}
+.left-container .well.well-olympia .side-menu ul li .submenuCV ul li a{
+	padding-left: 25px;
+	color: #555;
+	font-weight: 700;
+}
+.left-container .well.well-olympia .side-menu ul li .submenuCV ul li a:hover{
+	color: #ff4400;
+	background: #f7f9f8;
+}
+.left-container .well.well-olympia .side-menu ul li .submenuCV.in ul li a{
+	color: #ff4400;
+	background: #ffffff;
+}
+li#mijnCV{
+	background: #ffffff;
+}
+li#mijnCV .activeX{
+	color: #555;
+	background: #ffffff;
+}
+li#mijnCV .activeX:hover{
+	color: #ff4400;
+}
+.tips .tipsC .tips-heading span{
+	color: #ff4400;
+}
+.slick-arrow{
+	position: absolute;
+}
+.recommendation .list{
+	height: 185px;
+	padding: 5px;
+	border-left: 1px solid #d2d2d2;
+	background: #ffffff;
+	cursor: pointer;
+}
+.recommendation .list:hover{
+	background: #f5f5f5;
+}
+.recommendations{
+	margin-top: 20px;
+	padding: 0 35px;
+	background: #f5f5f5;
+	border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px 0px rgba(166, 166, 166, 0.25);
+    box-shadow: 0px 0px 5px 0px #f6f6f6\9;
+}
+.recommendation{
+	border-right: 1px solid #d2d2d2;
+}
+.slick-prev, .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 13px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+    z-index: 99;
+}
+.slick-prev:before, .slick-next:before {
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: #989090;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: bold;
+}
+.slick-prev::before {
+    content: "〈";
+}
+.slick-next::before {
+    content: "〉";
+}
+.slick-prev{
+	top: 50%;
+    left: -33px;
+}
+.slick-next{
+	top: 50%;
+    right: -33px;
+}
+.recommendation .list .headline{
+	font-size: 18px;
+	color: #ff4400;
+	padding: 10px 0 10px;
 }

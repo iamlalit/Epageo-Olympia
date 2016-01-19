@@ -125,3 +125,87 @@ $('.notificationSaveMessage1').click(function(){
 //     }
 //     $(this).html(newSubText);
 // });
+
+var indexHour = -1;
+function pad(num, size) {
+    var s = "0" + num;
+    return s.substr(s.length-size);
+}
+$('.hour .olympia-arrow-up').on('click', function(){
+    if(indexHour < 23){
+        indexHour++;
+        indexHour = pad(indexHour,2);
+        $('.clock .hour .value').val(indexHour);
+    }else if(indexHour == 23){
+        indexHour = 0;
+        indexHour = pad(indexHour,2);
+        $('.clock .hour .value').val(indexHour);
+    }
+});
+$('.hour .olympia-arrow-down').on('click', function(){
+    if(indexHour >= 0){
+        indexHour--;
+        indexHour = pad(indexHour,2);
+        if(indexHour < 0){
+            indexHour = 23;
+            $('.clock .hour .value').val(indexHour);
+        }else{
+            $('.clock .hour .value').val(indexHour);    
+        }
+    }else if(indexHour == -1){
+        indexHour = 23;
+        $('.clock .hour .value').val(indexHour);
+    }
+});
+var indexMinute = -1;
+$('.minutes .olympia-arrow-up').on('click', function(){
+    if(indexMinute < 59){
+        indexMinute++;
+        indexMinute = pad(indexMinute,2);
+        $('.clock .minutes .value').val(indexMinute);
+    }else if(indexMinute == 59){
+        indexMinute = 0;
+        indexMinute = pad(indexMinute,2);
+        $('.clock .minutes .value').val(indexMinute);
+    }
+});
+$('.minutes .olympia-arrow-down').on('click', function(){
+    if(indexMinute >= 0){
+        indexMinute--;
+        indexMinute = pad(indexMinute,2);
+        if(indexMinute < 0){
+            indexMinute = 59;
+            $('.clock .minutes .value').val(indexMinute);
+        }else{
+            $('.clock .minutes .value').val(indexMinute);    
+        }
+    }else if(indexMinute == -1){
+        indexMinute = 59;
+        $('.clock .minutes .value').val(indexMinute);
+    }
+});
+var days = ['maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag', 'zondag']
+var indexDay = -1;
+$('.day .olympia-arrow-up').on('click', function(){
+    if(indexDay < 6){
+        indexDay++;
+        $('.clock .day .value').html(days[indexDay]);
+    }else if(indexDay == 6){
+        indexDay = 0;
+        $('.clock .day .value').html(days[indexDay]);
+    }
+});
+$('.day .olympia-arrow-down').on('click', function(){
+    if(indexDay >= 0){
+        indexDay--;
+        if(indexDay < 0){
+            indexDay = 6;
+            $('.clock .day .value').html(days[indexDay]);
+        }else{
+            $('.clock .day .value').html(days[indexDay]);
+        }
+    }else if(indexDay == -1){
+        indexDay = 6;
+        $('.clock .day .value').html(days[indexDay]);
+    }
+});

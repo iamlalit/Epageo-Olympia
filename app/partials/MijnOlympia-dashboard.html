@@ -65,7 +65,11 @@
 			</div>
 		</div>
 	</header>
-
+	<div class="notificationSaveMessage hidden">
+		<div class="box">
+			<p>Je wijzigingen zijn opgeslagen!</p><span class="olympia olympia-check-circle"></span>
+		</div>
+	</div>
 	<div class="full-width-border" style="margin-top: 15px;">
 		<div class="container">
 			<nav>
@@ -152,7 +156,14 @@
 									<li class="active"><a href="MijnOlympia-dashboard.html">Mijn dashboard</a></li>
 									<li><a href="MijnOlympia-account.html">Mijn account</a></li>
 									<li><a href="MijnOlympia-video-cv.html">Mijn video CV</a></li>
-									<li><a href="MijnOlympia-cv-ervaring.html">Mijn CV &amp; ervaring</a></li>
+									<li id="mijnCV">
+										<a href="MijnOlympia-cv-ervaring.html">Mijn CV &amp; ervaring</a>
+										<div class="submenuCV">
+											<ul>
+												<li><a href="MijnOlympia-cv-tips.html">CV tips</a></li>
+											</ul>
+										</div>
+									</li>
 									<li><a href="MijnOlympia-voorkeuren.html">Mijn voorkeuren</a></li>
 									<li id="emailAlert"><a href="MijnOlympia-email-alerts.html">Mijn email alerts (<span>4</span>)</a></li>
 									<li><a href="MijnOlympia-sollicitaties.html">Mijn sollicitaties (<span>3</span>)</a></li>
@@ -924,9 +935,8 @@
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="radioNieuw" id="radio-nieuw3" value="option3" data-required="true"/> Nee, ik ben niet meer op zoek naar werk en wil niet dat Olympia contact met mij opneemt.
+									<input type="radio" name="radioNieuw" id="radio-nieuw3" value="option3" data-required="true"/> Nee, ik ben niet (meer) op zoek naar werk en wil niet dat Olympia contact met mij opneemt.
 								</label>
-								<p>(dit schakelt ook je e-mail alerts uit)</p>
 							</div>
 						</div>
 						<div class="form-group opzegtermijn">
@@ -963,6 +973,27 @@
 								</label>
 							</div>
 						</div>
+
+						<div class="form-group switched">
+							<hr>
+							<div class="row">
+								<div class="col-lg-12">
+									<span class="greenLengthDependent">Je hebt ingeschakelde e-mail alerts.</span>
+									<span>Zet hier je e-mail alert(s) aan of uit:</span>
+									<div class="header globalSwitch">
+										<div class="form-group" id="fromTO">
+											<div class="switch on globalCheck1">
+											    <input class="special-toggle" type="checkbox" name="toggleButton6" id="toggleButton6" checked="checked">
+											   	<label for="toggleButton6" title="Met deze knop kun je al je e-mail alerts in één keer in- of uitschakelen">
+												    <span></span>
+												    <span></span>
+											    </label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 						<div class="form-group">
 							<hr>
 							<div class="row">
@@ -976,7 +1007,7 @@
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
-								<button type="button" class="btn btn-primary pull-right" id="modal-voorkeuren-add" data-dismiss="modal">Wijzigingen opslaan</button>
+								<button type="button" class="btn btn-primary pull-right notificationSaveMessage1" id="modal-voorkeuren-add" data-dismiss="modal">Wijzigingen opslaan</button>
 							</div>
 						</div>
 					</div>
@@ -993,6 +1024,10 @@
 	<script type="text/javascript">
 	$(document).ready(function(){
 		var globalCheck = $('.globalCheck input[type=checkbox]').prop("checked");
+		$('#toggleButton6').on('change', function(){
+			$('.globalCheck input[type=checkbox]').prop("checked", $('.globalCheck1 input[type=checkbox]').prop("checked"));
+			$("#toggleButton5").trigger('change');
+		})
 		$('#toggleButton5').on('change', function(){
 			var globalCheck = $('.globalCheck input[type=checkbox]').prop("checked");
 			$('#emailAlert a').prop('href', 'MijnOlympia-email-alerts.html?globalCheck='+globalCheck);
@@ -1006,7 +1041,21 @@
 	              $(this).find('.circle').removeClass('green').removeClass('red').addClass('green');
 	            });	
 			}
-		})
+			$('.globalCheck1 input[type=checkbox]').prop("checked", globalCheck);
+			getGreenLength();
+		});
+
+		//get the length of greens
+		function getGreenLength(){
+			var lengthOfGreens = $('.alert-box .accordion-data li').find('.green').length;
+			if(lengthOfGreens == 1){
+				$('.switched span.greenLengthDependent').html('Je hebt één ingeschakelde e-mail alert.');
+			}else if(lengthOfGreens > 1){
+				$('.switched span.greenLengthDependent').html('Je hebt ingeschakelde e-mail alerts.');
+			}else if(lengthOfGreens == 0){
+				$('.switched span.greenLengthDependent').html('Je e-mail alerts zijn uitgeschakeld.');
+			}
+		}
 
 		function getParameterByName(name) {
 	        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -1014,7 +1063,6 @@
 	            results = regex.exec(location.search);
 	        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	    }
-
 	    var globalCheck = getParameterByName('globalCheck');
 	    if(globalCheck === 'false'){
 	    	
@@ -1037,9 +1085,9 @@
 	    }
 	    var listToPass = '';
 	    if(window.location.search != ''){
-	    	listToPass = window.location.search.split('=')[1];	
+	    	listToPass = window.location.search.split('=')[1];
+			getGreenLength();	
 	    }
-	    console.log(listToPass);
 	    
 	    
 	    for (var i = 1; i <= listToPass.length; i++) {
@@ -1049,11 +1097,14 @@
 	    	}else if(listToPass[i-1] === '0'){
 	    		$('.accordion-data.alerts').find('#'+i +' .circle').removeClass('green').removeClass('red').addClass('red');
 	    	}
+	    	getGreenLength();
 	    };
 	    if(listToPass === '1111'){
 	    	$('.globalCheck input[type=checkbox]').attr("checked", true);
+	    	$('.globalCheck1 input[type=checkbox]').attr("checked", true);
 	    }else if(listToPass === '0000'){
 	    	$('.globalCheck input[type=checkbox]').removeAttr("checked");
+	    	$('.globalCheck1 input[type=checkbox]').removeAttr("checked");
 	    }
 
 	    Array.prototype.contains = function(v) {

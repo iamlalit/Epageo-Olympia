@@ -157,7 +157,14 @@
 									<li><a href="MijnOlympia-dashboard.html">Mijn dashboard</a></li>
 									<li><a href="MijnOlympia-account.html">Mijn account</a></li>
 									<li><a href="MijnOlympia-video-cv.html">Mijn video CV</a></li>
-									<li><a href="MijnOlympia-cv-ervaring.html">Mijn CV &amp; ervaring</a></li>
+									<li id="mijnCV">
+										<a href="MijnOlympia-cv-ervaring.html">Mijn CV &amp; ervaring</a>
+										<div class="submenuCV">
+											<ul>
+												<li><a href="MijnOlympia-cv-tips.html">CV tips</a></li>
+											</ul>
+										</div>
+									</li>
 									<li class="active"><a href="MijnOlympia-voorkeuren.html">Mijn voorkeuren</a></li>
 									<li><a href="MijnOlympia-email-alerts.html">Mijn email alerts (<span>4</span>)</a></li>
 									<li><a href="MijnOlympia-sollicitaties.html">Mijn sollicitaties (<span>3</span>)</a></li>
@@ -274,6 +281,67 @@
 				<div class="well well-olympia">
 					<h1>Mijn voorkeuren bewerken</h1>
 					<div class="box-inner">
+						<div class="frequencies">
+							<label>Hoe vaak wil je e-mails voor deze alert ontvangen?</label>
+							<div class="row emailFreq">
+								<div class="col-lg-6">
+									<label class="radio-inline">
+										<input type="radio" name="emailFreq" id="inlineCheckbox1a" data-values="Direct als er een passende vacature is" value="Direct als er een passende vacature is"> Direct als er een passende vacature is
+									</label>
+								</div>
+								<div class="col-lg-6">
+									<label class="radio-inline">
+										<input type="radio" name="emailFreq" id="inlineCheckbox1c" data-values="1 x per week" value="1 x per week"> 1 x per week
+									</label>
+								</div>
+								<div class="col-lg-6">
+									<label class="radio-inline">
+										<input type="radio" name="emailFreq" id="inlineCheckbox1b" data-values="1 x per dag" value="1 x per dag" checked="checked"> 1 x per dag
+									</label>
+								</div>
+								<div class="col-lg-6">
+									<label>&nbsp;</label>
+								</div>
+							</div>
+							<div class="row perDay">
+								<div class="col-sm-12">
+									<div class="clock">
+										<div class="hour">
+											<span class="olympia olympia-arrow-up"></span>
+											<input type="text" class="value" value="uur" maxlength="2"/>
+											<span class="olympia olympia-arrow-down"></span>
+										</div>
+										<div class="minutes">
+											<span class="olympia olympia-arrow-up"></span>
+											<input type="text" class="value" value="minuten" maxlength="2"/>
+											<span class="olympia olympia-arrow-down"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row hidden perWeek">
+								<div class="col-sm-12">
+									<div class="clock">
+										<div class="day">
+											<span class="olympia olympia-arrow-up"></span>
+											<span class="value">dag</span>
+											<span class="olympia olympia-arrow-down"></span>
+										</div>
+										<div class="hour">
+											<span class="olympia olympia-arrow-up"></span>
+											<input type="text" class="value" value="uur"/>
+											<span class="olympia olympia-arrow-down"></span>
+										</div>
+										<div class="minutes">
+											<span class="olympia olympia-arrow-up"></span>
+											<input type="text" class="value" value="minuten"/>
+											<span class="olympia olympia-arrow-down"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<hr>
+						</div>
 						<label>Naar welke functies/ trefwoorden ben je op zoek?</label>
 						<div class="row vacatures">
 							<div class="col-lg-12">
@@ -970,14 +1038,13 @@
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="radioNieuw" id="radio-nieuw2" value="option2" data-required="true"/> Nee, ik ben niet op zoek naar werk maar ben wel geinteresseerd in vacatures en wil graag op de hoogte gehouden worden.
+									<input type="radio" name="radioNieuw" id="radio-nieuw2" value="option2" data-required="true"/> Nee, ik ben niet actief op zoek naar werk maar Olympia mag wel contact met mij opnemen.
 								</label>
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="radioNieuw" id="radio-nieuw3" value="option3" data-required="true"/> Nee, ik ben niet meer op zoek naar werk en wil ook niet meer benaderd worden door Olympia
+									<input type="radio" name="radioNieuw" id="radio-nieuw3" value="option3" data-required="true"/> Nee, ik ben niet (meer) op zoek naar werk en wil niet dat Olympia contact met mij opneemt.
 								</label>
-								<p>(dit schakelt ook je e-mail alerts uit)</p>
 							</div>
 						</div>
 						<div class="form-group opzegtermijn">
@@ -1014,6 +1081,26 @@
 								</label>
 							</div>
 						</div>
+						<div class="form-group switched">
+							<hr>
+							<div class="row">
+								<div class="col-lg-12">
+									<span class="greenLengthDependent">Je hebt ingeschakelde e-mail alerts.</span>
+									<span>Zet hier je e-mail alert(s) aan of uit:</span>
+									<div class="header globalSwitch">
+										<div class="form-group" id="fromTO">
+											<div class="switch on globalCheck1">
+											    <input class="special-toggle" type="checkbox" name="toggleButton6" id="toggleButton6" checked="checked">
+											   	<label for="toggleButton6" title="Met deze knop kun je al je e-mail alerts in één keer in- of uitschakelen">
+												    <span></span>
+												    <span></span>
+											    </label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 						<div class="form-group">
 							<hr>
 							<div class="row">
@@ -1027,7 +1114,7 @@
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
-								<button type="button" class="btn btn-primary pull-right" id="modal-voorkeuren-add" data-dismiss="modal">Wijzigingen opslaan</button>
+								<button type="button" class="btn btn-primary pull-right notificationSaveMessage1" id="modal-voorkeuren-add" data-dismiss="modal">Wijzigingen opslaan</button>
 							</div>
 						</div>
 					</div>
@@ -1120,6 +1207,12 @@
 	    if(toggleThis == 'true'){
 	   		$(".voorkeuren-box").removeClass('hidden');
 			$(".alert-box").addClass('hidden'); 	
+	    }
+	    var SetFrequency = getParameterByName('SetFrequency');
+	    if(SetFrequency == '1'){
+    		$('.frequencies').removeClass('hidden');
+	    }else{
+	    	$('.frequencies').addClass('hidden');
 	    }
 	</script>
 </body>
