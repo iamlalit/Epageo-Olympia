@@ -111,7 +111,7 @@ $('.notificationSaveMessage1').click(function(){
     $('.notificationSaveMessage').removeClass('hidden');
     var elementHeight = $('.notificationSaveMessage').height();
     var newTop = windowHeight - elementHeight;
-    newTop = newTop/2;
+    newTop = (newTop/2) - 60;
     $('.notificationSaveMessage').css('top', newTop+'px');
     setTimeout(function(){ $('.notificationSaveMessage').addClass('hidden'); }, 3000);
 })

@@ -1611,7 +1611,7 @@ $(document).ready(function(){
 });
 
 var currentView = '';
-// debugger;
+
 //for form 3
 $(document).ready(function(){
 	$('#jobForm-section3').addClass('grey-link');
@@ -2207,7 +2207,7 @@ function editEmailAlert(obj){
 	jobBody = $parent.find('.job-body');
 	functies = jobBody.find('.functies span').html();
 	locatie = jobBody.find('.locatie span').html();
-	//debugger;
+	
 	uren = jobBody.find('.uren span').html();
 	fullPartTime = jobBody.find('.fullPartTime span').html();
 	salary = jobBody.find('.salary span').html();
@@ -2291,7 +2291,7 @@ $(document).ready(function(){
 
 	//delete profile
 	$('#inlineCheckbox-delete').on('change', function(){
-		debugger;
+		
 		$('input[name=deletePassword]').val('');
 		if($('#inlineCheckbox-delete').prop('checked') == true){
 			$('#accountwijzigen').find('.box-inner').last().removeClass('hidden');	
@@ -2366,7 +2366,6 @@ $(document).ready(function(){
 	var sortByMatch = [];
 	var sortByDate = [];
 	function sortTheList(list, by, order){
-		debugger;
 		sortBy = [];
 		var phrases = [];
 		var sortByMatch = [];
@@ -2397,9 +2396,7 @@ $(document).ready(function(){
 				$('.'+list+' .actualData ul').append(sortBy[i].html);
 				$('.pagination').pagination('nextPage');
 				$('.pagination').pagination('prevPage');
-				
 			};
-
 	}
 
 	var activeTab = $('.MijnOlympia-suggesties .box-inner.accordion').find('.active').attr('class');
@@ -2407,7 +2404,7 @@ $(document).ready(function(){
 		var list = activeTab.split(' ')[0] + '-data';	
 	}
 	$('#sortingOrder').on('change', function(){
-		debugger;
+		
 		var selectedOption = $( "#sortingOrder option:selected" ).text();
 		var activeTab = $('.box-inner.accordion').find('.active').attr('class');
 		var list = activeTab.split(' ')[0] + '-data';
