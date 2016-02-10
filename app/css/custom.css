@@ -824,7 +824,7 @@ label.title.black{
 	width: 140px;
 }
 .cv .navbar-secondary .navigation {
-	width: 826px;
+    width: 495px;
 }
 .topLink .navbar-secondary .navigation {
 	width: 140px;
@@ -1636,53 +1636,55 @@ nav > ul > li:last-child{
     margin: 10px 0;
     border: 0;
 }
-.mijnCV .submenuCV{
-	visibility: hidden; /* hides sub-menu */
-	opacity: 0;
+.mijnSubmenu .submenu{
+	display: none;
 	position: relative;
-	top: -50%;
+	/*top: -50%;*/
 	padding: 0;
-	height: 0;
-	transition: all 0.5s ease 0s, visibility 0s linear 0.5s; /* the last value is the transition-delay for visibility */
+
+	/*height: 0;*/
+	/*transition: all 0.5s ease 0s, visibility 0s linear 0.5s;  the last value is the transition-delay for visibility */
 }
-.mijnCV.active .submenuCV,
-.mijnCV:hover .submenuCV{
-	visibility: visible; /* shows sub-menu */
-	opacity: 1;
-	top: 0;
-	height: 45px;
-	transition-delay: 0.1s;
+.mijnSubmenu .submenu.in,
+.mijnSubmenu.active .submenu{
+	display: block;
 }
-.mijnCV .submenuCV.in{
-	visibility: visible; /* shows sub-menu */
-	opacity: 1;
-	top: 0;
-	height: 45px;
-}
-.left-container .well.well-olympia .side-menu ul li .submenuCV ul li{
+.left-container .well.well-olympia .side-menu ul li .submenu ul li{
 	margin: 0;
+	width: 100%;
 }
-.left-container .well.well-olympia .side-menu ul li .submenuCV ul li a{
+.left-container .well.well-olympia .side-menu ul li .submenu ul li a{
 	padding-left: 35px;
 	color: #555;
 	font-weight: 700;
+	width: 100%;
 }
-.left-container .well.well-olympia .side-menu ul li .submenuCV ul li a:hover{
+.left-container .well.well-olympia .side-menu ul li .submenu ul li a:hover{
 	color: #ff4400;
 	background: #f7f9f8;
 }
-.left-container .well.well-olympia .side-menu ul li .submenuCV.in ul li a{
-	color: #ff4400;
-	background: #ffffff;
-}
-li.mijnCV{
-	background: #ffffff;
-}
-li.mijnCV .activeX{
+.left-container .well.well-olympia .side-menu ul li .submenu.in ul li a{
 	color: #555;
 	background: #ffffff;
 }
-li.mijnCV .activeX:hover{
+.left-container .well.well-olympia .side-menu ul li .submenu.in ul li a:hover{
+	color: #ff4400;
+	background: #f7f9f8;
+}
+.left-container .well.well-olympia .side-menu ul li.mijnSubmenu{
+	background: #ffffff;
+}
+.left-container .well.well-olympia .side-menu ul li.mijnSubmenu .activeX{
+	color: #555;
+	background: #ffffff;
+}
+.left-container .well.well-olympia .side-menu ul li.mijnSubmenu .activeX:hover{
+	color: #ff4400;
+}
+.left-container .well.well-olympia .side-menu ul li .submenu.in ul li a{
+	color: #555555;
+}
+.left-container .well.well-olympia .side-menu ul li.mijnSubmenu .submenu li.subActive a{
 	color: #ff4400;
 }
 .tips .tipsC .tips-heading span{
@@ -1771,4 +1773,26 @@ li.mijnCV .activeX:hover{
 	font-size: 18px;
 	color: #ff4400;
 	padding: 10px 0 10px;
+}
+.right-container .listing ul{
+    list-style-type: square;
+    padding-left: 15px;
+    color: #ff4400;
+}
+.right-container .listing ul li span{
+	color: #444;
+}
+.right-container.align-well .well.well-olympia + .well.well-olympia{
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+.margin-top-20{
+	margin-top: 20px !important;
+}
+.right-container .well.well-olympia.banner-images{
+	padding: 0;
+}
+.right-container .well.well-olympia.banner-images img{
+	width: 100%;
+	border-radius: 4px;
 }

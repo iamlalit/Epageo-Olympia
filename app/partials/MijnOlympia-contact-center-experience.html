@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-	<title>Mijn video CV</title>
+	<title>Contact center experience</title>
 	<link rel="stylesheet" href="../css/app.css"/>
 	<link rel="stylesheet" href="../css/custom.css"/>
 	<link rel="stylesheet" href="../css/olympia-icons.css"/>
@@ -26,36 +26,9 @@
 					            <a href="javascript:void(0)"> › uitloggen</a>
 					        </div>
 					    </div>
-					    <div class="logged bell" >
-					    	<span class="olympia-icon olympia-bell-o"></span>
+					   	<div class="logged bell" >
+					    	<span class="olympia-icon olympia-bell-o" onclick="location.href='MijnOlympia-dashboard.html?scrollTo=notification'"></span>
 					    	<span class="number">3</span>
-					    	<div class="notificationBalloon hidden">
-					    		<ul>
-					    			<li>
-					    				<a href="MijnOlympia-suggesties.html">3 nieuwe vacature suggesties</a>
-					    				<span class="olympia olympia-times"></span>
-					    			</li>
-					    			<li>
-					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Magazijnmedewerker(m/v)</a>
-					    				<span class="olympia olympia-times"></span>
-					    			</li>
-					    			<li>
-					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Fulltime orderpicker</a>
-					    				<span class="olympia olympia-times"></span>
-					    			</li>
-					    			<li>
-					    				<a href="MijnOlympia-suggesties.html">3 nieuwe vacature suggesties</a>
-					    				<span class="olympia olympia-times"></span>
-					    			</li>
-					    			<li>
-					    				<a href="MijnOlympia-sollicitaties.html">Statusverandering sollicitatie - Magazijnmedewerker(m/v)</a>
-					    				<span class="olympia olympia-times"></span>
-					    			</li>
-					    			<li>
-					    				<a href="MijnOlympia-notificaties.html">Bekijk alle notificaties</a>
-					    			</li>
-					    		</ul>
-					    	</div>
 					    </div>
 					    <div class="user">
 					        <img src="../img/pasfoto.jpg"/>
@@ -151,7 +124,7 @@
 								<ul>
 									<li><a href="MijnOlympia-dashboard.html">Mijn dashboard</a></li>
 									<li><a href="MijnOlympia-account.html">Mijn account</a></li>
-									<li class="active"><a href="MijnOlympia-video-cv.html">Mijn video CV</a></li>
+									<li><a href="MijnOlympia-video-cv.html">Mijn video CV</a></li>
 									<li class="mijnSubmenu">
 										<a href="MijnOlympia-cv-ervaring.html">Mijn CV &amp; ervaring</a>
 										<div class="submenu">
@@ -173,10 +146,10 @@
 									</li>
 									<li><a href="MijnOlympia-suggesties.html">Mijn suggesties (<spam>14</span>)</a></li>
 									<li class="mijnSubmenu">
-										<a href="MijnOlympia-competenties.html">Mijn competenties</a>
-										<div class="submenu">
+										<a href="MijnOlympia-competenties.html" class="activeX ">Mijn competenties</a>
+										<div class="submenu in">
 											<ul>
-												<li><a href="MijnOlympia-contact-center-experience.html">Contact center experience</a></li>
+												<li class="subActive"><a href="MijnOlympia-contact-center-experience.html">Contact center experience</a></li>
 												<li><a href="MijnOlympia-warehouse-experience.html">Warehouse experience</a></li>
 												<li><a href="MijnOlympia-procesoperator-experience.html">Procesoperator experience</a></li>
 											</ul>
@@ -200,65 +173,19 @@
 					</div>
 				</div>
             </div>
-			<div class="col-lg-9 right-container cv topLink">
-				<div class="navbar-secondary translate-up" id="secondary-navigation">
-			        <ul class="navigation">
-			          <li><a href="#" name="document">Terug naar boven</a></li>
-			        </ul>
-			    </div>
+			<div class="col-lg-9 right-container align-well">
 				<div class="well well-olympia">
-					<h1>Mijn video cv</h1>
+					<h1>Contact Center Experience</h1>
 					<div class="box-inner">
-						<p>Met een video CV kunnen wij en je toekomstige werkgever jou nog beter leren kennen, waardoor je solliciatieproces nog sneller kan verlopen. Gebruik je video CV om iets over jezelf te vertellen en naar wat voor werk je op zoek bent.</p>
-						<p>Je kunt hieronder direct een video opnemen met je webcam of een eerder gemaakte video uploaden.</p>
+						<p>Om een goed beeld van jouw talenten en vaardigheden te krijgen is er de Contact Center Experience. Hiermee brengen we nauwkeurig jouw vaardigheden en talenten in kaart. Doe de test wanneer het jou uitkomt, lekker vanuit huis!</p>
 					</div>
 				</div>
-				<div class="well well-olympia">
-					<div class="box-inner accordion">
-						<ul class="accordion-data">
-							<li class="show">
-								<div class="header" onclick="toggleView(this)">
-									<div class="job-title">
-										<strong>Heb je nog geen video CV? Neem hem hier op</strong>
-										<strong class="pull-right"><span class="olympia-caret-up olympia-icon pull-right"></span></strong>
-									</div>
-								</div>
-								<div class="job-body">
-									<div class="row">
-										<div class="col-sm-7">
-											<img src="../img/video.jpg" style="width: 100%">
-										</div>
-										<div class="col-sm-5">
-											<label class="title black">Tips voor jouw video CV:</label>
-											<ul class="list-style-square">
-												<li><span>Stel jezelf voor</span></li>
-												<li><span>Benoem je sterke punten</span></li>
-												<li><span>Houd het kort en krachtig (maximaal 2 minuten)</span></li>
-												<li><span>Vertel naar wat voor soort baan je op zoek bent</span></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="header" onclick="toggleView(this)">
-									<div class="job-title">
-										<strong>Heb je al een video CV? Upload hem hier</strong>
-										<strong class="pull-right"><span class="olympia-caret-up olympia-icon pull-right"></span></strong>
-									</div>
-								</div>
-								<div class="job-body">
-									<div class="row">
-										<div class="col-sm-12">
-											<div class="video-box">
-												<p>Sleep je videobestand hier of kies een bestand: <button class="btn btn-default">Bestand kiezen</button></p>
-												<button class="btn btn-primary">Uploaden</button>
-											</div>				
-										</div>
-									</div>
-								</div>
-							</li>
-						</ul>
+				<div class="well well-olympia banner-images">
+					<img src="../img/cce.png">
+				</div>
+				<div class="row row-centered">
+					<div class="col-sm-6 col-centered">
+						<button class="btn btn-primary" onclick="window.open('http://www1.olympia.nl/customer-contact-center/')">START CONTACT CENTER EXPERIENCE</button>
 					</div>
 				</div>
 			</div>

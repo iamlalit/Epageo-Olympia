@@ -209,3 +209,16 @@ $('.day .olympia-arrow-down').on('click', function(){
         $('.clock .day .value').html(days[indexDay]);
     }
 });
+
+$('.mijnSubmenu').hover(
+  function () {
+    if(!$(this).hasClass('active') && !$(this).find('.submenu').hasClass('in')){
+        $(this).find('.submenu').slideDown(300);    
+    }
+  },
+  function () {
+    if(!$(this).hasClass('active') && !$(this).find('.submenu').hasClass('in')){
+        $(this).find('.submenu').slideUp(300);
+    }
+  }
+);
